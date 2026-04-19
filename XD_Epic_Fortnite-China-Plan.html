@@ -503,6 +503,44 @@
     min-height: 0;
   }
 
+  .slide.slide-tech-sync {
+    padding: clamp(5.5vh, 6.5vh, 7.5vh) clamp(7.5vw, 9.5vw, 11vw);
+  }
+
+  .slide-tech-sync .slide-tech-sync-main {
+    flex: 1;
+    min-height: 0;
+    gap: clamp(28px, 3.2vw, 52px);
+  }
+
+  .slide-tech-sync .slide-tech-sync-main > .slide-tech-sync-copy {
+    padding-right: clamp(10px, 1.4vw, 22px);
+    padding-top: 0;
+    justify-content: flex-start;
+    min-height: 0;
+  }
+
+  .slide-tech-sync-intro {
+    flex-shrink: 0;
+    margin-bottom: clamp(12px, 1.6vh, 22px);
+  }
+
+  .slide-tech-sync-intro .eyebrow {
+    margin-bottom: clamp(6px, 0.8vh, 12px);
+  }
+
+  /* Page num — same corner as other slides (header used to reserve this strip) */
+  .slide-tech-sync-page-num {
+    position: absolute;
+    top: clamp(5.5vh, 6.5vh, 7.5vh);
+    right: clamp(7.5vw, 9.5vw, 11vw);
+    z-index: 2;
+  }
+
+  .slide-tech-sync .tech-sync-list {
+    gap: clamp(12px, 1.35vh, 20px);
+  }
+
   .slide-tech-sync .grid-2 {
     align-items: stretch;
   }
@@ -523,10 +561,6 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-  }
-
-  .slide-tech-sync .slide-header {
-    margin-bottom: clamp(10px, 1.6vh, 22px);
   }
 
   .slide-tech-sync-lede {
@@ -572,8 +606,13 @@
     font-size: var(--fs-micro);
     color: var(--text-faint);
     letter-spacing: 0.06em;
-    margin: clamp(10px, 1.4vh, 18px) 0 0;
-    padding-top: 4px;
+    margin: clamp(14px, 2vh, 26px) 0 0;
+    padding-top: clamp(6px, 1vh, 12px);
+  }
+
+  .slide-tech-sync-copy .slide-tech-sync-foot {
+    margin-top: auto;
+    padding-top: clamp(18px, 2.5vh, 32px);
   }
 
   .slide-tech-sync .section-label {
@@ -584,6 +623,53 @@
     color: var(--orange);
     padding-bottom: 11px;
     margin-bottom: 14px;
+  }
+
+  .slide-tech-sync-visual.stack-sm {
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .slide-tech-sync-visual .wire-img.wire-lg {
+    margin-top: 0;
+  }
+
+  /* Page 19: full width of the right column, stacked; top-aligned with the left intro */
+  .slide-tech-sync-visual-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(12px, 1.5vh, 20px);
+    width: 100%;
+    min-height: 0;
+    padding: 0 0 0 clamp(2px, 0.4vw, 8px);
+    box-sizing: border-box;
+  }
+
+  .slide-tech-sync .slide-tech-sync-visual-pair .wire-img.wire-lg {
+    flex: 0 0 auto;
+    margin-top: 0;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: clamp(6px, 0.95vmin, 12px);
+    box-sizing: border-box;
+  }
+
+  .slide-tech-sync-visual-pair figure.wire-img {
+    margin: 0;
+  }
+
+  .slide-tech-sync-visual-pair .wire-img img {
+    border-radius: inherit;
+  }
+
+  .slide-tech-sync-visual {
+    width: 100%;
+    min-width: 0;
+    padding-left: clamp(6px, 1vw, 16px);
+    padding-top: clamp(32px, 5.5vh, 80px);
+    padding-right: 0;
   }
 
   /* ========== P1 COVER ========== */
@@ -1255,7 +1341,7 @@
   .spectrum {
     position: relative;
     height: 12px;
-    background: linear-gradient(90deg, var(--purple) 0%, var(--orange) 50%, var(--green) 100%);
+    background: var(--orange);
     border-radius: 6px;
     margin: 80px 0 40px;
   }
@@ -2358,7 +2444,7 @@
   }
 
   .nav .bar::after {
-    background: linear-gradient(90deg, #ff7a00 0%, #ffb32c 100%);
+    background: var(--orange);
   }
 
   .hint { color: var(--text-faint); }
@@ -4217,7 +4303,8 @@
     justify-content: flex-start;
   }
   /* P11 小节标题：与 P10 首发策略同款（大号 + 橙色） */
-  .slide-creator-eco .creator-eco-copy .launch-section-head {
+  .slide-creator-eco .creator-eco-copy .launch-section-head,
+  .slide-uefn-bridge .creator-eco-copy .launch-section-head {
     font-size: clamp(22px, 2.75vmin, 34px);
     font-weight: 800;
     color: var(--orange);
@@ -4225,14 +4312,17 @@
     line-height: 1.2;
     margin: clamp(18px, 2.2vh, 28px) 0 clamp(10px, 1.2vh, 14px);
   }
-  .slide-creator-eco .creator-eco-copy .launch-section-head:first-of-type {
+  .slide-creator-eco .creator-eco-copy .launch-section-head:first-of-type,
+  .slide-uefn-bridge .creator-eco-copy .launch-section-head:first-of-type {
     margin-top: 0;
   }
-  .slide-creator-eco .creator-eco-copy > h3.launch-section-head:nth-of-type(2) {
+  .slide-creator-eco .creator-eco-copy > h3.launch-section-head:nth-of-type(2),
+  .slide-uefn-bridge .creator-eco-copy > h3.launch-section-head:nth-of-type(2) {
     margin-top: clamp(28px, 3.5vh, 44px);
   }
-  /* breathing room below last bullet (In-Game Mode Creator Incentives · 解决方案) */
-  .slide-creator-eco .creator-eco-copy ul.slide-strategic-points:last-of-type {
+  /* breathing room below last bullet */
+  .slide-creator-eco .creator-eco-copy ul.slide-strategic-points:last-of-type,
+  .slide-uefn-bridge .creator-eco-copy ul.slide-strategic-points:last-of-type {
     padding-bottom: clamp(18px, 2.4vh, 36px);
   }
   .creator-eco-visual {
@@ -4321,6 +4411,429 @@
   }
   .creator-eco-row .creator-eco-slot {
     width: 100%;
+  }
+
+  /* ========== v3 · Slide Xianxia IP — placeholders + genre bar + cases ========== */
+  .slide-xianxia-ip {
+    min-height: 0;
+  }
+  .slide-xianxia-ip .slide-header {
+    flex-shrink: 0;
+    margin-bottom: clamp(6px, 1vh, 12px);
+  }
+  .xianxia-ip-main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(5px, 0.75vh, 11px);
+    overflow: hidden;
+  }
+  .xianxia-ip-heroes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(10px, 1.4vw, 20px);
+    flex-shrink: 0;
+    min-height: 0;
+    align-items: start;
+  }
+  .xianxia-ip-hero-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 0.8vh, 10px);
+    min-width: 0;
+  }
+  .slide-xianxia-ip .slide-strategic-img-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide-xianxia-ip .slide-strategic-img-slot:has(> img) .img-placeholder-label {
+    display: none;
+  }
+  .img-placeholder-label {
+    font-size: clamp(10px, 1.05vmin, 13px);
+    color: var(--text-faint);
+    text-align: center;
+    padding: clamp(8px, 1.2vmin, 14px);
+    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    max-width: 90%;
+  }
+  .xianxia-ip-hero-cap {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 0 2px;
+  }
+  .xianxia-ip-title {
+    font-size: clamp(30px, 3.3vmin, 38px);
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .xianxia-ip-cn {
+    font-size: clamp(26px, 2.7vmin, 32px);
+    font-weight: 700;
+    color: var(--text-dim);
+  }
+  .xianxia-ip-stat {
+    font-size: clamp(22px, 2.3vmin, 28px);
+    color: var(--text-dim);
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+  .xianxia-heat {
+    flex-shrink: 0;
+    padding: clamp(8px, 1.1vh, 13px) clamp(12px, 1.8vw, 20px);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .slide-xianxia-ip .xianxia-heat .torch-heart-kpis {
+    width: 100%;
+    padding-bottom: 0;
+  }
+  .slide-xianxia-ip .xianxia-heat .torch-kpi-card-num {
+    font-size: clamp(26px, 3.83vmin, 42px);
+  }
+  .slide-xianxia-ip .xianxia-heat .torch-kpi-card-lbl {
+    font-size: clamp(15px, 1.58vmin, 20px);
+  }
+  .slide-xianxia-ip .xianxia-heat .torch-heart-kpis--grid {
+    align-items: stretch;
+  }
+  .slide-xianxia-ip .xianxia-heat .torch-heart-kpis--grid .torch-kpi-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+  }
+  .xianxia-cases {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(8px, 1.1vw, 18px);
+    align-items: start;
+    padding-top: clamp(10px, 1.4vh, 22px);
+  }
+  .xianxia-case-col {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(10px, 1.2vw, 16px);
+    min-width: 0;
+  }
+  .xianxia-case-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3px, 0.45vh, 6px);
+  }
+  .xianxia-case-kicker {
+    margin: 0;
+    font-size: clamp(11px, 1.22vmin, 15px);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    line-height: 1.25;
+  }
+  /* Hero row: taller frame (16:9) + title overlay inside slot. */
+  .slide-xianxia-ip .xianxia-ip-heroes .slide-strategic-img-slot {
+    aspect-ratio: 16 / 9;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide-xianxia-ip .xianxia-ip-heroes .slide-strategic-img-slot > img {
+    object-position: center center;
+  }
+  .slide-xianxia-ip .xianxia-hero-inset-cap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: clamp(28px, 4vh, 44px) clamp(14px, 1.8vw, 22px) clamp(14px, 1.8vh, 22px);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-start;
+    text-align: left;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 18, 26, 0.18) 30%, rgba(15, 18, 26, 0.82) 100%);
+    pointer-events: none;
+  }
+  .slide-xianxia-ip .xianxia-hero-inset-cap .xianxia-ip-title {
+    font-size: clamp(30px, 3.3vmin, 38px);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  .slide-xianxia-ip .xianxia-hero-inset-cap .xianxia-ip-cn {
+    font-size: clamp(26px, 2.7vmin, 32px);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 3px 16px rgba(0, 0, 0, 0.38);
+  }
+  .slide-xianxia-ip .xianxia-ip-hero-cap {
+    gap: 0;
+    padding-top: clamp(4px, 0.5vh, 8px);
+  }
+  .slide-xianxia-ip .xianxia-cases .xianxia-case-thumb {
+    flex-shrink: 0;
+    width: clamp(72px, 11vmin, 112px);
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+  }
+  .slide-xianxia-ip .xianxia-cases .xianxia-case-thumb .img-placeholder-label {
+    font-size: clamp(7px, 0.75vmin, 9px);
+    padding: clamp(4px, 0.6vmin, 8px);
+    line-height: 1.25;
+  }
+  .slide-xianxia-ip .xianxia-case-col .slide-strategic-subhead {
+    font-size: clamp(13px, 1.45vmin, 17px);
+    margin: 0;
+    line-height: 1.25;
+  }
+  .slide-xianxia-ip .xianxia-case-col .slide-strategic-p {
+    font-size: clamp(11px, 1.15vmin, 14px);
+    line-height: 1.36;
+    margin: 0;
+    color: var(--text-dim);
+  }
+  /* ========== Slide 14 · UGC Global ⇄ China — same split layout as slide 13 (copy + image wells) ========== */
+  .slide-uefn-bridge {
+    min-height: 0;
+  }
+  .slide-uefn-bridge .slide-header {
+    flex-shrink: 0;
+    margin-bottom: clamp(6px, 1.2vh, 14px);
+  }
+  .slide-uefn-bridge .creator-eco-split {
+    grid-template-columns: minmax(0, 0.47fr) minmax(0, 0.53fr);
+    gap: clamp(12px, 2vw, 28px);
+    align-items: start;
+  }
+  /* Fit copy + visuals in one viewport: tighter type & spacing than slide 13 */
+  .slide-uefn-bridge .creator-eco-copy .launch-section-head {
+    font-size: clamp(17px, 2vmin, 26px);
+    margin: clamp(8px, 1.2vh, 14px) 0 clamp(5px, 0.75vh, 10px);
+  }
+  .slide-uefn-bridge .creator-eco-copy > h3.launch-section-head:nth-of-type(2) {
+    margin-top: clamp(12px, 2vh, 20px);
+  }
+  .slide-uefn-bridge .creator-eco-copy .slide-strategic-points li {
+    margin-bottom: clamp(6px, 1vh, 12px);
+    font-size: clamp(12px, 1.38vmin, 16px);
+    line-height: 1.42;
+  }
+  .slide-uefn-bridge .creator-eco-copy ul.slide-strategic-points:last-of-type {
+    padding-bottom: clamp(6px, 1vh, 14px);
+  }
+  .slide-uefn-bridge .creator-eco-visual {
+    min-height: 0;
+  }
+  /* Stack sizes to content; avoids stretching the image column when copy runs long */
+  .slide-uefn-bridge .creator-eco-visual .creator-eco-stack {
+    flex: 0 1 auto;
+    width: 100%;
+  }
+  .slide-uefn-bridge .creator-eco-stack {
+    gap: clamp(6px, 0.9vw, 12px);
+    min-height: 0;
+  }
+  /* Hero: edge-to-edge in the visual column; height follows 16:9 (matches 2560×1440 art) */
+  .slide-uefn-bridge .creator-eco-slot--hero {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+  }
+  .slide-uefn-bridge .creator-eco-row {
+    min-height: 0;
+    flex-shrink: 0;
+  }
+  .slide-uefn-bridge .creator-eco-slot {
+    border-color: rgba(20, 184, 166, 0.26);
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.07) 0%, rgba(67, 97, 238, 0.06) 100%);
+  }
+  /* Overlay caption · same pattern as slide-three-val figure.asset-slot */
+  .slide-uefn-bridge .creator-eco-slot.creator-eco-slot--asset-note {
+    padding: 0;
+  }
+  .slide-uefn-bridge .creator-eco-slot.creator-eco-slot--asset-note .asset-slot-inner {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+  .slide-uefn-bridge .creator-eco-slot.creator-eco-slot--asset-note .asset-slot-inner > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 0;
+    border-radius: inherit;
+  }
+  .slide-uefn-bridge .creator-eco-slot.creator-eco-slot--asset-note .asset-slot-note {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px 8px 7px;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 18, 0.55) 38%, rgba(10, 10, 18, 0.88) 100%);
+    font-size: clamp(8px, 0.95vmin, 11px);
+    line-height: 1.22;
+    pointer-events: none;
+  }
+  .slide-uefn-bridge .creator-eco-slot.creator-eco-slot--asset-note .asset-slot-title {
+    color: rgba(255, 255, 255, 0.96);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+  }
+  .slide-uefn-bridge .creator-eco-slot.creator-eco-slot--asset-note.creator-eco-slot--img-zoom130 .asset-slot-inner > img {
+    transform: scale(1.3);
+    transform-origin: center center;
+  }
+  .slide-uefn-bridge .creator-eco-slot.creator-eco-slot--img-zoom130 .asset-slot-title {
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+  }
+
+  /* ========== v3 · Slide full-channel coverage ========== */
+  .slide-channel-full {
+    min-height: 0;
+  }
+  .slide-channel-full .slide-header {
+    flex-shrink: 0;
+    margin-bottom: clamp(8px, 1.2vh, 14px);
+  }
+  .channel-full-main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.2vh, 14px);
+    overflow: hidden;
+  }
+  .channel-full-thesis {
+    flex-shrink: 0;
+    font-size: clamp(13px, 1.55vmin, 17px);
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 85ch;
+  }
+  .channel-full-wall {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4px, 0.55vh, 7px);
+    padding-right: 4px;
+  }
+  .channel-cat {
+    flex-shrink: 0;
+  }
+  .channel-cat-label {
+    text-align: center;
+    font-size: clamp(12px, 1.25vmin, 15px);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: var(--orange);
+    padding: clamp(6px, 0.75vh, 10px) clamp(12px, 2.2vw, 22px);
+    margin: 0 0 clamp(4px, 0.5vh, 8px);
+    border-radius: 6px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+  .channel-logo-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(9px, 1.12vw, 14px);
+    align-items: stretch;
+  }
+  .channel-logo-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 auto;
+    min-width: min(103px, 100%);
+    min-height: clamp(55px, 7.2vmin, 70px);
+    padding: clamp(7px, 0.9vh, 11px) clamp(10px, 1.2vw, 14px);
+    background: none;
+    border: none;
+    box-sizing: border-box;
+  }
+  .channel-logo-tile img {
+    max-width: 100%;
+    max-height: clamp(41px, 5.5vmin, 58px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .channel-logo-tile--text .channel-logo-text {
+    font-size: clamp(12px, 1.3vmin, 16px);
+    font-weight: 600;
+    color: var(--text-dim);
+    text-align: center;
+    line-height: 1.25;
+    padding: 0 2px;
+  }
+  .channel-full-kpis {
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(8px, 1.2vw, 14px);
+  }
+  .channel-kpi-card {
+    text-align: center;
+    padding: clamp(10px, 1.4vh, 14px) 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .channel-kpi-val {
+    font-size: clamp(26px, 3.2vmin, 40px);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--orange);
+    line-height: 1.05;
+  }
+  .channel-kpi-label {
+    font-size: clamp(10px, 1.08vmin, 13px);
+    color: var(--text-dim);
+    line-height: 1.35;
+    margin-top: 6px;
   }
 
   .road-phase {
@@ -4797,6 +5310,13 @@
       font-size: 8pt;
     }
 
+    .slide-xianxia-ip .xianxia-heat .torch-kpi-card-num {
+      font-size: 30pt;
+    }
+    .slide-xianxia-ip .xianxia-heat .torch-kpi-card-lbl {
+      font-size: 12pt;
+    }
+
     .torch-heart-highlight {
       font-size: 8.5pt;
       line-height: 1.4;
@@ -4832,7 +5352,7 @@
   <div class="deck-backdrop deck-backdrop--blob-mlt" aria-hidden="true"></div>
   <div class="deck-backdrop deck-backdrop--hero" aria-hidden="true"></div>
 
-  <!-- Slide map (structure + layout merge): 17 slides — … | 7 RO×Disney | 8 China Publishing Plan (transition) | 9 Strategic Positioning | 10 Budget | … | 17 Closing CN -->
+  <!-- Slide map (structure + layout merge): 20 slides — … | 7 RO×Disney | 8 China Publishing Plan (transition) | 9 Strategic Positioning | 10 Budget | … | 20 Closing CN -->
 
   <!-- ============================================================ -->
   <!-- 1 COVER -->
@@ -4855,7 +5375,7 @@
     <div class="slide-header">
       <div class="eyebrow orange">Part 01 · Market timing</div>
       <h2>Things changed.</h2>
-      <div class="page-num">02 / 17</div>
+      <div class="page-num">02 / 20</div>
     </div>
 
     <div class="p3-compare">
@@ -4941,7 +5461,7 @@
         <div class="eyebrow orange">Part 01 · Why Now</div>
         <h2>Market Ready: Three Validations</h2>
       </div>
-      <div class="page-num">03 / 17</div>
+      <div class="page-num">03 / 20</div>
     </div>
 
     <div class="grid-3">
@@ -5025,7 +5545,7 @@
         <div class="eyebrow orange">Part 01 · Core capabilities</div>
         <h2>TapTap and Our Shared Values</h2>
       </div>
-      <div class="page-num">04 / 17</div>
+      <div class="page-num">04 / 20</div>
     </div>
 
     <div class="p4-layout">
@@ -5117,7 +5637,7 @@
         <div class="eyebrow orange">Part 01 · Genre credentials</div>
         <h2>Sausage Man: China's Closest Parallel to Fortnite</h2>
       </div>
-      <div class="page-num">05 / 17</div>
+      <div class="page-num">05 / 20</div>
     </div>
 
     <div class="proof-layout proof-sausage-body">
@@ -5229,7 +5749,7 @@
         <div class="eyebrow orange">Part 01 · Global operations</div>
         <h2>Torchlight: Infinite + Heartopia</h2>
       </div>
-      <div class="page-num">06 / 17</div>
+      <div class="page-num">06 / 20</div>
     </div>
 
     <p class="torch-heart-thesis">Global season-based live ops × simultaneous multi-region launch — make China part of the global ecosystem, not a "special edition".</p>
@@ -5320,7 +5840,7 @@
         <div class="eyebrow orange">Part 01 · Commercial assets</div>
         <h2>Top-Tier IP Licensing &amp; Derivative Experience</h2>
       </div>
-      <div class="page-num">07 / 17</div>
+      <div class="page-num">07 / 20</div>
     </div>
     <div class="ro-slide-main">
     <div class="ro-showcase-grid">
@@ -5391,7 +5911,7 @@
       <span class="transition-hero-rule" aria-hidden="true"></span>
       <h2 class="transition-hero-title">China Publishing Plan</h2>
     </div>
-    <div class="page-num">08 / 17</div>
+    <div class="page-num">08 / 20</div>
   </section>
 
   <!-- ============================================================ -->
@@ -5403,7 +5923,7 @@
         <div class="eyebrow purple">Part 02 · Publishing plan</div>
         <h2>Strategic Positioning</h2>
       </div>
-      <div class="page-num">09 / 17</div>
+      <div class="page-num">09 / 20</div>
     </div>
 
     <div class="slide-strategic-main">
@@ -5460,7 +5980,7 @@
         <div class="eyebrow" style="color:var(--yellow);">Year-one marketing investment</div>
         <h2>$30M · "Launch Burst +<br>Long-Tail Ecosystem" Dual Drive</h2>
       </div>
-      <div class="page-num">10 / 17</div>
+      <div class="page-num">10 / 20</div>
     </div>
 
     <p class="budget-lede">We recommend a first-year budget of <em>$30 million USD</em>, allocated as a <em>"launch burst + long-tail ecosystem"</em> dual-engine strategy. The budget is not pure paid acquisition — it's a systematic layout around Fortnite's platform positioning.</p>
@@ -5541,7 +6061,7 @@
         <div class="eyebrow purple">Publishing Plan</div>
         <h2>Launch Strategy ($6M): Zero Build + IP / Offline</h2>
       </div>
-      <div class="page-num">11 / 17</div>
+      <div class="page-num">11 / 20</div>
     </div>
 
     <div class="launch-split-main">
@@ -5578,15 +6098,109 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 12 Creators生态 $4.5M -->
+  <!-- 12 Xianxia IP — genre scale + crossover cases (v3) -->
   <!-- ============================================================ -->
-  <section class="slide slide-creator-eco" data-slide="12">
+  <section class="slide slide-xianxia-ip" data-slide="12" data-toc="Xianxia IP · genre + collabs">
+    <div class="slide-header">
+      <div>
+        <div class="eyebrow purple">IP Strategy · Xianxia / Cultivation</div>
+        <h2>A Genre China Owns — And the World Hasn't Tapped</h2>
+      </div>
+      <div class="page-num">12 / 20</div>
+    </div>
+    <div class="xianxia-ip-main">
+      <div class="xianxia-heat" role="group" aria-label="Genre heat">
+        <div class="torch-heart-kpis torch-heart-kpis--grid">
+          <div class="torch-kpi-card">
+            <div class="torch-kpi-card-num">¥30–50B</div>
+            <div class="torch-kpi-card-lbl">China xianxia game market · ~$4–7B USD</div>
+          </div>
+          <div class="torch-kpi-card">
+            <div class="torch-kpi-card-num">537M+</div>
+            <div class="torch-kpi-card-lbl">Web novel users · cultivation is a top-3 genre</div>
+          </div>
+          <div class="torch-kpi-card">
+            <div class="torch-kpi-card-num">67M</div>
+            <div class="torch-kpi-card-lbl">MAU · Quest for the Great Dao (寻道大千) — #1 WeChat mini-game</div>
+          </div>
+        </div>
+      </div>
+      <div class="xianxia-ip-heroes" role="group" aria-label="Two top-tier xianxia IPs">
+        <figure class="xianxia-ip-hero-card">
+          <div class="slide-strategic-img-slot" aria-label="Once Upon a Time (三生三世十里桃花) movie key art featuring Yang Yang as Ye Hua and Liu Yifei as Bai Qian">
+            <img src="https://cdn.hk01.com/di/media/images/937329/org/7405d1ec570ceadfe3517f1ad42aa422.jpg/ZrI2qjkfDuQW0DYNkDb7DaY9meA5Aqm5NX7lYTV-5WE?v=w1920" alt="Once Upon a Time (三生三世十里桃花) movie key art — Yang Yang as Ye Hua, Liu Yifei as Bai Qian" decoding="async" />
+            <span class="img-placeholder-label">Key art · Once Upon a Time (三生三世十里桃花)</span>
+            <div class="xianxia-hero-inset-cap">
+              <span class="xianxia-ip-title">Eternal Love</span>
+              <span class="xianxia-ip-cn">三生三世十里桃花</span>
+            </div>
+          </div>
+          <figcaption class="xianxia-ip-hero-cap">
+            <span class="xianxia-ip-stat">50B+ total views · 10B+ Weibo topic reads · National phenomenon</span>
+          </figcaption>
+        </figure>
+        <figure class="xianxia-ip-hero-card">
+          <div class="slide-strategic-img-slot" aria-label="Nezha (哪吒之魔童闹海) animated film key art">
+            <img src="https://hongkongfp.com/wp-content/uploads/2025/02/2b0bd26f02bec1d307d8.jpg-Copy-edited.jpg" alt="Nezha (哪吒之魔童闹海) animated film key art — multi-arm Nezha silhouette amid fire and water" decoding="async" />
+            <span class="img-placeholder-label">Key art · Nezha (哪吒之魔童闹海)</span>
+            <div class="xianxia-hero-inset-cap">
+              <span class="xianxia-ip-title">Nezha</span>
+              <span class="xianxia-ip-cn">哪吒之魔童闹海</span>
+            </div>
+          </div>
+          <figcaption class="xianxia-ip-hero-cap">
+            <span class="xianxia-ip-stat">$2.2B+ global box office · 324M cinema admissions · highest-grossing animated film worldwide</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="xianxia-cases" role="group" aria-label="Crossover track record">
+        <div class="xianxia-case-col">
+          <div class="slide-strategic-img-slot xianxia-case-thumb" aria-label="Honor of Kings × The Legend of Sword and Fairy — Li Xiaoyao crossover">
+            <img src="https://play-lh.googleusercontent.com/hEm5NVeEv7UfFJaK8GZdfWe7p3DB_VvYx57qIEHbR0tMV_NToziH0Vbgd6CxLiWF-iURpAe-jsC_UGUDt0diPQ" alt="Honor of Kings app icon" decoding="async" />
+            <span class="img-placeholder-label">HoK × Sword and Fairy · visual</span>
+          </div>
+          <div class="xianxia-case-text">
+            <p class="xianxia-case-kicker">Skin monetization</p>
+            <p class="slide-strategic-subhead">Honor of Kings × The Legend of Sword and Fairy</p>
+            <p class="slide-strategic-p">China's #1 MOBA × China's most beloved xianxia RPG IP. Li Xiaoyao skin with classic Flying Sword and Wine God Spell abilities — widely praised as a crossover benchmark.</p>
+          </div>
+        </div>
+        <div class="xianxia-case-col">
+          <div class="slide-strategic-img-slot xianxia-case-thumb" aria-label="NARAKA × A Will Eternal — Han Li as playable hero">
+            <img src="https://cdn2.steamgriddb.com/icon/7da8cfbdd6bebb76e383c1ecf334e522.png" alt="NARAKA: Bladepoint app icon" decoding="async" />
+            <span class="img-placeholder-label">NARAKA × A Will Eternal · visual</span>
+          </div>
+          <div class="xianxia-case-text">
+            <p class="xianxia-case-kicker">Playable character</p>
+            <p class="slide-strategic-subhead">NARAKA: Bladepoint × A Will Eternal</p>
+            <p class="slide-strategic-p">Martial-arts BR × cultivation ceiling IP. Han Li as a playable hero with authentic artifacts and flying-sword mechanics. Viral Bilibili crossover content proved the demand.</p>
+          </div>
+        </div>
+        <div class="xianxia-case-col">
+          <div class="slide-strategic-img-slot xianxia-case-thumb" aria-label="Sausage Man × Soul Land — Tang San with martial soul awakening">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp2exNTNXExT2wuEZ0P9eZ5_gg9qmt4R8YmA&amp;s" alt="Sausage Man × Soul Land crossover promotional art" decoding="async" />
+            <span class="img-placeholder-label">Sausage Man × Soul Land · visual</span>
+          </div>
+          <div class="xianxia-case-text">
+            <p class="xianxia-case-kicker">Gameplay mechanics</p>
+            <p class="slide-strategic-subhead">Sausage Man × Soul Land</p>
+            <p class="slide-strategic-p">Stylized BR × cultivation anime IP. Tang San as a playable character with martial soul awakening mechanics. Validated on X.D.'s own 300M+ download platform — proving our execution capability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 13 Creators生态 $4.5M -->
+  <!-- ============================================================ -->
+  <section class="slide slide-creator-eco" data-slide="13">
     <div class="slide-header">
       <div>
         <div class="eyebrow" style="color:var(--teal);">Creator ecosystem · 15% · $4,500,000</div>
         <h2>Creator Ecosystem — $4,500,000</h2>
       </div>
-      <div class="page-num">12 / 17</div>
+      <div class="page-num">13 / 20</div>
     </div>
 
     <div class="creator-eco-split">
@@ -5633,19 +6247,78 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 13 电竞 15% (structure P14) -->
+  <!-- 14 UGC Global ⇄ China — slide 13–style split: bullets + image wells -->
   <!-- ============================================================ -->
-  <section class="slide slide-esports" data-slide="13">
+  <section class="slide slide-uefn-bridge" data-slide="14" data-toc="UGC · Global–China flow">
+    <div class="slide-header">
+      <div>
+        <div class="eyebrow" style="color:var(--teal);">UGC interoperability · Vision &amp; rails</div>
+        <h2>Global ⇄ China UGC — Two-Way Flow</h2>
+      </div>
+      <div class="page-num">14 / 20</div>
+    </div>
+
+    <div class="creator-eco-split">
+      <div class="creator-eco-copy">
+        <h3 class="launch-section-head">Vision &amp; two-way flow</h3>
+        <ul class="slide-strategic-points" aria-label="UGC vision and bidirectional flow">
+          <li><strong>Flow:</strong> Proven global islands → China after localization and compliance review; Chinese creators → global Discover under agreed rules.</li>
+          <li><strong>Value:</strong> Richer China catalog; Chinese-built experiences for global players; shared upside for Epic and creators.</li>
+          <li><strong>Feasibility:</strong> Minecraft / industry precedents for gated catalogs; align technically with the global UEFN pipeline — <strong>audit workflow, tooling, and data sync stay partnership-scope.</strong></li>
+        </ul>
+
+        <h3 class="launch-section-head">Governance, China edge &amp; messaging</h3>
+        <ul class="slide-strategic-points" aria-label="Governance, China strengths, and communication boundaries">
+          <li><strong>Governance:</strong> Language, policy, and quality gates; community can co-own parts of review — not “anything goes.”</li>
+          <li><strong>China edge:</strong> TapTap developer depth; local IP and culture (e.g. <em>A Will Eternal</em>, <em>Linglong</em>, festival beats) × Fortnite.</li>
+          <li><strong>Messaging &amp; product:</strong> Lead with vision and a Workshop-style acceptance frame for global catalog — <strong>matchmaking stays China-only</strong>; catalog flow ≠ one global live region.</li>
+        </ul>
+      </div>
+
+      <div class="creator-eco-visual">
+        <div class="creator-eco-stack" aria-label="Suggested visuals — replace with your assets">
+          <figure class="creator-eco-slot creator-eco-slot--hero">
+            <img src="https://cdn1.epicgames.com/offer/fn/UEFN_29-01_EGS_UEFN_Assets_S1OfferImage_2560x1440_2560x1440-bc992b49496068f859100ec4cc6e0f3c" width="2560" height="1440" alt="Unreal Editor for Fortnite (UEFN) — official key art" decoding="async" />
+            <figcaption class="creator-eco-slot-cap">Hero · global ⇄ China UGC flow / diagram</figcaption>
+            <span class="creator-eco-slot-hint">UEFN.</span>
+          </figure>
+          <div class="creator-eco-row">
+            <figure class="creator-eco-slot creator-eco-slot--asset-note">
+              <div class="asset-slot-inner">
+                <img src="https://cdn.biubiu001.com/p/ping/0/img/d1bdb0cf7c617cc5e4f47474d26760a5.png?x-oss-process=image/resize,w_1280/quality,Q_90" alt="Minecraft-style build — governance catalog reference" decoding="async" />
+                <div class="asset-slot-note">
+                  <span class="asset-slot-title">Proven way to sync global creator contents with regulatory compliance</span>
+                </div>
+              </div>
+            </figure>
+            <figure class="creator-eco-slot creator-eco-slot--asset-note creator-eco-slot--img-zoom130">
+              <div class="asset-slot-inner">
+                <img src="https://techchina.nancai.net/2026/0130/eabcada6d1b4ad5.jpeg" alt="TapTap — creators and IP event scene" decoding="async" />
+                <div class="asset-slot-note">
+                  <span class="asset-slot-title">Millions of TapTap Creators waiting to contribute to the community</span>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 15 电竞 15% (structure P14) -->
+  <!-- ============================================================ -->
+  <section class="slide slide-esports" data-slide="15">
     <div class="slide-header">
       <div>
         <div class="eyebrow" style="color:var(--yellow);">Esports · $4.5M</div>
         <h2>China Tournament Infrastructure — $4,500,000</h2>
       </div>
-      <div class="page-num">13 / 17</div>
+      <div class="page-num">15 / 20</div>
     </div>
 
     <div class="slide-esports-main">
-      <p class="slide-esports-lede">Tournaments serve more than elite players — they help Fortnite China build a "playable, watchable, followable" competitive narrative. This deepens core user stickiness and continuously supplies high-quality content for livestream, video, and social platforms.</p>
+      <p class="slide-esports-lede">Tournaments serve more than elite players -<br />They make Fortnite China<br />A "playable, watchable, followable" competitive narrative.<br />Deepens core player stickiness across livestreams, videos, and social platforms.</p>
 
       <div class="slide-esports-tri" role="group" aria-label="Tournament three pillars · visuals">
         <div class="slide-esports-col">
@@ -5675,31 +6348,105 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 14 全年投放计划 $15M 分阶段 (timeline · structure P15) -->
+  <!-- 16 Full-channel coverage (v3) -->
   <!-- ============================================================ -->
-  <section class="slide slide-ua" data-slide="14">
+  <section class="slide slide-channel-full" data-slide="16" data-toc="Channels · full coverage">
+    <div class="slide-header">
+      <div>
+        <div class="eyebrow purple">Channel Strategy · Full Coverage</div>
+        <h2>Media and Channels: Get China Fully Covered</h2>
+      </div>
+      <div class="page-num">16 / 20</div>
+    </div>
+    <div class="channel-full-main">
+      <div class="channel-full-kpis">
+        <div class="channel-kpi-card">
+          <div class="channel-kpi-val">50M+</div>
+          <div class="channel-kpi-label">TapTap MAU · 0% platform fee</div>
+        </div>
+        <div class="channel-kpi-card">
+          <div class="channel-kpi-val">1B+</div>
+          <div class="channel-kpi-label">Combined MAU across all channels</div>
+        </div>
+        <div class="channel-kpi-card">
+          <div class="channel-kpi-val">10</div>
+          <div class="channel-kpi-label">Gaming &amp; console media partners</div>
+        </div>
+      </div>
+      <p class="channel-full-thesis">TapTap: 0% platform fee, 50M MAU core gamers. Our marketing covers every major channel in China — not one is left out.</p>
+      <div class="channel-full-wall">
+        <div class="channel-cat">
+          <div class="channel-cat-label">Videos &amp; Live Streaming</div>
+          <div class="channel-logo-row">
+            <div class="channel-logo-tile"><img src="https://upload.wikimedia.org/wikipedia/en/8/85/Douyin_logo.svg" alt="Douyin" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Kuaishou_logo.png" alt="Kuaishou" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://logo.stocklight.com/NASDAQ/BILI.png" alt="Bilibili" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://www.freelogovectors.net/wp-content/uploads/2022/11/huya-logo-freelogovectors.net_.png" alt="Huya" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://companieslogo.com/img/orig/DOYU_BIG-97fdb1c4.png" alt="Douyu" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+        <div class="channel-cat">
+          <div class="channel-cat-label">Social &amp; Lifestyle</div>
+          <div class="channel-logo-row">
+            <div class="channel-logo-tile"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/XiaohongshuLOGO.png" alt="Xiaohongshu" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://cdn.freebiesupply.com/images/large/2x/weibo-logo-transparent.png" alt="Weibo" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://cdn.freebiesupply.com/logos/large/2x/wechat-logo-png-transparent.png" alt="WeChat" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://download.logo.wine/logo/Tencent_QQ/Tencent_QQ-Logo.wine.png" alt="QQ" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+        <div class="channel-cat">
+          <div class="channel-cat-label">Gaming &amp; Console Media</div>
+          <div class="channel-logo-row">
+            <div class="channel-logo-tile"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/TapTap_Logo.png" alt="TapTap" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://www.game-connection.com/wp-content/uploads/5/2023/07/%E5%A5%BD%E6%B8%B8%E5%BF%AB%E7%88%862021%E6%9C%80%E6%96%B0LOGO_%E7%94%BB%E6%9D%BF-2.png" alt="Hykb" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile channel-logo-tile--text"><span class="channel-logo-text">NGA</span></div>
+            <div class="channel-logo-tile"><img src="https://static.gcores.com/assets/01546e353924919c541d.png" alt="Gcores" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://logowik.com/content/uploads/images/vgtimes4033.logowik.com.webp" alt="VGTime" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="http://files.nowre.com/articles/2020/09/A9VG%E5%A4%B4%E5%83%8F.png" alt="A9VG" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://pp.myapp.com/ma_icon/0/icon_52656222_1706153007/256" alt="Campfire" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile channel-logo-tile--text"><span class="channel-logo-text">游研社</span></div>
+            <div class="channel-logo-tile channel-logo-tile--text"><span class="channel-logo-text">P9</span></div>
+            <div class="channel-logo-tile"><img src="https://pp.myapp.com/ma_icon/0/icon_11348784_1776062681/256" alt="Ymxz" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+        <div class="channel-cat">
+          <div class="channel-cat-label">Ad &amp; Search Platforms</div>
+          <div class="channel-logo-row">
+            <div class="channel-logo-tile"><img src="https://lf1-cdn-tos.bytescm.com/obj/ad-growth-fe/cms/upload/images/20210915/1631701478913959285.png" alt="Ocean Engine" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://static.foodtalks.cn/company/logo/8da9ea1a382d42aa031e70e68ad33f916452.png" alt="Tencent Ads" loading="lazy" decoding="async" /></div>
+            <div class="channel-logo-tile"><img src="https://assets.stickpng.com/images/58568cfe4f6ae202fedf271f.png" alt="Baidu" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 17 全年投放计划 $15M 分阶段 (timeline · structure P15) -->
+  <!-- ============================================================ -->
+  <section class="slide slide-ua" data-slide="17">
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">User acquisition</div>
         <h2>Year-Round Paid Media — $15,000,000</h2>
       </div>
-      <div class="page-num">14 / 17</div>
+      <div class="page-num">17 / 20</div>
     </div>
 
     <div class="ua-timeline">
       <div class="ua-grid ua-grid--top">
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">Warm-up</span><span class="ua-phase-money">$3,000,000</span></div>
+          <div class="ua-phase-title"><span class="ua-phase-name">Pre-launch</span></div>
           <p class="ua-phase-desc">Target casual gamers, returning legacy players, and content-platform audiences via brand videos, pre-registration campaigns, KOL seeding, and core media exposure — establish the first wave of "Fortnite is back in China" awareness.</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">Live ops</span><span class="ua-phase-money">$1,000,000</span></div>
+          <div class="ua-phase-title"><span class="ua-phase-name">Live ops</span></div>
           <p class="ua-phase-desc">Maintain market presence; cover festival nodes; support community activity; sustain reach to high-potential segments.</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">Live ops</span><span class="ua-phase-money">$500,000</span></div>
+          <div class="ua-phase-title"><span class="ua-phase-name">Live ops</span></div>
           <p class="ua-phase-desc">Ensure year-round heat continuity; preserve growth foundation for next major release and Year 2.</p>
         </div>
       </div>
@@ -5718,12 +6465,12 @@
       <div class="ua-grid ua-grid--bot">
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">Launch</span><span class="ua-phase-money">$6,000,000</span></div>
+          <div class="ua-phase-title"><span class="ua-phase-name">Launch</span></div>
           <p class="ua-phase-desc">Convert awareness rapidly into downloads, activations, and server-opening buzz. Amplified by streamer livestreams, short-video spread, and launch celebration events for maximum market ignition.</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">Major Update</span><span class="ua-phase-money">$4,500,000</span></div>
+          <div class="ua-phase-title"><span class="ua-phase-name">Major Update</span></div>
           <p class="ua-phase-desc">Re-awaken dormant users and re-amplify content potential. Re-distribute around new release selling points, new activities, new collabs, and community highlight moments — avoid the "launch-day peak only" single-curve trap.</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
@@ -5735,15 +6482,15 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 15 合规 (structure P16) -->
+  <!-- 18 合规 (structure P16) -->
   <!-- ============================================================ -->
-  <section class="slide" data-slide="15">
+  <section class="slide" data-slide="18">
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">Operational Readiness</div>
         <h2>Compliance &amp; Operations</h2>
       </div>
-      <div class="page-num">15 / 17</div>
+      <div class="page-num">18 / 20</div>
     </div>
 
     <div class="comp-grid" style="margin-top:2vh;">
@@ -5797,57 +6544,51 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 16 技术 · 全球版本同步 (structure P17) -->
+  <!-- 19 技术 · Global cadence sync (trunk-aligned delivery) -->
   <!-- ============================================================ -->
-  <section class="slide slide-tech-sync" data-slide="16">
-    <div class="slide-header">
-      <div>
-        <div class="eyebrow orange">Technical alignment</div>
-        <h2>China Delivery: Global Cadence Sync ×<br>UEFN Content Pipeline</h2>
-        <p class="slide-tech-sync-lede">Seasons and patches follow global trunk; content and accounts use compliant pipes and agreed stacks.</p>
-      </div>
-      <div class="page-num">16 / 17</div>
-    </div>
-    <div class="grid-2" style="flex:1;gap:2vw;min-height:0;">
-      <div class="stack-sm">
-        <div class="section-label">Global Cadence Sync</div>
-        <ul class="tech-sync-list">
-          <li>Seasons and major updates: same cadence as global; individual collabs scheduled separately per licensor timelines.</li>
-          <li>Hotfixes: trunk-aligned; payment, real-name, security patches via China-specific channel.</li>
-          <li>Multiplayer: China-local by default; cross-border only where policy permits.</li>
-        </ul>
-        <div class="wire-img wire-lg">
-          <img src="https://preview.redd.it/i-like-this-new-battle-pass-setup-your-able-to-pick-which-v0-1qq7oen55m4g1.png?auto=webp&amp;s=cc1610a1123a51a63b104b430098f189207bf475" width="1920" height="1080" alt="Fortnite Battle Pass UI — selectable reward tracks" decoding="async" />
+  <section class="slide slide-tech-sync" data-slide="19" data-toc="Global Cadence Sync">
+    <span class="page-num slide-tech-sync-page-num">19 / 20</span>
+    <div class="grid-2 slide-tech-sync-main">
+      <div class="stack-sm slide-tech-sync-copy">
+        <div class="slide-tech-sync-intro">
+          <div class="eyebrow orange">Technical alignment</div>
+          <h2>Global Cadence Sync</h2>
+          <p class="slide-tech-sync-lede">Seasons, major updates, and hotfixes stay on the same trunk rhythm as global — regional overlays (payments, real-name, compliance) ship without forking the core roadmap.</p>
         </div>
-      </div>
-      <div class="stack-sm">
-        <div class="section-label">UEFN &amp; China Stack</div>
         <ul class="tech-sync-list">
-          <li>UEFN: create → review → publish pipeline; China content pool connects to global Discover via agreed rules.</li>
-          <li>Content flow: machine pre-check + human review; two-way circulation boundaries fixed upfront.</li>
-          <li>Anti-cheat &amp; logs: EAC + THEMIS (in-house security platform); login via WeChat/mobile/minor-protection — Epic account linkage preserved.</li>
+          <li><strong>Seasons &amp; major updates:</strong> Same release cadence as global; individual IP collabs may shift dates per licensor windows without breaking the overall seasonal rhythm.</li>
+          <li><strong>Hotfixes &amp; patches:</strong> Trunk-aligned builds; China-specific channels for payment, identity, and security hotfixes so players stay current with global fixes.</li>
+          <li><strong>Branches &amp; rollout:</strong> China builds from the same release branch as global; China-only layers sit on top so live content and balance track together.</li>
+          <li><strong>Multiplayer topology:</strong> China-local matchmaking by default; cross-border play only where policy allows — independent of seasonal content drop timing.</li>
         </ul>
-        <div class="wire-img wire-lg">
-          <img src="https://cdn1.epicgames.com/offer/fn/UEFN_29-01_EGS_UEFN_Assets_S1OfferImage_2560x1440_2560x1440-bc992b49496068f859100ec4cc6e0f3c" width="1920" height="1080" alt="Unreal Editor for Fortnite (UEFN)" decoding="async" />
+        <p class="slide-tech-sync-foot">Same beats as global — localized execution where regulation requires it.</p>
+      </div>
+      <div class="stack-sm slide-tech-sync-visual">
+        <div class="slide-tech-sync-visual-pair" role="group" aria-label="Season and patch cadence — global-aligned updates">
+          <figure class="wire-img wire-lg">
+            <img src="https://preview.redd.it/i-like-this-new-battle-pass-setup-your-able-to-pick-which-v0-1qq7oen55m4g1.png?auto=webp&amp;s=cc1610a1123a51a63b104b430098f189207bf475" width="1920" height="1080" alt="Fortnite Battle Pass UI — seasonal chapters aligned with global" decoding="async" />
+          </figure>
+          <figure class="wire-img wire-lg">
+            <img src="https://i.ytimg.com/vi/R1PQUpV4024/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLBJ1L61NhxjrjtijGidGG72FvuxdQ" width="1280" height="720" alt="Fortnite patch notes — updates ship on the same rhythm as global" decoding="async" />
+          </figure>
         </div>
       </div>
     </div>
-    <p class="slide-tech-sync-foot">Global where possible; local where needed.</p>
   </section>
 
   <!-- ============================================================ -->
-  <!-- 17 结尾邀请 (structure closing) -->
+  <!-- 20 结尾邀请 (structure closing) -->
   <!-- ============================================================ -->
-  <section class="slide slide-closing-cn" data-slide="17">
+  <section class="slide slide-closing-cn" data-slide="20">
     <h2 class="closing-cn-headline">Let's Build<br>Fortnite China, Together</h2>
-    <div class="page-num" style="position:absolute;bottom:6vh;right:8vw;">17 / 17</div>
+    <div class="page-num" style="position:absolute;bottom:6vh;right:8vw;">20 / 20</div>
   </section>
 
 </div>
 
 <!-- Navigation -->
 <div class="nav">
-  <span class="counter" id="counter">01 / 17</span>
+  <span class="counter" id="counter">01 / 20</span>
   <div class="bar" id="progressBar"></div>
 </div>
 <div class="hint">← → to navigate · hover Pages strip or B page list · #8 or #page-8 in URL opens that page · F fullscreen · P print</div>

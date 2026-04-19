@@ -6,7 +6,7 @@ Use this entire document as the **system + task prompt**. Translate or rewrite *
 
 ## 1. Project context
 
-- **Artifact:** Full-screen HTML deck (`epic_deck_V2.html`), 17 slides (`data-slide="1"` … `"17"`).
+- **Artifact:** Full-screen HTML deck (`XD_Epic_Fortnite-China-Plan.html`), 17 slides (`data-slide="1"` … `"17"`).
 - **Audience:** Epic Games stakeholders; tone is confident, factual, partnership-oriented — aligned with the deck’s **“务实叙事”** (pragmatic narrative): avoid hype, avoid claiming mass-market guarantees.
 - **Primary merge target:** Strings below map to visible HTML / `aria-label` / image `alt` where noted. IDs are stable — the receiving side will merge by `id`.
 - **Secondary:** Appendix **D** mirrors narrative-only copy from `doc/full-content.md` (reference doc; page numbers there use P1–P18 vs HTML’s 17 slides — treat as editorial source, not layout).
@@ -81,7 +81,7 @@ Rules:
 
 ---
 
-## B. `epic_deck_V2.html` — slide-by-slide inventory
+## B. `XD_Epic_Fortnite-China-Plan.html` — slide-by-slide inventory
 
 ### Slide 01 — `data-slide="1"` (Cover)
 
@@ -615,7 +615,7 @@ IP巡演（怎么做 - 核心策略）
 ## E. Count checklist
 
 - **Section A:** 5 IDs  
-- **Section B:** 17 slides — **one row per `id` in tables above** (HTML deck body + `epic_deck_V2.html`; slide 14 uses **15** IDs: 5×(name + money + desc))  
+- **Section B:** 17 slides — **one row per `id` in tables above** (HTML deck body + `XD_Epic_Fortnite-China-Plan.html`; slide 14 uses **15** IDs: 5×(name + money + desc))  
 - **Section C:** informational only (`toc_derived__note` — no JSON row required)  
 - **Section D:** appendix doc strings — **~25** explicit + `doc__flow_block`; **does not exhaust** every table cell in `full-content.md` §3—extend the same schema if you need full parity with that manuscript.
 
@@ -627,7 +627,7 @@ The external AI **must emit one JSON array** covering **every `id`** listed in s
 
 | File | Purpose |
 |------|---------|
-| `epic_deck_V2.html` | Primary merge target for section B |
+| `XD_Epic_Fortnite-China-Plan.html` | Primary merge target for section B |
 | `doc/full-content.md` | Extended narrative for section D |
 | This file | `doc/translation-handoff-prompt.md` |
 

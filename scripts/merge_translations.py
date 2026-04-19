@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Merge epic_deck_translation_v2.json (id -> en) into epic_deck_V2.html
+Merge epic_deck_translation_v2.json (id -> en) into XD_Epic_Fortnite-China-Plan.html
 using source strings from doc/translation-handoff-prompt.md.
 
 - Deduplicates identical (handoff source, en) pairs so duplicate UI strings
@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HANDOFF = ROOT / "doc" / "translation-handoff-prompt.md"
 JSON_PATH = ROOT / "epic_deck_translation_v2.json"
-HTML_PATH = ROOT / "epic_deck_V2.html"
+HTML_PATH = ROOT / "XD_Epic_Fortnite-China-Plan.html"
 
 
 def clean_handoff_source(s: str) -> str:
