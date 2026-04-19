@@ -17,7 +17,7 @@ Use this entire document as the **system + task prompt**. Translate or rewrite *
 
 | Term | Notes |
 |------|--------|
-| 心动 / X.D. Network | Company name |
+| 心动 / XD Inc. | Company name |
 | TapTap | Platform |
 | Fortnite / 堡垒之夜 | Game — prefer **Fortnite** in English body copy |
 | UEFN | Unreal Editor for Fortnite |
@@ -210,7 +210,7 @@ Rules:
 
 | `id` | Location | Role | Lines | hard_max_chars | Source text |
 |------|----------|------|-------|----------------|-------------|
-| `slide05__eyebrow` | Header | eyebrow | 1 | 36 | Proof · Genre credentials |
+| `slide05__eyebrow` | Header | eyebrow | 1 | 36 | Part 01 · Genre credentials |
 | `slide05__h2` | Header | title | 2 | 80 | 香肠派对 · 最接近国服的 Fortnite 平行体 |
 | `slide05__page` | Header | meta | 1 | 16 | 05 / 17 |
 | `slide05__logo_alt` | Logo img | alt | 1 | 40 | 香肠派对 Sausage Man logo |
@@ -260,7 +260,7 @@ Rules:
 
 | `id` | Location | Role | Lines | hard_max_chars | Source text |
 |------|----------|------|-------|----------------|-------------|
-| `slide06__eyebrow` | Header | eyebrow | 1 | 36 | Proof · Global operations |
+| `slide06__eyebrow` | Header | eyebrow | 1 | 36 | Part 01 · Global operations |
 | `slide06__h2` | Header | title | 2 | 56 | 火炬之光：无限 + 心动小镇 |
 | `slide06__page` | Header | meta | 1 | 16 | 06 / 17 |
 | `slide06__thesis` | Lede | body | 2 | 140 | 全球赛季制长线运营 × 跨国同步首发 — 让国服成为全球生态的一环，而非「特供版」。 |
@@ -299,7 +299,7 @@ Rules:
 
 | `id` | Location | Role | Lines | hard_max_chars | Source text |
 |------|----------|------|-------|----------------|-------------|
-| `slide07__eyebrow` | Header | eyebrow | 1 | 36 | Proof · Commercial assets |
+| `slide07__eyebrow` | Header | eyebrow | 1 | 36 | Part 01 · Commercial assets |
 | `slide07__h2` | Header | title | 2 | 56 | 全球顶级 IP 授权与衍生经验 |
 | `slide07__page` | Header | meta | 1 | 16 | 07 / 17 |
 | `slide07__bridge` | Bridge line | lead | 2 | 140 | 86+ 联动案例 · 建联—监修—上线 全链路 → 全球 IP 入华 + 中国 IP 出海 |
@@ -560,7 +560,7 @@ These strings appear as **TOC entries** via JavaScript (`slideLabel`). They are 
 |------|---------|------|-------|----------------|-------------|
 | `doc__title` | YAML/title | title | 2 | 120 | 心动 × Epic Games \| Fortnite 国服发行合作提案 |
 | `doc__theme` | Meta | body | 2 | 200 | **提案主题：** "中国第一个跨界内容互动平台" —— 我们一起打造中国的Fortnite平台 |
-| `doc__party_a` | Meta | label | 1 | 56 | **提案方：** 心动网络 (X.D. Network Inc.) |
+| `doc__party_a` | Meta | label | 1 | 56 | **提案方：** 心动网络 (XD Inc.) |
 | `doc__party_b` | Meta | label | 1 | 40 | **合作方：** Epic Games |
 | `doc__date` | Meta | label | 1 | 24 | **日期：** 2026年4月 |
 | `doc__outline_intro` | Directory | body | 8 | 400 | （目录章节标题列表 — 见源文件「目录」一节；翻译时保留可点击结构若输出 Markdown） |

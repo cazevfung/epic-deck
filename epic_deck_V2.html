@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Fortnite China — A Publishing Proposal (XD Visual)</title>
+<title>XD Inc. × Epic Games | Fortnite China Publishing Proposal</title>
 <!-- Google Fonts: Inter (English) and Noto Sans SC (Chinese) -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
@@ -3143,7 +3143,7 @@
   }
 
   .slide-xd-phil-tap .p4-values-card {
-    padding: clamp(10px, 1.1vh, 14px) clamp(10px, 1vw, 14px);
+    padding: clamp(12px, 1.25vh, 18px) clamp(16px, 1.65vw, 26px);
     min-height: 0;
     overflow: auto;
   }
@@ -3169,6 +3169,11 @@
 
   .slide-xd-phil-tap .p4-main-row .p4-zero-panel .p4-zero-sub {
     font-size: var(--fs-micro);
+  }
+
+  .slide-xd-phil-tap .p4-main-row .p4-zero-panel .p4-zero-platforms {
+    margin-top: clamp(3px, 0.45vh, 8px);
+    font-size: clamp(15px, 1.8vmin, 22px);
   }
 
   .slide-xd-phil-tap .p4-main-row .p4-kpi-card .big {
@@ -3242,16 +3247,13 @@
 
   .slide-xd-phil-tap .p4-tap-stats.p4-tap-stats--surface .p4-exclusive-head {
     color: #0d9488;
-    letter-spacing: 0.14em;
-    margin-bottom: 2px;
-    font-size: clamp(10px, 0.95vmin, 12px);
-  }
-
-  .slide-xd-phil-tap .p4-exclusive-sub {
-    font-size: clamp(10px, 0.98vmin, 12px);
-    color: var(--text-dim);
-    margin: 0 0 5px;
-    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0;
+    padding-block: clamp(10px, 1.15vh, 18px);
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
   }
 
   .slide-xd-phil-tap .p4-exclusive-grid {
@@ -3267,56 +3269,64 @@
   .slide-xd-phil-tap .p4-exclusive-cell {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 0;
     min-width: 0;
     min-height: 0;
     justify-content: flex-start;
   }
 
-  .slide-xd-phil-tap .p4-exclusive-caption {
-    font-size: clamp(10px, 1.05vmin, 13px);
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: 0.02em;
-    text-align: center;
-    line-height: 1.15;
-  }
-
-  .slide-xd-phil-tap .p4-frame-exclusive {
-    position: relative;
+  /* TapTap exclusives: same asset-slot caption pattern as slide-three-val validations (3:2 art). */
+  .slide-xd-phil-tap .p4-exclusive-grid figure.asset-slot {
+    margin: 0;
+    min-width: 0;
     width: 100%;
-    flex: 0 0 auto;
-    min-height: 0;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    max-height: none;
+  }
+  .slide-xd-phil-tap .p4-exclusive-grid .asset-slot-inner {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
     border-radius: 10px;
     border: 1px solid rgba(255, 122, 0, 0.22);
     background:
-      radial-gradient(circle at 78% 10%, rgba(20,184,166,0.08) 0%, transparent 24%),
+      radial-gradient(circle at 78% 10%, rgba(20, 184, 166, 0.08) 0%, transparent 24%),
       rgba(248, 252, 251, 0.95);
-    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 2;
   }
-
-  .slide-xd-phil-tap .p4-frame-exclusive .p4-frame-note {
-    padding: 5px;
-    inset: 4px;
-    border-color: rgba(20, 184, 166, 0.22);
-    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(10,10,16,0.55) 100%);
+  .slide-xd-phil-tap .p4-exclusive-grid .asset-slot-inner > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 0;
+    border-radius: inherit;
   }
-
-  .slide-xd-phil-tap .p4-frame-exclusive .p4-frame-title {
-    font-size: clamp(9px, 0.85vmin, 11px);
-    color: #ffffff;
+  .slide-xd-phil-tap .p4-exclusive-grid .asset-slot-note {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 12px 10px;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 18, 0.55) 38%, rgba(10, 10, 18, 0.88) 100%);
+    font-size: clamp(9px, 1.05vmin, 12px);
+    line-height: 1.25;
+    pointer-events: none;
   }
-
-  .slide-xd-phil-tap .p4-frame-exclusive .p4-frame-hint {
-    font-size: clamp(9px, 0.82vmin, 11px);
-    color: rgba(255,255,255,0.88);
+  .slide-xd-phil-tap .p4-exclusive-grid .asset-slot-title {
+    color: rgba(255, 255, 255, 0.96);
+    font-weight: 600;
+    letter-spacing: 0.02em;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     overflow: hidden;
   }
 
@@ -3336,7 +3346,6 @@
   .slide-xd-phil-tap .p4-zero-badge {
     width: min(94%, 320px);
     border-radius: 18px;
-    border: 2px solid rgba(20,184,166,0.26);
     background: linear-gradient(180deg, #ffffff 0%, #eefaf8 100%);
     padding: calc(8px * 1.5) 8px calc(9px * 1.5);
   }
@@ -3355,6 +3364,15 @@
     font-size: var(--fs-caption);
     font-weight: 600;
     color: #2d5e59;
+  }
+
+  .slide-xd-phil-tap .p4-zero-platforms {
+    margin-top: clamp(6px, 0.85vh, 14px);
+    font-size: var(--fs-lead);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: #18544e;
   }
 
   .slide-xd-phil-tap .taptap-zero {
@@ -3388,16 +3406,6 @@
     flex-direction: column;
     min-height: 0;
     gap: clamp(10px, 1.2vh, 16px);
-  }
-
-  .slide-ro-disney .ro-bridge {
-    font-size: clamp(10px, 1.05vmin, 13px);
-    color: var(--text-dim);
-    text-align: center;
-    margin: 0;
-    line-height: 1.4;
-    padding: 0 clamp(12px, 2.5vw, 28px);
-    flex-shrink: 0;
   }
 
   .slide-ro-disney .ro-showcase-grid {
@@ -3462,13 +3470,46 @@
   .slide-ro-disney .ro-showcase-grid > .card.ro-col .section-label,
   .slide-ro-disney .ro-matrix-panel .ro-col-text .section-label {
     font-size: clamp(15px, 1.95vmin, 24px);
-    letter-spacing: 0.06em;
-    line-height: 1.2;
-    margin-bottom: clamp(8px, 1vh, 14px);
-    padding-top: clamp(2px, 0.35vh, 8px);
-    padding-bottom: clamp(6px, 0.65vh, 12px);
+    letter-spacing: 0.015em;
+    line-height: 1.06;
+    margin-bottom: clamp(6px, 0.75vh, 11px);
+    padding-top: clamp(0px, 0.2vh, 4px);
+    padding-bottom: clamp(4px, 0.45vh, 8px);
     text-align: left;
     text-transform: none;
+  }
+
+  /* IP stack: logo above title; same logo height across columns (tied to label line box). */
+  .slide-ro-disney .ro-showcase-grid > .card.ro-col .section-label.ro-ip-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(12px, 1.15vh, 20px);
+  }
+
+  .slide-ro-disney .ro-ip-head .ro-ip-logo {
+    height: 1.06em;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
+    flex-shrink: 0;
+    display: block;
+    padding-bottom: clamp(14px, 1.45vh, 26px);
+    box-sizing: content-box;
+  }
+
+  .slide-ro-disney .ro-ip-head .ro-ip-logo.ro-ip-logo--lg {
+    height: 1.52em;
+  }
+
+  .slide-ro-disney .ro-ip-head .ro-ip-logo.ro-ip-logo--xl {
+    height: 1.95em;
+  }
+
+  /* Extra air under KFC mark only (bucket SVG sits tighter visually). */
+  .slide-ro-disney .ro-ip-head .ro-ip-logo.ro-ip-logo--kfc-pad {
+    padding-bottom: clamp(28px, 2.65vh, 46px);
   }
 
   /* Portrait column: width = image only; poster flush to card right edge. */
@@ -3550,16 +3591,6 @@
     min-width: 0;
   }
 
-  .slide-ro-disney .ro-matrix-copy {
-    margin: 0;
-    color: var(--text-dim);
-    font-size: clamp(11px, 1.1vmin, 14px);
-    line-height: 1.35;
-    text-align: right;
-    flex: 1 1 12rem;
-    min-width: min(100%, 12rem);
-  }
-
   .slide-ro-disney .ro-collab-grid-dense {
     flex: 0 0 auto;
     min-height: 0;
@@ -3596,8 +3627,7 @@
     object-fit: cover;
   }
 
-  .slide-xd-phil-tap .p4-frame-vertical > img:first-child,
-  .slide-xd-phil-tap .p4-frame-exclusive > img:first-child {
+  .slide-xd-phil-tap .p4-frame-vertical > img:first-child {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -3607,8 +3637,7 @@
     z-index: 0;
     border-radius: inherit;
   }
-  .slide-xd-phil-tap .p4-frame-vertical:has(> img) .p4-frame-note,
-  .slide-xd-phil-tap .p4-frame-exclusive:has(> img) .p4-frame-note {
+  .slide-xd-phil-tap .p4-frame-vertical:has(> img) .p4-frame-note {
     opacity: 0;
     pointer-events: none;
   }
@@ -3622,7 +3651,7 @@
   }
 
   /* =====================================================================
-     Slide 08 — 战略定位: English hero + 3 bullets → four images in one row
+     Slide 08 — Strategic Positioning: English hero + 3 bullets → four images in one row
      Captions: Game · Creator · Social · Culture
      ===================================================================== */
   .slide.slide-strategic {
@@ -3983,7 +4012,7 @@
     height: 100%;
   }
 
-  /* Slide 15 — 创作者生态：左文 ~45% + 右栏叠放三框（16:9 横幅位） */
+  /* Slide 15 — Creators生态：左文 ~45% + 右栏叠放三框（16:9 横幅位） */
   .slide-creator-eco {
     min-height: 0;
   }
@@ -4022,7 +4051,7 @@
   .slide-creator-eco .creator-eco-copy > h3.launch-section-head:nth-of-type(2) {
     margin-top: clamp(28px, 3.5vh, 44px);
   }
-  /* breathing room below last bullet (游戏内玩法创作者激励 · 解决方案) */
+  /* breathing room below last bullet (In-Game Mode Creator Incentives · 解决方案) */
   .slide-creator-eco .creator-eco-copy ul.slide-strategic-points:last-of-type {
     padding-bottom: clamp(18px, 2.4vh, 36px);
   }
@@ -4602,15 +4631,15 @@
 
 <div class="deck">
 
-  <!-- Slide map (structure + layout merge): 17 slides — … | 7 RO×Disney | 8 China Publishing Plan (transition) | 9 战略定位 | 10 Budget | … | 17 Closing CN -->
+  <!-- Slide map (structure + layout merge): 17 slides — … | 7 RO×Disney | 8 China Publishing Plan (transition) | 9 Strategic Positioning | 10 Budget | … | 17 Closing CN -->
 
   <!-- ============================================================ -->
   <!-- 1 COVER -->
   <!-- ============================================================ -->
   <section class="slide cover active has-hero-art" data-slide="1">
     <img class="cover-logo" src="images/2400.HK_BIG-0b4f771f.png" alt="XD" width="420" height="120" decoding="async" />
-    <div class="brand-tag">心动 × Epic Games · 2026</div>
-    <h1><span class="cover-en">Fortnite China · Publishing Proposal</span></h1>
+    <div class="brand-tag">XD Inc. × Epic Games · 2026</div>
+    <h1><span class="cover-en">Fortnite China<br>Publishing Proposal</span></h1>
     <div class="meta">
       <span>Confidential</span>
       <span class="divider"></span>
@@ -4638,10 +4667,10 @@
           <!-- ASSET: slide02-frame01 · slot = full column width × 16:9 -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--hero">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/PUBG%20Mobile%20%E2%80%94%20%E5%86%99%E5%AE%9E%E5%86%9B%E4%BA%8B%E9%A3%8E%E6%A0%BC%E4%B8%BB%E8%A7%86%E8%A7%89%E5%8F%82%E7%85%A7-16x9.png" alt="PUBG Mobile — 写实军事风格主视觉参照" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/PUBG%20Mobile%20%E2%80%94%20%E5%86%99%E5%AE%9E%E5%86%9B%E4%BA%8B%E9%A3%8E%E6%A0%BC%E4%B8%BB%E8%A7%86%E8%A7%89%E5%8F%82%E7%85%A7-16x9.png" alt="PUBG Mobile — tactical realism reference" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">写实战术竞技参照（如 PUBG Mobile）</span>
-                <span class="asset-slot-hint">2018 写实战术竞技参照。</span>
+                <span class="asset-slot-title">Realism-led BR reference (PUBG Mobile)</span>
+                <span class="asset-slot-hint">2018 realism-first BR benchmark.</span>
               </div>
             </div>
           </figure>
@@ -4653,46 +4682,46 @@
       <div class="p3-col new">
         <div class="eyebrow orange">2026</div>
         <div class="year new-year">2026</div>
-        <div class="state">Style-diverse. Educated audience.<br>Non-realistic &amp; UGC at scale.</div>
-        <div class="desc">Peacekeeper Elite and Delta Force raised the quality floor. Sausage Man, Egg Party, and Oasis Origin proved stylized shooters + UGC/creator appetite.</div>
+        <div class="state">Style-diverse. Market-educated audience.<br>Non-realistic &amp; UGC at scale.</div>
+        <div class="desc">Game for Peace and Delta Force raised the quality floor. Sausage Man, Egg Party, and Oasis Origin proved stylized shooters + UGC/creator appetite.</div>
         <div class="market-visuals market-visuals--grid">
           <!-- ASSET: slide02-frame02 · each cell = half column × 4:3 -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--thumb">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20%E5%AE%98%E6%96%B9%E8%B5%9B%E5%AD%A3%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="香肠派对 · 官方赛季宣传图" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20%E5%AE%98%E6%96%B9%E8%B5%9B%E5%AD%A3%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="Sausage Man · official season promo" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">香肠派对 · 主视觉</span>
-                <span class="asset-slot-hint">香肠派对主视觉。</span>
+                <span class="asset-slot-title">Sausage Man · Key Art</span>
+                <span class="asset-slot-hint">Sausage Man key visual.</span>
               </div>
             </div>
           </figure>
           <!-- ASSET: slide02-frame03 · 绿洲启元（与 slide04 蛋仔相邻：编辑器 / UGC 心智） -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--thumb">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%92%8C%E5%B9%B3%E7%B2%BE%E8%8B%B1%20%C2%B7%20%E7%BB%BF%E6%B4%B2%E5%90%AF%E5%85%83%E7%BC%96%E8%BE%91%E5%99%A8%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="和平精英 · 绿洲启元编辑器宣传图" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%92%8C%E5%B9%B3%E7%B2%BE%E8%8B%B1%20%C2%B7%20%E7%BB%BF%E6%B4%B2%E5%90%AF%E5%85%83%E7%BC%96%E8%BE%91%E5%99%A8%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="Peacekeeper Elite · Oasis Origin editor promo" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">和平精英 · 绿洲启元</span>
-                <span class="asset-slot-hint">绿洲启元编辑器。</span>
+                <span class="asset-slot-title">Game for Peace: Oasis Origin</span>
+                <span class="asset-slot-hint">Oasis Origin editor.</span>
               </div>
             </div>
           </figure>
           <!-- ASSET: slide02-frame04 -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--thumb">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E8%9B%8B%E4%BB%94%E6%B4%BE%E5%AF%B9%20%C2%B7%20UGC%20%E5%AE%98%E6%96%B9%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="蛋仔派对 · UGC 官方宣传图" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E8%9B%8B%E4%BB%94%E6%B4%BE%E5%AF%B9%20%C2%B7%20UGC%20%E5%AE%98%E6%96%B9%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="Egg Party · UGC promo" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">蛋仔派对</span>
-                <span class="asset-slot-hint">蛋仔派对 UGC。</span>
+                <span class="asset-slot-title">Egg Party</span>
+                <span class="asset-slot-hint">Egg Party UGC.</span>
               </div>
             </div>
           </figure>
           <!-- ASSET: slide02-frame05 -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--thumb">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/VALORANT%20%C2%B7%20%E5%AE%98%E6%96%B9%20Key%20Art-4x3.png" alt="VALORANT · 官方 Key Art" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/VALORANT%20%C2%B7%20%E5%AE%98%E6%96%B9%20Key%20Art-4x3.png" alt="VALORANT · Key Art" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">无畏契约 · 国服主视觉</span>
-                <span class="asset-slot-hint">无畏契约国服。</span>
+                <span class="asset-slot-title">VALORANT · China Key Art</span>
+                <span class="asset-slot-hint">VALORANT China.</span>
               </div>
             </div>
           </figure>
@@ -4709,7 +4738,7 @@
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">Part 01 · Why Now</div>
-        <h2>市场条件已成熟 · 三个验证</h2>
+        <h2>Market Ready: Three Validations</h2>
       </div>
       <div class="page-num">03 / 17</div>
     </div>
@@ -4718,68 +4747,68 @@
 
       <div class="v-card">
         <div class="head">
-          <div class="name">香肠派对（Sausage Man）</div>
+          <div class="name">Sausage Man</div>
           <span class="tag tag-dim">XD</span>
         </div>
         <div class="stats">
-          <div class="stat-line"><span class="sv">8 年</span><span class="sl">运营</span></div>
+          <div class="stat-line"><span class="sv">8 yrs</span><span class="sl">Live</span></div>
           <div class="stat-line"><span class="sv">~27M</span><span class="sl">Peak MAU</span></div>
           <div class="stat-line"><span class="sv">300M+</span><span class="sl">Downloads</span></div>
         </div>
         <figure class="asset-slot">
           <div class="asset-slot-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20%E5%AE%98%E6%96%B9%E5%AE%A3%E4%BC%A0%E5%9B%BE-3x4.png" alt="香肠派对 · 官方宣传图" decoding="async" />
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20%E5%AE%98%E6%96%B9%E5%AE%A3%E4%BC%A0%E5%9B%BE-3x4.png" alt="Sausage Man · promo art" decoding="async" />
             <div class="asset-slot-note">
-              <span class="asset-slot-title">香肠派对 · 官方 Key Art / 游戏截图</span>
-              <span class="asset-slot-hint">验证① 非写实射击长线。</span>
+              <span class="asset-slot-title">Sausage Man · Key Art / screenshots</span>
+              <span class="asset-slot-hint">Validation 1: stylized shooter LT.</span>
             </div>
           </div>
         </figure>
-        <div class="concl">非写实射击长线可行 — 与 Fortnite 卡通渲染 + 模式平台化逻辑一致。</div>
+        <div class="concl">Proof that stylized shooters sustain — aligns with Fortnite's cartoon-rendered, mode-platform logic.</div>
       </div>
 
       <div class="v-card">
         <div class="head">
-          <div class="name">蛋仔派对（UGC 生态）</div>
+          <div class="name">Egg Party</div>
           <span class="tag tag-dim">NetEase</span>
         </div>
         <div class="stats">
-          <div class="stat-line"><span class="sv">50M+</span><span class="sl">创作者</span></div>
-          <div class="stat-line"><span class="sv">1亿+</span><span class="sl">UGC 地图</span></div>
-          <div class="stat-line"><span class="sv">3300万</span><span class="sl">绿洲 DAU</span></div>
+          <div class="stat-line"><span class="sv">50M+</span><span class="sl">Creators</span></div>
+          <div class="stat-line"><span class="sv">100M+</span><span class="sl">UGC Maps</span></div>
+          <div class="stat-line"><span class="sv">33M</span><span class="sl">Oasis DAU</span></div>
         </div>
         <figure class="asset-slot">
           <div class="asset-slot-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E8%9B%8B%E4%BB%94%E6%B4%BE%E5%AF%B9%20%C2%B7%20UGC%20%EF%BC%8F%20Party%20%E6%B0%9B%E5%9B%B4-3x4.png" alt="蛋仔派对 · UGC / Party 氛围" decoding="async" />
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E8%9B%8B%E4%BB%94%E6%B4%BE%E5%AF%B9%20%C2%B7%20UGC%20%EF%BC%8F%20Party%20%E6%B0%9B%E5%9B%B4-3x4.png" alt="Egg Party · UGC / Party vibe" decoding="async" />
             <div class="asset-slot-note">
-              <span class="asset-slot-title">蛋仔派对 · UGC / 编辑器心智</span>
-              <span class="asset-slot-hint">验证② UGC 生态。</span>
+              <span class="asset-slot-title">Egg Party · UGC / editor mindset</span>
+              <span class="asset-slot-hint">Validation 2: UGC ecosystem.</span>
             </div>
           </div>
         </figure>
-        <div class="concl">亿级创作者与地图供给验证 UGC 心智；《绿洲启元》编辑器生态补强「派对 + 编辑器」心智与商业闭环。</div>
+        <div class="concl">Nine-figure creator and map supply validates UGC mindset; Oasis Origin editor ecosystem reinforces "party + creator" loop.</div>
       </div>
 
       <div class="v-card">
         <div class="head">
-          <div class="name">心动小镇（Heartopia）</div>
+          <div class="name">Heartopia</div>
           <span class="tag tag-dim">XD</span>
         </div>
         <div class="stats">
-          <div class="stat-line"><span class="sv">80M+</span><span class="sl">国服下载</span></div>
-          <div class="stat-line"><span class="sv">首周 5M+ 新增</span><span class="sl">国际首发</span></div>
-          <div class="stat-line"><span class="sv">规模化验证</span><span class="sl">建造 / 社交</span></div>
+          <div class="stat-line"><span class="sv">80M+</span><span class="sl">CN Downloads</span></div>
+          <div class="stat-line"><span class="sv">5M+ 1st wk</span><span class="sl">Int'l Launch</span></div>
+          <div class="stat-line"><span class="sv">Scaled</span><span class="sl">Build / Social</span></div>
         </div>
         <figure class="asset-slot">
           <div class="asset-slot-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%BF%83%E5%8A%A8%E5%B0%8F%E9%95%87%20Heartopia%20%C2%B7%20%E5%AE%98%E6%96%B9%E4%B8%BB%E8%A7%86%E8%A7%89-3x4.png" alt="心动小镇 Heartopia · 官方主视觉" decoding="async" />
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%BF%83%E5%8A%A8%E5%B0%8F%E9%95%87%20Heartopia%20%C2%B7%20%E5%AE%98%E6%96%B9%E4%B8%BB%E8%A7%86%E8%A7%89-3x4.png" alt="Heartopia · official Key Art" decoding="async" />
             <div class="asset-slot-note">
-              <span class="asset-slot-title">心动小镇 · 官方主视觉 / 建造社交场景</span>
-              <span class="asset-slot-hint">验证③ 建造与社交。</span>
+              <span class="asset-slot-title">Heartopia · Key Art / build &amp; social</span>
+              <span class="asset-slot-hint">Validation 3: build &amp; social</span>
             </div>
           </div>
         </figure>
-        <div class="concl">建造与社交大盘可被年轻用户接受 — Zero Build 与社交循环可对标。</div>
+        <div class="concl">Building and social at scale accepted by young users — Zero Build and social loops map directly.</div>
       </div>
 
     </div>
@@ -4793,7 +4822,7 @@
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">Part 01 · Core capabilities</div>
-        <h2>理念同盟 · TapTap 规模 · 为什么是我们</h2>
+        <h2>TapTap and Our Shared Values</h2>
       </div>
       <div class="page-num">04 / 17</div>
     </div>
@@ -4812,12 +4841,12 @@
         </div>
 
         <div class="card p4-values-card">
-          <div class="section-label" style="margin-bottom:8px;">价值观同盟</div>
+          <div class="section-label" style="margin-bottom:8px;">Value Alliance</div>
           <div class="stack-sm" style="font-size:var(--fs-caption);">
-            <div class="row-item"><span class="k">心动 / TapTap</span><span class="v">0% 分成 · 玩家与开发者优先</span></div>
-            <div class="row-item"><span class="k">Epic</span><span class="v">反平台税立场 · 长线产品 · UEFN 创作者分成</span></div>
-            <div class="row-item"><span class="k">协同价值</span><span class="v">渠道不掠夺开发者收益 · 更健康 LTV/CAC</span></div>
-            <div class="row-item"><span class="k">业务能力</span><span class="v">自研 30+ · 全球发行 · TapTap 游戏社区</span></div>
+            <div class="row-item"><span class="k">X.D. / TapTap</span><span class="v">0% revenue share · players &amp; devs first</span></div>
+            <div class="row-item"><span class="k">Epic</span><span class="v">Anti-platform-tax · long-term products · UEFN creator payout</span></div>
+            <div class="row-item"><span class="k">Synergy</span><span class="v">No channel tax on dev earnings · healthier LTV/CAC</span></div>
+            <div class="row-item"><span class="k">Capabilities</span><span class="v">30+ titles dev'd · global publishing · TapTap community</span></div>
           </div>
         </div>
 
@@ -4825,51 +4854,51 @@
           <div class="p4-kpi-row">
             <div class="card p4-kpi-card"><div class="big">2012</div><div class="small">Founded</div></div>
             <div class="card p4-kpi-card"><div class="big">50M+</div><div class="small">MAU</div></div>
-            <div class="card p4-kpi-card"><div class="big">800M+</div><div class="small">Annual downloads</div></div>
+            <div class="card p4-kpi-card"><div class="big">800M+</div><div class="small">Downloads/yr</div></div>
           </div>
           <div class="p4-zero-panel">
             <div class="p4-zero-badge">
               <div class="p4-zero-value">0% Platform Fee</div>
-              <div class="p4-zero-sub">since day one</div>
+              <div class="p4-zero-sub">Cross-platform</div>
+              <div class="p4-zero-platforms">Mobile + PC</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="p4-exclusives-block p4-tap-stats p4-tap-stats--surface">
-        <div class="p4-exclusive-head">独家游戏</div>
-        <p class="p4-exclusive-sub">代表性独占 · 主视觉示意</p>
+        <div class="p4-exclusive-head">TapTap China Exclusives</div>
         <div class="p4-exclusive-grid">
           <div class="p4-exclusive-cell">
-            <span class="p4-exclusive-caption">泰拉瑞亚</span>
             <!-- ASSET: slide04-exclusive01 · Key art 1:1 -->
-            <figure class="p4-frame-exclusive">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Terraria%20Steam%20%E5%B0%81%E9%9D%A2-3x2.png" alt="Terraria Steam 封面" decoding="async" />
-              <div class="p4-frame-note">
-                <span class="p4-frame-title">Key Art</span>
-                <span class="p4-frame-hint">泰拉瑞亚 · TapTap。</span>
+            <figure class="asset-slot">
+              <div class="asset-slot-inner">
+                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Terraria%20Steam%20%E5%B0%81%E9%9D%A2-3x2.png" alt="Terraria Steam cover" decoding="async" />
+                <div class="asset-slot-note">
+                  <span class="asset-slot-title">Terraria</span>
+                </div>
               </div>
             </figure>
           </div>
           <div class="p4-exclusive-cell">
-            <span class="p4-exclusive-caption">潜水员戴夫</span>
             <!-- ASSET: slide04-exclusive02 · Key art 1:1 -->
-            <figure class="p4-frame-exclusive">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E6%BD%9C%E6%B0%B4%E5%91%98%E6%88%B4%E5%A4%AB%20%C2%B7%20%E5%AE%98%E6%96%B9%20Key%20Art-3x2.png" alt="潜水员戴夫 · 官方 Key Art" decoding="async" />
-              <div class="p4-frame-note">
-                <span class="p4-frame-title">Key Art</span>
-                <span class="p4-frame-hint">潜水员戴夫 · TapTap。</span>
+            <figure class="asset-slot">
+              <div class="asset-slot-inner">
+                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E6%BD%9C%E6%B0%B4%E5%91%98%E6%88%B4%E5%A4%AB%20%C2%B7%20%E5%AE%98%E6%96%B9%20Key%20Art-3x2.png" alt="Dave the Diver · Key Art" decoding="async" />
+                <div class="asset-slot-note">
+                  <span class="asset-slot-title">Dave the Diver</span>
+                </div>
               </div>
             </figure>
           </div>
           <div class="p4-exclusive-cell">
-            <span class="p4-exclusive-caption">人类跌落梦境</span>
             <!-- ASSET: slide04-exclusive03 · Key art 1:1 -->
-            <figure class="p4-frame-exclusive">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%BA%BA%E7%B1%BB%E8%B7%8C%E8%90%BD%E6%A2%A6%E5%A2%83%20%C2%B7%20%E5%B0%81%E9%9D%A2-3x2.png" alt="人类跌落梦境 · 封面" decoding="async" />
-              <div class="p4-frame-note">
-                <span class="p4-frame-title">Key Art</span>
-                <span class="p4-frame-hint">人类跌落梦境 · TapTap。</span>
+            <figure class="asset-slot">
+              <div class="asset-slot-inner">
+                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%BA%BA%E7%B1%BB%E8%B7%8C%E8%90%BD%E6%A2%A6%E5%A2%83%20%C2%B7%20%E5%B0%81%E9%9D%A2-3x2.png" alt="Human Fall Flat · cover" decoding="async" />
+                <div class="asset-slot-note">
+                  <span class="asset-slot-title">Human Fall Flat</span>
+                </div>
               </div>
             </figure>
           </div>
@@ -4884,8 +4913,8 @@
   <section class="slide proof-sausage" data-slide="5">
     <div class="slide-header">
       <div>
-        <div class="eyebrow orange">Proof · Genre credentials</div>
-        <h2>香肠派对 · 最接近国服的 Fortnite 平行体</h2>
+        <div class="eyebrow orange">Part 01 · Genre credentials</div>
+        <h2>Sausage Man: China's Closest Parallel to Fortnite</h2>
       </div>
       <div class="page-num">05 / 17</div>
     </div>
@@ -4894,13 +4923,13 @@
       <div class="stack-lg proof-sausage-copy-col">
         <div>
           <figure class="proof-sausage-logo-wrap">
-            <img class="proof-sausage-logo-img" src="images/sausage-man-logo-cropped.png" width="450" height="203" alt="香肠派对 Sausage Man logo" decoding="async" loading="lazy">
+            <img class="proof-sausage-logo-img" src="images/sausage-man-logo-cropped.png" width="450" height="203" alt="Sausage Man logo" decoding="async" loading="lazy">
           </figure>
-          <div class="proof-sausage-dna-kpi-row" role="group" aria-label="香肠派对核心规模指标">
+          <div class="proof-sausage-dna-kpi-row" role="group" aria-label="Sausage Man core metrics">
             <div class="proof-sausage-dna-kpi-card">
               <span class="proof-sausage-dna-kpi-val">8</span>
-              <span class="proof-sausage-dna-kpi-lab">years live</span>
-              <span class="proof-sausage-dna-kpi-sub">continuous live-ops</span>
+              <span class="proof-sausage-dna-kpi-lab">years</span>
+              <span class="proof-sausage-dna-kpi-sub">live ops</span>
             </div>
             <div class="proof-sausage-dna-kpi-card">
               <span class="proof-sausage-dna-kpi-val">300M+</span>
@@ -4916,12 +4945,12 @@
           <div class="stack-sm">
             <div class="row-item"><span class="k">Social presence</span><span class="v"><span class="proof-stat-num">3.3M</span> Douyin · <span class="proof-stat-num">4.7M</span> Kuaishou · <span class="proof-stat-num">43M</span> TapTap</span></div>
             <div class="row-item"><span class="k">Companion anime</span><span class="v"><span class="proof-stat-num">15</span> seasons · <span class="proof-stat-num">8.67B</span> views</span></div>
-            <div class="row-item"><span class="k">IP integrations</span><span class="v">Ultraman · Kamen Rider · Sanrio · Douluo Dalu · Assassin Wulinxiao</span></div>
-            <div class="row-item"><span class="k">Brand tie-ups</span><span class="v">KFC · Pizza Hut · Wanglaoji</span></div>
+            <div class="row-item"><span class="k">IP integrations</span><span class="v"><span class="proof-stat-num">86+ Cases</span>: Ultraman · Kamen Rider · Sanrio · Douluo Dalu · Assassin Wulinxiao, and more</span></div>
+            <div class="row-item"><span class="k">Brand tie-ups</span><span class="v">KFC · Pizza Hut · Wanglaoji, and more</span></div>
           </div>
         </div>
-        <figure class="proof-sausage-copy-gameplay" aria-label="香肠派对 游戏内画面">
-          <img src="https://gizmologi.id/wp-content/uploads/2021/07/Screenshot_2021-07-10-20-50-09-81_97a883999baa7fde27ed6ab203eeaafd.jpg" alt="香肠派对 — 战术竞技玩法游戏内截图" decoding="async" loading="lazy">
+        <figure class="proof-sausage-copy-gameplay" aria-label="Sausage Man gameplay shot">
+          <img src="https://gizmologi.id/wp-content/uploads/2021/07/Screenshot_2021-07-10-20-50-09-81_97a883999baa7fde27ed6ab203eeaafd.jpg" alt="Sausage Man — BR gameplay screenshot" decoding="async" loading="lazy">
         </figure>
       </div>
 
@@ -4929,66 +4958,59 @@
         <figure class="asset-slot proof-sausage-hero-slot">
           <div class="asset-slot-inner proof-sausage-hero-inner">
             <!-- Production: first child optional; fills slot (object-fit: cover). -->
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20Steam%20%E9%A1%B5%E9%9D%A2%E4%B8%BB%E8%A7%86%E8%A7%89%EF%BC%88%E9%AB%98%E6%B8%85%E8%83%8C%E6%99%AF%EF%BC%89-1438x810-16x9.jpg" alt="香肠派对 · Steam 页面主视觉（高清背景）" decoding="async">
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20Steam%20%E9%A1%B5%E9%9D%A2%E4%B8%BB%E8%A7%86%E8%A7%89%EF%BC%88%E9%AB%98%E6%B8%85%E8%83%8C%E6%99%AF%EF%BC%89-1438x810-16x9.jpg" alt="Sausage Man · Steam page hero visual" decoding="async">
             <div class="asset-slot-note">
-              <span class="asset-slot-title">香肠派对 · 官方主视觉 / 截图</span>
-              <span class="asset-slot-hint">主视觉。</span>
+              <span class="asset-slot-title">Sausage Man Key Art</span>
             </div>
           </div>
         </figure>
-        <div class="proof-sausage-collab-label">联动厚度示意（86+ 案例管线可复用）</div>
-        <div class="proof-sausage-collab-grid" role="group" aria-label="香肠派对联动与品牌合作案例示意">
+        <div class="proof-sausage-collab-label">86+ China IP Collaboration Case Studies</div>
+        <div class="proof-sausage-collab-grid" role="group" aria-label="Sausage Man collab &amp; brand partnership showcase">
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%A5%A5%E7%89%B9%E6%9B%BC%20%E8%81%94%E5%8A%A8-1x1.png" alt="香肠派对 × 奥特曼 联动" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%A5%A5%E7%89%B9%E6%9B%BC%20%E8%81%94%E5%8A%A8-1x1.png" alt="Sausage Man × Ultraman collab" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">奥特曼 · 联动主视觉</span>
-                <span class="asset-slot-hint">奥特曼联动。</span>
+                <span class="asset-slot-title">Ultraman collaboration</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%81%87%E9%9D%A2%E9%AA%91%E5%A3%AB%20%E8%81%94%E5%8A%A8-1x1.png" alt="香肠派对 × 假面骑士 联动" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%81%87%E9%9D%A2%E9%AA%91%E5%A3%AB%20%E8%81%94%E5%8A%A8-1x1.png" alt="Sausage Man × Kamen Rider collab" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">假面骑士</span>
-                <span class="asset-slot-hint">假面骑士联动。</span>
+                <span class="asset-slot-title">Kamen Rider collaboration</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%89%E4%B8%BD%E9%B8%A5-1x1.png" alt="香肠派对 × 三丽鸥 联动" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%89%E4%B8%BD%E9%B8%A5-1x1.png" alt="Sausage Man × Sanrio collab" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">三丽鸥</span>
-                <span class="asset-slot-hint">三丽鸥联动。</span>
+                <span class="asset-slot-title">Sanrio collaboration</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86%20%E8%81%94%E5%8A%A8-1x1.png" alt="香肠派对 × 斗罗大陆 联动" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86%20%E8%81%94%E5%8A%A8-1x1.png" alt="Sausage Man × Douluo Dalu collab" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">斗罗大陆 / 伍六七</span>
-                <span class="asset-slot-hint">国漫联动。</span>
+                <span class="asset-slot-title">Soul Land Wuxia collaboration</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E8%82%AF%E5%BE%B7%E5%9F%BA%20%E8%81%94%E5%8A%A8%E4%B8%BB%E8%A7%86%E8%A7%89-1x1.png" alt="香肠派对 × 肯德基 联动" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E8%82%AF%E5%BE%B7%E5%9F%BA%20%E8%81%94%E5%8A%A8%E4%B8%BB%E8%A7%86%E8%A7%89-1x1.png" alt="Sausage Man × KFC collab" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">肯德基 · 异业联动</span>
-                <span class="asset-slot-hint">肯德基联动。</span>
+                <span class="asset-slot-title">KFC · brand tie-up</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E7%8E%8B%E8%80%81%E5%90%89%20%E8%81%94%E5%8A%A8-1x1.png" alt="香肠派对 × 王老吉 联动" decoding="async" />
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E7%8E%8B%E8%80%81%E5%90%89%20%E8%81%94%E5%8A%A8-1x1.png" alt="Sausage Man × Wanglaoji collab" decoding="async" />
               <div class="asset-slot-note">
-                <span class="asset-slot-title">必胜客 / 王老吉</span>
-                <span class="asset-slot-hint">王老吉联名。</span>
+                <span class="asset-slot-title">Pizza Hut · brand tie-up</span>
               </div>
             </div>
           </figure>
@@ -4998,52 +5020,52 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 6 全球运营 — 火炬之光 + 心动小镇 (structure P5) -->
+  <!-- 6 全球Live — 火炬之光 + 心动小镇 (structure P5) -->
   <!-- ============================================================ -->
   <section class="slide slide-torch-heart" data-slide="6">
     <div class="slide-header">
       <div>
-        <div class="eyebrow orange">Proof · Global operations</div>
-        <h2>火炬之光：无限 + 心动小镇</h2>
+        <div class="eyebrow orange">Part 01 · Global operations</div>
+        <h2>Torchlight: Infinite + Heartopia</h2>
       </div>
       <div class="page-num">06 / 17</div>
     </div>
 
-    <p class="torch-heart-thesis">全球赛季制长线运营 × 跨国同步首发 — 让国服成为全球生态的一环，而非「特供版」。</p>
+    <p class="torch-heart-thesis">Global season-based live ops × simultaneous multi-region launch — make China part of the global ecosystem, not a "special edition".</p>
 
     <div class="torch-heart-columns">
       <div class="torch-heart-col">
         <figure class="torch-heart-hero">
           <div class="torch-heart-hero-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%81%AB%E7%82%AC%E4%B9%8B%E5%85%89%EF%BC%9A%E6%97%A0%E9%99%90%20%E4%B8%BB%E8%A7%86%E8%A7%89-16x9.png" alt="火炬之光：无限 主视觉" width="2000" height="1000" decoding="async" />
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%81%AB%E7%82%AC%E4%B9%8B%E5%85%89%EF%BC%9A%E6%97%A0%E9%99%90%20%E4%B8%BB%E8%A7%86%E8%A7%89-16x9.png" alt="Torchlight: Infinite Key Art" width="2000" height="1000" decoding="async" />
             <div class="torch-heart-caption">
-              <span class="torch-heart-caption-title">火炬之光：无限</span>
-              <span class="torch-heart-caption-sub">UE4 · 稳定运营 13 个赛季 · 中国 / 欧美 / 韩国同步发行 — 与 Fortnite 同属 UE 技术栈与长线赛季节奏</span>
+              <span class="torch-heart-caption-title">Torchlight: Infinite</span>
+              <span class="torch-heart-caption-sub">UE4 · 13-Season Live Operations · China / EU / KR simultaneous launch — shares UE tech stack and seasonal rhythm with Fortnite</span>
             </div>
           </div>
         </figure>
         <div class="torch-heart-chips" aria-label="Torchlight proof points">
           <span class="torch-chip">UE4</span>
-          <span class="torch-chip">13 赛季</span>
-          <span class="torch-chip">多区同步</span>
+          <span class="torch-chip">13 seasons</span>
+          <span class="torch-chip">Multi-region</span>
         </div>
         <div class="torch-heart-kpis">
           <div class="torch-kpis-duo">
             <div class="torch-kpi-card">
-              <div class="torch-kpi-card-num">2000万+</div>
-              <div class="torch-kpi-card-lbl">全球下载</div>
+              <div class="torch-kpi-card-num">20M+</div>
+              <div class="torch-kpi-card-lbl">Global DL</div>
             </div>
             <div class="torch-kpi-card">
               <div class="torch-kpi-card-num">13+</div>
-              <div class="torch-kpi-card-lbl">赛季 · IP 长线投入</div>
+              <div class="torch-kpi-card-lbl">Seasons · IP long-term</div>
             </div>
           </div>
         </div>
         <div class="torch-heart-highlight torch-heart-highlight--points">
           <ul>
-            <li>UE4 长线赛季制 + 中美韩多区同步首发，国服并进全球版本与运营节奏。</li>
-            <li>买下「火炬之光」IP 后的持续投入：赛季内容、管线产能与跨国协同交付，而非单区短跑。</li>
-            <li>与 Fortnite 同属 UE 技术栈与长线赛季筹备经验，沉淀可迁移的工程与运营方法。</li>
+            <li>UE4 seasonal live ops + CN/US/KR simultaneous launch; China stays in sync with global version and release cadence.</li>
+            <li>Post-IP-acquisition commitment: seasonal content, pipeline throughput, and cross-border delivery — not a single-region sprint.</li>
+            <li>Shares UE tech stack and long-season planning with Fortnite; engineering and ops methods are directly transferable.</li>
           </ul>
         </div>
       </div>
@@ -5051,37 +5073,37 @@
       <div class="torch-heart-col">
         <figure class="torch-heart-hero">
           <div class="torch-heart-hero-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%BF%83%E5%8A%A8%E5%B0%8F%E9%95%87%20Heartopia%20%E4%B8%BB%E8%A7%86%E8%A7%89-16x9.png" alt="心动小镇 Heartopia 主视觉" width="616" height="353" decoding="async" />
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%BF%83%E5%8A%A8%E5%B0%8F%E9%95%87%20Heartopia%20%E4%B8%BB%E8%A7%86%E8%A7%89-16x9.png" alt="Heartopia Key Art" width="616" height="353" decoding="async" />
             <div class="torch-heart-caption">
-              <span class="torch-heart-caption-title">心动小镇（Heartopia）</span>
-              <span class="torch-heart-caption-sub">国服规模化验证 · 国际版首发 · 50+ 国家/地区 iOS 免费榜登顶（含美、日、韩）</span>
+              <span class="torch-heart-caption-title">Heartopia</span>
+              <span class="torch-heart-caption-sub">China-market validation · international launch · #1 iOS free in 50+ countries (US, JP, KR included)</span>
             </div>
           </div>
         </figure>
         <div class="torch-heart-chips" aria-label="Heartopia proof points">
-          <span class="torch-chip torch-chip--accent">#1 iOS 免费榜</span>
-          <span class="torch-chip">国服 8000 万+ DL</span>
-          <span class="torch-chip">50+ 市场登顶</span>
+          <span class="torch-chip torch-chip--accent">#1 iOS Free</span>
+          <span class="torch-chip">80M+ CN DL</span>
+          <span class="torch-chip">50+ markets</span>
         </div>
         <div class="torch-heart-kpis torch-heart-kpis--grid">
           <div class="torch-kpi-card">
-            <div class="torch-kpi-card-num">8000 万+</div>
-            <div class="torch-kpi-card-lbl">国服下载</div>
+            <div class="torch-kpi-card-num">80M+</div>
+            <div class="torch-kpi-card-lbl">China DL</div>
           </div>
           <div class="torch-kpi-card">
-            <div class="torch-kpi-card-num">500 万</div>
-            <div class="torch-kpi-card-lbl">国际版首周新增</div>
+            <div class="torch-kpi-card-num">5M</div>
+            <div class="torch-kpi-card-lbl">Int'l 1st-week adds</div>
           </div>
           <div class="torch-kpi-card">
             <div class="torch-kpi-card-num">50+</div>
-            <div class="torch-kpi-card-lbl">登顶国家/地区</div>
+            <div class="torch-kpi-card-lbl">Markets topped</div>
           </div>
         </div>
         <div class="torch-heart-highlight torch-heart-highlight--points">
           <ul>
-            <li>国服规模化验证：高自由度建造 × 休闲社交跑通爆款；建造可作独立内容形态，非竞技附庸。</li>
-            <li>国际版首发与首周增量：跨国同期上线、全球发行落地与多市场协同执行。</li>
-            <li>50+ 国家/地区 iOS 免费榜登顶（含美、日、韩），跨国获客与发行覆盖 — 优先多国广度与国际增量。</li>
+            <li>China-scale validation: free-form building × casual social hit; building works as standalone content, not just competitive accessory.</li>
+            <li>International launch + first-week growth: simultaneous global ship, multi-market execution.</li>
+            <li>#1 iOS free in 50+ countries (US, JP, KR): cross-border user acquisition and publishing reach — prioritizing global breadth over single-market depth.</li>
           </ul>
         </div>
       </div>
@@ -5094,39 +5116,47 @@
   <section class="slide slide-ro-disney" data-slide="7">
     <div class="slide-header">
       <div>
-        <div class="eyebrow orange">Proof · Commercial assets</div>
-        <h2>全球顶级 IP 授权与衍生经验</h2>
+        <div class="eyebrow orange">Part 01 · Commercial assets</div>
+        <h2>Top-Tier IP Licensing &amp; Derivative Experience</h2>
       </div>
       <div class="page-num">07 / 17</div>
     </div>
     <div class="ro-slide-main">
-    <p class="ro-bridge">86+ 联动案例 · 建联—监修—上线 全链路 → 全球 IP 入华 + 中国 IP 出海</p>
     <div class="ro-showcase-grid">
       <div class="card ro-col">
         <div class="ro-col-text">
-          <div class="section-label">迪士尼全球授权合作</div>
-          <p class="ro-col-copy">跨区域法务、素材与衍生品协同，长线运营节奏支撑 Fortnite 全球 IP 入华。</p>
+          <div class="section-label ro-ip-head">
+            <img class="ro-ip-logo ro-ip-logo--lg" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Disney_logo.png" alt="Disney" decoding="async" />
+            <span>Disney Global License</span>
+          </div>
+          <p class="ro-col-copy">Cross-region legal, asset, and merchandising coordination; long-term live ops cadence supports Fortnite global IP entry into China.</p>
         </div>
         <div class="ro-kv-wrap">
-          <div class="wire-img ro-visual-fill"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%BB%99%E5%A2%83%E4%BC%A0%E8%AF%B4%20RO%20%C3%97%20%E8%BF%AA%E5%A3%AB%E5%B0%BC%20%E8%81%94%E5%8A%A8%20Key%20Visual-2x3.png" alt="仙境传说 RO × 迪士尼 联动 Key Visual" decoding="async"></div>
+          <div class="wire-img ro-visual-fill"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%BB%99%E5%A2%83%E4%BC%A0%E8%AF%B4%20RO%20%C3%97%20%E8%BF%AA%E5%A3%AB%E5%B0%BC%20%E8%81%94%E5%8A%A8%20Key%20Visual-2x3.png" alt="Ragnarok Online × Disney collab Key Visual" decoding="async"></div>
         </div>
       </div>
       <div class="card ro-col">
         <div class="ro-col-text">
-          <div class="section-label">刺客伍六七（中国 IP）</div>
-          <p class="ro-col-copy">国服联动执行与监修尺度沉淀，可作为「中国 IP 出海」交付模板。</p>
+          <div class="section-label ro-ip-head">
+            <img class="ro-ip-logo ro-ip-logo--xl" src="https://image.tmdb.org/t/p/original/ji9SF0qNc5172AZbXTWDlGRP6Dr.png" alt="Scissor Seven" decoding="async" />
+            <span>Scissor Seven (Wuxia anime)</span>
+          </div>
+          <p class="ro-col-copy">China collab execution and review-scale templates ready for "Chinese IP going global" delivery.</p>
         </div>
         <div class="ro-kv-wrap">
-          <div class="wire-img ro-visual-fill"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%88%BA%E5%AE%A2%E4%BC%8D%E5%85%AD%E4%B8%83%20%E8%81%94%E5%8A%A8%E5%AE%A3%E4%BC%A0%E5%9B%BE-2x3.png" alt="香肠派对 × 刺客伍六七 联动宣传图" decoding="async"></div>
+          <div class="wire-img ro-visual-fill"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%88%BA%E5%AE%A2%E4%BC%8D%E5%85%AD%E4%B8%83%20%E8%81%94%E5%8A%A8%E5%AE%A3%E4%BC%A0%E5%9B%BE-2x3.png" alt="Sausage Man × Scissor Seven collab promo" decoding="async"></div>
         </div>
       </div>
       <div class="card ro-col">
         <div class="ro-col-text">
-          <div class="section-label">异业品牌</div>
-          <p class="ro-col-copy">快消 × 游戏 — 单案 KV（右侧竖版 2:3，与左两列对齐）。</p>
+          <div class="section-label ro-ip-head">
+            <img class="ro-ip-logo ro-ip-logo--kfc-pad" src="https://upload.wikimedia.org/wikipedia/commons/9/91/KFC_Logo.svg" alt="KFC" decoding="async" />
+            <span>KFC China</span>
+          </div>
+          <p class="ro-col-copy">FMCG × gaming — single-case KV (vertical 2:3, aligned with left two columns).</p>
         </div>
         <div class="ro-kv-wrap">
-          <div class="wire-img ro-brand-single"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E8%82%AF%E5%BE%B7%E5%9F%BA%20%E8%81%94%E5%8A%A8%E4%B8%BB%E8%A7%86%E8%A7%89-2x3.png" alt="香肠派对 × 肯德基 联动主视觉" decoding="async"></div>
+          <div class="wire-img ro-brand-single"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E8%82%AF%E5%BE%B7%E5%9F%BA%20%E8%81%94%E5%8A%A8%E4%B8%BB%E8%A7%86%E8%A7%89-2x3.png" alt="Sausage Man × KFC collab Key Visual" decoding="async"></div>
         </div>
       </div>
     </div>
@@ -5134,19 +5164,18 @@
       <div class="ro-matrix-stack">
         <div class="ro-matrix-head-row">
           <div class="ro-col-text">
-            <div class="section-label">更多联动案例</div>
+            <div class="section-label">More collabs</div>
           </div>
-          <p class="ro-matrix-copy">九宫格统一按方形裁切展示，后续你只要继续按 1:1 调整素材即可。</p>
         </div>
         <div class="ro-collab-grid-dense">
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%A5%A5%E7%89%B9%E6%9B%BC%20%E8%81%94%E5%8A%A8-1x1.png" alt="奥特曼" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%81%87%E9%9D%A2%E9%AA%91%E5%A3%AB%20%E8%81%94%E5%8A%A8-1x1.png" alt="假面骑士" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%89%E4%B8%BD%E9%B8%A5-1x1.png" alt="三丽鸥" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%86%8A%E5%87%BA%E6%B2%A1-1x1.png" alt="熊出没" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86%20%E8%81%94%E5%8A%A8-1x1.png" alt="斗罗大陆" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%8E%8B%E8%80%81%E5%90%89-1x1.jpg" alt="王老吉" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%8F%8C%E6%B1%87-1x1.png" alt="双汇" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%BB%E9%A2%98%E8%B5%9B%E5%AD%A3-1x1.png" alt="主题赛季" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%A5%A5%E7%89%B9%E6%9B%BC%20%E8%81%94%E5%8A%A8-1x1.png" alt="Ultraman" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%81%87%E9%9D%A2%E9%AA%91%E5%A3%AB%20%E8%81%94%E5%8A%A8-1x1.png" alt="Kamen Rider" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%89%E4%B8%BD%E9%B8%A5-1x1.png" alt="Sanrio" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%86%8A%E5%87%BA%E6%B2%A1-1x1.png" alt="Boonie Bears" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86%20%E8%81%94%E5%8A%A8-1x1.png" alt="Douluo Dalu" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%8E%8B%E8%80%81%E5%90%89-1x1.jpg" alt="Wanglaoji" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%8F%8C%E6%B1%87-1x1.png" alt="Shuanghui" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%BB%E9%A2%98%E8%B5%9B%E5%AD%A3-1x1.png" alt="Themed seasons" decoding="async"></span>
         </div>
       </div>
     </div>
@@ -5165,13 +5194,13 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 9 战略定位 (structure P7) -->
+  <!-- 9 Strategic Positioning (structure P7) -->
   <!-- ============================================================ -->
   <section class="slide slide-strategic" data-slide="9">
     <div class="slide-header">
       <div>
         <div class="eyebrow purple">Part 02 · Publishing plan</div>
-        <h2>战略定位</h2>
+        <h2>Strategic Positioning</h2>
       </div>
       <div class="page-num">09 / 17</div>
     </div>
@@ -5182,35 +5211,35 @@
           <div class="slide-strategic-hero">
             <p class="strategic-hero-en">China's First<br><span class="purple">Cross-Media Interactive Platform.</span></p>
           </div>
-          <ul class="slide-strategic-points" aria-label="战略三要点">
-            <li><strong>机会</strong>：不争高度成熟的战术竞技<strong>存量赛道</strong>——以游戏为基座、内容互动为核心、创作者与跨界合作为增长引擎，开辟<strong>新认知赛道</strong>与长期平台生态。</li>
-            <li><strong>用户</strong>：已成熟接受线上娱乐内容的融合消费；不仅为「赢一局」付费或停留，也为社交、表达、参与、围观与文化认同<strong>持续回流</strong>。</li>
-            <li><strong>定位</strong>：最优解不是单一竞技包装——而是可持续发生内容事件、承载创作者生态、连接品牌合作的<strong>新一代互动平台</strong>。</li>
+          <ul class="slide-strategic-points" aria-label="Three strategic pillars">
+            <li><strong>Opportunity</strong>: Don't fight for the saturated tactical-combat <strong>red ocean</strong> — use the game as a base, content interaction as core, creators and cross-border collabs as growth engines to open a <strong>new perception category</strong> and long-term platform ecosystem.</li>
+            <li><strong>Audience</strong>: Mature appetite for fused online entertainment; users stay and pay not just to win, but for social, expression, participation, spectatorship, and cultural identity.</li>
+            <li><strong>Positioning</strong>: The optimal solution is not a pure competitive wrapper — it's a <strong>next-gen interactive platform</strong> that sustains content events, carries a creator ecosystem, and connects brand partnerships.</li>
           </ul>
         </div>
         <div class="slide-strategic-visual">
-          <div class="slide-strategic-quad" role="group" aria-label="游戏、创作者、社交与文化 — 四图横排">
+          <div class="slide-strategic-quad" role="group" aria-label="Game, Creator, Social, Culture — four images horizontal">
             <figure class="slide-strategic-frame">
-              <div class="slide-strategic-img-slot" aria-label="Fortnite 战斗画面">
-                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%E6%88%98%E6%96%97%E7%94%BB%E9%9D%A2-16x9.jpg" alt="Fortnite 战斗画面" decoding="async" />
+              <div class="slide-strategic-img-slot" aria-label="Fortnite combat gameplay">
+                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%E6%88%98%E6%96%97%E7%94%BB%E9%9D%A2-16x9.jpg" alt="Fortnite combat gameplay" decoding="async" />
                 <span class="slide-strategic-tag-en slide-strategic-tag-en--d1" aria-hidden="true">Game</span>
               </div>
             </figure>
             <figure class="slide-strategic-frame">
-              <div class="slide-strategic-img-slot" aria-label="UEFN 编辑器界面">
-                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/UEFN%20%E7%BC%96%E8%BE%91%E5%99%A8%E7%95%8C%E9%9D%A2-16x9.png" alt="UEFN 编辑器界面" decoding="async" />
+              <div class="slide-strategic-img-slot" aria-label="UEFN editor interface">
+                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/UEFN%20%E7%BC%96%E8%BE%91%E5%99%A8%E7%95%8C%E9%9D%A2-16x9.png" alt="UEFN editor interface" decoding="async" />
                 <span class="slide-strategic-tag-en slide-strategic-tag-en--d2" aria-hidden="true">Creator</span>
               </div>
             </figure>
             <figure class="slide-strategic-frame">
-              <div class="slide-strategic-img-slot" aria-label="Fortnite Party Royale / 演唱会">
-                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20Party%20Royale%20%E6%B4%BB%E5%8A%A8%E7%94%BB%E9%9D%A2-16x9.png" alt="Fortnite Party Royale 活动画面" decoding="async" />
+              <div class="slide-strategic-img-slot" aria-label="Fortnite Party Royale / concert">
+                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20Party%20Royale%20%E6%B4%BB%E5%8A%A8%E7%94%BB%E9%9D%A2-16x9.png" alt="Fortnite Party Royale event scene" decoding="async" />
                 <span class="slide-strategic-tag-en slide-strategic-tag-en--d3" aria-hidden="true">Social</span>
               </div>
             </figure>
             <figure class="slide-strategic-frame">
-              <div class="slide-strategic-img-slot" aria-label="Fortnite × Marvel 联动">
-                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%C3%97%20Marvel%20%E8%81%94%E5%8A%A8-16x9.jpg" alt="Fortnite × Marvel 联动" decoding="async" />
+              <div class="slide-strategic-img-slot" aria-label="Fortnite × Marvel collab">
+                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%C3%97%20Marvel%20%E8%81%94%E5%8A%A8-16x9.jpg" alt="Fortnite × Marvel collab" decoding="async" />
                 <span class="slide-strategic-tag-en slide-strategic-tag-en--d4" aria-hidden="true">Culture</span>
               </div>
             </figure>
@@ -5228,16 +5257,16 @@
     <div class="slide-header">
       <div>
         <div class="eyebrow" style="color:var(--yellow);">Year-one marketing investment</div>
-        <h2>$30M · 「首发爆发 + 长线生态」双轮驱动</h2>
+        <h2>$30M · "Launch Burst +<br>Long-Tail Ecosystem" Dual Drive</h2>
       </div>
       <div class="page-num">10 / 17</div>
     </div>
 
-    <p class="budget-lede">首年我们建议投入总预算 <em>3000 万美元</em>，并以 <em>「首发爆发 + 长线生态」</em> 双轮驱动进行配置。预算不是单纯买量，而是围绕《堡垒之夜》的平台型定位进行系统化布局。</p>
+    <p class="budget-lede">We recommend a first-year budget of <em>$30 million USD</em>, allocated as a <em>"launch burst + long-tail ecosystem"</em> dual-engine strategy. The budget is not pure paid acquisition — it's a systematic layout around Fortnite's platform positioning.</p>
 
     <div class="budget-split">
       <div class="budget-chart-col">
-        <div class="budget-donut-wrap" role="group" aria-label="首年预算结构：悬停扇区或图例以高亮">
+        <div class="budget-donut-wrap" role="group" aria-label="Year-one budget: hover sector or legend to highlight">
           <svg class="budget-donut budget-donut-svg" viewBox="0 0 200 200" aria-hidden="true">
             <g class="budget-seg budget-seg--adv" data-budget-key="adv">
               <path fill="var(--orange)" d="M100.000 12.000 A88 88 0 1 1 100.000 188.000 L100.000 168.000 A68 68 0 1 0 100.000 32.000 Z"></path>
@@ -5254,7 +5283,7 @@
           </svg>
           <div class="budget-donut-inner">
             <div class="bdc-amt">$30,000,000</div>
-            <div class="bdc-lbl">USD · 首年</div>
+            <div class="bdc-lbl">USD · Year 1</div>
           </div>
         </div>
       </div>
@@ -5263,8 +5292,8 @@
           <div class="bl-row" data-budget-key="adv">
             <span class="bl-dot" style="background:var(--orange);"></span>
             <div class="bl-name">
-              <span class="bl-title">广告投放</span>
-              <span class="bl-sub">建立广泛市场认知、完成预约与下载转化，支撑重点版本放量。</span>
+              <span class="bl-title">Paid Media</span>
+              <span class="bl-sub">Build broad market awareness, drive pre-reg and download conversion, support major release pushes.</span>
             </div>
             <div class="bl-pct">50%</div>
             <div class="bl-amt">$15M</div>
@@ -5272,8 +5301,8 @@
           <div class="bl-row" data-budget-key="brand">
             <span class="bl-dot" style="background:var(--purple);"></span>
             <div class="bl-name">
-              <span class="bl-title">品牌与联动</span>
-              <span class="bl-sub">打造破圈事件、IP 联动、线下体验与首发社会化讨论。</span>
+              <span class="bl-title">Brand &amp; Collabs</span>
+              <span class="bl-sub">Create break-out events, IP tie-ups, offline experiences, and launch social buzz.</span>
             </div>
             <div class="bl-pct">20%</div>
             <div class="bl-amt">$6M</div>
@@ -5281,8 +5310,8 @@
           <div class="bl-row" data-budget-key="esports">
             <span class="bl-dot" style="background:var(--yellow);"></span>
             <div class="bl-name">
-              <span class="bl-title">电竞赛事</span>
-              <span class="bl-sub">快速搭建中国本地赛事体系，提升核心玩家认同与长期生命力。</span>
+              <span class="bl-title">Esports</span>
+              <span class="bl-sub">Rapidly build China-local tournament infrastructure; deepen core player affinity and long-term vitality.</span>
             </div>
             <div class="bl-pct">15%</div>
             <div class="bl-amt">$4.5M</div>
@@ -5290,8 +5319,8 @@
           <div class="bl-row" data-budget-key="ugc">
             <span class="bl-dot" style="background:var(--teal);"></span>
             <div class="bl-name">
-              <span class="bl-title">UGC 内容创作</span>
-              <span class="bl-sub">创作者内容供给、直播/视频传播与 UEFN 创作者生态。</span>
+              <span class="bl-title">UGC Content Creation</span>
+              <span class="bl-sub">Creator content supply, livestream/video distribution, and UEFN creator ecosystem.</span>
             </div>
             <div class="bl-pct">15%</div>
             <div class="bl-amt">$4.5M</div>
@@ -5309,38 +5338,38 @@
     <div class="slide-header">
       <div>
         <div class="eyebrow purple">Publishing Plan</div>
-        <h2>首发策略（$6M）：Zero Build + IP / 线下</h2>
+        <h2>Launch Strategy ($6M): Zero Build + IP / Offline</h2>
       </div>
       <div class="page-num">11 / 17</div>
     </div>
 
     <div class="launch-split-main">
       <div class="launch-split-copy">
-        <h3 class="launch-section-head">首发玩法——Zero Build</h3>
-        <ul class="slide-strategic-points" aria-label="首发玩法要点">
-          <li><strong>首发主推 Zero Build</strong>：对标国内成熟射击品类，降低建造学习成本，扩大新用户入口。</li>
-          <li><strong>体验路径分层上线</strong>：先高强度快节奏对战；建造模式、创意地图与完整 UGC 生态后续逐步释放。</li>
-          <li><strong>避免首日堆复杂度</strong>：用清晰进阶路径承接深度玩家，而非一次性堆满功能。</li>
+        <h3 class="launch-section-head">Launch Play Mode — Zero Build</h3>
+        <ul class="slide-strategic-points" aria-label="Zero Build launch points">
+          <li><strong>Zero Build as launch lead</strong>: Aligns with China's mature shooter market; lowers build-learning barrier; widens new-user entry.</li>
+          <li><strong>Layered content rollout</strong>: High-intensity fast-paced combat first; build mode, creative maps, and full UGC ecosystem follow in stages.</li>
+          <li><strong>Avoid day-one complexity overload</strong>: Use a clear progression path to retain depth players rather than dumping everything at once.</li>
         </ul>
 
-        <h3 class="launch-section-head">IP联动+线下大事件</h3>
-        <ul class="slide-strategic-points" aria-label="IP 与线下要点">
-          <li><strong>国民级 IP 首发联动</strong>：国漫、影视等本土 IP 进入 Fortnite，制造话题与付费支点。</li>
-          <li><strong>线下「可传播事件」</strong>：快闪、沉浸装置、限时主题场，把线上热度延伸为可参与、可打卡的体验。</li>
-          <li><strong>内容供给与扩散</strong>：触达更广圈层，为短视频、直播与社交平台持续供给素材，放大首发窗口声量。</li>
+        <h3 class="launch-section-head">IP Collabs + Offline Events</h3>
+        <ul class="slide-strategic-points" aria-label="IP and offline event points">
+          <li><strong>Tier-1 domestic IP launch collabs</strong>: Local anime, film, and TV IPs enter Fortnite — manufactured buzz + monetization hooks.</li>
+          <li><strong>Offline "shareable moments"</strong>: Pop-ups, immersive installations, limited-themed venues — extend online heat into participatory, photo-worthy experiences.</li>
+          <li><strong>Content supply &amp; distribution</strong>: Reach broader circles; feed short-video, livestream, and social platforms with sustained material to amplify launch-window noise.</li>
         </ul>
       </div>
 
-      <div class="launch-split-visual" role="group" aria-label="配图：首发 Zero Build、线下沉浸体验与国漫 IP 参考">
+      <div class="launch-split-visual" role="group" aria-label="Visuals: Zero Build launch, offline immersion, China anime IP ref">
         <div class="launch-img-slot launch-img-slot--hero" aria-label="Fortnite Zero Build">
-          <img src="https://static.wikia.nocookie.net/fortnite/images/9/90/Zero_Build_%28Born_in_Chaos%29_-_Playlist_-_Fortnite.jpg/revision/latest/scale-to-width-down/1200?cb=20260109103926" alt="Fortnite Zero Build 模式" decoding="async" />
+          <img src="https://static.wikia.nocookie.net/fortnite/images/9/90/Zero_Build_%28Born_in_Chaos%29_-_Playlist_-_Fortnite.jpg/revision/latest/scale-to-width-down/1200?cb=20260109103926" alt="Fortnite Zero Build mode" decoding="async" />
         </div>
         <div class="launch-img-slot-row">
-          <div class="launch-img-slot" aria-label="线下品牌体验 / 快闪">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%E7%BA%BF%E4%B8%8B%E6%B2%89%E6%B5%B8%E5%BC%8F%E5%93%81%E7%89%8C%E4%BD%93%E9%AA%8C-2fr%E7%AD%89%E9%AB%98.jpg" alt="Fortnite 线下沉浸式品牌体验" decoding="async" />
+          <div class="launch-img-slot" aria-label="Offline brand experience / pop-up">
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%E7%BA%BF%E4%B8%8B%E6%B2%89%E6%B5%B8%E5%BC%8F%E5%93%81%E7%89%8C%E4%BD%93%E9%AA%8C-2fr%E7%AD%89%E9%AB%98.jpg" alt="Fortnite offline brand experience" decoding="async" />
           </div>
-          <div class="launch-img-slot" aria-label="国漫 IP 参考">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%88%BA%E5%AE%A2%E4%BC%8D%E5%85%AD%E4%B8%83%20%E5%AE%98%E6%96%B9%E6%B5%B7%E6%8A%A5-1fr%E7%AD%89%E9%AB%98.png" alt="刺客伍六七 官方海报" decoding="async" />
+          <div class="launch-img-slot" aria-label="China anime IP reference">
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%88%BA%E5%AE%A2%E4%BC%8D%E5%85%AD%E4%B8%83%20%E5%AE%98%E6%96%B9%E6%B5%B7%E6%8A%A5-1fr%E7%AD%89%E9%AB%98.png" alt="Scissor Seven official art" decoding="async" />
           </div>
         </div>
       </div>
@@ -5348,53 +5377,53 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 12 创作者生态 $4.5M -->
+  <!-- 12 Creators生态 $4.5M -->
   <!-- ============================================================ -->
   <section class="slide slide-creator-eco" data-slide="12">
     <div class="slide-header">
       <div>
         <div class="eyebrow" style="color:var(--teal);">Creator ecosystem · 15% · $4,500,000</div>
-        <h2>创作者生态——$4,500,000</h2>
+        <h2>Creator Ecosystem — $4,500,000</h2>
       </div>
       <div class="page-num">12 / 17</div>
     </div>
 
     <div class="creator-eco-split">
       <div class="creator-eco-copy">
-        <h3 class="launch-section-head">游戏直播与视频创作者激励</h3>
-        <ul class="slide-strategic-points" aria-label="直播与视频激励 · 受众目标与打法">
-          <li><strong>受众</strong>：直播平台主播、短视频作者、攻略与娱乐向内容创作者。</li>
-          <li><strong>目标</strong>：快速形成多层次内容矩阵，放大传播与话题扩散。</li>
-          <li><strong>难点</strong>：SAC 联盟计划对中国用户相对陌生，认知与参与门槛偏高。</li>
-          <li><strong>解决方案</strong>：以「内容激励 + SAC」组合推进，在中国创作者群体中逐步落地 SAC。</li>
+        <h3 class="launch-section-head">Streamer &amp; Video Creator Incentives</h3>
+        <ul class="slide-strategic-points" aria-label="Streaming &amp; video incentive · audience and approach">
+          <li><strong>Audience</strong>: Livestream hosts, short-video creators, guide and entertainment content creators.</li>
+          <li><strong>Goal</strong>: Rapidly build multi-layer content matrix; amplify reach and topic diffusion.</li>
+          <li><strong>Challenge</strong>: Support-A-Creator (SAC) programs are relatively unfamiliar to Chinese users — awareness and participation threshold are high.</li>
+          <li><strong>Solution</strong>: Combo of content incentives + SAC to gradually establish the SAC program among Chinese creators.</li>
         </ul>
 
-        <h3 class="launch-section-head">游戏内玩法创作者激励</h3>
-        <ul class="slide-strategic-points" aria-label="玩法创作者激励 · 受众目标与打法">
-          <li><strong>受众</strong>：更深层的生态参与者——本地玩法 / 地图创作者与专业开发者（含 TapTap 开发者侧资源）。</li>
-          <li><strong>目标</strong>：沉淀中国本地创作者供给；从「官方发行的一款游戏」升级为「可持续生长的玩法平台」。</li>
-          <li><strong>难点</strong>：不止短期曝光，更要建立 UEFN 创作习惯与可持续的内容与变现路径。</li>
-          <li><strong>解决方案</strong>：结合 Creator Economy 2.0 与岛内交易（In-Island Transactions），用 UEFN 围绕本土文化与热点打造可传播玩法；联动 TapTap 号召中国游戏开发者参与 Fortnite 内容创作。</li>
+        <h3 class="launch-section-head">In-Game Mode Creator Incentives</h3>
+        <ul class="slide-strategic-points" aria-label="Mode creator incentive · audience targets and approach">
+          <li><strong>Audience</strong>: Deeper ecosystem participants — local mode/map creators and professional developers (including TapTap dev resources).</li>
+          <li><strong>Goal</strong>: Build China-local creator supply; upgrade from "an officially published game" to "a sustainably growing mode platform".</li>
+          <li><strong>Challenge</strong>: Not just short-term exposure — need to establish UEFN creation habits and sustainable content + monetization paths.</li>
+          <li><strong>Solution</strong>: Combine Creator Economy 2.0 and In-Experience Monetization; use UEFN to build shareable modes around local culture and hot topics; partner with TapTap to recruit Chinese game developers into Fortnite content creation.</li>
         </ul>
       </div>
 
       <div class="creator-eco-visual">
-        <div class="creator-eco-stack" aria-label="配图：UEFN 全宽 · 下排直播与 TapTap 双列">
+        <div class="creator-eco-stack" aria-label="Visuals: UEFN full · livestream + TapTap dual">
           <figure class="creator-eco-slot creator-eco-slot--hero">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/UEFN%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%95%8C%E9%9D%A2-16x9.png" alt="UEFN 官方文档界面" decoding="async" />
-            <figcaption class="creator-eco-slot-cap">UEFN 创作工具与地图开发</figcaption>
-            <span class="creator-eco-slot-hint">UEFN。</span>
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/UEFN%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%95%8C%E9%9D%A2-16x9.png" alt="UEFN official docs interface" decoding="async" />
+            <figcaption class="creator-eco-slot-cap">UEFN creation tools and map development</figcaption>
+            <span class="creator-eco-slot-hint">UEFN.</span>
           </figure>
           <div class="creator-eco-row">
             <figure class="creator-eco-slot">
-              <img src="https://media.kingston.com/kingston/content/ktc-content-blog-gaming-live-video-game-streaming-guide-hero.jpg" alt="游戏直播 / 主播场景" decoding="async" />
-              <figcaption class="creator-eco-slot-cap">游戏直播 / 主播场景</figcaption>
-              <span class="creator-eco-slot-hint">直播。</span>
+              <img src="https://media.kingston.com/kingston/content/ktc-content-blog-gaming-live-video-game-streaming-guide-hero.jpg" alt="Game streaming / host scene" decoding="async" />
+              <figcaption class="creator-eco-slot-cap">Game streaming / host scene</figcaption>
+              <span class="creator-eco-slot-hint">Streaming.</span>
             </figure>
             <figure class="creator-eco-slot">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/TapTap%20%E5%8F%91%E5%B8%83%E4%BC%9A%20%EF%BC%8F%20%E5%BC%80%E5%8F%91%E8%80%85%E6%B4%BB%E5%8A%A8-16x9.png" alt="TapTap 发布会 / 开发者活动" decoding="async" />
-              <figcaption class="creator-eco-slot-cap">TapTap 开发者与创作者招募场</figcaption>
-              <span class="creator-eco-slot-hint">TapTap 开发者。</span>
+              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/TapTap%20%E5%8F%91%E5%B8%83%E4%BC%9A%20%EF%BC%8F%20%E5%BC%80%E5%8F%91%E8%80%85%E6%B4%BB%E5%8A%A8-16x9.png" alt="TapTap event / developer gathering" decoding="async" />
+              <figcaption class="creator-eco-slot-cap">TapTap developer &amp; creator recruitment</figcaption>
+              <span class="creator-eco-slot-hint">TapTap developers.</span>
             </figure>
           </div>
         </div>
@@ -5409,35 +5438,35 @@
     <div class="slide-header">
       <div>
         <div class="eyebrow" style="color:var(--yellow);">Esports · $4.5M</div>
-        <h2>建立中国赛事体系——$4,500,000</h2>
+        <h2>China Tournament Infrastructure — $4,500,000</h2>
       </div>
       <div class="page-num">13 / 17</div>
     </div>
 
     <div class="slide-esports-main">
-      <p class="slide-esports-lede">赛事体系的作用，不只是服务少数高端玩家，而是帮助《堡垒之夜》在中国建立「可参与、可观看、可追随」的竞技叙事。这将提升产品的核心用户粘性，也将持续为直播、视频和社交平台提供高质量内容。</p>
+      <p class="slide-esports-lede">Tournaments serve more than elite players — they help Fortnite China build a "playable, watchable, followable" competitive narrative. This deepens core user stickiness and continuously supplies high-quality content for livestream, video, and social platforms.</p>
 
-      <div class="slide-esports-tri" role="group" aria-label="赛事体系三支柱 · 配图占位">
+      <div class="slide-esports-tri" role="group" aria-label="Tournament three pillars · visuals">
         <div class="slide-esports-col">
-          <div class="slide-strategic-img-slot" aria-label="香肠派对大众赛事">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%E8%8F%81%E8%8B%B1%E8%B5%9B%E5%AE%A3%E4%BC%A0-16x9.png" alt="香肠派对菁英赛宣传" decoding="async" />
+          <div class="slide-strategic-img-slot" aria-label="Sausage Man open tourney">
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%E8%8F%81%E8%8B%B1%E8%B5%9B%E5%AE%A3%E4%BC%A0-16x9.png" alt="Sausage Man elite tournament promo" decoding="async" />
           </div>
-          <p class="slide-strategic-subhead">大众赛事</p>
-          <p class="slide-strategic-p">面向全体玩家的公开赛事，赛事体系、奖励、赛制设置与国际服保持一致。目标是让大众玩家都能感知并参与到《堡垒之夜》独特的竞技氛围，并有所收获。</p>
+          <p class="slide-strategic-subhead">Open Tournaments</p>
+          <p class="slide-strategic-p">Open to all players; format, rewards, and ruleset mirror the international version. The goal is to let every player feel and participate in Fortnite's unique competitive atmosphere — and gain something from it.</p>
         </div>
         <div class="slide-esports-col">
-          <div class="slide-strategic-img-slot" aria-label="香肠派对总决赛舞台">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%E4%BC%97%E7%A5%9E%E6%9D%AF%E6%80%BB%E5%86%B3%E8%B5%9B%E7%8E%B0%E5%9C%BA-16x9.png" alt="香肠派对众神杯总决赛现场" decoding="async" />
+          <div class="slide-strategic-img-slot" aria-label="Sausage Man finals stage">
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%E4%BC%97%E7%A5%9E%E6%9D%AF%E6%80%BB%E5%86%B3%E8%B5%9B%E7%8E%B0%E5%9C%BA-16x9.png" alt="Sausage Man championship finals" decoding="async" />
           </div>
-          <p class="slide-strategic-subhead">职业赛事（FNCS 国服赛区）</p>
-          <p class="slide-strategic-p">国服独立的职业竞技周期，代表《堡垒之夜》国服最顶尖的竞技赛事，同时作为全球 FNCS 的中国赛区入口。让国内的职业玩家征战全球竞技的重要平台。</p>
+          <p class="slide-strategic-subhead">FNCS China Qualifier (Pro Circuit)</p>
+          <p class="slide-strategic-p">Independent China pro competitive cycle representing Fortnite China's highest tier; serves as the entry point to global FNCS. The platform for Chinese pros to compete on the world stage.</p>
         </div>
         <div class="slide-esports-col">
-          <div class="slide-strategic-img-slot slide-esports-img-slot--sharp" aria-label="主播联赛参考">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E6%B8%B8%E6%88%8F%E4%B8%BB%E6%92%AD%E8%81%94%E8%B5%9B%E5%AE%A3%E4%BC%A0%E5%8F%82%E8%80%83-16x9.png" alt="游戏主播联赛宣传参考" decoding="async" />
+          <div class="slide-strategic-img-slot slide-esports-img-slot--sharp" aria-label="Streamer league ref">
+            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E6%B8%B8%E6%88%8F%E4%B8%BB%E6%92%AD%E8%81%94%E8%B5%9B%E5%AE%A3%E4%BC%A0%E5%8F%82%E8%80%83-16x9.png" alt="Game streamer league promo reference" decoding="async" />
           </div>
-          <p class="slide-strategic-subhead">平台与主播联赛</p>
-          <p class="slide-strategic-p">联合直播平台、头部主播和内容阵地发起中型赛事，兼顾观赏性与传播性。目标是通过内容平台赛事提升《堡垒之夜》在核心圈层中的讨论热度。</p>
+          <p class="slide-strategic-subhead">Platform &amp; Streamer Lg</p>
+          <p class="slide-strategic-p">Mid-size tournaments co-hosted with livestream platforms, top streamers, and content hubs — balancing spectacle and shareability. The goal is to raise Fortnite's core-circle discussion heat through content-platform events.</p>
         </div>
       </div>
     </div>
@@ -5451,7 +5480,7 @@
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">User acquisition</div>
-        <h2>全年投放计划——$15,000,000</h2>
+        <h2>Year-Round Paid Media — $15,000,000</h2>
       </div>
       <div class="page-num">14 / 17</div>
     </div>
@@ -5459,18 +5488,18 @@
     <div class="ua-timeline">
       <div class="ua-grid ua-grid--top">
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">预热期</span><span class="ua-phase-money">$3,000,000</span></div>
-          <p class="ua-phase-desc">面向泛游戏用户、回归老玩家和内容平台受众，通过品牌视频、预约传播、KOL 首轮种草和核心媒体曝光，建立《堡垒之夜》回归中国市场的第一波认知。</p>
+          <div class="ua-phase-title"><span class="ua-phase-name">Warm-up</span><span class="ua-phase-money">$3,000,000</span></div>
+          <p class="ua-phase-desc">Target casual gamers, returning legacy players, and content-platform audiences via brand videos, pre-registration campaigns, KOL seeding, and core media exposure — establish the first wave of "Fortnite is back in China" awareness.</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">日常版本</span><span class="ua-phase-money">$1,000,000</span></div>
-          <p class="ua-phase-desc">保持市场存在感、覆盖节庆节点、支撑社群活动，并对高潜人群进行持续触达。</p>
+          <div class="ua-phase-title"><span class="ua-phase-name">Live ops</span><span class="ua-phase-money">$1,000,000</span></div>
+          <p class="ua-phase-desc">Maintain market presence; cover festival nodes; support community activity; sustain reach to high-potential segments.</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">日常版本</span><span class="ua-phase-money">$500,000</span></div>
-          <p class="ua-phase-desc">保证全年热度不断档，为下一个大版本和下一年运营保留增长基础。</p>
+          <div class="ua-phase-title"><span class="ua-phase-name">Live ops</span><span class="ua-phase-money">$500,000</span></div>
+          <p class="ua-phase-desc">Ensure year-round heat continuity; preserve growth foundation for next major release and Year 2.</p>
         </div>
       </div>
 
@@ -5488,19 +5517,19 @@
       <div class="ua-grid ua-grid--bot">
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">公测期</span><span class="ua-phase-money">$6,000,000</span></div>
-          <p class="ua-phase-desc">是把认知快速转化为下载、激活与开服声量。同时配合主播直播、短视频传播和公测庆典事件，共同形成最大化市场引爆。</p>
+          <div class="ua-phase-title"><span class="ua-phase-name">Launch</span><span class="ua-phase-money">$6,000,000</span></div>
+          <p class="ua-phase-desc">Convert awareness rapidly into downloads, activations, and server-opening buzz. Amplified by streamer livestreams, short-video spread, and launch celebration events for maximum market ignition.</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">版本更新期</span><span class="ua-phase-money">$4,500,000</span></div>
-          <p class="ua-phase-desc">唤醒沉默用户重新放大内容势能。围绕新版本卖点、新活动、新联动和社区高光时刻进行再传播，让产品不陷入「上线即高点」的单峰曲线。</p>
+          <div class="ua-phase-title"><span class="ua-phase-name">Major Update</span><span class="ua-phase-money">$4,500,000</span></div>
+          <p class="ua-phase-desc">Re-awaken dormant users and re-amplify content potential. Re-distribute around new release selling points, new activities, new collabs, and community highlight moments — avoid the "launch-day peak only" single-curve trap.</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
       </div>
     </div>
 
-    <p class="ua-foot">首年总预算中的 50% 将投入线上投放，但投放节奏不是平均分配，而是围绕产品生命周期和关键节点进行分阶段推进，以确保每一轮预算都服务于不同阶段目标。</p>
+    <p class="ua-foot">50% of the first-year budget goes to paid media, but spend is not averaged — it's phased around product lifecycle and key nodes to ensure every dollar serves stage-specific objectives.</p>
 
   </section>
 
@@ -5511,7 +5540,7 @@
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">Operational Readiness</div>
-        <h2>Compliance &amp; operations</h2>
+        <h2>Compliance &amp; Operations</h2>
       </div>
       <div class="page-num">15 / 17</div>
     </div>
@@ -5541,7 +5570,7 @@
         <div class="comp-title">Anti-Cheat</div>
         <ul class="comp-list">
           <li>Easy Anti-Cheat + THEMIS (XD in-house security platform)</li>
-          <li>Transferred from Sausage Man's 8-year live environment</li>
+          <li>Inherited from Sausage Man's 8-year live environment</li>
           <li>Dedicated PC vs. mobile strategy</li>
         </ul>
       </div>
@@ -5573,43 +5602,43 @@
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">Technical alignment</div>
-        <h2>国服交付：全球节奏对齐 × UEFN 内容管线</h2>
-        <p class="slide-tech-sync-lede">赛季与补丁跟随全球主干；内容与账号走合规管道与约定栈。</p>
+        <h2>China Delivery: Global Cadence Sync ×<br>UEFN Content Pipeline</h2>
+        <p class="slide-tech-sync-lede">Seasons and patches follow global trunk; content and accounts use compliant pipes and agreed stacks.</p>
       </div>
       <div class="page-num">16 / 17</div>
     </div>
     <div class="grid-2" style="flex:1;gap:2vw;min-height:0;">
       <div class="stack-sm">
-        <div class="section-label">全球节奏对齐</div>
+        <div class="section-label">Global Cadence Sync</div>
         <ul class="tech-sync-list">
-          <li>赛季与重大更新：与全球同节拍；个别联动按监修单独排期。</li>
-          <li>热修：主干一致；支付、实名、安全等走国服补丁通道。</li>
-          <li>联机：默认国服体验；与全球互通仅在政策允许范围内。</li>
+          <li>Seasons and major updates: same cadence as global; individual collabs scheduled separately per licensor timelines.</li>
+          <li>Hotfixes: trunk-aligned; payment, real-name, security patches via China-specific channel.</li>
+          <li>Multiplayer: China-local by default; cross-border only where policy permits.</li>
         </ul>
         <div class="wire-img wire-lg">
           <img src="https://preview.redd.it/i-like-this-new-battle-pass-setup-your-able-to-pick-which-v0-1qq7oen55m4g1.png?auto=webp&amp;s=cc1610a1123a51a63b104b430098f189207bf475" width="1920" height="1080" alt="Fortnite Battle Pass UI — selectable reward tracks" decoding="async" />
         </div>
       </div>
       <div class="stack-sm">
-        <div class="section-label">UEFN 与国服栈</div>
+        <div class="section-label">UEFN &amp; China Stack</div>
         <ul class="tech-sync-list">
-          <li>UEFN：创作—审核—发布管线；国服内容池与全球 Discover 规则化对接。</li>
-          <li>内容进出：机审 + 人审；双向流通边界事先固定。</li>
-          <li>反作弊与日志：EAC + THEMIS（自研安全平台）；登录接微信/手机/未成年，不割裂 Epic 账号叙事。</li>
+          <li>UEFN: create → review → publish pipeline; China content pool connects to global Discover via agreed rules.</li>
+          <li>Content flow: machine pre-check + human review; two-way circulation boundaries fixed upfront.</li>
+          <li>Anti-cheat &amp; logs: EAC + THEMIS (in-house security platform); login via WeChat/mobile/minor-protection — Epic account linkage preserved.</li>
         </ul>
         <div class="wire-img wire-lg">
           <img src="https://cdn1.epicgames.com/offer/fn/UEFN_29-01_EGS_UEFN_Assets_S1OfferImage_2560x1440_2560x1440-bc992b49496068f859100ec4cc6e0f3c" width="1920" height="1080" alt="Unreal Editor for Fortnite (UEFN)" decoding="async" />
         </div>
       </div>
     </div>
-    <p class="slide-tech-sync-foot">能跟跟全球，该分有路径。</p>
+    <p class="slide-tech-sync-foot">Global where possible; local where needed.</p>
   </section>
 
   <!-- ============================================================ -->
   <!-- 17 结尾邀请 (structure closing) -->
   <!-- ============================================================ -->
   <section class="slide slide-closing-cn" data-slide="17">
-    <h2 class="closing-cn-headline">诚邀一起打造中国Fortnite</h2>
+    <h2 class="closing-cn-headline">Let's Build<br>Fortnite China, Together</h2>
     <div class="page-num" style="position:absolute;bottom:6vh;right:8vw;">17 / 17</div>
   </section>
 
