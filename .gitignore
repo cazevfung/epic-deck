@@ -1,6 +1,7 @@
 .cursor/
 .DS_Store
 **/.DS_Store
+**/DS_Store
 Thumbs.db
 _img_list.txt
 _rewrite_urls.py

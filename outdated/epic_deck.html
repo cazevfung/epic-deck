@@ -435,7 +435,7 @@
 
   .placeholder-img {
     background: linear-gradient(135deg, #2a2a38 0%, #1c1c26 100%);
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border: 1px dashed var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -443,7 +443,7 @@
     font-size: var(--fs-micro);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border-radius: 10px;
+    border-radius: 6px;
     text-align: center;
     padding: 16px;
   }
@@ -462,9 +462,8 @@
     min-width: 0;
     min-height: 0;
     background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(157, 78, 221, 0.07) 100%);
-    border: 1px solid rgba(255, 122, 0, 0.22);
-    border-radius: 10px;
-    overflow: hidden;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
     color: var(--text-faint);
     font-size: var(--fs-micro);
     letter-spacing: 0.05em;
@@ -514,91 +513,17 @@
     height: 100%;
   }
 
-  /* Strict 16:9 frame per column width (no max-height — avoids ratio skew). */
   .slide-tech-sync .stack-sm .wire-img.wire-lg {
-    margin-top: clamp(8px, 1.2vh, 14px);
-    flex: 0 0 auto;
+    margin-top: 12px;
+    flex: 1 1 auto;
     min-height: 0;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-  }
-
-  .slide-tech-sync .slide-header {
-    margin-bottom: clamp(10px, 1.6vh, 22px);
-  }
-
-  .slide-tech-sync-lede {
-    font-size: var(--fs-caption);
-    color: var(--text-dim);
-    line-height: 1.45;
-    max-width: 52em;
-    margin: 0.45em 0 0;
-    font-weight: 500;
-  }
-
-  .tech-sync-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(8px, 1vh, 12px);
-    font-size: var(--fs-body);
-    line-height: 1.42;
-    color: var(--text);
-  }
-
-  .tech-sync-list li {
-    padding-left: 1.05em;
-    position: relative;
-  }
-
-  .tech-sync-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.55em;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--orange);
-    opacity: 0.85;
-  }
-
-  .slide-tech-sync-foot {
-    flex-shrink: 0;
-    font-size: var(--fs-micro);
-    color: var(--text-faint);
-    letter-spacing: 0.06em;
-    margin: clamp(10px, 1.4vh, 18px) 0 0;
-    padding-top: 4px;
-  }
-
-  .slide-tech-sync .section-label {
-    font-size: clamp(20px, 2.45vmin, 30px);
-    letter-spacing: 0.03em;
-    text-transform: none;
-    font-weight: 700;
-    color: var(--orange);
-    padding-bottom: 11px;
-    margin-bottom: 14px;
+    aspect-ratio: 21 / 9;
   }
 
   /* ========== P1 COVER ========== */
   .cover {
     justify-content: center;
-  }
-  .cover .cover-logo {
-    display: block;
-    width: auto;
-    max-width: min(48vw, 420px);
-    max-height: clamp(44px, 8vmin, 88px);
-    height: auto;
-    object-fit: contain;
-    align-self: flex-start;
-    margin: 0 0 32px;
-    mix-blend-mode: screen;
   }
   .cover .brand-tag {
     font-size: var(--fs-micro);
@@ -735,32 +660,10 @@
   .slide-market-shift .slide-header {
     flex-shrink: 0;
     margin-bottom: clamp(8px, 1.4vh, 18px);
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    grid-template-areas:
-      "eyebrow . pagenum"
-      "title title title";
-    align-items: start;
-    column-gap: clamp(12px, 2vw, 28px);
-    row-gap: 0;
-  }
-  .slide-market-shift .slide-header .eyebrow {
-    grid-area: eyebrow;
-  }
-  .slide-market-shift .slide-header .page-num {
-    grid-area: pagenum;
-    justify-self: end;
   }
   .slide-market-shift .slide-header h2 {
-    grid-area: title;
-    margin: 0;
-    text-align: center;
-    color: var(--orange);
-    font-size: clamp(34px, 5.8vmin, 76px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.08;
-    padding-block: clamp(18px, 3vh, 44px);
+    font-size: clamp(20px, 3.1vmin, 40px);
+    line-height: 1.12;
   }
   .slide-market-shift .p3-compare {
     flex: 1 1 0;
@@ -821,8 +724,8 @@
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border-radius: 6px;
+    border: 1px dashed rgba(255, 107, 53, 0.42);
     background: var(--bg-elev);
   }
   /* Full column width; height from aspect ratio — fills market-visuals region */
@@ -844,25 +747,20 @@
   .slide-market-shift .market-visuals--grid figure.asset-slot {
     min-height: 0;
     min-width: 0;
-    height: 100%;
-    max-height: 100%;
-    overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    height: 100%;
   }
   .slide-market-shift .asset-slot-inner--thumb {
     width: 100%;
     aspect-ratio: 4 / 3;
     margin-inline: 0;
   }
-  /* 2×2: when row height is tight, shrink slots so 4:3 doesn’t overflow the card */
+  /* Fill the flex-limited grid area; fixed 4:3 intrinsic + min-content grid made colScrollH > colClientH (clipped bottom row). */
   .slide-market-shift .market-visuals--grid .asset-slot-inner--thumb {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    flex: 0 1 auto;
-    min-width: 0;
+    flex: 1 1 auto;
+    min-height: 0;
+    aspect-ratio: auto;
   }
   .slide-market-shift .market-visuals--single {
     justify-content: stretch;
@@ -888,6 +786,20 @@
     display: block;
     z-index: 0;
     border-radius: inherit;
+  }
+  .slide-market-shift .asset-slot-ratio {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    z-index: 2;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: clamp(9px, 1vmin, 11px);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(0, 0, 0, 0.42);
+    pointer-events: none;
   }
   .slide-market-shift .asset-slot-note {
     position: absolute;
@@ -925,6 +837,19 @@
     line-clamp: 2;
     overflow: hidden;
   }
+  .slide-market-shift .closing-line {
+    flex-shrink: 0;
+    margin-top: clamp(6px, 1vh, 14px);
+    padding-top: clamp(4px, 0.6vh, 8px);
+    padding-bottom: 0;
+    text-align: center;
+    font-size: clamp(12px, 1.45vmin, 17px);
+    font-weight: 600;
+    color: var(--orange);
+    letter-spacing: 0.06em;
+    border-top: 1px solid var(--border);
+  }
+
   /* ========== P4 Validations ========== */
   .v-card {
     background: var(--bg-card);
@@ -1039,8 +964,8 @@
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border-radius: 8px;
+    border: 1px dashed rgba(255, 107, 53, 0.42);
     background: var(--bg-elev);
     width: 100%;
     aspect-ratio: 3 / 4;
@@ -1054,9 +979,24 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     display: block;
     z-index: 0;
     border-radius: inherit;
+  }
+  .slide-three-val .asset-slot-ratio {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    z-index: 2;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: clamp(9px, 1vmin, 11px);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(0, 0, 0, 0.42);
+    pointer-events: none;
   }
   .slide-three-val .asset-slot-note {
     position: absolute;
@@ -1116,7 +1056,7 @@
     border-bottom: 1px solid var(--border);
     flex-shrink: 0;
     /* Shared band height so dividers line up across columns */
-    min-height: clamp(72px, 9vh, 112px);
+    min-height: clamp(80px, 10vh, 124px);
     align-content: center;
   }
   .slide-three-val .v-card .stat-line {
@@ -1132,7 +1072,7 @@
   }
   .slide-three-val .v-card .stat-line .sv {
     /* Headline metrics: clamp keeps long Chinese lines from dominating the card */
-    font-size: clamp(17px, 2.35vmin, 30px);
+    font-size: clamp(21px, 2.95vmin, 38px);
     font-weight: 900;
     color: var(--orange);
     line-height: 1.12;
@@ -1605,22 +1545,27 @@
   }
   .budget-donut-wrap {
     position: relative;
-    width: min(58vmin, 540px);
+    width: min(44vmin, 400px);
     max-width: 100%;
     aspect-ratio: 1;
   }
   .budget-donut {
     width: 100%;
     height: 100%;
-    display: block;
-    overflow: visible;
     border-radius: 50%;
-    filter: drop-shadow(0 18px 40px rgba(26, 35, 52, 0.08));
+    background: conic-gradient(
+      var(--orange) 0% 50%,
+      var(--purple) 50% 70%,
+      var(--yellow) 70% 85%,
+      var(--teal) 85% 100%
+    );
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 18px 40px rgba(26, 35, 52, 0.08);
   }
   .budget-donut-inner {
     position: absolute;
-    inset: 11%;
-    pointer-events: none;
+    inset: 16%;
     border-radius: 50%;
     background: var(--bg-card);
     display: flex;
@@ -1661,12 +1606,13 @@
     display: grid;
     grid-template-columns: 10px minmax(0, 1fr) auto auto;
     gap: 12px 16px;
-    align-items: center;
+    align-items: flex-start;
   }
   .bl-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    margin-top: 0.42em;
     flex-shrink: 0;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
   }
@@ -1775,20 +1721,12 @@
     min-height: 1px;
   }
   .slide-ua .ua-phase-title {
-    font-size: clamp(28px, 3vmin, 39px);
+    font-size: clamp(19px, 2vmin, 26px);
     font-weight: 700;
     color: var(--text);
-    line-height: 1.25;
-    margin: 0 0 clamp(8px, 1vh, 15px);
+    line-height: 1.28;
+    margin: 0 0 clamp(5px, 0.65vh, 10px);
     letter-spacing: -0.02em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: clamp(2px, 0.35vh, 6px);
-  }
-  .slide-ua .ua-phase-money {
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.02em;
   }
   .slide-ua .ua-phase-desc {
     font-size: clamp(16px, 1.58vmin, 20px);
@@ -1853,7 +1791,7 @@
   }
   @media (max-width: 900px) {
     .slide-ua .ua-phase-title {
-      font-size: clamp(25px, 2.6vmin, 34px);
+      font-size: clamp(17px, 1.75vmin, 23px);
     }
     .slide-ua .ua-phase-desc {
       font-size: clamp(14px, 1.38vmin, 18px);
@@ -1864,7 +1802,7 @@
   .event-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1874,9 +1812,7 @@
     aspect-ratio: 3 / 2;
     flex-shrink: 0;
     box-sizing: border-box;
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(255, 122, 0, 0.22);
+    border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1960,11 +1896,11 @@
   }
   .slide-esports-lede {
     text-align: center;
-    font-size: clamp(17px, 2.05vmin, 26px);
+    font-size: clamp(13px, 1.45vmin, 18px);
     line-height: 1.62;
     color: var(--text-dim);
     max-width: 76ch;
-    margin: clamp(22px, 3.4vh, 52px) auto 0;
+    margin: 0 auto;
     flex-shrink: 0;
   }
   .slide-esports-tri {
@@ -1982,14 +1918,15 @@
     gap: clamp(10px, 1.15vh, 14px);
     min-width: 0;
   }
+  .slide-esports-col .slide-strategic-subhead {
+    margin-bottom: 0;
+    font-size: clamp(15px, 1.65vmin, 21px);
+  }
   .slide-esports-col .slide-strategic-p {
     margin-bottom: 0;
   }
-  .slide-esports .slide-esports-col .slide-strategic-img-slot {
-    margin-bottom: clamp(14px, 2vh, 28px);
-  }
   .slide-esports .slide-strategic-img-slot.slide-esports-img-slot--sharp {
-    border-radius: 10px;
+    border-radius: 3px;
   }
 
   /* ========== P21 Compliance ========== */
@@ -2006,34 +1943,32 @@
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: clamp(18px, 2.2vh, 26px) clamp(20px, 2.2vw, 28px);
+    padding: 20px 24px;
     display: flex;
     flex-direction: column;
-    gap: clamp(10px, 1.1vh, 14px);
+    gap: 10px;
   }
   .comp-icon {
-    font-size: var(--fs-lead);
-    line-height: 1;
+    font-size: var(--fs-h3);
     color: var(--orange);
     font-weight: 900;
   }
   .comp-title {
-    font-size: var(--fs-h3);
+    font-size: var(--fs-body);
     font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.18;
+    letter-spacing: -0.005em;
   }
   .comp-list {
-    font-size: var(--fs-body);
+    font-size: var(--fs-micro);
     color: var(--text-dim);
-    line-height: 1.58;
+    line-height: 1.55;
   }
   .comp-list li {
     list-style: none;
-    padding-left: 14px;
+    padding-left: 12px;
     position: relative;
-    font-size: var(--fs-body);
-    padding: clamp(4px, 0.45vh, 7px) 0 clamp(4px, 0.45vh, 7px) 14px;
+    font-size: var(--fs-micro);
+    padding: 3px 0 3px 12px;
   }
   .comp-list li::before {
     content: '›';
@@ -2244,51 +2179,6 @@
     background: rgba(255,255,255,0.72);
   }
 
-  /* Chapter / transition title — same hero gradient as cover */
-  .slide.slide-transition-hero {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-    background:
-      radial-gradient(circle at 82% 18%, rgba(255, 186, 66, 0.22) 0%, rgba(255, 186, 66, 0.22) 26%, transparent 27%),
-      radial-gradient(circle at 66% 72%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.09) 25%, transparent 26%),
-      radial-gradient(circle at 102% 10%, rgba(255, 114, 0, 0.2) 0%, rgba(255, 114, 0, 0.2) 25%, transparent 26%),
-      linear-gradient(135deg, #ff7a00 0%, #ff8d00 58%, #ffb326 100%);
-  }
-  .slide.slide-transition-hero .transition-hero-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(20px, 2.6vmin, 36px);
-    padding: 0 6vw;
-    max-width: min(92vw, 1200px);
-  }
-  .slide.slide-transition-hero .transition-hero-rule {
-    width: min(140px, 22vw);
-    height: 3px;
-    background: rgba(255, 255, 255, 0.88);
-    border-radius: 2px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
-  }
-  .slide.slide-transition-hero .transition-hero-title {
-    margin: 0;
-    font-size: clamp(40px, 6.2vmin, 92px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.12;
-    color: #ffffff;
-    text-shadow: 0 2px 32px rgba(0, 0, 0, 0.14);
-  }
-  .slide.slide-transition-hero .page-num {
-    position: absolute;
-    bottom: 6vh;
-    right: 8vw;
-    background: rgba(255, 255, 255, 0.14);
-    border-color: rgba(255, 255, 255, 0.38);
-    color: rgba(255, 255, 255, 0.92);
-  }
-
   /* Closing invite — same hero gradient as cover (slide 1); overrides default .slide white fill */
   .slide.slide-closing-cn {
     justify-content: center;
@@ -2474,39 +2364,14 @@
     margin-top: 0;
     gap: clamp(10px, 2.2vw, 24px);
     align-items: stretch;
-    grid-template-rows: minmax(0, 1fr);
   }
 
   .slide.proof-sausage .stack-lg.proof-sausage-copy-col {
     gap: clamp(14px, 1.8vh, 26px);
     min-width: 0;
     min-height: 0;
-    height: 100%;
     padding-right: clamp(0px, 0.5vw, 8px);
     box-sizing: border-box;
-  }
-
-  .slide.proof-sausage .proof-sausage-copy-gameplay {
-    position: relative;
-    margin: 0;
-    flex: 1 1 0;
-    min-height: clamp(120px, 18vmin, 240px);
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 122, 0, 0.22);
-    box-sizing: border-box;
-    align-self: stretch;
-    background: rgba(26, 35, 52, 0.06);
-  }
-
-  .slide.proof-sausage .proof-sausage-copy-gameplay img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
   }
 
   .slide.proof-sausage .stack-sm {
@@ -2578,8 +2443,8 @@
     margin-inline: 0;
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border-radius: 22px;
+    border: 2px dashed rgba(255, 122, 0, 0.38);
     background: var(--bg-elev);
     aspect-ratio: 16 / 9;
     min-height: clamp(140px, 24vmin, 420px);
@@ -2594,8 +2459,8 @@
     margin-inline: 0;
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border-radius: 14px;
+    border: 1px dashed rgba(255, 122, 0, 0.35);
     background: var(--bg-elev);
     aspect-ratio: 1 / 1;
   }
@@ -2610,6 +2475,36 @@
     display: block;
     z-index: 0;
     border-radius: inherit;
+  }
+
+  .proof-sausage .proof-sausage-hero-inner .asset-slot-ratio {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 2;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: clamp(9px, 1vmin, 11px);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+  }
+
+  .proof-sausage .proof-sausage-collab-inner .asset-slot-ratio {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    z-index: 2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: clamp(8px, 0.85vmin, 10px);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(0, 0, 0, 0.42);
+    pointer-events: none;
   }
 
   .proof-sausage .asset-slot-note {
@@ -2676,36 +2571,12 @@
     letter-spacing: -0.02em;
   }
 
-  /* Product DNA — Sausage Man logo (tight crop, no slot frame) */
-  .proof-sausage .proof-sausage-logo-wrap {
-    margin: clamp(4px, 0.8vh, 12px) 0 clamp(14px, 2vh, 28px);
-    padding: 0;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    max-width: 100%;
-  }
-
-  .proof-sausage .proof-sausage-logo-img {
-    display: block;
-    width: min(100%, 280px);
-    height: auto;
-    max-height: clamp(56px, 11vh, 112px);
-    object-fit: contain;
-    object-position: left center;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    background: transparent;
-  }
-
   /* Product DNA — top headline metrics (8 yrs · 300M+ DL · 27M MAU) */
   .proof-sausage .proof-sausage-dna-kpi-row {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(6px, 1vmin, 12px);
     width: 100%;
-    margin-top: clamp(4px, 0.6vh, 10px);
     margin-bottom: clamp(8px, 1.2vh, 16px);
   }
 
@@ -2994,6 +2865,10 @@
     }
   }
 
+  .slide-xd-phil-tap {
+    background: linear-gradient(90deg, rgba(40,199,194,0.14) 0%, rgba(40,199,194,0.14) 34%, #ffffff 34%, #f8fbfc 100%);
+  }
+
   /* Let flex column children (e.g. .p4-layout) shrink within the fixed-height slide */
   .slide.slide-xd-phil-tap {
     min-height: 0;
@@ -3022,95 +2897,125 @@
 
   .slide-xd-phil-tap .p4-layout {
     display: grid;
-    /* Row1 = band for main row (vertical center) · row2 = exclusives */
-    grid-template-rows: minmax(0, 2.2fr) auto;
-    gap: clamp(14px, 2.4vh, 28px);
+    /* Left: phone screenshot anchor · Right: content stack (top 2/3 + exclusives 1/3) */
+    grid-template-columns: minmax(0, 0.34fr) minmax(0, 1fr);
+    gap: clamp(10px, 1.2vw, 18px);
     flex: 1;
     min-height: 0;
     min-width: 0;
     width: 100%;
-    max-width: 100%;
-    align-content: stretch;
-    justify-items: stretch;
+    align-items: stretch;
   }
 
-  .slide-xd-phil-tap .p4-main-row {
-    display: grid;
-    /* Tap logo 20% · values 40% · KPI 40% */
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 2fr);
-    gap: clamp(8px, 1.1vw, 18px);
-    align-items: center;
+  /* Right-side vertical stack: values card → metrics row → exclusives */
+  .slide-xd-phil-tap .p4-content-stack {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(7px, 0.9vh, 12px);
     min-height: 0;
     min-width: 0;
-    width: 100%;
-    height: auto;
-    align-self: center;
   }
 
-  .slide-xd-phil-tap .p4-main-row > * {
+  /* Top portion (2/3): values table | 2×2 KPI grid */
+  .slide-xd-phil-tap .p4-top-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: clamp(8px, 1vw, 14px);
+    align-items: stretch;
+    min-height: 0;
     min-width: 0;
+    flex: 2 1 0;
+  }
+
+  /* 2×2 KPI grid */
+  .slide-xd-phil-tap .p4-kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: clamp(6px, 0.75vw, 10px);
+    min-height: 0;
+    min-width: 0;
+    align-items: stretch;
+    align-content: stretch;
+  }
+
+  /* All KPI cards inside the 2×2 grid */
+  .slide-xd-phil-tap .p4-kpi-grid .p4-kpi-card {
+    padding: clamp(8px, 1vh, 14px) 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+  }
+
+  .slide-xd-phil-tap .p4-kpi-grid .p4-kpi-card .big {
+    font-size: clamp(20px, 3vmin, 40px);
+    line-height: 1;
+  }
+
+  /* 0% accent card */
+  .slide-xd-phil-tap .p4-kpi-card--zero {
+    border-top: 3px solid #20bbb6;
+    background: linear-gradient(160deg, #f0fdfb 0%, #ffffff 100%);
+  }
+
+  .slide-xd-phil-tap .p4-kpi-card--zero .big {
+    color: #0d9488;
+    font-size: clamp(22px, 3.4vmin, 44px) !important;
+  }
+
+  .slide-xd-phil-tap .p4-kpi-card--zero .p4-zero-cap {
+    font-size: clamp(9px, 0.82vmin, 11px);
+    color: var(--text-dim);
+    margin: 3px 0 0;
+    line-height: 1.25;
+    text-align: center;
+    text-wrap: balance;
   }
 
   .slide-xd-phil-tap .p4-shot-column {
     container-type: size;
     display: flex;
-    align-items: stretch;
-    justify-content: stretch;
-    min-width: 0;
-    min-height: 0;
-    padding-inline: 2px;
-  }
-
-  .slide-xd-phil-tap .p4-logo-column {
-    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: clamp(8px, 1vh, 14px);
     min-width: 0;
     min-height: 0;
-    padding-inline: clamp(4px, 0.8vw, 14px);
   }
 
   .slide-xd-phil-tap .p4-taptap-logo {
-    width: 100%;
-    max-width: 100%;
+    width: clamp(80px, 78%, 180px);
     height: auto;
-    max-height: 100%;
-    object-fit: contain;
+    flex-shrink: 0;
     display: block;
   }
 
-  /* Portrait frame: fill shot column height (9:16) */
+  /* Portrait frame: fill remaining height after logo */
   .slide-xd-phil-tap .p4-shot-column .p4-frame-vertical {
-    flex: 1 1 auto;
-    align-self: stretch;
     width: 100%;
     max-width: 100%;
+    flex: 1 1 0;
     min-height: 0;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    align-self: center;
   }
 
   .slide-xd-phil-tap .p4-frame-vertical {
     position: relative;
     margin: 0;
-    flex-shrink: 1;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
-    aspect-ratio: 9 / 16;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border-radius: 18px;
+    border: 2px dashed rgba(20, 184, 166, 0.45);
     background:
       radial-gradient(circle at 50% 18%, rgba(20,184,166,0.12) 0%, transparent 42%),
       rgba(248, 252, 251, 0.96);
     overflow: hidden;
-  }
-
-  @supports (width: 1cqw) {
-    .slide-xd-phil-tap .p4-frame-vertical {
-      width: min(100cqw, 100cqh * 9 / 16);
-      height: min(100cqh, 100cqw * 16 / 9);
-      aspect-ratio: auto;
-    }
+    /* default fallback sizing */
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 9 / 16;
   }
 
   .slide-xd-phil-tap .p4-frame-note--vertical {
@@ -3148,46 +3053,23 @@
     overflow: auto;
   }
 
-  .slide-xd-phil-tap .p4-main-row .p4-zero-panel {
-    flex: 0 1 auto;
-    min-height: 0;
-    height: auto;
-    justify-content: center;
-    width: 100%;
-  }
+  /* p4-metrics-row overrides removed — replaced by p4-kpi-grid */
 
-  .slide-xd-phil-tap .p4-main-row .p4-zero-badge {
-    width: 100%;
+  .slide-xd-phil-tap .p4-zero-cap {
+    margin: 0;
+    padding-inline: 4px;
+    font-size: clamp(10px, 0.95vmin, 12px);
+    line-height: 1.32;
+    color: var(--text-dim);
     max-width: none;
-    padding: calc(6px * 1.5) 6px calc(7px * 1.5);
-  }
-
-  .slide-xd-phil-tap .p4-main-row .p4-zero-panel .p4-zero-value {
-    font-size: clamp(34px, 6vmin, 80px);
-    line-height: 1.05;
-  }
-
-  .slide-xd-phil-tap .p4-main-row .p4-zero-panel .p4-zero-sub {
-    font-size: var(--fs-micro);
-  }
-
-  .slide-xd-phil-tap .p4-main-row .p4-kpi-card .big {
-    font-size: clamp(26px, 4.8vmin, 52px);
-  }
-
-  .slide-xd-phil-tap .p4-main-row .p4-kpi-card {
-    padding: 8px 6px;
-  }
-
-  .slide-xd-phil-tap .p4-main-row .p4-kpi-row {
-    gap: clamp(4px, 0.6vw, 8px);
+    text-wrap: balance;
   }
 
   .slide-xd-phil-tap .p4-exclusives-block {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    height: auto;
+    flex: 1 1 0;   /* exactly 1/3 of content-stack height (top-row takes flex:2) */
     overflow: hidden;
     align-self: stretch;
     width: 100%;
@@ -3258,10 +3140,10 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-    align-items: start;
-    flex: 0 0 auto;
+    align-items: stretch;
+    flex: 1 1 auto;
     min-height: 0;
-    align-content: start;
+    align-content: stretch;
   }
 
   .slide-xd-phil-tap .p4-exclusive-cell {
@@ -3285,13 +3167,12 @@
   .slide-xd-phil-tap .p4-frame-exclusive {
     position: relative;
     width: 100%;
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     min-height: 0;
-    height: auto;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: unset;
     max-height: none;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border-radius: 12px;
+    border: 2px dashed rgba(20, 184, 166, 0.45);
     background:
       radial-gradient(circle at 78% 10%, rgba(20,184,166,0.08) 0%, transparent 24%),
       rgba(248, 252, 251, 0.95);
@@ -3324,13 +3205,13 @@
     border: 1px solid rgba(20,184,166,0.24);
     border-radius: 22px;
     background: linear-gradient(180deg, #ffffff 0%, #f4fbfa 100%);
-    padding: calc(8px * 1.5) 8px;
+    padding: 8px 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: calc(8px * 1.5);
+    gap: 8px;
   }
 
   .slide-xd-phil-tap .p4-zero-badge {
@@ -3338,7 +3219,7 @@
     border-radius: 18px;
     border: 2px solid rgba(20,184,166,0.26);
     background: linear-gradient(180deg, #ffffff 0%, #eefaf8 100%);
-    padding: calc(8px * 1.5) 8px calc(9px * 1.5);
+    padding: 8px 8px 9px;
   }
 
   .slide-xd-phil-tap .p4-zero-value {
@@ -3348,7 +3229,15 @@
     letter-spacing: -0.05em;
     color: var(--teal);
     text-shadow: 0 8px 18px rgba(20,184,166,0.15);
-    text-wrap: balance;
+  }
+
+  .slide-xd-phil-tap .p4-zero-label {
+    margin-top: 3px;
+    font-size: var(--fs-micro);
+    color: #148a7f;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
   }
 
   .slide-xd-phil-tap .p4-zero-sub {
@@ -3362,8 +3251,9 @@
     text-shadow: 0 10px 26px rgba(40, 199, 194, 0.14);
   }
 
-  /* ========== Slide 7 · RO / Disney proof ==========
-     Rebuilt as: 3 showcase cards on top + full-width matrix panel below. */
+  /* ========== Slide 7 · RO / Disney proof (4-column) ==========
+     Fits one viewport: tight slide padding, flex main, grid row 1fr, KV/thumbs
+     scale inside remaining space (max-width/max-height + aspect-ratio). */
   .slide-ro-disney {
     padding: 4.2vh 6vw 4.8vh;
     box-sizing: border-box;
@@ -3387,7 +3277,7 @@
     display: flex;
     flex-direction: column;
     min-height: 0;
-    gap: clamp(10px, 1.2vh, 16px);
+    gap: 1vh;
   }
 
   .slide-ro-disney .ro-bridge {
@@ -3400,18 +3290,17 @@
     flex-shrink: 0;
   }
 
-  .slide-ro-disney .ro-showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: minmax(0, 1fr);
-    gap: clamp(10px, 1.1vw, 16px);
-    align-items: stretch;
+  .slide-ro-disney .ro-proof-grid {
+    flex: 1;
     min-height: 0;
-    flex: 1 1 0%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: clamp(8px, 1.1vw, 14px);
+    align-items: stretch;
   }
 
-  .slide-ro-disney .ro-showcase-grid > .card,
-  .slide-ro-disney .ro-matrix-panel {
+  .slide-ro-disney .ro-proof-grid > .card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -3421,46 +3310,27 @@
     overflow: hidden;
   }
 
-  /* Flex (not grid 1fr + auto): avoids uneven auto-column sizing vs image intrinsic meta on first columns. */
-  .slide-ro-disney .ro-showcase-grid > .card.ro-col {
-    padding: clamp(10px, 1.2vh, 18px) clamp(10px, 1.2vw, 18px);
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    gap: clamp(10px, 1.2vw, 18px);
-    min-height: 0;
-    height: 100%;
-    align-self: stretch;
-  }
-
-  .slide-ro-disney .ro-col-text {
-    flex: 1 1 0%;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow-wrap: break-word;
-    word-break: normal;
+  .slide-ro-disney .ro-proof-grid > .card.ro-col:not(.ro-col-gallery) {
+    padding: clamp(12px, 1.55vh, 22px) clamp(12px, 1.45vw, 22px);
   }
 
   .slide-ro-disney .ro-col-copy {
     font-size: clamp(11px, 1.28vmin, 15px);
     line-height: 1.42;
     color: var(--text-dim);
-    margin: 0;
+    margin: 0 0 clamp(8px, 1vh, 14px);
     flex-shrink: 0;
     text-align: left;
-    padding-bottom: 0;
+    padding-bottom: clamp(2px, 0.35vh, 8px);
   }
 
-  .slide-ro-disney .section-label {
+  .slide-ro-disney .ro-proof-grid .section-label {
     margin-bottom: clamp(4px, 0.5vh, 8px);
     padding-bottom: 4px;
     flex-shrink: 0;
   }
 
-  .slide-ro-disney .ro-showcase-grid > .card.ro-col .section-label,
-  .slide-ro-disney .ro-matrix-panel .ro-col-text .section-label {
+  .slide-ro-disney .ro-proof-grid > .card.ro-col:not(.ro-col-gallery) .section-label {
     font-size: clamp(15px, 1.95vmin, 24px);
     letter-spacing: 0.06em;
     line-height: 1.2;
@@ -3468,114 +3338,55 @@
     padding-top: clamp(2px, 0.35vh, 8px);
     padding-bottom: clamp(6px, 0.65vh, 12px);
     text-align: left;
-    text-transform: none;
   }
 
-  /* Portrait column: width = image only; poster flush to card right edge. */
   .slide-ro-disney .ro-kv-wrap {
-    flex: 0 0 auto;
+    flex: 1;
+    min-height: clamp(140px, 26vmin, 52vh);
     display: flex;
-    flex-direction: row;
     align-items: stretch;
-    justify-content: flex-end;
-    min-height: 0;
-    min-width: 0;
-    height: 100%;
+    justify-content: center;
+    width: 100%;
   }
 
-  /* Same layout as third column: never use .wire-lg here — it forces 16:9 + width 100%.
-     No wireframe shell — flush photos with rounded corners only. */
+  /* Fill column width; 2:3 portrait — do not use width/height auto (collapses placeholders) */
   .slide-ro-disney .wire-img.ro-visual-fill,
   .slide-ro-disney .wire-img.ro-brand-single {
-    box-sizing: border-box;
-    align-self: stretch;
-    flex: 0 0 auto;
-    width: auto;
-    max-width: none;
-    height: 100%;
-    max-height: 100%;
+    align-self: center;
+    width: 100%;
+    max-width: 100%;
     aspect-ratio: 2 / 3;
-    padding: 0;
+    max-height: 100%;
+    min-height: clamp(120px, 22vmin, 48vh);
+    flex: 0 1 auto;
+    padding: clamp(6px, 1vmin, 12px);
     overflow: hidden;
     font-size: clamp(9px, 0.95vmin, 11px);
-    background: transparent;
-    border: 1px solid rgba(255, 122, 0, 0.22);
-    border-radius: 10px;
+    box-sizing: border-box;
   }
 
-  .slide-ro-disney .wire-img.wire-lg.ro-visual-fill {
-    width: auto;
-    aspect-ratio: 2 / 3;
-  }
-
-  .slide-ro-disney .wire-img.ro-visual-fill img,
-  .slide-ro-disney .wire-img.ro-brand-single img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center center;
-    border-radius: 10px;
-    display: block;
-  }
-
-  .slide-ro-disney .ro-matrix-panel {
-    gap: 0;
-    flex: 0 0 auto;
-    padding: clamp(10px, 1.2vh, 18px) clamp(10px, 1.2vw, 18px);
-  }
-
-  /* Title = text-width only; thumbs row full bleed in panel → left edge aligns with showcase cards / 迪士尼列. */
-  .slide-ro-disney .ro-matrix-stack {
+  .slide-ro-disney .ro-col-gallery {
+    min-height: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: clamp(8px, 1vh, 12px);
-    width: 100%;
-    min-width: 0;
-  }
-
-  .slide-ro-disney .ro-matrix-head-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: clamp(10px, 2vw, 24px);
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .slide-ro-disney .ro-matrix-head-row .ro-col-text {
-    flex: 0 1 auto;
-    width: max-content;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .slide-ro-disney .ro-matrix-copy {
-    margin: 0;
-    color: var(--text-dim);
-    font-size: clamp(11px, 1.1vmin, 14px);
-    line-height: 1.35;
-    text-align: right;
-    flex: 1 1 12rem;
-    min-width: min(100%, 12rem);
   }
 
   .slide-ro-disney .ro-collab-grid-dense {
-    flex: 0 0 auto;
-    min-height: 0;
+    flex: 1;
+    min-height: clamp(120px, 22vmin, 48vh);
     display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: clamp(4px, 0.5vw, 7px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: clamp(4px, 0.55vw, 8px);
     width: 100%;
-    max-width: 100%;
-    align-items: start;
+    align-items: stretch;
     justify-items: stretch;
-    align-content: start;
   }
 
   .slide-ro-disney .ro-collab-grid-dense .wire-img.ro-collab-thumb {
     width: 100%;
-    height: auto;
+    height: 100%;
     min-width: 0;
     min-height: 0;
     aspect-ratio: 1 / 1;
@@ -3583,17 +3394,8 @@
     max-height: none;
     box-sizing: border-box;
     font-size: clamp(8px, 0.85vmin, 11px);
-    padding: 0;
+    padding: clamp(4px, 0.6vmin, 8px);
     line-height: 1.15;
-    overflow: hidden;
-    background: transparent;
-    border: 1px solid rgba(255, 122, 0, 0.22);
-    border-radius: 10px;
-  }
-
-  .slide-ro-disney .ro-collab-grid-dense .wire-img.ro-collab-thumb img {
-    border-radius: 10px;
-    object-fit: cover;
   }
 
   .slide-xd-phil-tap .p4-frame-vertical > img:first-child,
@@ -3613,17 +3415,21 @@
     pointer-events: none;
   }
 
-  .slide-offline-events .event-card {
-    border-radius: 10px;
+  .slide-strategic-img-slot:has(> img) .slide-strategic-slot-ratio,
+  .launch-img-slot:has(> img) .slide-strategic-slot-ratio {
+    opacity: 0;
+    pointer-events: none;
   }
 
+  .slide-offline-events .event-card,
   .comp-card {
     border-radius: 24px;
   }
 
   /* =====================================================================
-     Slide 08 — 战略定位: English hero + 3 bullets → four images in one row
-     Captions: Game · Creator · Social · Culture
+     Slide 08 — 战略定位  B layout:
+     Left 45% → English hero + subhead + 3 bullets (机会/用户/定位)
+     Right 55% → 2×2 image grid, fills full right-column width, no cap
      ===================================================================== */
   .slide.slide-strategic {
     flex: 1;
@@ -3633,7 +3439,7 @@
     min-height: 0;
   }
   /* header slightly tighter so body area gets more room */
-  .slide.slide-strategic[data-slide="9"] .slide-header {
+  .slide.slide-strategic[data-slide="8"] .slide-header {
     margin-bottom: clamp(10px, 1.6vh, 22px);
   }
   .slide-strategic-main {
@@ -3657,9 +3463,9 @@
     flex-direction: column;
     gap: 0;
   }
-  /* English hero: headline scale above Chinese bullets */
+  /* English hero: left-aligned, matching previous scale */
   .slide-strategic-hero {
-    padding: 0 0 clamp(26px, 3.2vh, 52px);
+    padding: 0 0 clamp(14px, 1.8vh, 24px);
   }
   .slide-strategic-hero .strategic-hero-en {
     font-size: clamp(26px, 3.85vmin, 52px);
@@ -3677,24 +3483,13 @@
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
-  .slide-esports .slide-esports-col .slide-strategic-subhead {
-    margin-bottom: clamp(8px, 1.05vh, 14px);
-    font-size: clamp(19px, 2.35vmin, 30px);
-    font-weight: 800;
-    color: var(--orange);
-    letter-spacing: -0.02em;
-  }
   /* Bullets */
-  .slide-strategic-copy .slide-strategic-points,
-  .launch-split-copy .slide-strategic-points,
-  .creator-eco-copy .slide-strategic-points {
+  .slide-strategic-copy .slide-strategic-points {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  .slide-strategic-copy .slide-strategic-points li,
-  .launch-split-copy .slide-strategic-points li,
-  .creator-eco-copy .slide-strategic-points li {
+  .slide-strategic-copy .slide-strategic-points li {
     position: relative;
     font-size: var(--fs-body);
     line-height: 1.6;
@@ -3702,14 +3497,10 @@
     margin-bottom: clamp(14px, 1.8vh, 22px);
     padding-left: 1.3em;
   }
-  .slide-strategic-copy .slide-strategic-points li:last-child,
-  .launch-split-copy .slide-strategic-points li:last-child,
-  .creator-eco-copy .slide-strategic-points li:last-child {
+  .slide-strategic-copy .slide-strategic-points li:last-child {
     margin-bottom: 0;
   }
-  .slide-strategic-copy .slide-strategic-points li::before,
-  .launch-split-copy .slide-strategic-points li::before,
-  .creator-eco-copy .slide-strategic-points li::before {
+  .slide-strategic-copy .slide-strategic-points li::before {
     content: '·';
     position: absolute;
     left: 0;
@@ -3719,9 +3510,7 @@
     font-size: 1.4em;
     line-height: 1.15;
   }
-  .slide-strategic-copy .slide-strategic-points strong,
-  .launch-split-copy .slide-strategic-points strong,
-  .creator-eco-copy .slide-strategic-points strong {
+  .slide-strategic-copy .slide-strategic-points strong {
     color: var(--text);
     font-weight: 700;
   }
@@ -3731,7 +3520,7 @@
     min-height: 0;
     width: 100%;
   }
-  /* 2×2 default; slide 8 overrides to single row of four */
+  /* 2×2 grid — no max-width; fills whatever the right column gives */
   .slide-strategic-quad {
     width: 100%;
     display: grid;
@@ -3739,50 +3528,6 @@
     grid-template-rows: repeat(2, auto);
     gap: clamp(10px, 1.3vw, 18px);
     align-items: start;
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-split {
-    grid-template-columns: 1fr;
-    /* Top row fills space so copy can sit lower; bottom row = images (same footprint as before) */
-    grid-template-rows: 1fr auto;
-    align-items: stretch;
-    gap: clamp(14px, 2vh, 26px);
-    min-height: 0;
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: center;
-    min-height: 0;
-    padding-bottom: clamp(10px, 1.4vh, 20px);
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-hero {
-    width: 100%;
-    text-align: center;
-    padding-bottom: clamp(28px, 3.2vh, 52px);
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-hero .strategic-hero-en {
-    text-align: center;
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-copy .slide-strategic-points {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: min(52rem, 100%);
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-copy .slide-strategic-points li {
-    text-align: left;
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-quad {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: auto;
-    gap: clamp(8px, 1.2vw, 14px);
-  }
-  /* Breathing room below the image row (not flush to slide / nav) */
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-visual {
-    padding-bottom: clamp(56px, 14vh, 180px);
-    box-sizing: border-box;
   }
   .slide-strategic-frame {
     margin: 0;
@@ -3796,8 +3541,8 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     min-height: 0;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border-radius: 6px;
+    border: 1px dashed var(--border);
     background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(157, 78, 221, 0.07) 100%);
     box-sizing: border-box;
     position: relative;
@@ -3813,66 +3558,16 @@
     border-radius: inherit;
     z-index: 0;
   }
-  /* Slide 08 — English keyword pulse over each image (sequential loop) */
-  @keyframes strategic-tag-float {
-    0% {
-      opacity: 0;
-      transform: translateY(12px) scale(0.96);
-    }
-    7% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    20% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    30% {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.96);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(12px) scale(0.96);
-    }
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-tag-en {
+  .slide-strategic-slot-ratio {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+    bottom: clamp(4px, 0.5vh, 7px);
+    right: clamp(5px, 0.6vw, 8px);
+    z-index: 1;
+    font-size: clamp(9px, 0.82vmin, 11px);
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+    font-variant-numeric: tabular-nums;
     pointer-events: none;
-    font-size: clamp(39px, 6.3vmin, 81px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow:
-      0 2px 28px rgba(0, 0, 0, 0.55),
-      0 1px 3px rgba(0, 0, 0, 0.85);
-    opacity: 0;
-    animation: strategic-tag-float 5s ease-in-out infinite;
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-tag-en--d1 {
-    animation-delay: 0s;
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-tag-en--d2 {
-    animation-delay: 1.25s;
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-tag-en--d3 {
-    animation-delay: 2.5s;
-  }
-  .slide.slide-strategic[data-slide="9"] .slide-strategic-tag-en--d4 {
-    animation-delay: 3.75s;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .slide.slide-strategic[data-slide="9"] .slide-strategic-tag-en {
-      animation: none;
-      opacity: 0.88;
-      transform: none;
-    }
   }
   .slide-strategic-frame figcaption {
     font-size: var(--fs-caption);
@@ -3918,6 +3613,14 @@
     min-width: 0;
     overflow: auto;
   }
+  .launch-split-hero-title {
+    font-size: clamp(20px, 2.4vmin, 30px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 clamp(14px, 1.8vh, 22px);
+    color: var(--text);
+  }
   .launch-section-head {
     font-size: clamp(15px, 1.55vmin, 20px);
     font-weight: 700;
@@ -3925,21 +3628,6 @@
     margin: clamp(16px, 2vh, 24px) 0 clamp(8px, 1vh, 12px);
     letter-spacing: -0.02em;
     line-height: 1.3;
-  }
-  /* Slide 10: section titles larger + brand orange */
-  .slide-launch-mode .launch-section-head {
-    font-size: clamp(22px, 2.75vmin, 34px);
-    font-weight: 800;
-    color: var(--orange);
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-    margin: clamp(18px, 2.2vh, 28px) 0 clamp(10px, 1.2vh, 14px);
-  }
-  .slide-launch-mode .launch-section-head:first-of-type {
-    margin-top: 0;
-  }
-  .slide-launch-mode .launch-split-copy > h3.launch-section-head:nth-of-type(2) {
-    margin-top: clamp(28px, 3.5vh, 44px);
   }
   .launch-split-visual {
     min-width: 0;
@@ -3949,8 +3637,8 @@
     height: 100%;
   }
   .launch-img-slot {
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border-radius: 8px;
+    border: 1px dashed var(--border);
     background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(157, 78, 221, 0.07) 100%);
     box-sizing: border-box;
     position: relative;
@@ -3991,6 +3679,11 @@
     flex-shrink: 0;
     margin-bottom: clamp(10px, 1.8vh, 22px);
   }
+  .slide-creator-eco .slide-header h2 {
+    font-size: clamp(18px, 2.35vmin, 34px);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
   .creator-eco-split {
     flex: 1;
     min-height: 0;
@@ -4001,68 +3694,36 @@
   }
   .creator-eco-copy {
     min-width: 0;
-    min-height: 0;
     overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
-  /* P11 小节标题：与 P10 首发策略同款（大号 + 橙色） */
-  .slide-creator-eco .creator-eco-copy .launch-section-head {
-    font-size: clamp(22px, 2.75vmin, 34px);
-    font-weight: 800;
-    color: var(--orange);
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-    margin: clamp(18px, 2.2vh, 28px) 0 clamp(10px, 1.2vh, 14px);
+  .creator-eco-copy .launch-section-head {
+    margin-top: clamp(12px, 1.5vh, 18px);
   }
-  .slide-creator-eco .creator-eco-copy .launch-section-head:first-of-type {
+  .creator-eco-copy .launch-section-head:first-of-type {
     margin-top: 0;
-  }
-  .slide-creator-eco .creator-eco-copy > h3.launch-section-head:nth-of-type(2) {
-    margin-top: clamp(28px, 3.5vh, 44px);
-  }
-  /* breathing room below last bullet (游戏内玩法创作者激励 · 解决方案) */
-  .slide-creator-eco .creator-eco-copy ul.slide-strategic-points:last-of-type {
-    padding-bottom: clamp(18px, 2.4vh, 36px);
   }
   .creator-eco-visual {
     min-width: 0;
-    min-height: 0;
     display: flex;
-    flex-direction: column;
     align-items: stretch;
-    justify-content: flex-start;
-    overflow: hidden;
+    justify-content: center;
   }
-  /* 与 slide 10 一致：上全宽 16:9 · 下双列 16:9（纯文档顺序，不用 grid 跨区放置，避免叠层） */
-  .creator-eco-stack {
+  .creator-eco-collage {
+    position: relative;
     width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(12px, 1.2vw, 18px);
-  }
-  .creator-eco-row {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(12px, 1.2vw, 18px);
-    width: 100%;
-    min-width: 0;
+    align-self: stretch;
+    min-height: clamp(240px, 38vh, 440px);
   }
   .creator-eco-slot {
     margin: 0;
-    position: relative;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    position: absolute;
+    border-radius: 8px;
+    border: 1px dashed var(--border);
     background: linear-gradient(135deg, rgba(6, 255, 165, 0.07) 0%, rgba(157, 78, 221, 0.06) 100%);
     box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
     aspect-ratio: 16 / 9;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     display: flex;
@@ -4078,15 +3739,14 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    max-width: 100%;
     object-fit: cover;
-    object-position: center;
     display: block;
     border-radius: inherit;
-    z-index: 1;
+    z-index: 0;
   }
   .creator-eco-slot:has(> img) .creator-eco-slot-cap,
-  .creator-eco-slot:has(> img) .creator-eco-slot-hint {
+  .creator-eco-slot:has(> img) .creator-eco-slot-hint,
+  .creator-eco-slot:has(> img) .creator-eco-slot-ratio {
     opacity: 0;
     pointer-events: none;
   }
@@ -4101,17 +3761,38 @@
   .creator-eco-slot-hint {
     font-size: clamp(9px, 0.82vmin, 11px);
     color: var(--text-faint);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     text-align: center;
-    line-height: 1.35;
-    padding: 0 8px;
   }
-  .creator-eco-slot--hero {
-    flex-shrink: 0;
-    width: 100%;
+  .creator-eco-slot-ratio {
+    position: absolute;
+    bottom: clamp(4px, 0.55vh, 8px);
+    right: clamp(6px, 0.75vw, 10px);
+    font-size: clamp(9px, 0.85vmin, 11px);
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
   }
-  .creator-eco-row .creator-eco-slot {
-    width: 100%;
+  /* 顶右 · 中与下左叠压（位置/比例锁定，便于后期整图替换） */
+  .creator-eco-slot--1 {
+    top: 0;
+    right: 0;
+    width: 76%;
+    z-index: 1;
+  }
+  .creator-eco-slot--2 {
+    top: 34%;
+    right: 0;
+    width: 88%;
+    z-index: 3;
+  }
+  .creator-eco-slot--3 {
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    z-index: 2;
   }
 
   .road-phase {
@@ -4139,7 +3820,7 @@
 
   .slide-budget .budget-donut-inner .bdc-amt {
     color: var(--orange);
-    font-size: clamp(28px, 4.1vmin, 56px);
+    font-size: clamp(26px, 3.85vmin, 52px);
     letter-spacing: -0.04em;
   }
 
@@ -4169,87 +3850,6 @@
     line-height: 1.38;
   }
 
-  .slide-budget .budget-donut-svg .budget-seg {
-    cursor: pointer;
-    transform: translate(100px, 100px) scale(1) translate(-100px, -100px);
-    transition:
-      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-      filter 0.45s ease;
-  }
-  .slide-budget .budget-donut-svg .budget-seg path {
-    stroke: rgba(255, 255, 255, 0.16);
-    stroke-width: 1.25px;
-    paint-order: stroke fill;
-  }
-  .slide-budget .budget-split[data-budget-hover="adv"] .budget-seg--adv {
-    transform: translate(100px, 100px) scale(1.09) translate(-100px, -100px);
-    filter: drop-shadow(0 14px 32px rgba(255, 107, 53, 0.42));
-  }
-  .slide-budget .budget-split[data-budget-hover="brand"] .budget-seg--brand {
-    transform: translate(100px, 100px) scale(1.09) translate(-100px, -100px);
-    filter: drop-shadow(0 14px 32px rgba(157, 78, 221, 0.4));
-  }
-  .slide-budget .budget-split[data-budget-hover="esports"] .budget-seg--esports {
-    transform: translate(100px, 100px) scale(1.09) translate(-100px, -100px);
-    filter: drop-shadow(0 14px 32px rgba(255, 214, 10, 0.45));
-  }
-  .slide-budget .budget-split[data-budget-hover="ugc"] .budget-seg--ugc {
-    transform: translate(100px, 100px) scale(1.09) translate(-100px, -100px);
-    filter: drop-shadow(0 14px 32px rgba(20, 184, 166, 0.45));
-  }
-
-  .slide-budget .budget-legend {
-    gap: clamp(10px, 1.4vh, 16px);
-  }
-  .slide-budget .budget-legend .bl-row {
-    cursor: pointer;
-    border-radius: 14px;
-    padding: clamp(14px, 1.75vh, 22px) clamp(16px, 1.9vw, 24px);
-    transition:
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      background 0.38s ease,
-      box-shadow 0.38s ease;
-  }
-  .slide-budget .budget-split[data-budget-hover="adv"] .bl-row[data-budget-key="adv"] {
-    transform: scale(1.042);
-    transform-origin: left center;
-    background: rgba(255, 107, 53, 0.08);
-    box-shadow: 0 12px 40px rgba(26, 35, 52, 0.12);
-  }
-  .slide-budget .budget-split[data-budget-hover="brand"] .bl-row[data-budget-key="brand"] {
-    transform: scale(1.042);
-    transform-origin: left center;
-    background: rgba(157, 78, 221, 0.09);
-    box-shadow: 0 12px 40px rgba(26, 35, 52, 0.12);
-  }
-  .slide-budget .budget-split[data-budget-hover="esports"] .bl-row[data-budget-key="esports"] {
-    transform: scale(1.042);
-    transform-origin: left center;
-    background: rgba(255, 214, 10, 0.1);
-    box-shadow: 0 12px 40px rgba(26, 35, 52, 0.12);
-  }
-  .slide-budget .budget-split[data-budget-hover="ugc"] .bl-row[data-budget-key="ugc"] {
-    transform: scale(1.042);
-    transform-origin: left center;
-    background: rgba(20, 184, 166, 0.1);
-    box-shadow: 0 12px 40px rgba(26, 35, 52, 0.12);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .slide-budget .budget-donut-svg .budget-seg,
-    .slide-budget .budget-legend .bl-row {
-      transition: none !important;
-    }
-    .slide-budget .budget-split[data-budget-hover] .budget-seg {
-      transform: translate(100px, 100px) scale(1) translate(-100px, -100px) !important;
-      filter: none !important;
-    }
-    .slide-budget .budget-split[data-budget-hover] .bl-row[data-budget-key] {
-      transform: none !important;
-      box-shadow: none !important;
-    }
-  }
-
   .channel-box {
     border-radius: 20px;
   }
@@ -4272,15 +3872,15 @@
   }
 
   .slide-offline-events .event-card:nth-child(1) .event-img {
-    background-image: url('https://cazevfung.github.io/epic-deck/images/pictures%20new/proposal_event-3x2.png');
+    background-image: url('Resources/proposal_event.png');
   }
 
   .slide-offline-events .event-card:nth-child(2) .event-img {
-    background-image: url('https://cazevfung.github.io/epic-deck/images/company_p26-2592x1458-3x2.jpg');
+    background-image: url('Resources/company_p26.png');
   }
 
   .slide-offline-events .event-card:nth-child(3) .event-img {
-    background-image: url('https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%BF%83%E5%8A%A8%E5%B0%8F%E9%95%87%20Heartopia%20%E4%B8%BB%E8%A7%86%E8%A7%89-3x2.png');
+    background-image: url('https://static0.gamerantimages.com/wordpress/wp-content/uploads/wm/2026/01/heartopia-characters-with-game-logo-composite.jpg?w=1600&h=900&fit=crop');
   }
 
   .tour-quote {
@@ -4318,7 +3918,7 @@
 
   .placeholder-img {
     background: linear-gradient(180deg, #fff8f2 0%, #fdf3e8 100%);
-    border: 1px solid rgba(255, 122, 0, 0.22);
+    border: 1px dashed rgba(255,122,0,0.24);
     color: var(--text-faint);
   }
 
@@ -4326,10 +3926,6 @@
   @media (max-width: 960px) {
     .proof-sausage .proof-layout {
       grid-template-columns: 1fr !important;
-    }
-
-    .proof-sausage .proof-layout.proof-sausage-body {
-      grid-template-rows: none;
     }
 
     .slide.proof-sausage {
@@ -4357,13 +3953,6 @@
 
     .slide.proof-sausage .stack-lg.proof-sausage-copy-col {
       padding-right: 0;
-      height: auto;
-    }
-
-    .slide.proof-sausage .proof-sausage-copy-gameplay {
-      flex: 0 0 auto;
-      min-height: 0;
-      aspect-ratio: 21 / 9;
     }
 
     .proof-sausage .proof-sausage-dna-kpi-row {
@@ -4379,9 +3968,14 @@
       font-size: clamp(18px, 2.85vmin, 36px);
     }
 
-    .slide.slide-strategic[data-slide="9"] .slide-strategic-quad {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, auto);
+    .slide.slide-strategic[data-slide="8"] .slide-strategic-split {
+      grid-template-columns: 1fr;
+    }
+
+    .slide.slide-strategic[data-slide="8"] .slide-strategic-quad {
+      max-width: min(100%, 560px);
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -4405,12 +3999,6 @@
       print-color-adjust: exact;
     }
     .nav, .hint, .slide-toc-dock { display: none; }
-    /* Static keyword overlays on PDF (animations don’t run reliably in print) */
-    .slide.slide-strategic[data-slide="9"] .slide-strategic-tag-en {
-      animation: none !important;
-      opacity: 0.92 !important;
-      transform: none !important;
-    }
     .deck { width: auto; height: auto; }
     .slide {
       display: flex !important;
@@ -4480,6 +4068,18 @@
       font-size: 6.5pt;
       gap: 1px;
     }
+    .slide-market-shift .asset-slot-ratio {
+      font-size: 6.5pt;
+      top: 3px;
+      right: 4px;
+      padding: 2px 4px;
+    }
+    .slide-market-shift .closing-line {
+      margin-top: 4mm;
+      padding-top: 3px;
+      font-size: 10pt;
+    }
+
     .proof-sausage .proof-sausage-hero-inner {
       width: 100%;
       margin-inline: auto;
@@ -4507,14 +4107,6 @@
 
     .proof-sausage .proof-sausage-collab-label {
       font-size: 7pt;
-    }
-
-    .slide.proof-sausage .proof-sausage-copy-gameplay {
-      min-height: 42mm;
-    }
-
-    .proof-sausage .proof-sausage-copy-gameplay img {
-      max-height: none;
     }
 
     .proof-sausage .proof-stat-num {
@@ -4602,15 +4194,19 @@
 
 <div class="deck">
 
-  <!-- Slide map (structure + layout merge): 17 slides — … | 7 RO×Disney | 8 China Publishing Plan (transition) | 9 战略定位 | 10 Budget | … | 17 Closing CN -->
+  <!-- Slide map (structure + layout merge): 21 slides — 1 Cover | 2 Market shift | 3 Three validations | 4 XD+Tap+philosophy | 5 Sausage | 6 Torch+Heartopia | 7 RO×Disney | 8 Positioning | 9 Budget | 10 Launch | 11 Dual IP commercial | 12 Douluo | 13 Wuliuqi | 14 Concerts+brands | 15 Creator ecosystem $4.5M | 16 Esports | 17 UA timeline | 18 Compliance | 19 Tech | 20 Closing CN | 21 Ask -->
 
   <!-- ============================================================ -->
   <!-- 1 COVER -->
   <!-- ============================================================ -->
   <section class="slide cover active has-hero-art" data-slide="1">
-    <img class="cover-logo" src="images/2400.HK_BIG-0b4f771f.png" alt="XD" width="420" height="120" decoding="async" />
+    <div class="cover-logo-strip" aria-hidden="true">
+      <span class="logo-slot">Fortnite</span>
+      <span class="logo-div">×</span>
+      <span class="logo-slot">心动 XD</span>
+    </div>
     <div class="brand-tag">心动 × Epic Games · 2026</div>
-    <h1><span class="cover-en">Fortnite China · Publishing Proposal</span></h1>
+    <h1>Fortnite<span class="cover-subcn">国服</span><br><span class="cover-en">Fortnite China · Publishing Proposal</span></h1>
     <div class="meta">
       <span>Confidential</span>
       <span class="divider"></span>
@@ -4623,9 +4219,11 @@
   <!-- ============================================================ -->
   <section class="slide slide-market-shift" data-slide="2">
     <div class="slide-header">
-      <div class="eyebrow orange">Part 01 · Market timing</div>
-      <h2>Things changed.</h2>
-      <div class="page-num">02 / 17</div>
+      <div>
+        <div class="eyebrow orange">Part 01 · 市场时机</div>
+        <h2>核心转变：从写实主导到风格多元</h2>
+      </div>
+      <div class="page-num">02 / 16</div>
     </div>
 
     <div class="p3-compare">
@@ -4638,10 +4236,11 @@
           <!-- ASSET: slide02-frame01 · slot = full column width × 16:9 -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--hero">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/PUBG%20Mobile%20%E2%80%94%20%E5%86%99%E5%AE%9E%E5%86%9B%E4%BA%8B%E9%A3%8E%E6%A0%BC%E4%B8%BB%E8%A7%86%E8%A7%89%E5%8F%82%E7%85%A7-16x9.png" alt="PUBG Mobile — 写实军事风格主视觉参照" decoding="async" />
+              <img src="https://m.media-amazon.com/images/M/MV5BODQzNzJjY2QtY2Y2YS00OWJmLTlkZWMtMmNmMmE2NTg1MjQzXkEyXkFqcGc@._V1_.jpg" alt="PUBG Mobile — 写实军事风格主视觉参照" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">16:9</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">写实战术竞技参照（如 PUBG Mobile）</span>
-                <span class="asset-slot-hint">2018 写实战术竞技参照。</span>
+                <span class="asset-slot-hint">待替换：公开主视觉或截图；与 slot 同尺寸；写实审美对照组。</span>
               </div>
             </div>
           </figure>
@@ -4659,46 +4258,52 @@
           <!-- ASSET: slide02-frame02 · each cell = half column × 4:3 -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--thumb">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20%E5%AE%98%E6%96%B9%E8%B5%9B%E5%AD%A3%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="香肠派对 · 官方赛季宣传图" decoding="async" />
+              <img src="https://img2-tc.tapimg.com/moment/etag/Fvnid853iaByQywJMMbKoTzFngT5.jpeg/_tap_ugc.jpg" alt="香肠派对 · 官方赛季宣传图" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">4:3</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">香肠派对 · 主视觉</span>
-                <span class="asset-slot-hint">香肠派对主视觉。</span>
+                <span class="asset-slot-hint">待替换：官方 Key Art；铺满本框。</span>
               </div>
             </div>
           </figure>
           <!-- ASSET: slide02-frame03 · 绿洲启元（与 slide04 蛋仔相邻：编辑器 / UGC 心智） -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--thumb">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%92%8C%E5%B9%B3%E7%B2%BE%E8%8B%B1%20%C2%B7%20%E7%BB%BF%E6%B4%B2%E5%90%AF%E5%85%83%E7%BC%96%E8%BE%91%E5%99%A8%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="和平精英 · 绿洲启元编辑器宣传图" decoding="async" />
+              <img src="https://wegame.gtimg.com/g.2001776-r.d86a1/info/a56385a3be82b66cfe403af8a0bc1932.jpg" alt="和平精英 · 绿洲启元编辑器宣传图" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">4:3</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">和平精英 · 绿洲启元</span>
-                <span class="asset-slot-hint">绿洲启元编辑器。</span>
+                <span class="asset-slot-hint">待替换：绿洲启元编辑器 / UGC 地图界面截图；铺满本框。</span>
               </div>
             </div>
           </figure>
           <!-- ASSET: slide02-frame04 -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--thumb">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E8%9B%8B%E4%BB%94%E6%B4%BE%E5%AF%B9%20%C2%B7%20UGC%20%E5%AE%98%E6%96%B9%E5%AE%A3%E4%BC%A0%E5%9B%BE-4x3.png" alt="蛋仔派对 · UGC 官方宣传图" decoding="async" />
+              <img src="https://nie.res.netease.com/r/pic/20230324/a7a1614c-cfc1-4066-bcd8-7373f3092ade.jpg" alt="蛋仔派对 · UGC 官方宣传图" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">4:3</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">蛋仔派对</span>
-                <span class="asset-slot-hint">蛋仔派对 UGC。</span>
+                <span class="asset-slot-hint">待替换：UGC / Party 心智截图；铺满本框。</span>
               </div>
             </div>
           </figure>
           <!-- ASSET: slide02-frame05 -->
           <figure class="asset-slot">
             <div class="asset-slot-inner asset-slot-inner--thumb">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/VALORANT%20%C2%B7%20%E5%AE%98%E6%96%B9%20Key%20Art-4x3.png" alt="VALORANT · 官方 Key Art" decoding="async" />
+              <img src="https://cdnb.artstation.com/p/assets/images/images/071/028/701/large/envar-studio-valorant-final.jpg?1704288950" alt="VALORANT · 官方 Key Art" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">4:3</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">无畏契约 · 国服主视觉</span>
-                <span class="asset-slot-hint">无畏契约国服。</span>
+                <span class="asset-slot-hint">待替换：VALORANT CN 素材；铺满本框。</span>
               </div>
             </div>
           </figure>
         </div>
       </div>
     </div>
+
+    <p class="closing-line">今天，这一前提已根本改变。</p>
 
   </section>
 
@@ -4711,15 +4316,15 @@
         <div class="eyebrow orange">Part 01 · Why Now</div>
         <h2>市场条件已成熟 · 三个验证</h2>
       </div>
-      <div class="page-num">03 / 17</div>
+      <div class="page-num">03 / 16</div>
     </div>
 
     <div class="grid-3">
 
       <div class="v-card">
         <div class="head">
-          <div class="name">香肠派对（Sausage Man）</div>
-          <span class="tag tag-dim">XD</span>
+          <div class="name">香肠派对</div>
+          <span class="tag tag-dim">XD · Sausage Man</span>
         </div>
         <div class="stats">
           <div class="stat-line"><span class="sv">8 年</span><span class="sl">运营</span></div>
@@ -4728,10 +4333,11 @@
         </div>
         <figure class="asset-slot">
           <div class="asset-slot-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20%E5%AE%98%E6%96%B9%E5%AE%A3%E4%BC%A0%E5%9B%BE-3x4.png" alt="香肠派对 · 官方宣传图" decoding="async" />
+            <img src="https://damaged-amber-lhfrrdi8yl.edgeone.app/sausage-man-1.png" alt="香肠派对 · 官方宣传图" decoding="async" />
+            <span class="asset-slot-ratio" aria-hidden="true">3:4</span>
             <div class="asset-slot-note">
               <span class="asset-slot-title">香肠派对 · 官方 Key Art / 游戏截图</span>
-              <span class="asset-slot-hint">验证① 非写实射击长线。</span>
+              <span class="asset-slot-hint">待替换：香肠派对卡通 BR 主视觉；铺满框体。</span>
             </div>
           </div>
         </figure>
@@ -4740,8 +4346,8 @@
 
       <div class="v-card">
         <div class="head">
-          <div class="name">蛋仔派对（UGC 生态）</div>
-          <span class="tag tag-dim">NetEase</span>
+          <div class="name">蛋仔派对 · UGC 生态</div>
+          <span class="tag tag-dim">NetEase · Party / UGC</span>
         </div>
         <div class="stats">
           <div class="stat-line"><span class="sv">50M+</span><span class="sl">创作者</span></div>
@@ -4750,10 +4356,11 @@
         </div>
         <figure class="asset-slot">
           <div class="asset-slot-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E8%9B%8B%E4%BB%94%E6%B4%BE%E5%AF%B9%20%C2%B7%20UGC%20%EF%BC%8F%20Party%20%E6%B0%9B%E5%9B%B4-3x4.png" alt="蛋仔派对 · UGC / Party 氛围" decoding="async" />
+            <img src="https://curved-black-75do58jzly.edgeone.app/image_20260418173633.png" alt="蛋仔派对 · UGC / Party 氛围" decoding="async" />
+            <span class="asset-slot-ratio" aria-hidden="true">3:4</span>
             <div class="asset-slot-note">
               <span class="asset-slot-title">蛋仔派对 · UGC / 编辑器心智</span>
-              <span class="asset-slot-hint">验证② UGC 生态。</span>
+              <span class="asset-slot-hint">待替换：蛋仔派对官方 Key Art 或 UGC 地图界面截图；铺满框体。</span>
             </div>
           </div>
         </figure>
@@ -4762,8 +4369,8 @@
 
       <div class="v-card">
         <div class="head">
-          <div class="name">心动小镇（Heartopia）</div>
-          <span class="tag tag-dim">XD</span>
+          <div class="name">心动小镇</div>
+          <span class="tag tag-dim">XD · Heartopia</span>
         </div>
         <div class="stats">
           <div class="stat-line"><span class="sv">80M+</span><span class="sl">国服下载</span></div>
@@ -4772,14 +4379,15 @@
         </div>
         <figure class="asset-slot">
           <div class="asset-slot-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%BF%83%E5%8A%A8%E5%B0%8F%E9%95%87%20Heartopia%20%C2%B7%20%E5%AE%98%E6%96%B9%E4%B8%BB%E8%A7%86%E8%A7%89-3x4.png" alt="心动小镇 Heartopia · 官方主视觉" decoding="async" />
+            <img src="https://interested-magenta-nmhcfqmeyk.edgeone.app/image_20260418173052.png" alt="心动小镇 Heartopia · 官方主视觉" decoding="async" />
+            <span class="asset-slot-ratio" aria-hidden="true">3:4</span>
             <div class="asset-slot-note">
               <span class="asset-slot-title">心动小镇 · 官方主视觉 / 建造社交场景</span>
-              <span class="asset-slot-hint">验证③ 建造与社交。</span>
+              <span class="asset-slot-hint">待替换：心动小镇官方截图；铺满框体。</span>
             </div>
           </div>
         </figure>
-        <div class="concl">建造与社交大盘可被年轻用户接受 — Zero Build 与社交循环可对标。</div>
+        <div class="concl">建造与社交大盘可被 younger demos 接受 — Zero Build &amp; social loops 可对标。</div>
       </div>
 
     </div>
@@ -4792,88 +4400,99 @@
   <section class="slide slide-xd-phil-tap p5" data-slide="4">
     <div class="slide-header">
       <div>
-        <div class="eyebrow orange">Part 01 · Core capabilities</div>
+        <div class="eyebrow orange">Part 01 · 心动核心能力</div>
         <h2>理念同盟 · TapTap 规模 · 为什么是我们</h2>
       </div>
-      <div class="page-num">04 / 17</div>
+      <div class="page-num">04 / 16</div>
     </div>
 
     <div class="p4-layout">
-      <div class="p4-main-row">
-        <div class="p4-logo-column">
-          <img
-            class="p4-taptap-logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/c/c5/TapTap_Logo.png"
-            alt="TapTap"
-            width="512"
-            height="155"
-            decoding="async"
-          />
-        </div>
 
-        <div class="card p4-values-card">
-          <div class="section-label" style="margin-bottom:8px;">价值观同盟</div>
-          <div class="stack-sm" style="font-size:var(--fs-caption);">
-            <div class="row-item"><span class="k">心动 / TapTap</span><span class="v">0% 分成 · 玩家与开发者优先</span></div>
-            <div class="row-item"><span class="k">Epic</span><span class="v">反平台税立场 · 长线产品 · UEFN 创作者分成</span></div>
-            <div class="row-item"><span class="k">协同价值</span><span class="v">渠道不掠夺开发者收益 · 更健康 LTV/CAC</span></div>
-            <div class="row-item"><span class="k">业务能力</span><span class="v">自研 30+ · 全球发行 · TapTap 游戏社区</span></div>
+      <!-- LEFT: TapTap logo + app screenshot — full-height visual anchor -->
+      <div class="p4-shot-column">
+        <img class="p4-taptap-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c5/TapTap_Logo.png" alt="TapTap" />
+        <!-- ASSET: slide04-vertical-screenshot · 9:16 TapTap / store UI -->
+        <figure class="p4-frame-vertical" aria-label="TapTap App 竖屏界面截图">
+          <img src="https://syimg.3dmgame.com/uploadimg/img/2024/1209/1733710620320342.png" alt="TapTap App 商店 / 发现页界面" decoding="async" />
+          <div class="p4-frame-note p4-frame-note--vertical">
+            <span class="p4-frame-title">Vertical UI</span>
+            <span class="p4-frame-hint">待替换：竖屏商店 / 社区截图；铺满本框（9:16）。</span>
           </div>
-        </div>
+        </figure>
+      </div>
 
-        <div class="p4-right-stack">
-          <div class="p4-kpi-row">
+      <!-- RIGHT: content stack — top 2/3 (values | 2×2 KPIs) + bottom 1/3 (exclusives) -->
+      <div class="p4-content-stack">
+
+        <!-- Top row: values table LEFT · 2×2 KPI grid RIGHT -->
+        <div class="p4-top-row">
+
+          <!-- Values alignment table -->
+          <div class="card p4-values-card">
+            <div class="section-label" style="margin-bottom:8px;">价值观同盟（Core Alignment）</div>
+            <div class="stack-sm" style="font-size:var(--fs-caption);">
+              <div class="row-item"><span class="k">心动 / TapTap</span><span class="v">0% 分成 · 玩家与开发者优先</span></div>
+              <div class="row-item"><span class="k">Epic</span><span class="v">反平台税立场 · 长线产品 · UEFN 创作者分成</span></div>
+              <div class="row-item"><span class="k">协同价值</span><span class="v">渠道不掠夺开发者收益 · 更健康 LTV/CAC</span></div>
+              <div class="row-item"><span class="k">业务能力</span><span class="v">自研 30+ · 全球发行 · TapTap 游戏社区</span></div>
+            </div>
+          </div>
+
+          <!-- 2×2 KPI grid: 2012 | 50M+ / 800M+ | 0% -->
+          <div class="p4-kpi-grid">
             <div class="card p4-kpi-card"><div class="big">2012</div><div class="small">Founded</div></div>
             <div class="card p4-kpi-card"><div class="big">50M+</div><div class="small">MAU</div></div>
             <div class="card p4-kpi-card"><div class="big">800M+</div><div class="small">Annual downloads</div></div>
+            <div class="card p4-kpi-card p4-kpi-card--zero">
+              <div class="big">0%</div>
+              <div class="small">Platform Fee</div>
+              <p class="p4-zero-cap">since day one · UEFN · creator-first</p>
+            </div>
           </div>
-          <div class="p4-zero-panel">
-            <div class="p4-zero-badge">
-              <div class="p4-zero-value">0% Platform Fee</div>
-              <div class="p4-zero-sub">since day one</div>
+
+        </div>
+
+        <!-- Bottom 1/3: exclusive games proof -->
+        <div class="p4-exclusives-block p4-tap-stats p4-tap-stats--surface">
+          <div class="p4-exclusive-head">独家游戏</div>
+          <p class="p4-exclusive-sub">代表性独占 · Key Art 示意</p>
+          <div class="p4-exclusive-grid">
+            <div class="p4-exclusive-cell">
+              <span class="p4-exclusive-caption">泰拉瑞亚</span>
+              <!-- ASSET: slide04-exclusive01 · Key art 1:1 -->
+              <figure class="p4-frame-exclusive">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/capsule_616x353.jpg?t=1769844435" alt="Terraria Steam 封面" decoding="async" />
+                <div class="p4-frame-note">
+                  <span class="p4-frame-title">Key Art</span>
+                  <span class="p4-frame-hint">待替换：官方主视觉或封面图；铺满本框（方形）。</span>
+                </div>
+              </figure>
+            </div>
+            <div class="p4-exclusive-cell">
+              <span class="p4-exclusive-caption">潜水员戴夫</span>
+              <!-- ASSET: slide04-exclusive02 · Key art 1:1 -->
+              <figure class="p4-frame-exclusive">
+                <img src="https://wotpack.ru/wp-content/uploads/2023/07/word-image-265419-1.jpg" alt="潜水员戴夫 · 官方 Key Art" decoding="async" />
+                <div class="p4-frame-note">
+                  <span class="p4-frame-title">Key Art</span>
+                  <span class="p4-frame-hint">待替换：官方主视觉；TapTap 移动端独占可附小字。</span>
+                </div>
+              </figure>
+            </div>
+            <div class="p4-exclusive-cell">
+              <span class="p4-exclusive-caption">人类跌落梦境</span>
+              <!-- ASSET: slide04-exclusive03 · Key art 1:1 -->
+              <figure class="p4-frame-exclusive">
+                <img src="https://sttc.gamersgate.com/images/product/human-fall-flat/cover-616-943e83.jpg" alt="人类跌落梦境 · 封面" decoding="async" />
+                <div class="p4-frame-note">
+                  <span class="p4-frame-title">Key Art</span>
+                  <span class="p4-frame-hint">待替换：官方主视觉；独占矩阵代表。</span>
+                </div>
+              </figure>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="p4-exclusives-block p4-tap-stats p4-tap-stats--surface">
-        <div class="p4-exclusive-head">独家游戏</div>
-        <p class="p4-exclusive-sub">代表性独占 · 主视觉示意</p>
-        <div class="p4-exclusive-grid">
-          <div class="p4-exclusive-cell">
-            <span class="p4-exclusive-caption">泰拉瑞亚</span>
-            <!-- ASSET: slide04-exclusive01 · Key art 1:1 -->
-            <figure class="p4-frame-exclusive">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Terraria%20Steam%20%E5%B0%81%E9%9D%A2-3x2.png" alt="Terraria Steam 封面" decoding="async" />
-              <div class="p4-frame-note">
-                <span class="p4-frame-title">Key Art</span>
-                <span class="p4-frame-hint">泰拉瑞亚 · TapTap。</span>
-              </div>
-            </figure>
-          </div>
-          <div class="p4-exclusive-cell">
-            <span class="p4-exclusive-caption">潜水员戴夫</span>
-            <!-- ASSET: slide04-exclusive02 · Key art 1:1 -->
-            <figure class="p4-frame-exclusive">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E6%BD%9C%E6%B0%B4%E5%91%98%E6%88%B4%E5%A4%AB%20%C2%B7%20%E5%AE%98%E6%96%B9%20Key%20Art-3x2.png" alt="潜水员戴夫 · 官方 Key Art" decoding="async" />
-              <div class="p4-frame-note">
-                <span class="p4-frame-title">Key Art</span>
-                <span class="p4-frame-hint">潜水员戴夫 · TapTap。</span>
-              </div>
-            </figure>
-          </div>
-          <div class="p4-exclusive-cell">
-            <span class="p4-exclusive-caption">人类跌落梦境</span>
-            <!-- ASSET: slide04-exclusive03 · Key art 1:1 -->
-            <figure class="p4-frame-exclusive">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%BA%BA%E7%B1%BB%E8%B7%8C%E8%90%BD%E6%A2%A6%E5%A2%83%20%C2%B7%20%E5%B0%81%E9%9D%A2-3x2.png" alt="人类跌落梦境 · 封面" decoding="async" />
-              <div class="p4-frame-note">
-                <span class="p4-frame-title">Key Art</span>
-                <span class="p4-frame-hint">人类跌落梦境 · TapTap。</span>
-              </div>
-            </figure>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -4884,18 +4503,16 @@
   <section class="slide proof-sausage" data-slide="5">
     <div class="slide-header">
       <div>
-        <div class="eyebrow orange">Proof · Genre credentials</div>
+        <div class="eyebrow orange">Proof · 品类基因</div>
         <h2>香肠派对 · 最接近国服的 Fortnite 平行体</h2>
       </div>
-      <div class="page-num">05 / 17</div>
+      <div class="page-num">05 / 16</div>
     </div>
 
     <div class="proof-layout proof-sausage-body">
       <div class="stack-lg proof-sausage-copy-col">
         <div>
-          <figure class="proof-sausage-logo-wrap">
-            <img class="proof-sausage-logo-img" src="images/sausage-man-logo-cropped.png" width="450" height="203" alt="香肠派对 Sausage Man logo" decoding="async" loading="lazy">
-          </figure>
+          <div class="section-label">Product DNA</div>
           <div class="proof-sausage-dna-kpi-row" role="group" aria-label="香肠派对核心规模指标">
             <div class="proof-sausage-dna-kpi-card">
               <span class="proof-sausage-dna-kpi-val">8</span>
@@ -4911,28 +4528,32 @@
               <span class="proof-sausage-dna-kpi-lab">peak MAU</span>
             </div>
           </div>
-        </div>
-        <div>
           <div class="stack-sm">
-            <div class="row-item"><span class="k">Social presence</span><span class="v"><span class="proof-stat-num">3.3M</span> Douyin · <span class="proof-stat-num">4.7M</span> Kuaishou · <span class="proof-stat-num">43M</span> TapTap</span></div>
-            <div class="row-item"><span class="k">Companion anime</span><span class="v"><span class="proof-stat-num">15</span> seasons · <span class="proof-stat-num">8.67B</span> views</span></div>
-            <div class="row-item"><span class="k">IP integrations</span><span class="v">Ultraman · Kamen Rider · Sanrio · Douluo Dalu · Assassin Wulinxiao</span></div>
-            <div class="row-item"><span class="k">Brand tie-ups</span><span class="v">KFC · Pizza Hut · Wanglaoji</span></div>
+            <div class="row-item"><span class="k">Scale</span><span class="v"><span class="proof-stat-num">5M</span> peak DAU</span></div>
+            <div class="row-item"><span class="k">Art style</span><span class="v">Non-realistic, cartoon-styled BR</span></div>
+            <div class="row-item"><span class="k">Architecture</span><span class="v">Multi-mode platform — not a single BR</span></div>
           </div>
         </div>
-        <figure class="proof-sausage-copy-gameplay" aria-label="香肠派对 游戏内画面">
-          <img src="https://gizmologi.id/wp-content/uploads/2021/07/Screenshot_2021-07-10-20-50-09-81_97a883999baa7fde27ed6ab203eeaafd.jpg" alt="香肠派对 — 战术竞技玩法游戏内截图" decoding="async" loading="lazy">
-        </figure>
+        <div>
+          <div class="section-label">Capabilities That Transfer to Fortnite</div>
+          <div class="stack-sm">
+            <div class="row-item"><span class="k">IP integrations</span><span class="v">Ultraman · Kamen Rider · Sanrio · Douluo Dalu · Assassin Wulinxiao</span></div>
+            <div class="row-item"><span class="k">Brand tie-ups</span><span class="v">KFC · Pizza Hut · Wanglaoji</span></div>
+            <div class="row-item"><span class="k">Companion anime</span><span class="v"><span class="proof-stat-num">15</span> seasons · <span class="proof-stat-num">8.67B</span> views</span></div>
+            <div class="row-item"><span class="k">Social presence</span><span class="v"><span class="proof-stat-num">3.3M</span> Douyin · <span class="proof-stat-num">4.7M</span> Kuaishou · <span class="proof-stat-num">43M</span> TapTap</span></div>
+          </div>
+        </div>
       </div>
 
       <div class="proof-sausage-visual">
         <figure class="asset-slot proof-sausage-hero-slot">
           <div class="asset-slot-inner proof-sausage-hero-inner">
             <!-- Production: first child optional; fills slot (object-fit: cover). -->
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C2%B7%20Steam%20%E9%A1%B5%E9%9D%A2%E4%B8%BB%E8%A7%86%E8%A7%89%EF%BC%88%E9%AB%98%E6%B8%85%E8%83%8C%E6%99%AF%EF%BC%89-1438x810-16x9.jpg" alt="香肠派对 · Steam 页面主视觉（高清背景）" decoding="async">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1351780/page_bg_raw.jpg?t=1726803686" alt="香肠派对 · Steam 页面主视觉（高清背景）" decoding="async">
+            <span class="asset-slot-ratio" aria-hidden="true">16:9</span>
             <div class="asset-slot-note">
-              <span class="asset-slot-title">香肠派对 · 官方主视觉 / 截图</span>
-              <span class="asset-slot-hint">主视觉。</span>
+              <span class="asset-slot-title">香肠派对 · Key Art / 游戏截图</span>
+              <span class="asset-slot-hint">待替换：卡通非写实 BR 主视觉或官方截图；铺满框体。</span>
             </div>
           </div>
         </figure>
@@ -4940,55 +4561,61 @@
         <div class="proof-sausage-collab-grid" role="group" aria-label="香肠派对联动与品牌合作案例示意">
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%A5%A5%E7%89%B9%E6%9B%BC%20%E8%81%94%E5%8A%A8-1x1.png" alt="香肠派对 × 奥特曼 联动" decoding="async" />
+              <img src="https://img2-tc.tapimg.com/moment/etag/FsbrJHI3Lrc0SNm-JoCngi0di_Xf.jpg/_tap_ugc.jpg" alt="香肠派对 × 奥特曼 联动" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">1:1</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">奥特曼 · 联动主视觉</span>
-                <span class="asset-slot-hint">奥特曼联动。</span>
+                <span class="asset-slot-hint">待替换：联动宣发图或 Key Art。</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%81%87%E9%9D%A2%E9%AA%91%E5%A3%AB%20%E8%81%94%E5%8A%A8-1x1.png" alt="香肠派对 × 假面骑士 联动" decoding="async" />
+              <img src="https://img2-tc.tapimg.com/moment/etag/FpM-Job6U2hNgS2wlSH6C1_1cfy__20260212171328.jpg" alt="香肠派对 × 假面骑士 联动" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">1:1</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">假面骑士</span>
-                <span class="asset-slot-hint">假面骑士联动。</span>
+                <span class="asset-slot-hint">待替换：合作公开素材。</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%89%E4%B8%BD%E9%B8%A5-1x1.png" alt="香肠派对 × 三丽鸥 联动" decoding="async" />
+              <img src="https://img2-tc.tapimg.com/moment/etag/Fkmc-7jMxVYxuO_Anl8PicR35YnU.png/_tap_ugc_m.jpg" alt="香肠派对 × 三丽鸥 联动" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">1:1</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">三丽鸥</span>
-                <span class="asset-slot-hint">三丽鸥联动。</span>
+                <span class="asset-slot-hint">待替换：联动宣发图。</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86%20%E8%81%94%E5%8A%A8-1x1.png" alt="香肠派对 × 斗罗大陆 联动" decoding="async" />
+              <img src="https://mgame.ali213.net/img/temp/a8003502-5451-c70d-d08a-8516336f918f.png" alt="香肠派对 × 斗罗大陆 联动" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">1:1</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">斗罗大陆 / 伍六七</span>
-                <span class="asset-slot-hint">国漫联动。</span>
+                <span class="asset-slot-hint">待替换：国漫合作视觉。</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E8%82%AF%E5%BE%B7%E5%9F%BA%20%E8%81%94%E5%8A%A8%E4%B8%BB%E8%A7%86%E8%A7%89-1x1.png" alt="香肠派对 × 肯德基 联动" decoding="async" />
+              <img src="https://img2-tc.tapimg.com/moment/etag/FnsGkI-seIg88n3oKy3fkFxbMFW-.jpg/_tap_ugc.jpg" alt="香肠派对 × 肯德基 联动" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">1:1</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">肯德基 · 异业联动</span>
-                <span class="asset-slot-hint">肯德基联动。</span>
+                <span class="asset-slot-hint">待替换：品牌合作物料。</span>
               </div>
             </div>
           </figure>
           <figure class="asset-slot proof-sausage-collab-slot">
             <div class="asset-slot-inner proof-sausage-collab-inner">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E7%8E%8B%E8%80%81%E5%90%89%20%E8%81%94%E5%8A%A8-1x1.png" alt="香肠派对 × 王老吉 联动" decoding="async" />
+              <img src="https://www.xiaopi.com/uploadfile/2023-09-19ab7oau4ZDM.jpg" alt="香肠派对 × 王老吉 联动" decoding="async" />
+              <span class="asset-slot-ratio" aria-hidden="true">1:1</span>
               <div class="asset-slot-note">
                 <span class="asset-slot-title">必胜客 / 王老吉</span>
-                <span class="asset-slot-hint">王老吉联名。</span>
+                <span class="asset-slot-hint">待替换：品牌合作物料。</span>
               </div>
             </div>
           </figure>
@@ -5003,10 +4630,10 @@
   <section class="slide slide-torch-heart" data-slide="6">
     <div class="slide-header">
       <div>
-        <div class="eyebrow orange">Proof · Global operations</div>
+        <div class="eyebrow orange">Proof · 全球运营</div>
         <h2>火炬之光：无限 + 心动小镇</h2>
       </div>
-      <div class="page-num">06 / 17</div>
+      <div class="page-num">06 / 16</div>
     </div>
 
     <p class="torch-heart-thesis">全球赛季制长线运营 × 跨国同步首发 — 让国服成为全球生态的一环，而非「特供版」。</p>
@@ -5015,9 +4642,9 @@
       <div class="torch-heart-col">
         <figure class="torch-heart-hero">
           <div class="torch-heart-hero-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%81%AB%E7%82%AC%E4%B9%8B%E5%85%89%EF%BC%9A%E6%97%A0%E9%99%90%20%E4%B8%BB%E8%A7%86%E8%A7%89-16x9.png" alt="火炬之光：无限 主视觉" width="2000" height="1000" decoding="async" />
+            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/05/torchlight-infinite-promo-art.jpg" alt="火炬之光：无限 主视觉" width="2000" height="1000" decoding="async" />
             <div class="torch-heart-caption">
-              <span class="torch-heart-caption-title">火炬之光：无限</span>
+              <span class="torch-heart-caption-title">火炬之光：无限 · Torchlight: Infinite</span>
               <span class="torch-heart-caption-sub">UE4 · 稳定运营 13 个赛季 · 中国 / 欧美 / 韩国同步发行 — 与 Fortnite 同属 UE 技术栈与长线赛季节奏</span>
             </div>
           </div>
@@ -5051,9 +4678,9 @@
       <div class="torch-heart-col">
         <figure class="torch-heart-hero">
           <div class="torch-heart-hero-inner">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%BF%83%E5%8A%A8%E5%B0%8F%E9%95%87%20Heartopia%20%E4%B8%BB%E8%A7%86%E8%A7%89-16x9.png" alt="心动小镇 Heartopia 主视觉" width="616" height="353" decoding="async" />
+            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/wm/2026/01/heartopia-characters-with-game-logo-composite.jpg?w=1600&h=900&fit=crop" alt="心动小镇 Heartopia 主视觉" width="1600" height="900" decoding="async" />
             <div class="torch-heart-caption">
-              <span class="torch-heart-caption-title">心动小镇（Heartopia）</span>
+              <span class="torch-heart-caption-title">心动小镇 · Heartopia</span>
               <span class="torch-heart-caption-sub">国服规模化验证 · 国际版首发 · 50+ 国家/地区 iOS 免费榜登顶（含美、日、韩）</span>
             </div>
           </div>
@@ -5094,59 +4721,47 @@
   <section class="slide slide-ro-disney" data-slide="7">
     <div class="slide-header">
       <div>
-        <div class="eyebrow orange">Proof · Commercial assets</div>
+        <div class="eyebrow orange">Proof · 商业化资源</div>
         <h2>全球顶级 IP 授权与衍生经验</h2>
       </div>
-      <div class="page-num">07 / 17</div>
+      <div class="page-num">07 / 16</div>
     </div>
     <div class="ro-slide-main">
     <p class="ro-bridge">86+ 联动案例 · 建联—监修—上线 全链路 → 全球 IP 入华 + 中国 IP 出海</p>
-    <div class="ro-showcase-grid">
+    <div class="ro-proof-grid">
       <div class="card ro-col">
-        <div class="ro-col-text">
-          <div class="section-label">迪士尼全球授权合作</div>
-          <p class="ro-col-copy">跨区域法务、素材与衍生品协同，长线运营节奏支撑 Fortnite 全球 IP 入华。</p>
-        </div>
+        <div class="section-label">迪士尼 · 全球授权合作</div>
+        <p class="ro-col-copy">跨区域法务、素材与衍生品协同，长线运营节奏支撑 Fortnite 全球 IP 入华。</p>
         <div class="ro-kv-wrap">
-          <div class="wire-img ro-visual-fill"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%BB%99%E5%A2%83%E4%BC%A0%E8%AF%B4%20RO%20%C3%97%20%E8%BF%AA%E5%A3%AB%E5%B0%BC%20%E8%81%94%E5%8A%A8%20Key%20Visual-2x3.png" alt="仙境传说 RO × 迪士尼 联动 Key Visual" decoding="async"></div>
+          <div class="wire-img wire-lg ro-visual-fill"><img src="https://img2-tc.tapimg.com/bbcode/images/b15b21435990f988d7864df4cc356658.jpg/_tap_ugc.jpg" alt="仙境传说 RO × 迪士尼 联动 Key Visual" decoding="async"></div>
         </div>
       </div>
       <div class="card ro-col">
-        <div class="ro-col-text">
-          <div class="section-label">刺客伍六七（中国 IP）</div>
-          <p class="ro-col-copy">国服联动执行与监修尺度沉淀，可作为「中国 IP 出海」交付模板。</p>
-        </div>
+        <div class="section-label">中国 IP · 刺客伍六七</div>
+        <p class="ro-col-copy">国服联动执行与监修尺度沉淀，可作为「中国 IP 出海」交付模板。</p>
         <div class="ro-kv-wrap">
-          <div class="wire-img ro-visual-fill"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%88%BA%E5%AE%A2%E4%BC%8D%E5%85%AD%E4%B8%83%20%E8%81%94%E5%8A%A8%E5%AE%A3%E4%BC%A0%E5%9B%BE-2x3.png" alt="香肠派对 × 刺客伍六七 联动宣传图" decoding="async"></div>
+          <div class="wire-img wire-lg ro-visual-fill"><img src="https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-1660015682.png" alt="香肠派对 × 刺客伍六七 联动宣传图" decoding="async"></div>
         </div>
       </div>
       <div class="card ro-col">
-        <div class="ro-col-text">
-          <div class="section-label">异业品牌</div>
-          <p class="ro-col-copy">快消 × 游戏 — 单案 KV（右侧竖版 2:3，与左两列对齐）。</p>
-        </div>
+        <div class="section-label">异业品牌</div>
+        <p class="ro-col-copy">快消 × 游戏 — 单案 KV（与左两列相同 2:3 画幅，便于对齐）。</p>
         <div class="ro-kv-wrap">
-          <div class="wire-img ro-brand-single"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E8%82%AF%E5%BE%B7%E5%9F%BA%20%E8%81%94%E5%8A%A8%E4%B8%BB%E8%A7%86%E8%A7%89-2x3.png" alt="香肠派对 × 肯德基 联动主视觉" decoding="async"></div>
+          <div class="wire-img ro-brand-single"><img src="https://img2-tc.tapimg.com/moment/etag/FnsGkI-seIg88n3oKy3fkFxbMFW-.jpg/_tap_ugc.jpg" alt="香肠派对 × 肯德基 联动主视觉" decoding="async"></div>
         </div>
       </div>
-    </div>
-    <div class="card ro-matrix-panel">
-      <div class="ro-matrix-stack">
-        <div class="ro-matrix-head-row">
-          <div class="ro-col-text">
-            <div class="section-label">更多联动案例</div>
-          </div>
-          <p class="ro-matrix-copy">九宫格统一按方形裁切展示，后续你只要继续按 1:1 调整素材即可。</p>
-        </div>
+      <div class="card ro-col ro-col-gallery">
+        <div class="section-label">香肠派对 · 联动矩阵（节选）</div>
         <div class="ro-collab-grid-dense">
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%A5%A5%E7%89%B9%E6%9B%BC%20%E8%81%94%E5%8A%A8-1x1.png" alt="奥特曼" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E5%81%87%E9%9D%A2%E9%AA%91%E5%A3%AB%20%E8%81%94%E5%8A%A8-1x1.png" alt="假面骑士" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%89%E4%B8%BD%E9%B8%A5-1x1.png" alt="三丽鸥" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%86%8A%E5%87%BA%E6%B2%A1-1x1.png" alt="熊出没" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%20%C3%97%20%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86%20%E8%81%94%E5%8A%A8-1x1.png" alt="斗罗大陆" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E7%8E%8B%E8%80%81%E5%90%89-1x1.jpg" alt="王老吉" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%8F%8C%E6%B1%87-1x1.png" alt="双汇" decoding="async"></span>
-          <span class="wire-img ro-collab-thumb"><img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E4%B8%BB%E9%A2%98%E8%B5%9B%E5%AD%A3-1x1.png" alt="主题赛季" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://img2-tc.tapimg.com/moment/etag/FsbrJHI3Lrc0SNm-JoCngi0di_Xf.jpg/_tap_ugc.jpg" alt="奥特曼" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://img2-tc.tapimg.com/moment/etag/FpM-Job6U2hNgS2wlSH6C1_1cfy__20260212171328.jpg" alt="假面骑士" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://img2-tc.tapimg.com/moment/etag/Fkmc-7jMxVYxuO_Anl8PicR35YnU.png/_tap_ugc_m.jpg" alt="三丽鸥" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://img1.gamersky.com/image2024/02/20240207_ljf_519_7/image001_S.jpg" alt="熊出没" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://mgame.ali213.net/img/temp/a8003502-5451-c70d-d08a-8516336f918f.png" alt="斗罗大陆" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://socialbeta.oss-cn-hangzhou.aliyuncs.com/upload/198246-1660015682.png" alt="刺客伍六七" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://img2-tc.tapimg.com/moment/etag/FgeHLU7GExZ4pHH2_JjnEUWZmpPM.jpeg/_tap_ugc.jpg" alt="王老吉" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://img2-tc.tapimg.com/moment/etag/FqVn9XwF4bVJyQ7wYxKkL8pRzZmN.jpeg/_tap_ugc.jpg" alt="双汇" decoding="async"></span>
+          <span class="wire-img ro-collab-thumb"><img src="https://img2-tc.tapimg.com/moment/etag/FowoPbqkO5k7KBBdz85kke5RzoS_.jpg/_tap_ugc.jpg" alt="主题赛季" decoding="async"></span>
         </div>
       </div>
     </div>
@@ -5154,26 +4769,15 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- Transition · China Publishing Plan -->
+  <!-- 8 战略定位 (structure P7) -->
   <!-- ============================================================ -->
-  <section class="slide slide-transition-hero" data-slide="8" data-toc="China Publishing Plan">
-    <div class="transition-hero-inner">
-      <span class="transition-hero-rule" aria-hidden="true"></span>
-      <h2 class="transition-hero-title">China Publishing Plan</h2>
-    </div>
-    <div class="page-num">08 / 17</div>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- 9 战略定位 (structure P7) -->
-  <!-- ============================================================ -->
-  <section class="slide slide-strategic" data-slide="9">
+  <section class="slide slide-strategic" data-slide="8">
     <div class="slide-header">
       <div>
-        <div class="eyebrow purple">Part 02 · Publishing plan</div>
+        <div class="eyebrow purple">Part 02 · 发行方案</div>
         <h2>战略定位</h2>
       </div>
-      <div class="page-num">09 / 17</div>
+      <div class="page-num">08 / 16</div>
     </div>
 
     <div class="slide-strategic-main">
@@ -5182,6 +4786,7 @@
           <div class="slide-strategic-hero">
             <p class="strategic-hero-en">China's First<br><span class="purple">Cross-Media Interactive Platform.</span></p>
           </div>
+          <p class="slide-strategic-subhead">中国第一个跨界内容互动平台</p>
           <ul class="slide-strategic-points" aria-label="战略三要点">
             <li><strong>机会</strong>：不争高度成熟的战术竞技<strong>存量赛道</strong>——以游戏为基座、内容互动为核心、创作者与跨界合作为增长引擎，开辟<strong>新认知赛道</strong>与长期平台生态。</li>
             <li><strong>用户</strong>：已成熟接受线上娱乐内容的融合消费；不仅为「赢一局」付费或停留，也为社交、表达、参与、围观与文化认同<strong>持续回流</strong>。</li>
@@ -5189,30 +4794,34 @@
           </ul>
         </div>
         <div class="slide-strategic-visual">
-          <div class="slide-strategic-quad" role="group" aria-label="游戏、创作者、社交与文化 — 四图横排">
+          <div class="slide-strategic-quad" role="group" aria-label="四重属性 · 配图占位 · 2×2">
             <figure class="slide-strategic-frame">
               <div class="slide-strategic-img-slot" aria-label="Fortnite 战斗画面">
-                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%E6%88%98%E6%96%97%E7%94%BB%E9%9D%A2-16x9.jpg" alt="Fortnite 战斗画面" decoding="async" />
-                <span class="slide-strategic-tag-en slide-strategic-tag-en--d1" aria-hidden="true">Game</span>
+                <img src="https://4kwallpapers.com/images/wallpapers/fortnite-battle-3840x2160-20136.jpg" alt="Fortnite 战斗画面" decoding="async" />
+                <span class="slide-strategic-slot-ratio" aria-hidden="true">16:9</span>
               </div>
+              <figcaption>游戏产品</figcaption>
             </figure>
             <figure class="slide-strategic-frame">
               <div class="slide-strategic-img-slot" aria-label="UEFN 编辑器界面">
-                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/UEFN%20%E7%BC%96%E8%BE%91%E5%99%A8%E7%95%8C%E9%9D%A2-16x9.png" alt="UEFN 编辑器界面" decoding="async" />
-                <span class="slide-strategic-tag-en slide-strategic-tag-en--d2" aria-hidden="true">Creator</span>
+                <img src="https://d3kjluh73b9h9o.cloudfront.net/optimized/4X/c/9/8/c98409deac2f275731a28478d4c4e272ef16bc36_2_690x388.jpeg" alt="UEFN 编辑器界面" decoding="async" />
+                <span class="slide-strategic-slot-ratio" aria-hidden="true">16:9</span>
               </div>
+              <figcaption>创作者平台</figcaption>
             </figure>
             <figure class="slide-strategic-frame">
               <div class="slide-strategic-img-slot" aria-label="Fortnite Party Royale / 演唱会">
-                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20Party%20Royale%20%E6%B4%BB%E5%8A%A8%E7%94%BB%E9%9D%A2-16x9.png" alt="Fortnite Party Royale 活动画面" decoding="async" />
-                <span class="slide-strategic-tag-en slide-strategic-tag-en--d3" aria-hidden="true">Social</span>
+                <img src="https://cdn.mos.cms.futurecdn.net/v2/t:0,l:160,cw:960,ch:720,q:80,w:960/egSVWhMAyVsAHcdbEGHP2j.jpg" alt="Fortnite Party Royale 活动画面" decoding="async" />
+                <span class="slide-strategic-slot-ratio" aria-hidden="true">16:9</span>
               </div>
+              <figcaption>社交场景</figcaption>
             </figure>
             <figure class="slide-strategic-frame">
               <div class="slide-strategic-img-slot" aria-label="Fortnite × Marvel 联动">
-                <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%C3%97%20Marvel%20%E8%81%94%E5%8A%A8-16x9.jpg" alt="Fortnite × Marvel 联动" decoding="async" />
-                <span class="slide-strategic-tag-en slide-strategic-tag-en--d4" aria-hidden="true">Culture</span>
+                <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2024/08/fortnite-absolute-doom-dr-doom-surrounded-by-marvel-heroes-and-villains.jpg?q=49&amp;fit=contain&amp;w=750&amp;h=422&amp;dpr=2" alt="Fortnite × Marvel 联动" decoding="async" />
+                <span class="slide-strategic-slot-ratio" aria-hidden="true">16:9</span>
               </div>
+              <figcaption>联动载体</figcaption>
             </figure>
           </div>
         </div>
@@ -5222,76 +4831,63 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 10 首年预算总览 $30M (structure P8) -->
+  <!-- 9 首年预算总览 $30M (structure P8) -->
   <!-- ============================================================ -->
-  <section class="slide slide-budget" data-slide="10">
+  <section class="slide slide-budget" data-slide="9">
     <div class="slide-header">
       <div>
-        <div class="eyebrow" style="color:var(--yellow);">Year-one marketing investment</div>
-        <h2>$30M · 「首发爆发 + 长线生态」双轮驱动</h2>
+        <div class="eyebrow" style="color:var(--yellow);">首年市场投入 · Year-One Marketing Investment</div>
+        <h2>$30M · 「首发爆发 + 长线生态」双轮驱动 · Four pillars</h2>
       </div>
-      <div class="page-num">10 / 17</div>
+      <div class="page-num">09 / 16</div>
     </div>
 
-    <p class="budget-lede">首年我们建议投入总预算 <em>3000 万美元</em>，并以 <em>「首发爆发 + 长线生态」</em> 双轮驱动进行配置。预算不是单纯买量，而是围绕《堡垒之夜》的平台型定位进行系统化布局。</p>
+    <p class="budget-lede">首年我们建议投入总预算 <em>3000 万美元</em>，并以 <em>「首发爆发 + 长线生态」</em> 双轮驱动进行配置。预算不是单纯买量，而是围绕《堡垒之夜》的平台型定位进行系统化布局。<span style="color:var(--text-dim);font-size:var(--fs-caption);display:inline-block;margin-left:0.35em;">Dual burst launch + enduring ecosystem — not paid UA alone, but systematic investment in Fortnite as a platform.</span></p>
 
     <div class="budget-split">
       <div class="budget-chart-col">
-        <div class="budget-donut-wrap" role="group" aria-label="首年预算结构：悬停扇区或图例以高亮">
-          <svg class="budget-donut budget-donut-svg" viewBox="0 0 200 200" aria-hidden="true">
-            <g class="budget-seg budget-seg--adv" data-budget-key="adv">
-              <path fill="var(--orange)" d="M100.000 12.000 A88 88 0 1 1 100.000 188.000 L100.000 168.000 A68 68 0 1 0 100.000 32.000 Z"></path>
-            </g>
-            <g class="budget-seg budget-seg--brand" data-budget-key="brand">
-              <path fill="var(--purple)" d="M100.000 188.000 A88 88 0 0 1 16.307 127.193 L35.328 121.013 A68 68 0 0 0 100.000 168.000 Z"></path>
-            </g>
-            <g class="budget-seg budget-seg--esports" data-budget-key="esports">
-              <path fill="var(--yellow)" d="M16.307 127.193 A88 88 0 0 1 28.807 48.275 L44.987 60.031 A68 68 0 0 0 35.328 121.013 Z"></path>
-            </g>
-            <g class="budget-seg budget-seg--ugc" data-budget-key="ugc">
-              <path fill="var(--teal)" d="M28.807 48.275 A88 88 0 0 1 100.000 12.000 L100.000 32.000 A68 68 0 0 0 44.987 60.031 Z"></path>
-            </g>
-          </svg>
+        <div class="budget-donut-wrap" role="img" aria-label="Year-one budget: 50% advertising, 20% branding and collaborations, 15% UGC and content, 15% esports">
+          <div class="budget-donut"></div>
           <div class="budget-donut-inner">
             <div class="bdc-amt">$30,000,000</div>
-            <div class="bdc-lbl">USD · 首年</div>
+            <div class="bdc-lbl">USD · 首年 · Year One</div>
           </div>
         </div>
       </div>
       <div class="budget-legend-col">
         <div class="budget-legend-card budget-legend">
-          <div class="bl-row" data-budget-key="adv">
+          <div class="bl-row">
             <span class="bl-dot" style="background:var(--orange);"></span>
             <div class="bl-name">
-              <span class="bl-title">广告投放</span>
-              <span class="bl-sub">建立广泛市场认知、完成预约与下载转化，支撑重点版本放量。</span>
+              <span class="bl-title">广告投放 · Advertising</span>
+              <span class="bl-sub">建立广泛市场认知、完成预约与下载转化，支撑重点版本放量。Broad awareness, pre-registration &amp; installs, scaling key releases.</span>
             </div>
             <div class="bl-pct">50%</div>
             <div class="bl-amt">$15M</div>
           </div>
-          <div class="bl-row" data-budget-key="brand">
+          <div class="bl-row">
             <span class="bl-dot" style="background:var(--purple);"></span>
             <div class="bl-name">
-              <span class="bl-title">品牌与联动</span>
-              <span class="bl-sub">打造破圈事件、IP 联动、线下体验与首发社会化讨论。</span>
+              <span class="bl-title">品牌&amp;联动 · Branding &amp; collaborations</span>
+              <span class="bl-sub">打造破圈事件、IP 联动、线下体验与首发社会化讨论。Breakout moments, IP ties, offline beats, launch social conversation.</span>
             </div>
             <div class="bl-pct">20%</div>
             <div class="bl-amt">$6M</div>
           </div>
-          <div class="bl-row" data-budget-key="esports">
+          <div class="bl-row">
             <span class="bl-dot" style="background:var(--yellow);"></span>
             <div class="bl-name">
-              <span class="bl-title">电竞赛事</span>
-              <span class="bl-sub">快速搭建中国本地赛事体系，提升核心玩家认同与长期生命力。</span>
+              <span class="bl-title">电竞赛事 · Esports</span>
+              <span class="bl-sub">快速搭建中国本地赛事体系，提升核心玩家认同与长期生命力。CN tournament ladder, core-player identity, long-term vitality.</span>
             </div>
             <div class="bl-pct">15%</div>
             <div class="bl-amt">$4.5M</div>
           </div>
-          <div class="bl-row" data-budget-key="ugc">
+          <div class="bl-row">
             <span class="bl-dot" style="background:var(--teal);"></span>
             <div class="bl-name">
-              <span class="bl-title">UGC 内容创作</span>
-              <span class="bl-sub">创作者内容供给、直播/视频传播与 UEFN 创作者生态。</span>
+              <span class="bl-title">UGC 内容创作 · Content &amp; UGC</span>
+              <span class="bl-sub">创作者内容供给、直播/视频传播与 UEFN 创作者生态。Creator supply, live &amp; video distribution, UEFN ecosystem.</span>
             </div>
             <div class="bl-pct">15%</div>
             <div class="bl-amt">$4.5M</div>
@@ -5303,44 +4899,44 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 11 首发策略 $6M · Zero Build + IP / 线下 (structure P9) -->
+  <!-- 10 首发策略 $6M · Zero Build + IP / 线下 (structure P9) -->
   <!-- ============================================================ -->
-  <section class="slide slide-launch-mode" data-slide="11">
+  <section class="slide slide-launch-mode" data-slide="10">
     <div class="slide-header">
       <div>
         <div class="eyebrow purple">Publishing Plan</div>
-        <h2>首发策略（$6M）：Zero Build + IP / 线下</h2>
+        <h2>首发策略 · $6M · Zero Build + IP / 线下</h2>
       </div>
-      <div class="page-num">11 / 17</div>
+      <div class="page-num">10 / 16</div>
     </div>
 
     <div class="launch-split-main">
       <div class="launch-split-copy">
+        <p class="launch-split-hero-title">首发策略——$6,000,000</p>
+
         <h3 class="launch-section-head">首发玩法——Zero Build</h3>
-        <ul class="slide-strategic-points" aria-label="首发玩法要点">
-          <li><strong>首发主推 Zero Build</strong>：对标国内成熟射击品类，降低建造学习成本，扩大新用户入口。</li>
-          <li><strong>体验路径分层上线</strong>：先高强度快节奏对战；建造模式、创意地图与完整 UGC 生态后续逐步释放。</li>
-          <li><strong>避免首日堆复杂度</strong>：用清晰进阶路径承接深度玩家，而非一次性堆满功能。</li>
-        </ul>
+        <p class="slide-strategic-p">中国射击品类已相当成熟，用户认知与上手预期清晰。首发阶段我们建议以「零建造（Zero Build）」为主形态，降低操作与建造学习成本，让更广泛的新用户能够快速进入高强度、快节奏的对战体验。</p>
+        <p class="slide-strategic-p">「零建造」提供直接而刺激的入口；建造模式、创意地图与更完整的 UGC 生态可在后续版本中分层释放，形成清晰的进阶路径，而不是在首日把所有复杂度一次性堆给用户。</p>
 
         <h3 class="launch-section-head">IP联动+线下大事件</h3>
-        <ul class="slide-strategic-points" aria-label="IP 与线下要点">
-          <li><strong>国民级 IP 首发联动</strong>：国漫、影视等本土 IP 进入 Fortnite，制造话题与付费支点。</li>
-          <li><strong>线下「可传播事件」</strong>：快闪、沉浸装置、限时主题场，把线上热度延伸为可参与、可打卡的体验。</li>
-          <li><strong>内容供给与扩散</strong>：触达更广圈层，为短视频、直播与社交平台持续供给素材，放大首发窗口声量。</li>
-        </ul>
+        <p class="slide-strategic-p">首发可与头部国漫、影视等国民级 IP 联动，让中国用户熟悉的角色与世界观进入 Fortnite，形成舆论话题与付费转化支点。</p>
+        <p class="slide-strategic-p">Fortnite 擅长事件化叙事与沉浸体验——通过线下快闪店、沉浸式装置与限时主题场，把线上曝光延伸为可参与、可打卡、可传播的「公共事件」。</p>
+        <p class="slide-strategic-p">线下活动触达更广泛圈层，并为短视频、直播与社交平台持续供给内容素材，帮助品牌势能与社区讨论度在首发窗口集中放大。</p>
       </div>
 
-      <div class="launch-split-visual" role="group" aria-label="配图：首发 Zero Build、线下沉浸体验与国漫 IP 参考">
+      <div class="launch-split-visual" role="group" aria-label="配图占位 · 上 16:9 · 下排左 2fr 右 1fr 等高">
         <div class="launch-img-slot launch-img-slot--hero" aria-label="Fortnite Zero Build">
           <img src="https://static.wikia.nocookie.net/fortnite/images/9/90/Zero_Build_%28Born_in_Chaos%29_-_Playlist_-_Fortnite.jpg/revision/latest/scale-to-width-down/1200?cb=20260109103926" alt="Fortnite Zero Build 模式" decoding="async" />
+          <span class="slide-strategic-slot-ratio" aria-hidden="true">16:9</span>
         </div>
         <div class="launch-img-slot-row">
           <div class="launch-img-slot" aria-label="线下品牌体验 / 快闪">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/Fortnite%20%E7%BA%BF%E4%B8%8B%E6%B2%89%E6%B5%B8%E5%BC%8F%E5%93%81%E7%89%8C%E4%BD%93%E9%AA%8C-2fr%E7%AD%89%E9%AB%98.jpg" alt="Fortnite 线下沉浸式品牌体验" decoding="async" />
+            <img src="https://fgpg.com/wp-content/uploads/2019/08/fortnite-e3-experiential-marketing-trade-show-fgpg.jpg" alt="Fortnite 线下沉浸式品牌体验" decoding="async" />
+            <span class="slide-strategic-slot-ratio" aria-hidden="true">2fr · 等高</span>
           </div>
           <div class="launch-img-slot" aria-label="国漫 IP 参考">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E5%88%BA%E5%AE%A2%E4%BC%8D%E5%85%AD%E4%B8%83%20%E5%AE%98%E6%96%B9%E6%B5%B7%E6%8A%A5-1fr%E7%AD%89%E9%AB%98.png" alt="刺客伍六七 官方海报" decoding="async" />
+            <img src="https://image.tmdb.org/t/p/original/jz9ii5sft8l6zP3lzu51xNWmgiO.jpg" alt="刺客伍六七 官方海报" decoding="async" />
+            <span class="slide-strategic-slot-ratio" aria-hidden="true">1fr · 等高</span>
           </div>
         </div>
       </div>
@@ -5348,70 +4944,64 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 12 创作者生态 $4.5M -->
+  <!-- 15 创作者生态 $4.5M -->
   <!-- ============================================================ -->
-  <section class="slide slide-creator-eco" data-slide="12">
+  <section class="slide slide-creator-eco" data-slide="11">
     <div class="slide-header">
       <div>
         <div class="eyebrow" style="color:var(--teal);">Creator ecosystem · 15% · $4,500,000</div>
         <h2>创作者生态——$4,500,000</h2>
       </div>
-      <div class="page-num">12 / 17</div>
+      <div class="page-num">11 / 16</div>
     </div>
 
     <div class="creator-eco-split">
       <div class="creator-eco-copy">
-        <h3 class="launch-section-head">游戏直播与视频创作者激励</h3>
-        <ul class="slide-strategic-points" aria-label="直播与视频激励 · 受众目标与打法">
-          <li><strong>受众</strong>：直播平台主播、短视频作者、攻略与娱乐向内容创作者。</li>
-          <li><strong>目标</strong>：快速形成多层次内容矩阵，放大传播与话题扩散。</li>
-          <li><strong>难点</strong>：SAC 联盟计划对中国用户相对陌生，认知与参与门槛偏高。</li>
-          <li><strong>解决方案</strong>：以「内容激励 + SAC」组合推进，在中国创作者群体中逐步落地 SAC。</li>
-        </ul>
+        <div class="launch-section-head">游戏直播与视频创作者激励</div>
+        <p class="slide-strategic-p">面向直播平台主播、短视频作者、攻略作者和娱乐内容创作者。目标是快速形成多层次内容矩阵。</p>
+        <p class="slide-strategic-p">由于 SAC 联盟计划对于中国用户比较陌生，所以会以内容激励 + SAC 的方式组合进行，期望最终将 SAC 计划在中国创作者群体中完成落地。</p>
 
-        <h3 class="launch-section-head">游戏内玩法创作者激励</h3>
-        <ul class="slide-strategic-points" aria-label="玩法创作者激励 · 受众目标与打法">
-          <li><strong>受众</strong>：更深层的生态参与者——本地玩法 / 地图创作者与专业开发者（含 TapTap 开发者侧资源）。</li>
-          <li><strong>目标</strong>：沉淀中国本地创作者供给；从「官方发行的一款游戏」升级为「可持续生长的玩法平台」。</li>
-          <li><strong>难点</strong>：不止短期曝光，更要建立 UEFN 创作习惯与可持续的内容与变现路径。</li>
-          <li><strong>解决方案</strong>：结合 Creator Economy 2.0 与岛内交易（In-Island Transactions），用 UEFN 围绕本土文化与热点打造可传播玩法；联动 TapTap 号召中国游戏开发者参与 Fortnite 内容创作。</li>
-        </ul>
+        <div class="launch-section-head">游戏内玩法创作者激励</div>
+        <p class="slide-strategic-p">这一部分面向更深层的生态参与者其核心目标不是短期传播，而是建立中国本地创作者供给，让《堡垒之夜》在中国市场从「一个官方游戏」进化为一个「一个持续生长的玩法平台」。</p>
+        <p class="slide-strategic-p">我们期望结合 Creator Economy 2.0 和岛内交易（In-Island Transactions），激励中国本地创作者使用 UEFN，围绕本土文化和热点内容制作具有传播潜力的玩法内容。</p>
+        <p class="slide-strategic-p">我们将利用 TapTap 强大的开发者资源，号召中国的专业游戏开发者参与到《堡垒之夜》的内容创作中。</p>
       </div>
 
       <div class="creator-eco-visual">
-        <div class="creator-eco-stack" aria-label="配图：UEFN 全宽 · 下排直播与 TapTap 双列">
-          <figure class="creator-eco-slot creator-eco-slot--hero">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/UEFN%20%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%95%8C%E9%9D%A2-16x9.png" alt="UEFN 官方文档界面" decoding="async" />
-            <figcaption class="creator-eco-slot-cap">UEFN 创作工具与地图开发</figcaption>
-            <span class="creator-eco-slot-hint">UEFN。</span>
+        <div class="creator-eco-collage" aria-label="三图位叠放示意">
+          <figure class="creator-eco-slot creator-eco-slot--1">
+            <img src="https://media.kingston.com/kingston/content/ktc-content-blog-gaming-live-video-game-streaming-guide-hero.jpg" alt="游戏直播 / 主播场景" decoding="async" />
+            <figcaption class="creator-eco-slot-cap">图位 1 · 顶右横幅</figcaption>
+            <span class="creator-eco-slot-hint">待替换素材</span>
+            <span class="creator-eco-slot-ratio">16 : 9</span>
           </figure>
-          <div class="creator-eco-row">
-            <figure class="creator-eco-slot">
-              <img src="https://media.kingston.com/kingston/content/ktc-content-blog-gaming-live-video-game-streaming-guide-hero.jpg" alt="游戏直播 / 主播场景" decoding="async" />
-              <figcaption class="creator-eco-slot-cap">游戏直播 / 主播场景</figcaption>
-              <span class="creator-eco-slot-hint">直播。</span>
-            </figure>
-            <figure class="creator-eco-slot">
-              <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/TapTap%20%E5%8F%91%E5%B8%83%E4%BC%9A%20%EF%BC%8F%20%E5%BC%80%E5%8F%91%E8%80%85%E6%B4%BB%E5%8A%A8-16x9.png" alt="TapTap 发布会 / 开发者活动" decoding="async" />
-              <figcaption class="creator-eco-slot-cap">TapTap 开发者与创作者招募场</figcaption>
-              <span class="creator-eco-slot-hint">TapTap 开发者。</span>
-            </figure>
-          </div>
+          <figure class="creator-eco-slot creator-eco-slot--2">
+            <img src="https://d1iv7db44yhgxn.cloudfront.net/documentation/images/a36ef9ea-ab10-4323-aa2a-fe64aa0528a0/comparison.png" alt="UEFN 官方文档界面" decoding="async" />
+            <figcaption class="creator-eco-slot-cap">图位 2 · 中下横幅（与顶图叠压）</figcaption>
+            <span class="creator-eco-slot-hint">待替换素材</span>
+            <span class="creator-eco-slot-ratio">16 : 9</span>
+          </figure>
+          <figure class="creator-eco-slot creator-eco-slot--3">
+            <img src="https://img2-tc.tapimg.com/moment/etag/FrefHzB-7J_AlNgKUUwSrx4dCMbE_20260415145343.png/_tap_ugc.jpg" alt="TapTap 发布会 / 开发者活动" decoding="async" />
+            <figcaption class="creator-eco-slot-cap">图位 3 · 左下横幅</figcaption>
+            <span class="creator-eco-slot-hint">待替换素材</span>
+            <span class="creator-eco-slot-ratio">16 : 9</span>
+          </figure>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!-- 13 电竞 15% (structure P14) -->
+  <!-- 16 电竞 15% (structure P14) -->
   <!-- ============================================================ -->
-  <section class="slide slide-esports" data-slide="13">
+  <section class="slide slide-esports" data-slide="12">
     <div class="slide-header">
       <div>
         <div class="eyebrow" style="color:var(--yellow);">Esports · $4.5M</div>
         <h2>建立中国赛事体系——$4,500,000</h2>
       </div>
-      <div class="page-num">13 / 17</div>
+      <div class="page-num">12 / 16</div>
     </div>
 
     <div class="slide-esports-main">
@@ -5420,21 +5010,24 @@
       <div class="slide-esports-tri" role="group" aria-label="赛事体系三支柱 · 配图占位">
         <div class="slide-esports-col">
           <div class="slide-strategic-img-slot" aria-label="香肠派对大众赛事">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%E8%8F%81%E8%8B%B1%E8%B5%9B%E5%AE%A3%E4%BC%A0-16x9.png" alt="香肠派对菁英赛宣传" decoding="async" />
+            <img src="https://res.xdcdn.net/game/match/files/2020/10/2020100202564486056.png" alt="香肠派对菁英赛宣传" decoding="async" />
+            <span class="slide-strategic-slot-ratio" aria-hidden="true">16:9</span>
           </div>
           <p class="slide-strategic-subhead">大众赛事</p>
           <p class="slide-strategic-p">面向全体玩家的公开赛事，赛事体系、奖励、赛制设置与国际服保持一致。目标是让大众玩家都能感知并参与到《堡垒之夜》独特的竞技氛围，并有所收获。</p>
         </div>
         <div class="slide-esports-col">
           <div class="slide-strategic-img-slot" aria-label="香肠派对总决赛舞台">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E9%A6%99%E8%82%A0%E6%B4%BE%E5%AF%B9%E4%BC%97%E7%A5%9E%E6%9D%AF%E6%80%BB%E5%86%B3%E8%B5%9B%E7%8E%B0%E5%9C%BA-16x9.png" alt="香肠派对众神杯总决赛现场" decoding="async" />
+            <img src="https://pic.iyingdi.com/post/content/2023/05/29/15227718/15f5f4cd-9eda-401e-be0d-37f9f7c8c4cf.png" alt="香肠派对众神杯总决赛现场" decoding="async" />
+            <span class="slide-strategic-slot-ratio" aria-hidden="true">16:9</span>
           </div>
           <p class="slide-strategic-subhead">职业赛事（FNCS 国服赛区）</p>
           <p class="slide-strategic-p">国服独立的职业竞技周期，代表《堡垒之夜》国服最顶尖的竞技赛事，同时作为全球 FNCS 的中国赛区入口。让国内的职业玩家征战全球竞技的重要平台。</p>
         </div>
         <div class="slide-esports-col">
           <div class="slide-strategic-img-slot slide-esports-img-slot--sharp" aria-label="主播联赛参考">
-            <img src="https://cazevfung.github.io/epic-deck/images/pictures%20new/%E6%B8%B8%E6%88%8F%E4%B8%BB%E6%92%AD%E8%81%94%E8%B5%9B%E5%AE%A3%E4%BC%A0%E5%8F%82%E8%80%83-16x9.png" alt="游戏主播联赛宣传参考" decoding="async" />
+            <img src="https://oss.5eplay.com/editor/20240730/eaacde6605b3a5cbd6b9236517e39594.jpeg" alt="游戏主播联赛宣传参考" decoding="async" />
+            <span class="slide-strategic-slot-ratio" aria-hidden="true">16:9</span>
           </div>
           <p class="slide-strategic-subhead">平台与主播联赛</p>
           <p class="slide-strategic-p">联合直播平台、头部主播和内容阵地发起中型赛事，兼顾观赏性与传播性。目标是通过内容平台赛事提升《堡垒之夜》在核心圈层中的讨论热度。</p>
@@ -5445,31 +5038,31 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 14 全年投放计划 $15M 分阶段 (timeline · structure P15) -->
+  <!-- 17 全年投放计划 $15M 分阶段 (timeline · structure P15) -->
   <!-- ============================================================ -->
-  <section class="slide slide-ua" data-slide="14">
+  <section class="slide slide-ua" data-slide="13">
     <div class="slide-header">
       <div>
-        <div class="eyebrow orange">User acquisition</div>
+        <div class="eyebrow orange">User Acquisition · 线上投放</div>
         <h2>全年投放计划——$15,000,000</h2>
       </div>
-      <div class="page-num">14 / 17</div>
+      <div class="page-num">13 / 16</div>
     </div>
 
     <div class="ua-timeline">
       <div class="ua-grid ua-grid--top">
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">预热期</span><span class="ua-phase-money">$3,000,000</span></div>
+          <div class="ua-phase-title">预热期（$3,000,000）</div>
           <p class="ua-phase-desc">面向泛游戏用户、回归老玩家和内容平台受众，通过品牌视频、预约传播、KOL 首轮种草和核心媒体曝光，建立《堡垒之夜》回归中国市场的第一波认知。</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">日常版本</span><span class="ua-phase-money">$1,000,000</span></div>
+          <div class="ua-phase-title">日常版本（$1,000,000）</div>
           <p class="ua-phase-desc">保持市场存在感、覆盖节庆节点、支撑社群活动，并对高潜人群进行持续触达。</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">日常版本</span><span class="ua-phase-money">$500,000</span></div>
+          <div class="ua-phase-title">日常版本（$500,000）</div>
           <p class="ua-phase-desc">保证全年热度不断档，为下一个大版本和下一年运营保留增长基础。</p>
         </div>
       </div>
@@ -5488,32 +5081,32 @@
       <div class="ua-grid ua-grid--bot">
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">公测期</span><span class="ua-phase-money">$6,000,000</span></div>
+          <div class="ua-phase-title">公测期（$6,000,000）</div>
           <p class="ua-phase-desc">是把认知快速转化为下载、激活与开服声量。同时配合主播直播、短视频传播和公测庆典事件，共同形成最大化市场引爆。</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
         <div class="ua-cell">
-          <div class="ua-phase-title"><span class="ua-phase-name">版本更新期</span><span class="ua-phase-money">$4,500,000</span></div>
+          <div class="ua-phase-title">版本更新期（$4,500,000）</div>
           <p class="ua-phase-desc">唤醒沉默用户重新放大内容势能。围绕新版本卖点、新活动、新联动和社区高光时刻进行再传播，让产品不陷入「上线即高点」的单峰曲线。</p>
         </div>
         <div class="ua-cell ua-cell--empty" aria-hidden="true"></div>
       </div>
     </div>
 
-    <p class="ua-foot">首年总预算中的 50% 将投入线上投放，但投放节奏不是平均分配，而是围绕产品生命周期和关键节点进行分阶段推进，以确保每一轮预算都服务于不同阶段目标。</p>
+    <p class="ua-foot">首年总预算中的 50% 将投入线上投放，但投放节奏不是平均分配，而是围绕产品生命周期和关键节点进行分阶段推进，以确保每一轮预算都服务于不同阶段目标。<span style="display:block;margin-top:0.5em;color:var(--text-faint);font-size:0.94em;">50% of year-one budget goes to online media — phased by lifecycle and beats, not flat spend.</span></p>
 
   </section>
 
   <!-- ============================================================ -->
-  <!-- 15 合规 (structure P16) -->
+  <!-- 18 合规 (structure P16) -->
   <!-- ============================================================ -->
-  <section class="slide" data-slide="15">
+  <section class="slide" data-slide="14">
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">Operational Readiness</div>
         <h2>Compliance &amp; operations</h2>
       </div>
-      <div class="page-num">15 / 17</div>
+      <div class="page-num">14 / 16</div>
     </div>
 
     <div class="comp-grid" style="margin-top:2vh;">
@@ -5540,7 +5133,7 @@
         <div class="comp-icon">③</div>
         <div class="comp-title">Anti-Cheat</div>
         <ul class="comp-list">
-          <li>Easy Anti-Cheat + THEMIS (XD in-house security platform)</li>
+          <li>Easy Anti-Cheat + XD's THEMIS platform</li>
           <li>Transferred from Sausage Man's 8-year live environment</li>
           <li>Dedicated PC vs. mobile strategy</li>
         </ul>
@@ -5567,57 +5160,50 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- 16 技术 · 全球版本同步 (structure P17) -->
+  <!-- 19 技术 · 全球版本同步 (structure P17) -->
   <!-- ============================================================ -->
-  <section class="slide slide-tech-sync" data-slide="16">
+  <section class="slide slide-tech-sync" data-slide="15">
     <div class="slide-header">
       <div>
         <div class="eyebrow orange">Technical alignment</div>
-        <h2>国服交付：全球节奏对齐 × UEFN 内容管线</h2>
-        <p class="slide-tech-sync-lede">赛季与补丁跟随全球主干；内容与账号走合规管道与约定栈。</p>
+        <h2>全球版本同步 · 国服技术栈 · UEFN 管道</h2>
       </div>
-      <div class="page-num">16 / 17</div>
+      <div class="page-num">15 / 16</div>
     </div>
-    <div class="grid-2" style="flex:1;gap:2vw;min-height:0;">
+    <div class="grid-2" style="flex:1;gap:2vw;">
       <div class="stack-sm">
-        <div class="section-label">全球节奏对齐</div>
-        <ul class="tech-sync-list">
-          <li>赛季与重大更新：与全球同节拍；个别联动按监修单独排期。</li>
-          <li>热修：主干一致；支付、实名、安全等走国服补丁通道。</li>
-          <li>联机：默认国服体验；与全球互通仅在政策允许范围内。</li>
-        </ul>
-        <div class="wire-img wire-lg">
-          <img src="https://preview.redd.it/i-like-this-new-battle-pass-setup-your-able-to-pick-which-v0-1qq7oen55m4g1.png?auto=webp&amp;s=cc1610a1123a51a63b104b430098f189207bf475" width="1920" height="1080" alt="Fortnite Battle Pass UI — selectable reward tracks" decoding="async" />
+        <div class="section-label">Build &amp; release rhythm</div>
+        <div class="stack-sm" style="font-size:var(--fs-body);">
+          <div class="row-item"><span class="k">Season parity</span><span class="v">Target: align major gameplay + cosmetics cadence to global where policy allows.</span></div>
+          <div class="row-item"><span class="k">Hotfix path</span><span class="v">Shared branch discipline + CN-exclusive critical patches (compliance, payments).</span></div>
+          <div class="row-item"><span class="k">Cross-play</span><span class="v">Policy-driven: default CN island; global bridges only where approved.</span></div>
         </div>
       </div>
       <div class="stack-sm">
-        <div class="section-label">UEFN 与国服栈</div>
-        <ul class="tech-sync-list">
-          <li>UEFN：创作—审核—发布管线；国服内容池与全球 Discover 规则化对接。</li>
-          <li>内容进出：机审 + 人审；双向流通边界事先固定。</li>
-          <li>反作弊与日志：EAC + THEMIS（自研安全平台）；登录接微信/手机/未成年，不割裂 Epic 账号叙事。</li>
-        </ul>
-        <div class="wire-img wire-lg">
-          <img src="https://cdn1.epicgames.com/offer/fn/UEFN_29-01_EGS_UEFN_Assets_S1OfferImage_2560x1440_2560x1440-bc992b49496068f859100ec4cc6e0f3c" width="1920" height="1080" alt="Unreal Editor for Fortnite (UEFN)" decoding="async" />
+        <div class="section-label">UEFN + content</div>
+        <div class="stack-sm" style="font-size:var(--fs-body);">
+          <div class="row-item"><span class="k">Bidirectional review</span><span class="v">Machine + human for inbound/outbound Discover per China rules.</span></div>
+          <div class="row-item"><span class="k">Infrastructure</span><span class="v">EAC + THEMIS (PC/mobile split) · CN-resident logging where required.</span></div>
+          <div class="row-item"><span class="k">SDK / login</span><span class="v">WeChat / phone / minor verification integration without breaking Epic ID story.</span></div>
         </div>
+        <div class="wire-img wire-lg">pipeline diagram placeholder</div>
       </div>
     </div>
-    <p class="slide-tech-sync-foot">能跟跟全球，该分有路径。</p>
   </section>
 
   <!-- ============================================================ -->
-  <!-- 17 结尾邀请 (structure closing) -->
+  <!-- 20 结尾邀请 (structure closing) -->
   <!-- ============================================================ -->
-  <section class="slide slide-closing-cn" data-slide="17">
+  <section class="slide slide-closing-cn" data-slide="16">
     <h2 class="closing-cn-headline">诚邀一起打造中国Fortnite</h2>
-    <div class="page-num" style="position:absolute;bottom:6vh;right:8vw;">17 / 17</div>
+    <div class="page-num" style="position:absolute;bottom:6vh;right:8vw;">16 / 16</div>
   </section>
 
 </div>
 
 <!-- Navigation -->
 <div class="nav">
-  <span class="counter" id="counter">01 / 17</span>
+  <span class="counter" id="counter">01 / 16</span>
   <div class="bar" id="progressBar"></div>
 </div>
 <div class="hint">← → to navigate · hover Pages strip or B page list · #8 or #page-8 in URL opens that page · F fullscreen · P print</div>
@@ -5633,6 +5219,82 @@
   const tocClose = document.getElementById('slideTocClose');
   let current = 0;
   const tocItemButtons = [];
+
+  // #region agent log
+  const __DBG_SESSION = '411535';
+  const __DBG_ENDPOINT = 'http://127.0.0.1:7312/ingest/2fe62a34-a8ae-4000-8a36-43560152b1f5';
+  function __dbgPost(hypothesisId, location, message, data, runId) {
+    fetch(__DBG_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': __DBG_SESSION },
+      body: JSON.stringify({
+        sessionId: __DBG_SESSION,
+        runId: runId || 'post-fix-v2',
+        hypothesisId,
+        location,
+        message,
+        data,
+        timestamp: Date.now()
+      })
+    }).catch(function () {});
+  }
+  function logMarketShiftLayout(reason) {
+    var slide = document.querySelector('.slide.slide-market-shift');
+    if (!slide) return;
+    var grid = slide.querySelector('.market-visuals--grid');
+    var mv = slide.querySelector('.p3-col.new .market-visuals');
+    var col = slide.querySelector('.p3-col.new');
+    if (!grid || !mv || !col) return;
+    var csG = getComputedStyle(grid);
+    var csMv = getComputedStyle(mv);
+    var figs = grid.querySelectorAll('figure.asset-slot');
+    var rows = [];
+    for (var i = 0; i < figs.length; i++) {
+      var f = figs[i];
+      var inner = f.querySelector('.asset-slot-inner');
+      var r = f.getBoundingClientRect();
+      rows.push({
+        i: i,
+        figOffsetH: f.offsetHeight,
+        figScrollH: f.scrollHeight,
+        innerOH: inner ? inner.offsetHeight : null,
+        innerScrollH: inner ? inner.scrollHeight : null,
+        top: Math.round(r.top * 100) / 100,
+        bottom: Math.round(r.bottom * 100) / 100,
+        h: Math.round(r.height * 100) / 100
+      });
+    }
+    var gapY = csG.rowGap || csG.gap;
+    var overlapL = rows.length >= 3 ? rows[2].top - rows[0].bottom : null;
+    var overlapR = rows.length >= 4 ? rows[3].top - rows[1].bottom : null;
+    __dbgPost('H-A', 'epic_deck.html:logMarketShiftLayout', 'overflow ' + reason, {
+      reason: reason,
+      gridClientH: grid.clientHeight,
+      gridScrollH: grid.scrollHeight,
+      mvClientH: mv.clientHeight,
+      mvScrollH: mv.scrollHeight,
+      colClientH: col.clientHeight,
+      colScrollH: col.scrollHeight,
+      colOverflowPx: col.scrollHeight - col.clientHeight
+    });
+    __dbgPost('H-B', 'epic_deck.html:logMarketShiftLayout', 'overlap ' + reason, {
+      reason: reason,
+      gapY: gapY,
+      overlapLeftColPx: overlapL,
+      overlapRightColPx: overlapR,
+      rows: rows
+    });
+    __dbgPost('H-C', 'epic_deck.html:logMarketShiftLayout', 'computed grid ' + reason, {
+      reason: reason,
+      gridTemplateRows: csG.gridTemplateRows,
+      gridTemplateColumns: csG.gridTemplateColumns,
+      alignContent: csG.alignContent,
+      mvFlex: csMv.flex,
+      mvMinH: csMv.minHeight,
+      mvOverflow: csMv.overflow
+    });
+  }
+  // #endregion
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
@@ -5700,6 +5362,13 @@
       if (activeBtn) activeBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
     if (syncHash) syncLocationHash(idx);
+    // #region agent log
+    if (idx === 1) {
+      requestAnimationFrame(function () {
+        logMarketShiftLayout('after show');
+      });
+    }
+    // #endregion
   }
 
   function buildToc() {
@@ -5825,18 +5494,15 @@
     if (fromHash !== null) show(fromHash);
     else show(0, { syncHash: false });
   }
-
-  (function initBudgetDonutHover() {
-    const split = document.querySelector('.slide-budget .budget-split');
-    if (!split) return;
-    const keyed = split.querySelectorAll('[data-budget-key]');
-    split.addEventListener('mouseleave', () => split.removeAttribute('data-budget-hover'));
-    keyed.forEach((el) => {
-      el.addEventListener('mouseenter', () => {
-        split.setAttribute('data-budget-hover', el.dataset.budgetKey);
+  // #region agent log
+  window.addEventListener('resize', function () {
+    if (current === 1) {
+      requestAnimationFrame(function () {
+        logMarketShiftLayout('resize');
       });
-    });
-  })();
+    }
+  });
+  // #endregion
 </script>
 
 </body>

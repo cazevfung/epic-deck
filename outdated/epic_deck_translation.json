@@ -1,0 +1,2421 @@
+[
+  {
+    "id": "doc__date",
+    "en": "**Date:** April 2026",
+    "within_limit": true,
+    "chars": 20
+  },
+  {
+    "id": "doc__flow_block",
+    "en": "Platform Positioning (What it is)\n↓\nIP Tour (How — Core Strategy)\n├── Dual-track IP collabs (global IP into China + Chinese IP going global)\n├── Chinese IP commercial proof (Douluo Dalu + Scissor Seven)\n├── Virtual concerts + brand partnerships\n└── Creator economy ecosystem\n↓\nBudget Deployment (How resources are allocated)\n├── Overview: $30M USD + four-pillar strategic priority\n├── Paid media (50% — core user acquisition)\n├── Esports (15% — foundation ecosystem)\n├── Content UGC (15% — ecosystem building)\n└── IP launch/tour (20% — cold start)\n↓\nAll-Ages Ecosystem (compliance flip)\n↓\nTechnical Alignment (feasibility assurance)",
+    "within_limit": true,
+    "chars": 632
+  },
+  {
+    "id": "doc__flow_title",
+    "en": "Publishing Core Logic (Narrative Flow)",
+    "within_limit": true,
+    "chars": 38
+  },
+  {
+    "id": "doc__outline_intro",
+    "en": "(Table of contents chapter list — see source file \"Contents\" section; retain clickable structure if outputting Markdown)",
+    "within_limit": true,
+    "chars": 120
+  },
+  {
+    "id": "doc__overview_table_caption",
+    "en": "Deck structure overview",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "doc__party_a",
+    "en": "**Proposer:** X.D. Network Inc.",
+    "within_limit": true,
+    "chars": 31
+  },
+  {
+    "id": "doc__party_b",
+    "en": "**Partner:** Epic Games",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "doc__s2_edu_heading",
+    "en": "Market Education Complete:",
+    "within_limit": true,
+    "chars": 26
+  },
+  {
+    "id": "doc__s2_edu_li1",
+    "en": "\"Egg Party\" (50M creators, 100M UGC maps) and \"Peacekeeper Elite Oasis Origin\" (33M DAU editor ecosystem) have cultivated tens of millions of UGC creators and established a monetizable commercial loop",
+    "within_limit": true,
+    "chars": 200
+  },
+  {
+    "id": "doc__s2_edu_li2",
+    "en": "This proves Chinese players have deeply accepted the logic of \"creating content inside games\" — no need to explain \"why build\" from scratch",
+    "within_limit": true,
+    "chars": 139
+  },
+  {
+    "id": "doc__s2_explore_heading",
+    "en": "Willing to Explore Together?",
+    "within_limit": true,
+    "chars": 28
+  },
+  {
+    "id": "doc__s2_explore_li1",
+    "en": "China's market environment is transformed — player openness to innovative gameplay, UGC ecosystem maturity, and cultural IP global influence have all reached new heights.",
+    "within_limit": true,
+    "chars": 170
+  },
+  {
+    "id": "doc__s2_explore_li2",
+    "en": "As a Chinese company combining platform, R&D, and publishing, our values align closely with Epic's; we have China-rooted, globally-facing game publishing capability, and can activate China's quality player base through a nimble, open partnership model.",
+    "within_limit": true,
+    "chars": 252
+  },
+  {
+    "id": "doc__s2_explore_li3",
+    "en": "We are ready to explore new possibilities for Fortnite's China publishing with Epic.",
+    "within_limit": true,
+    "chars": 84
+  },
+  {
+    "id": "doc__s2_heading",
+    "en": "China Market Status: Pragmatic Narrative",
+    "within_limit": true,
+    "chars": 40
+  },
+  {
+    "id": "doc__s2_nonreal_heading",
+    "en": "Non-Realistic Shooter Viability:",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "doc__s2_nonreal_li1",
+    "en": "Sausage Man has operated for 8 years in cartoon-rendered BR (peak MAU 27M), proving Chinese players' long-term payment willingness and community loyalty for non-realistic shooters",
+    "within_limit": true,
+    "chars": 179
+  },
+  {
+    "id": "doc__s2_nonreal_li2",
+    "en": "In 2024, VALORANT achieved 50M MAU with \"hero shooter + trendy style\", further validating that stylized shooting has crossed the \"market education\" stage and become a mainstream option",
+    "within_limit": true,
+    "chars": 184
+  },
+  {
+    "id": "doc__s2_pragmatic",
+    "en": "Based on the **\"pragmatic narrative\"** principle (no inflated expectations, controlled messaging, emphasize \"eating the cake well\" over \"everyone's blockbuster\"), reframe market analysis:",
+    "within_limit": true,
+    "chars": 187
+  },
+  {
+    "id": "doc__s2_shift_heading",
+    "en": "Shift: From \"Realism-Led\" to \"Style-Diverse\"",
+    "within_limit": true,
+    "chars": 44
+  },
+  {
+    "id": "doc__s2_shift_p1",
+    "en": "When Fortnite first reached China in 2018, the market had just emerged from PUBG's realism aesthetic; cartoon rendering + building mechanics created a double unfamiliarity that raised the barrier to entry. Today, this premise has fundamentally changed:",
+    "within_limit": true,
+    "chars": 252
+  },
+  {
+    "id": "doc__s2_xd_heading",
+    "en": "X.D. Validates Building Viability:",
+    "within_limit": true,
+    "chars": 34
+  },
+  {
+    "id": "doc__s2_xd_li1",
+    "en": "\"Heartopia\" (80M+ China downloads, 5M international first-week adds) validates the scalability of free-form building systems in China, proving building works as standalone content (not just a competitive tool)",
+    "within_limit": true,
+    "chars": 209
+  },
+  {
+    "id": "doc__s3_narrative_heading",
+    "en": "Core Narrative",
+    "within_limit": true,
+    "chars": 14
+  },
+  {
+    "id": "doc__s3_narrative_lead",
+    "en": "**Non-realistic shooter + long-tail UGC platform = X.D.'s exclusive domain**",
+    "within_limit": true,
+    "chars": 76
+  },
+  {
+    "id": "doc__s3_narrative_p",
+    "en": "In China, the only publisher with both \"cartoon shooter long-term live ops experience\" + \"zero-rev-share platform ecosystem\" is X.D. Network. These are the two necessary conditions for Fortnite's success in China, and X.D. is the only team that satisfies both.",
+    "within_limit": true,
+    "chars": 260
+  },
+  {
+    "id": "doc__theme",
+    "en": "**Proposal theme:** \"China's First Cross-Media Interactive Platform\" — together we build the Fortnite platform for China",
+    "within_limit": true,
+    "chars": 120
+  },
+  {
+    "id": "doc__title",
+    "en": "X.D. Network × Epic Games | Fortnite China Publishing Proposal",
+    "within_limit": true,
+    "chars": 62
+  },
+  {
+    "id": "slide01__brand_tag",
+    "en": "X.D. Network × Epic Games · 2026",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "slide01__cover_title",
+    "en": "Fortnite China\nPublishing Proposal",
+    "within_limit": true,
+    "chars": 34
+  },
+  {
+    "id": "slide01__img_alt_logo",
+    "en": "XD",
+    "within_limit": true,
+    "chars": 2
+  },
+  {
+    "id": "slide01__meta_confidential",
+    "en": "Confidential",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide01__meta_date",
+    "en": "April 2026",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide02__eyebrow",
+    "en": "Part 01 · Market timing",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "slide02__h2",
+    "en": "Things changed.",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide02__img_alt_egg",
+    "en": "Egg Party · UGC promo",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide02__img_alt_oasis",
+    "en": "Peacekeeper Elite · Oasis Origin editor promo",
+    "within_limit": true,
+    "chars": 45
+  },
+  {
+    "id": "slide02__img_alt_pubg",
+    "en": "PUBG Mobile — tactical realism reference",
+    "within_limit": true,
+    "chars": 40
+  },
+  {
+    "id": "slide02__img_alt_sausage",
+    "en": "Sausage Man · official season promo",
+    "within_limit": true,
+    "chars": 35
+  },
+  {
+    "id": "slide02__img_alt_val",
+    "en": "VALORANT · Key Art",
+    "within_limit": true,
+    "chars": 18
+  },
+  {
+    "id": "slide02__new_desc",
+    "en": "Peacekeeper Elite and Delta Force raised the quality floor. Sausage Man, Egg Party, and Oasis Origin proved stylized shooters + UGC/creator appetite.",
+    "within_limit": true,
+    "chars": 149
+  },
+  {
+    "id": "slide02__new_eyebrow",
+    "en": "2026",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide02__new_state",
+    "en": "Style-diverse. Educated audience.\nNon-realistic & UGC at scale.",
+    "within_limit": true,
+    "chars": 63
+  },
+  {
+    "id": "slide02__new_year",
+    "en": "2026",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide02__old_desc",
+    "en": "When Fortnite first reached China, benchmarks for non-realistic shooting, UGC, and creator platforms were thin. Reference: PUBG Mobile (realism-first).",
+    "within_limit": true,
+    "chars": 151
+  },
+  {
+    "id": "slide02__old_eyebrow",
+    "en": "2018",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide02__old_state",
+    "en": "Realism-led shooter market.\nCartoon + build = high barrier.",
+    "within_limit": true,
+    "chars": 59
+  },
+  {
+    "id": "slide02__old_year",
+    "en": "2018",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide02__page",
+    "en": "02 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide02__slot_egg_hint",
+    "en": "Egg Party UGC.",
+    "within_limit": true,
+    "chars": 14
+  },
+  {
+    "id": "slide02__slot_egg_title",
+    "en": "Egg Party",
+    "within_limit": true,
+    "chars": 9
+  },
+  {
+    "id": "slide02__slot_oasis_hint",
+    "en": "Oasis Origin editor.",
+    "within_limit": true,
+    "chars": 20
+  },
+  {
+    "id": "slide02__slot_oasis_title",
+    "en": "Peacekeeper Elite · Oasis Origin",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "slide02__slot_pubg_hint",
+    "en": "2018 realism-first BR benchmark.",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "slide02__slot_pubg_title",
+    "en": "Realism-led BR reference (PUBG Mobile)",
+    "within_limit": true,
+    "chars": 38
+  },
+  {
+    "id": "slide02__slot_sausage_hint",
+    "en": "Sausage Man key visual.",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "slide02__slot_sausage_title",
+    "en": "Sausage Man · Key Art",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide02__slot_val_hint",
+    "en": "VALORANT China.",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide02__slot_val_title",
+    "en": "VALORANT · China Key Art",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide03__card1_concl",
+    "en": "Proof that stylized shooters sustain — aligns with Fortnite's cartoon-rendered, mode-platform logic.",
+    "within_limit": true,
+    "chars": 100
+  },
+  {
+    "id": "slide03__card1_img_alt",
+    "en": "Sausage Man · promo art",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "slide03__card1_name",
+    "en": "Sausage Man",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide03__card1_sl1",
+    "en": "Live",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide03__card1_sl2",
+    "en": "Peak MAU",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide03__card1_sl3",
+    "en": "Downloads",
+    "within_limit": true,
+    "chars": 9
+  },
+  {
+    "id": "slide03__card1_slot_hint",
+    "en": "Validation 1: stylized shooter LT.",
+    "within_limit": true,
+    "chars": 34
+  },
+  {
+    "id": "slide03__card1_slot_title",
+    "en": "Sausage Man · Key Art / screenshots",
+    "within_limit": true,
+    "chars": 35
+  },
+  {
+    "id": "slide03__card1_sv1",
+    "en": "8 yrs",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide03__card1_sv2",
+    "en": "~27M",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide03__card1_sv3",
+    "en": "300M+",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide03__card1_tag",
+    "en": "XD",
+    "within_limit": true,
+    "chars": 2
+  },
+  {
+    "id": "slide03__card2_concl",
+    "en": "Nine-figure creator and map supply validates UGC mindset; Oasis Origin editor ecosystem reinforces \"party + creator\" loop.",
+    "within_limit": true,
+    "chars": 122
+  },
+  {
+    "id": "slide03__card2_img_alt",
+    "en": "Egg Party · UGC / Party vibe",
+    "within_limit": true,
+    "chars": 28
+  },
+  {
+    "id": "slide03__card2_name",
+    "en": "Egg Party (UGC)",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide03__card2_sl1",
+    "en": "Creators",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide03__card2_sl2",
+    "en": "UGC Maps",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide03__card2_sl3",
+    "en": "Oasis DAU",
+    "within_limit": true,
+    "chars": 9
+  },
+  {
+    "id": "slide03__card2_slot_hint",
+    "en": "Validation 2: UGC ecosystem.",
+    "within_limit": true,
+    "chars": 28
+  },
+  {
+    "id": "slide03__card2_slot_title",
+    "en": "Egg Party · UGC / editor mindset",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "slide03__card2_sv1",
+    "en": "50M+",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide03__card2_sv2",
+    "en": "100M+",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide03__card2_sv3",
+    "en": "33M",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide03__card2_tag",
+    "en": "NetEase",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide03__card3_concl",
+    "en": "Building and social at scale accepted by young users — Zero Build and social loops map directly.",
+    "within_limit": true,
+    "chars": 96
+  },
+  {
+    "id": "slide03__card3_img_alt",
+    "en": "Heartopia · official Key Art",
+    "within_limit": true,
+    "chars": 28
+  },
+  {
+    "id": "slide03__card3_name",
+    "en": "Heartopia",
+    "within_limit": true,
+    "chars": 9
+  },
+  {
+    "id": "slide03__card3_sl1",
+    "en": "CN Downloads",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide03__card3_sl2",
+    "en": "Int'l Launch",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide03__card3_sl3",
+    "en": "Build / Social",
+    "within_limit": true,
+    "chars": 14
+  },
+  {
+    "id": "slide03__card3_slot_hint",
+    "en": "Validation 3: build & social",
+    "within_limit": true,
+    "chars": 28
+  },
+  {
+    "id": "slide03__card3_slot_title",
+    "en": "Heartopia · Key Art / build & social",
+    "within_limit": true,
+    "chars": 36
+  },
+  {
+    "id": "slide03__card3_sv1",
+    "en": "80M+",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide03__card3_sv2",
+    "en": "5M+ 1st wk",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide03__card3_sv3",
+    "en": "Scaled",
+    "within_limit": true,
+    "chars": 6
+  },
+  {
+    "id": "slide03__card3_tag",
+    "en": "XD",
+    "within_limit": true,
+    "chars": 2
+  },
+  {
+    "id": "slide03__eyebrow",
+    "en": "Part 01 · Why Now",
+    "within_limit": true,
+    "chars": 17
+  },
+  {
+    "id": "slide03__h2",
+    "en": "Market Ready:\nThree Validations",
+    "within_limit": true,
+    "chars": 31
+  },
+  {
+    "id": "slide03__page",
+    "en": "03 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide04__cap_dave",
+    "en": "Dave the Diver",
+    "within_limit": true,
+    "chars": 14
+  },
+  {
+    "id": "slide04__cap_human",
+    "en": "Human Fall Flat",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide04__cap_terraria",
+    "en": "Terraria",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide04__exclusive_head",
+    "en": "Exclusives",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide04__exclusive_sub",
+    "en": "Flagship exclusives · representative visuals",
+    "within_limit": true,
+    "chars": 44
+  },
+  {
+    "id": "slide04__eyebrow",
+    "en": "Part 01 · Core capabilities",
+    "within_limit": true,
+    "chars": 27
+  },
+  {
+    "id": "slide04__frame_title",
+    "en": "Key Art",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide04__h2",
+    "en": "Shared Values · TapTap Scale ·\nWhy X.D. Network",
+    "within_limit": true,
+    "chars": 47
+  },
+  {
+    "id": "slide04__hint_dave",
+    "en": "Dave the Diver · TapTap.",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide04__hint_human",
+    "en": "Human Fall Flat · TapTap.",
+    "within_limit": true,
+    "chars": 25
+  },
+  {
+    "id": "slide04__hint_terraria",
+    "en": "Terraria · TapTap.",
+    "within_limit": true,
+    "chars": 18
+  },
+  {
+    "id": "slide04__img_alt_dave",
+    "en": "Dave the Diver · Key Art",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide04__img_alt_human",
+    "en": "Human Fall Flat · cover",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "slide04__img_alt_terraria",
+    "en": "Terraria Steam cover",
+    "within_limit": true,
+    "chars": 20
+  },
+  {
+    "id": "slide04__kpi1_lbl",
+    "en": "Founded",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide04__kpi1_val",
+    "en": "2012",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide04__kpi2_lbl",
+    "en": "MAU",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide04__kpi2_val",
+    "en": "50M+",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide04__kpi3_lbl",
+    "en": "Downloads/yr",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide04__kpi3_val",
+    "en": "800M+",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide04__logo_alt",
+    "en": "TapTap",
+    "within_limit": true,
+    "chars": 6
+  },
+  {
+    "id": "slide04__page",
+    "en": "04 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide04__row1_k",
+    "en": "X.D. / TapTap",
+    "within_limit": true,
+    "chars": 13
+  },
+  {
+    "id": "slide04__row1_v",
+    "en": "0% rev share · players & devs first",
+    "within_limit": true,
+    "chars": 35
+  },
+  {
+    "id": "slide04__row2_k",
+    "en": "Epic",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide04__row2_v",
+    "en": "Anti-platform-tax · long-term products · UEFN creator payout",
+    "within_limit": true,
+    "chars": 60
+  },
+  {
+    "id": "slide04__row3_k",
+    "en": "Synergy",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide04__row3_v",
+    "en": "No channel tax on dev earnings · healthier LTV/CAC",
+    "within_limit": true,
+    "chars": 50
+  },
+  {
+    "id": "slide04__row4_k",
+    "en": "Capabilities",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide04__row4_v",
+    "en": "30+ self-dev · global pub · TapTap community",
+    "within_limit": true,
+    "chars": 44
+  },
+  {
+    "id": "slide04__values_label",
+    "en": "Value Alliance",
+    "within_limit": true,
+    "chars": 14
+  },
+  {
+    "id": "slide04__zero_sub",
+    "en": "since day one",
+    "within_limit": true,
+    "chars": 13
+  },
+  {
+    "id": "slide04__zero_value",
+    "en": "0% Platform Fee",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide05__aria_kpi",
+    "en": "Sausage Man core metrics",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide05__c1_hint",
+    "en": "Ultraman collab.",
+    "within_limit": true,
+    "chars": 16
+  },
+  {
+    "id": "slide05__c1_img_alt",
+    "en": "Sausage Man × Ultraman collab",
+    "within_limit": true,
+    "chars": 29
+  },
+  {
+    "id": "slide05__c1_title",
+    "en": "Ultraman · collab Key Art",
+    "within_limit": true,
+    "chars": 25
+  },
+  {
+    "id": "slide05__c2_hint",
+    "en": "Kamen Rider collab.",
+    "within_limit": true,
+    "chars": 19
+  },
+  {
+    "id": "slide05__c2_img_alt",
+    "en": "Sausage Man × Kamen Rider collab",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "slide05__c2_title",
+    "en": "Kamen Rider",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide05__c3_hint",
+    "en": "Sanrio collab.",
+    "within_limit": true,
+    "chars": 14
+  },
+  {
+    "id": "slide05__c3_img_alt",
+    "en": "Sausage Man × Sanrio collab",
+    "within_limit": true,
+    "chars": 27
+  },
+  {
+    "id": "slide05__c3_title",
+    "en": "Sanrio",
+    "within_limit": true,
+    "chars": 6
+  },
+  {
+    "id": "slide05__c4_hint",
+    "en": "CN anime collab.",
+    "within_limit": true,
+    "chars": 16
+  },
+  {
+    "id": "slide05__c4_img_alt",
+    "en": "Sausage Man × Douluo Dalu collab",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "slide05__c4_title",
+    "en": "Douluo Dalu / Scissor Seven",
+    "within_limit": true,
+    "chars": 27
+  },
+  {
+    "id": "slide05__c5_hint",
+    "en": "KFC collab.",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide05__c5_img_alt",
+    "en": "Sausage Man × KFC collab",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide05__c5_title",
+    "en": "KFC · brand tie-up",
+    "within_limit": true,
+    "chars": 18
+  },
+  {
+    "id": "slide05__c6_hint",
+    "en": "Wanglaoji tie-up.",
+    "within_limit": true,
+    "chars": 17
+  },
+  {
+    "id": "slide05__c6_img_alt",
+    "en": "Sausage Man × Wanglaoji collab",
+    "within_limit": true,
+    "chars": 30
+  },
+  {
+    "id": "slide05__c6_title",
+    "en": "Pizza Hut / Wanglaoji",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide05__collab_grid_aria",
+    "en": "Sausage Man collab & brand partnership showcase",
+    "within_limit": true,
+    "chars": 47
+  },
+  {
+    "id": "slide05__collab_label",
+    "en": "Collab depth preview (86+ case pipeline reusable)",
+    "within_limit": true,
+    "chars": 49
+  },
+  {
+    "id": "slide05__eyebrow",
+    "en": "Proof · Genre credentials",
+    "within_limit": true,
+    "chars": 25
+  },
+  {
+    "id": "slide05__fig_gp_aria",
+    "en": "Sausage Man gameplay shot",
+    "within_limit": true,
+    "chars": 25
+  },
+  {
+    "id": "slide05__h2",
+    "en": "Sausage Man:\nChina's Closest Parallel to Fortnite",
+    "within_limit": true,
+    "chars": 49
+  },
+  {
+    "id": "slide05__hero_img_alt",
+    "en": "Sausage Man · Steam page hero visual",
+    "within_limit": true,
+    "chars": 36
+  },
+  {
+    "id": "slide05__hero_slot_hint",
+    "en": "Hero visual.",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide05__hero_slot_title",
+    "en": "Sausage Man · Key Art / screenshots",
+    "within_limit": true,
+    "chars": 35
+  },
+  {
+    "id": "slide05__img_alt_gp",
+    "en": "Sausage Man — BR gameplay screenshot",
+    "within_limit": true,
+    "chars": 36
+  },
+  {
+    "id": "slide05__kpi1_lab",
+    "en": "years",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide05__kpi1_sub",
+    "en": "live ops",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide05__kpi1_val",
+    "en": "8",
+    "within_limit": true,
+    "chars": 1
+  },
+  {
+    "id": "slide05__kpi2_lab",
+    "en": "downloads",
+    "within_limit": true,
+    "chars": 9
+  },
+  {
+    "id": "slide05__kpi2_val",
+    "en": "300M+",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide05__kpi3_lab",
+    "en": "peak MAU",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide05__kpi3_val",
+    "en": "27M",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide05__logo_alt",
+    "en": "Sausage Man logo",
+    "within_limit": true,
+    "chars": 16
+  },
+  {
+    "id": "slide05__page",
+    "en": "05 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide05__row_anime_k",
+    "en": "Companion anime",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide05__row_anime_v",
+    "en": "15 seasons · 8.67B views",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide05__row_brand_k",
+    "en": "Brand tie-ups",
+    "within_limit": true,
+    "chars": 13
+  },
+  {
+    "id": "slide05__row_brand_v",
+    "en": "KFC · Pizza Hut · Wanglaoji",
+    "within_limit": true,
+    "chars": 27
+  },
+  {
+    "id": "slide05__row_ip_k",
+    "en": "IP integrations",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide05__row_ip_v",
+    "en": "Ultraman · Kamen Rider · Sanrio · Douluo Dalu · Assassin Wulinxiao",
+    "within_limit": true,
+    "chars": 66
+  },
+  {
+    "id": "slide05__row_social_k",
+    "en": "Social presence",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide05__row_social_v",
+    "en": "3.3M Douyin · 4.7M Kuaishou · 43M TapTap",
+    "within_limit": true,
+    "chars": 40
+  },
+  {
+    "id": "slide06__eyebrow",
+    "en": "Proof · Global operations",
+    "within_limit": true,
+    "chars": 25
+  },
+  {
+    "id": "slide06__h2",
+    "en": "Torchlight: Infinite +\nHeartopia",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "slide06__h_cap_sub",
+    "en": "China-scale validation · international launch · #1 iOS free in 50+ countries (US, JP, KR included)",
+    "within_limit": true,
+    "chars": 98
+  },
+  {
+    "id": "slide06__h_cap_title",
+    "en": "Heartopia",
+    "within_limit": true,
+    "chars": 9
+  },
+  {
+    "id": "slide06__h_chip_1",
+    "en": "#1 iOS Free",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide06__h_chip_2",
+    "en": "80M+ CN DL",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide06__h_chip_3",
+    "en": "50+ markets",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide06__h_chips_aria",
+    "en": "Heartopia proof points",
+    "within_limit": true,
+    "chars": 22
+  },
+  {
+    "id": "slide06__h_img_alt",
+    "en": "Heartopia Key Art",
+    "within_limit": true,
+    "chars": 17
+  },
+  {
+    "id": "slide06__h_kpi_l1",
+    "en": "China DL",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide06__h_kpi_l2",
+    "en": "Int'l 1st-week adds",
+    "within_limit": true,
+    "chars": 19
+  },
+  {
+    "id": "slide06__h_kpi_l3",
+    "en": "Markets topped",
+    "within_limit": true,
+    "chars": 14
+  },
+  {
+    "id": "slide06__h_kpi_n1",
+    "en": "80M+",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide06__h_kpi_n2",
+    "en": "5M",
+    "within_limit": true,
+    "chars": 2
+  },
+  {
+    "id": "slide06__h_kpi_n3",
+    "en": "50+",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide06__h_li1",
+    "en": "China-scale validation: free-form building × casual social hit; building works as standalone content, not just competitive accessory.",
+    "within_limit": true,
+    "chars": 133
+  },
+  {
+    "id": "slide06__h_li2",
+    "en": "International launch + first-week growth: simultaneous global ship, multi-market execution.",
+    "within_limit": true,
+    "chars": 91
+  },
+  {
+    "id": "slide06__h_li3",
+    "en": "#1 iOS free in 50+ countries (US, JP, KR): cross-border user acquisition and publishing reach — prioritizing global breadth over single-market depth.",
+    "within_limit": true,
+    "chars": 149
+  },
+  {
+    "id": "slide06__page",
+    "en": "06 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide06__t_cap_sub",
+    "en": "UE4 · 13 seasons live · China / EU / KR simultaneous launch — shares UE tech stack and seasonal rhythm with Fortnite",
+    "within_limit": true,
+    "chars": 116
+  },
+  {
+    "id": "slide06__t_cap_title",
+    "en": "Torchlight: Infinite",
+    "within_limit": true,
+    "chars": 20
+  },
+  {
+    "id": "slide06__t_chip_seasons",
+    "en": "13 seasons",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide06__t_chip_sync",
+    "en": "Multi-region",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide06__t_chip_ue4",
+    "en": "UE4",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide06__t_chips_aria",
+    "en": "Torchlight proof points",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "slide06__t_img_alt",
+    "en": "Torchlight: Infinite Key Art",
+    "within_limit": true,
+    "chars": 28
+  },
+  {
+    "id": "slide06__t_kpi_l1",
+    "en": "Global DL",
+    "within_limit": true,
+    "chars": 9
+  },
+  {
+    "id": "slide06__t_kpi_l2",
+    "en": "Seasons · IP long-term",
+    "within_limit": true,
+    "chars": 22
+  },
+  {
+    "id": "slide06__t_kpi_n1",
+    "en": "20M+",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide06__t_kpi_n2",
+    "en": "13+",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide06__t_li1",
+    "en": "UE4 seasonal live ops + CN/US/KR simultaneous launch; China stays in sync with global version and release cadence.",
+    "within_limit": true,
+    "chars": 114
+  },
+  {
+    "id": "slide06__t_li2",
+    "en": "Post-IP-acquisition commitment: seasonal content, pipeline throughput, and cross-border delivery — not a single-region sprint.",
+    "within_limit": true,
+    "chars": 126
+  },
+  {
+    "id": "slide06__t_li3",
+    "en": "Shares UE tech stack and long-season planning with Fortnite; engineering and ops methods transfer directly.",
+    "within_limit": true,
+    "chars": 107
+  },
+  {
+    "id": "slide06__thesis",
+    "en": "Global season-based live ops × simultaneous multi-region launch — make China part of the global ecosystem, not a \"special edition\".",
+    "within_limit": true,
+    "chars": 131
+  },
+  {
+    "id": "slide07__bridge",
+    "en": "86+ collab cases · full chain from licensing to live → global IP into China + Chinese IP going global",
+    "within_limit": true,
+    "chars": 101
+  },
+  {
+    "id": "slide07__col1_copy",
+    "en": "Cross-region legal, asset, and derivative coordination; long-term live ops cadence supports Fortnite global IP entry into China.",
+    "within_limit": true,
+    "chars": 128
+  },
+  {
+    "id": "slide07__col1_img_alt",
+    "en": "Ragnarok Online × Disney collab Key Visual",
+    "within_limit": true,
+    "chars": 42
+  },
+  {
+    "id": "slide07__col1_label",
+    "en": "Disney Global License",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide07__col2_copy",
+    "en": "China collab execution and review-scale templates ready for \"Chinese IP going global\" delivery.",
+    "within_limit": true,
+    "chars": 95
+  },
+  {
+    "id": "slide07__col2_img_alt",
+    "en": "Sausage Man × Scissor Seven collab promo",
+    "within_limit": true,
+    "chars": 40
+  },
+  {
+    "id": "slide07__col2_label",
+    "en": "Scissor Seven (China IP)",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide07__col3_copy",
+    "en": "FMCG × gaming — single-case KV (vertical 2:3, aligned with left two columns).",
+    "within_limit": true,
+    "chars": 77
+  },
+  {
+    "id": "slide07__col3_img_alt",
+    "en": "Sausage Man × KFC collab Key Visual",
+    "within_limit": true,
+    "chars": 35
+  },
+  {
+    "id": "slide07__col3_label",
+    "en": "Cross-brand",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide07__eyebrow",
+    "en": "Proof · Commercial assets",
+    "within_limit": true,
+    "chars": 25
+  },
+  {
+    "id": "slide07__h2",
+    "en": "Top-Tier IP Licensing\n& Derivative Experience",
+    "within_limit": true,
+    "chars": 45
+  },
+  {
+    "id": "slide07__matrix_copy",
+    "en": "Grid cropped square 1:1; continue adjusting assets at 1:1 as needed.",
+    "within_limit": true,
+    "chars": 68
+  },
+  {
+    "id": "slide07__matrix_label",
+    "en": "More collabs",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide07__page",
+    "en": "07 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide07__thumb_alt_01",
+    "en": "Ultraman",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide07__thumb_alt_02",
+    "en": "Kamen Rider",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide07__thumb_alt_03",
+    "en": "Sanrio",
+    "within_limit": true,
+    "chars": 6
+  },
+  {
+    "id": "slide07__thumb_alt_04",
+    "en": "Boonie Bears",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide07__thumb_alt_05",
+    "en": "Douluo Dalu",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide07__thumb_alt_06",
+    "en": "Wanglaoji",
+    "within_limit": true,
+    "chars": 9
+  },
+  {
+    "id": "slide07__thumb_alt_07",
+    "en": "Shuanghui",
+    "within_limit": false,
+    "chars": 9,
+    "notes": "Brand name 'Shuanghui' is 9 chars vs 8 limit; alternative: 'Shuangh' (incomplete) — recommend keeping 'Shuanghui'"
+  },
+  {
+    "id": "slide07__thumb_alt_08",
+    "en": "Themed seasons",
+    "within_limit": true,
+    "chars": 14
+  },
+  {
+    "id": "slide08__h2",
+    "en": "China Publishing Plan",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide08__page",
+    "en": "08 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide09__eyebrow",
+    "en": "Part 02 · Publishing plan",
+    "within_limit": true,
+    "chars": 25
+  },
+  {
+    "id": "slide09__h2",
+    "en": "Strategic Positioning",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide09__hero_en",
+    "en": "China's First\nCross-Media\nInteractive\nPlatform.",
+    "within_limit": true,
+    "chars": 47
+  },
+  {
+    "id": "slide09__li1",
+    "en": "**Opportunity**: Don't fight for the saturated tactical-combat **red ocean** — use the game as a base, content interaction as core, creators and cross-border collabs as growth engines to open a **new perception category** and long-term platform ecosystem.",
+    "within_limit": true,
+    "chars": 255
+  },
+  {
+    "id": "slide09__li2",
+    "en": "**Audience**: Mature appetite for fused online entertainment; users stay and pay not just to win, but for social, expression, participation, spectatorship, and cultural identity.",
+    "within_limit": true,
+    "chars": 178
+  },
+  {
+    "id": "slide09__li3",
+    "en": "**Positioning**: The optimal solution is not a pure competitive wrapper — it's a **next-gen interactive platform** that sustains content events, carries a creator ecosystem, and connects brand partnerships.",
+    "within_limit": true,
+    "chars": 206
+  },
+  {
+    "id": "slide09__page",
+    "en": "09 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide09__points_aria",
+    "en": "Three strategic pillars",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "slide09__q1_aria",
+    "en": "Fortnite combat gameplay",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide09__q1_img_alt",
+    "en": "Fortnite combat gameplay",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide09__q1_tag",
+    "en": "Game",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide09__q2_aria",
+    "en": "UEFN editor interface",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide09__q2_img_alt",
+    "en": "UEFN editor interface",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide09__q2_tag",
+    "en": "Creator",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide09__q3_aria",
+    "en": "Fortnite Party Royale / concert",
+    "within_limit": true,
+    "chars": 31
+  },
+  {
+    "id": "slide09__q3_img_alt",
+    "en": "Fortnite Party Royale event scene",
+    "within_limit": true,
+    "chars": 33
+  },
+  {
+    "id": "slide09__q3_tag",
+    "en": "Social",
+    "within_limit": true,
+    "chars": 6
+  },
+  {
+    "id": "slide09__q4_aria",
+    "en": "Fortnite × Marvel collab",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide09__q4_img_alt",
+    "en": "Fortnite × Marvel collab",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide09__q4_tag",
+    "en": "Culture",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide09__quad_aria",
+    "en": "Game, Creator, Social, Culture — four images horizontal",
+    "within_limit": true,
+    "chars": 55
+  },
+  {
+    "id": "slide10__donut_aria",
+    "en": "Year-one budget: hover sector or legend to highlight",
+    "within_limit": true,
+    "chars": 52
+  },
+  {
+    "id": "slide10__donut_center_amt",
+    "en": "$30,000,000",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "slide10__donut_center_lbl",
+    "en": "USD · Year 1",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide10__eyebrow",
+    "en": "Year-one marketing investment",
+    "within_limit": true,
+    "chars": 29
+  },
+  {
+    "id": "slide10__h2",
+    "en": "$30M · \"Launch Burst +\nLong-Tail Ecosystem\" Dual Drive",
+    "within_limit": true,
+    "chars": 54
+  },
+  {
+    "id": "slide10__lede",
+    "en": "We recommend a first-year budget of <em>$30 million USD</em>, allocated as a <em>\"launch burst + long-tail ecosystem\"</em> dual-engine strategy. The budget is not pure paid acquisition — it's a systematic layout around Fortnite's platform positioning. (Merge: keep <em> or map to <strong> per design)",
+    "within_limit": true,
+    "chars": 300
+  },
+  {
+    "id": "slide10__leg_adv_amt",
+    "en": "$15M",
+    "within_limit": true,
+    "chars": 4
+  },
+  {
+    "id": "slide10__leg_adv_pct",
+    "en": "50%",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide10__leg_adv_sub",
+    "en": "Build broad market awareness, drive pre-reg and download conversion, support major release pushes.",
+    "within_limit": true,
+    "chars": 98
+  },
+  {
+    "id": "slide10__leg_adv_title",
+    "en": "Paid Media",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide10__leg_brand_amt",
+    "en": "$6M",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide10__leg_brand_pct",
+    "en": "20%",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide10__leg_brand_sub",
+    "en": "Create break-out events, IP tie-ups, offline experiences, and launch social buzz.",
+    "within_limit": true,
+    "chars": 81
+  },
+  {
+    "id": "slide10__leg_brand_title",
+    "en": "Brand & Collabs",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide10__leg_esports_amt",
+    "en": "$4.5M",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide10__leg_esports_pct",
+    "en": "15%",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide10__leg_esports_sub",
+    "en": "Rapidly build China-local tournament infrastructure; deepen core player affinity and long-term vitality.",
+    "within_limit": true,
+    "chars": 104
+  },
+  {
+    "id": "slide10__leg_esports_title",
+    "en": "Esports",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide10__leg_ugc_amt",
+    "en": "$4.5M",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide10__leg_ugc_pct",
+    "en": "15%",
+    "within_limit": true,
+    "chars": 3
+  },
+  {
+    "id": "slide10__leg_ugc_sub",
+    "en": "Creator content supply, livestream/video distribution, and UEFN creator ecosystem.",
+    "within_limit": true,
+    "chars": 82
+  },
+  {
+    "id": "slide10__leg_ugc_title",
+    "en": "UGC Content Creation",
+    "within_limit": true,
+    "chars": 20
+  },
+  {
+    "id": "slide10__page",
+    "en": "10 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide11__eyebrow",
+    "en": "Publishing Plan",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide11__h2",
+    "en": "Launch Strategy ($6M): Zero Build + IP / Offline",
+    "within_limit": true,
+    "chars": 48
+  },
+  {
+    "id": "slide11__img_alt_offline",
+    "en": "Fortnite offline brand experience",
+    "within_limit": true,
+    "chars": 33
+  },
+  {
+    "id": "slide11__img_alt_poster",
+    "en": "Scissor Seven official art",
+    "within_limit": true,
+    "chars": 26
+  },
+  {
+    "id": "slide11__img_alt_zb",
+    "en": "Fortnite Zero Build mode",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide11__ip_aria",
+    "en": "IP and offline event points",
+    "within_limit": true,
+    "chars": 27
+  },
+  {
+    "id": "slide11__ip_li1",
+    "en": "**Tier-1 domestic IP launch collabs**: Local anime, film, and TV IPs enter Fortnite — manufactured buzz + monetization hooks.",
+    "within_limit": true,
+    "chars": 125
+  },
+  {
+    "id": "slide11__ip_li2",
+    "en": "**Offline \"shareable events\"**: Pop-ups, immersive installations, limited-themed venues — extend online heat into participatory, check-in-worthy experiences.",
+    "within_limit": true,
+    "chars": 157
+  },
+  {
+    "id": "slide11__ip_li3",
+    "en": "**Content supply & distribution**: Reach broader circles; feed short-video, livestream, and social platforms with sustained material to amplify launch-window noise.",
+    "within_limit": true,
+    "chars": 164
+  },
+  {
+    "id": "slide11__page",
+    "en": "11 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide11__sec_ip",
+    "en": "IP Collabs + Offline Events",
+    "within_limit": true,
+    "chars": 27
+  },
+  {
+    "id": "slide11__sec_zb",
+    "en": "Launch Play Mode — Zero Build",
+    "within_limit": true,
+    "chars": 29
+  },
+  {
+    "id": "slide11__vis_group_aria",
+    "en": "Visuals: Zero Build launch, offline immersion, China anime IP ref",
+    "within_limit": true,
+    "chars": 65
+  },
+  {
+    "id": "slide11__zb_aria",
+    "en": "Zero Build launch points",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide11__zb_li1",
+    "en": "**Zero Build as launch lead**: Aligns with China's mature shooter market; lowers build-learning barrier; widens new-user entry.",
+    "within_limit": true,
+    "chars": 127
+  },
+  {
+    "id": "slide11__zb_li2",
+    "en": "**Layered content rollout**: High-intensity fast-paced combat first; build mode, creative maps, and full UGC ecosystem follow in stages.",
+    "within_limit": true,
+    "chars": 136
+  },
+  {
+    "id": "slide11__zb_li3",
+    "en": "**Avoid day-one complexity overload**: Use a clear progression path to retain depth players rather than dumping everything at once.",
+    "within_limit": true,
+    "chars": 131
+  },
+  {
+    "id": "slide12__cap_stream",
+    "en": "Game streaming / host scene",
+    "within_limit": true,
+    "chars": 27
+  },
+  {
+    "id": "slide12__cap_taptap",
+    "en": "TapTap developer & creator recruitment",
+    "within_limit": true,
+    "chars": 38
+  },
+  {
+    "id": "slide12__cap_uefn",
+    "en": "UEFN creation tools and map development",
+    "within_limit": true,
+    "chars": 39
+  },
+  {
+    "id": "slide12__eyebrow",
+    "en": "Creator ecosystem · 15% · $4,500,000",
+    "within_limit": true,
+    "chars": 36
+  },
+  {
+    "id": "slide12__h2",
+    "en": "Creator Ecosystem — $4,500,000",
+    "within_limit": true,
+    "chars": 30
+  },
+  {
+    "id": "slide12__hint_stream",
+    "en": "Streaming.",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide12__hint_taptap",
+    "en": "TapTap developers.",
+    "within_limit": true,
+    "chars": 18
+  },
+  {
+    "id": "slide12__hint_uefn",
+    "en": "UEFN.",
+    "within_limit": true,
+    "chars": 5
+  },
+  {
+    "id": "slide12__img_alt_stream",
+    "en": "Game streaming / host scene",
+    "within_limit": true,
+    "chars": 27
+  },
+  {
+    "id": "slide12__img_alt_taptap",
+    "en": "TapTap event / developer gathering",
+    "within_limit": true,
+    "chars": 34
+  },
+  {
+    "id": "slide12__img_alt_uefn_doc",
+    "en": "UEFN official docs interface",
+    "within_limit": true,
+    "chars": 28
+  },
+  {
+    "id": "slide12__page",
+    "en": "12 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide12__sec_stream",
+    "en": "Streamer & Video Creator Incentives",
+    "within_limit": true,
+    "chars": 35
+  },
+  {
+    "id": "slide12__sec_uefn",
+    "en": "In-Game Mode Creator Incentives",
+    "within_limit": true,
+    "chars": 31
+  },
+  {
+    "id": "slide12__stack_aria",
+    "en": "Visuals: UEFN full · livestream + TapTap dual",
+    "within_limit": true,
+    "chars": 45
+  },
+  {
+    "id": "slide12__stream_aria",
+    "en": "Streaming & video incentive · audience and approach",
+    "within_limit": true,
+    "chars": 51
+  },
+  {
+    "id": "slide12__stream_li1",
+    "en": "**Audience**: Livestream hosts, short-video creators, guide and entertainment content creators.",
+    "within_limit": true,
+    "chars": 95
+  },
+  {
+    "id": "slide12__stream_li2",
+    "en": "**Goal**: Rapidly build multi-layer content matrix; amplify reach and topic diffusion.",
+    "within_limit": true,
+    "chars": 86
+  },
+  {
+    "id": "slide12__stream_li3",
+    "en": "**Challenge**: SAC-style programs are relatively unfamiliar to Chinese users — awareness and participation threshold are high.",
+    "within_limit": true,
+    "chars": 126
+  },
+  {
+    "id": "slide12__stream_li4",
+    "en": "**Solution**: Combo of content incentives + SAC to gradually establish SAC among Chinese creators.",
+    "within_limit": true,
+    "chars": 98
+  },
+  {
+    "id": "slide12__uefn_aria",
+    "en": "Mode creator incentive · audience targets and approach",
+    "within_limit": true,
+    "chars": 54
+  },
+  {
+    "id": "slide12__uefn_li1",
+    "en": "**Audience**: Deeper ecosystem participants — local mode/map creators and professional developers (including TapTap dev resources).",
+    "within_limit": true,
+    "chars": 131
+  },
+  {
+    "id": "slide12__uefn_li2",
+    "en": "**Goal**: Build China-local creator supply; upgrade from \"an officially published game\" to \"a sustainably growing mode platform\".",
+    "within_limit": true,
+    "chars": 129
+  },
+  {
+    "id": "slide12__uefn_li3",
+    "en": "**Challenge**: Not just short-term exposure — need to establish UEFN creation habits and sustainable content + monetization paths.",
+    "within_limit": true,
+    "chars": 130
+  },
+  {
+    "id": "slide12__uefn_li4",
+    "en": "**Solution**: Combine Creator Economy 2.0 and In-Island Transactions; use UEFN to build shareable modes around local culture and hot topics; partner with TapTap to recruit Chinese game developers into Fortnite content creation.",
+    "within_limit": true,
+    "chars": 227
+  },
+  {
+    "id": "slide13__c1_aria",
+    "en": "Sausage Man open tourney",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide13__c1_img_alt",
+    "en": "Sausage Man elite tournament promo",
+    "within_limit": true,
+    "chars": 34
+  },
+  {
+    "id": "slide13__c1_p",
+    "en": "Open to all players; format, rewards, and ruleset mirror the international version. The goal is to let every player feel and participate in Fortnite's unique competitive atmosphere — and gain something from it.",
+    "within_limit": true,
+    "chars": 210
+  },
+  {
+    "id": "slide13__c1_subhead",
+    "en": "Open Tournaments",
+    "within_limit": true,
+    "chars": 16
+  },
+  {
+    "id": "slide13__c2_aria",
+    "en": "Sausage Man finals stage",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide13__c2_img_alt",
+    "en": "Sausage Man championship finals",
+    "within_limit": true,
+    "chars": 31
+  },
+  {
+    "id": "slide13__c2_p",
+    "en": "Independent China pro competitive cycle representing Fortnite China's highest tier; serves as the entry point to global FNCS. The platform for Chinese pros to compete on the world stage.",
+    "within_limit": true,
+    "chars": 186
+  },
+  {
+    "id": "slide13__c2_subhead",
+    "en": "Pro Circuit (FNCS China Qualifier)",
+    "within_limit": true,
+    "chars": 34
+  },
+  {
+    "id": "slide13__c3_aria",
+    "en": "Streamer league ref",
+    "within_limit": true,
+    "chars": 19
+  },
+  {
+    "id": "slide13__c3_img_alt",
+    "en": "Game streamer league promo reference",
+    "within_limit": true,
+    "chars": 36
+  },
+  {
+    "id": "slide13__c3_p",
+    "en": "Mid-size tournaments co-hosted with livestream platforms, top streamers, and content hubs — balancing spectacle and shareability. The goal is to raise Fortnite's core-circle discussion heat through content-platform events.",
+    "within_limit": true,
+    "chars": 222
+  },
+  {
+    "id": "slide13__c3_subhead",
+    "en": "Platform & Streamer Lg",
+    "within_limit": true,
+    "chars": 22
+  },
+  {
+    "id": "slide13__eyebrow",
+    "en": "Esports · $4.5M",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "slide13__h2",
+    "en": "China Tournament Infrastructure — $4,500,000",
+    "within_limit": true,
+    "chars": 44
+  },
+  {
+    "id": "slide13__lede",
+    "en": "Tournaments serve more than elite players — they help Fortnite China build a \"playable, watchable, followable\" competitive narrative. This deepens core user stickiness and continuously supplies high-quality content for livestream, video, and social platforms.",
+    "within_limit": true,
+    "chars": 259
+  },
+  {
+    "id": "slide13__page",
+    "en": "13 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide13__tri_aria",
+    "en": "Tournament three pillars · visuals",
+    "within_limit": true,
+    "chars": 34
+  },
+  {
+    "id": "slide14__eyebrow",
+    "en": "User acquisition",
+    "within_limit": true,
+    "chars": 16
+  },
+  {
+    "id": "slide14__foot",
+    "en": "50% of the first-year budget goes to paid media, but spend is not averaged — it's phased around product lifecycle and key nodes to ensure every dollar serves stage-specific objectives.",
+    "within_limit": true,
+    "chars": 184
+  },
+  {
+    "id": "slide14__h2",
+    "en": "Year-Round Paid Media — $15,000,000",
+    "within_limit": true,
+    "chars": 35
+  },
+  {
+    "id": "slide14__page",
+    "en": "14 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide14__ua_ph1_desc",
+    "en": "Target casual gamers, returning legacy players, and content-platform audiences via brand videos, pre-registration campaigns, KOL seeding, and core media exposure — establish the first wave of \"Fortnite is back in China\" awareness.",
+    "within_limit": true,
+    "chars": 230
+  },
+  {
+    "id": "slide14__ua_ph1_money",
+    "en": "$3,000,000",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide14__ua_ph1_name",
+    "en": "Warm-up",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide14__ua_ph2_desc",
+    "en": "Maintain market presence; cover festival nodes; support community activity; sustain reach to high-potential segments.",
+    "within_limit": true,
+    "chars": 117
+  },
+  {
+    "id": "slide14__ua_ph2_money",
+    "en": "$1,000,000",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide14__ua_ph2_name",
+    "en": "Live ops",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide14__ua_ph3_desc",
+    "en": "Ensure year-round heat continuity; preserve growth foundation for next major release and Year 2.",
+    "within_limit": true,
+    "chars": 96
+  },
+  {
+    "id": "slide14__ua_ph3_money",
+    "en": "$500,000",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide14__ua_ph3_name",
+    "en": "Live ops",
+    "within_limit": true,
+    "chars": 8
+  },
+  {
+    "id": "slide14__ua_ph4_desc",
+    "en": "Convert awareness rapidly into downloads, activations, and server-opening buzz. Amplified by streamer livestreams, short-video spread, and launch celebration events for maximum market ignition.",
+    "within_limit": true,
+    "chars": 193
+  },
+  {
+    "id": "slide14__ua_ph4_money",
+    "en": "$6,000,000",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide14__ua_ph4_name",
+    "en": "Launch",
+    "within_limit": true,
+    "chars": 6
+  },
+  {
+    "id": "slide14__ua_ph5_desc",
+    "en": "Re-awaken dormant users and re-amplify content potential. Re-distribute around new release selling points, new activities, new collabs, and community highlight moments — avoid the \"launch-day peak only\" single-curve trap.",
+    "within_limit": true,
+    "chars": 221
+  },
+  {
+    "id": "slide14__ua_ph5_money",
+    "en": "$4,500,000",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide14__ua_ph5_name",
+    "en": "Version push",
+    "within_limit": true,
+    "chars": 12
+  },
+  {
+    "id": "slide15__c1_li1",
+    "en": "Real-name + face verification",
+    "within_limit": true,
+    "chars": 29
+  },
+  {
+    "id": "slide15__c1_li2",
+    "en": "Playtime limits per national rules",
+    "within_limit": true,
+    "chars": 34
+  },
+  {
+    "id": "slide15__c1_li3",
+    "en": "Age-tiered spending caps",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide15__c1_li4",
+    "en": "Integrated with global account system",
+    "within_limit": true,
+    "chars": 37
+  },
+  {
+    "id": "slide15__c1_title",
+    "en": "Minor Protection",
+    "within_limit": true,
+    "chars": 16
+  },
+  {
+    "id": "slide15__c2_li1",
+    "en": "Platform-specific flows (iOS / Android / PC)",
+    "within_limit": true,
+    "chars": 44
+  },
+  {
+    "id": "slide15__c2_li2",
+    "en": "Minor-refund legal compliance",
+    "within_limit": true,
+    "chars": 29
+  },
+  {
+    "id": "slide15__c2_li3",
+    "en": "Malicious-refund detection",
+    "within_limit": true,
+    "chars": 26
+  },
+  {
+    "id": "slide15__c2_title",
+    "en": "Refund Policy",
+    "within_limit": true,
+    "chars": 13
+  },
+  {
+    "id": "slide15__c3_li1",
+    "en": "Easy Anti-Cheat + THEMIS (XD in-house security platform)",
+    "within_limit": true,
+    "chars": 56
+  },
+  {
+    "id": "slide15__c3_li2",
+    "en": "Transferred from Sausage Man's 8-year live environment",
+    "within_limit": true,
+    "chars": 54
+  },
+  {
+    "id": "slide15__c3_li3",
+    "en": "Dedicated PC vs. mobile strategy",
+    "within_limit": true,
+    "chars": 32
+  },
+  {
+    "id": "slide15__c3_title",
+    "en": "Anti-Cheat",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide15__c4_li1",
+    "en": "Tiered: machine pre-screen + human review",
+    "within_limit": true,
+    "chars": 41
+  },
+  {
+    "id": "slide15__c4_li2",
+    "en": "Standards aligned with China regulation on political / sexual / copyright content",
+    "within_limit": true,
+    "chars": 81
+  },
+  {
+    "id": "slide15__c4_li3",
+    "en": "Creator appeal and feedback mechanism",
+    "within_limit": true,
+    "chars": 37
+  },
+  {
+    "id": "slide15__c4_title",
+    "en": "UGC Review",
+    "within_limit": true,
+    "chars": 10
+  },
+  {
+    "id": "slide15__c5_li1",
+    "en": "NPPA license pathway",
+    "within_limit": true,
+    "chars": 20
+  },
+  {
+    "id": "slide15__c5_li2",
+    "en": "CN-resident data storage",
+    "within_limit": true,
+    "chars": 24
+  },
+  {
+    "id": "slide15__c5_li3",
+    "en": "Cross-border transfer review",
+    "within_limit": true,
+    "chars": 28
+  },
+  {
+    "id": "slide15__c5_title",
+    "en": "Licensing & Data",
+    "within_limit": true,
+    "chars": 16
+  },
+  {
+    "id": "slide15__eyebrow",
+    "en": "Operational Readiness",
+    "within_limit": true,
+    "chars": 21
+  },
+  {
+    "id": "slide15__h2",
+    "en": "Compliance & Operations",
+    "within_limit": true,
+    "chars": 23
+  },
+  {
+    "id": "slide15__page",
+    "en": "15 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide16__c1_li1",
+    "en": "Seasons and major updates: same cadence as global; individual collabs scheduled separately per licensor timelines.",
+    "within_limit": true,
+    "chars": 114
+  },
+  {
+    "id": "slide16__c1_li2",
+    "en": "Hotfixes: trunk-aligned; payment, real-name, security patches via China-specific channel.",
+    "within_limit": true,
+    "chars": 89
+  },
+  {
+    "id": "slide16__c1_li3",
+    "en": "Multiplayer: China-local by default; cross-border only where policy permits.",
+    "within_limit": true,
+    "chars": 76
+  },
+  {
+    "id": "slide16__c2_li1",
+    "en": "UEFN: create → review → publish pipeline; China content pool connects to global Discover via agreed rules.",
+    "within_limit": true,
+    "chars": 106
+  },
+  {
+    "id": "slide16__c2_li2",
+    "en": "Content flow: machine pre-check + human review; two-way circulation boundaries fixed upfront.",
+    "within_limit": true,
+    "chars": 93
+  },
+  {
+    "id": "slide16__c2_li3",
+    "en": "Anti-cheat & logs: EAC + THEMIS (in-house security platform); login via WeChat/mobile/minor-protection — Epic account narrative stays intact.",
+    "within_limit": true,
+    "chars": 141
+  },
+  {
+    "id": "slide16__col1_label",
+    "en": "Global Cadence Sync",
+    "within_limit": true,
+    "chars": 19
+  },
+  {
+    "id": "slide16__col2_label",
+    "en": "UEFN & China Stack",
+    "within_limit": true,
+    "chars": 18
+  },
+  {
+    "id": "slide16__eyebrow",
+    "en": "Technical alignment",
+    "within_limit": true,
+    "chars": 19
+  },
+  {
+    "id": "slide16__foot",
+    "en": "Global where possible; local where needed.",
+    "within_limit": true,
+    "chars": 42
+  },
+  {
+    "id": "slide16__h2",
+    "en": "China Delivery: Global Cadence Sync ×\nUEFN Content Pipeline",
+    "within_limit": true,
+    "chars": 59
+  },
+  {
+    "id": "slide16__img_alt_bp",
+    "en": "Fortnite Battle Pass UI — selectable reward tracks",
+    "within_limit": true,
+    "chars": 50
+  },
+  {
+    "id": "slide16__img_alt_uefn",
+    "en": "Unreal Editor for Fortnite (UEFN)",
+    "within_limit": true,
+    "chars": 33
+  },
+  {
+    "id": "slide16__lede",
+    "en": "Seasons and patches follow global trunk; content and accounts use compliant pipes and agreed stacks.",
+    "within_limit": true,
+    "chars": 100
+  },
+  {
+    "id": "slide16__page",
+    "en": "16 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "slide17__h2",
+    "en": "Let's Build\nFortnite China, Together",
+    "within_limit": true,
+    "chars": 36
+  },
+  {
+    "id": "slide17__page",
+    "en": "17 / 17",
+    "within_limit": true,
+    "chars": 7
+  },
+  {
+    "id": "ui__nav_hint",
+    "en": "← → to navigate · hover Pages strip or B page list · #8 or #page-8 in URL opens that page · F fullscreen · P print",
+    "within_limit": true,
+    "chars": 114
+  },
+  {
+    "id": "ui__toc_close_aria",
+    "en": "Close page list",
+    "within_limit": true,
+    "chars": 15
+  },
+  {
+    "id": "ui__toc_list_aria",
+    "en": "Slide index",
+    "within_limit": true,
+    "chars": 11
+  },
+  {
+    "id": "ui__toc_tab_title",
+    "en": "Pages list — hover to open; B toggles; tap on touch",
+    "within_limit": true,
+    "chars": 51
+  },
+  {
+    "id": "ui__toc_top_label",
+    "en": "Pages",
+    "within_limit": true,
+    "chars": 5
+  }
+]
