@@ -60,6 +60,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
+    overflow: hidden;
   }
 
   .slide {
@@ -2136,17 +2137,214 @@
   }
 
   html, body {
-    background: linear-gradient(180deg, #fbfcfe 0%, #f4f7fb 100%);
+    background: #f4f7fb;
     color: var(--text);
     font-family: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans SC', 'Microsoft YaHei', sans-serif;
   }
 
+  /* Fixed full-viewport layers; slides stay transparent on screen (see @media print for PDF). */
+  .deck-backdrop {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.4s ease;
+  }
+  .deck-backdrop--default {
+    opacity: 1;
+    background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  }
+  /* Soft blobs: hue-matched fade (no keyword transparent) + blur so edges stay feathered during motion */
+  .deck-backdrop--default::before,
+  .deck-backdrop--default::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform, filter;
+    filter: blur(clamp(36px, 6vmin, 88px));
+    backface-visibility: hidden;
+  }
+  /* Corner-sized spots (≈ prior fixed radials at -8%/-12% and 110%/100%), not full-field washes */
+  .deck-backdrop--default::before {
+    width: min(81.12vmin, 65.52vw);
+    height: min(81.12vmin, 65.52vw);
+    left: -8%;
+    top: -12%;
+    background: radial-gradient(
+      circle at 42% 42%,
+      rgba(255, 122, 0, 0.087) 0%,
+      rgba(255, 122, 0, 0.047) 26%,
+      rgba(255, 122, 0, 0.023) 48%,
+      rgba(255, 122, 0, 0.009) 68%,
+      rgba(255, 122, 0, 0.003) 82%,
+      rgba(255, 122, 0, 0.001) 92%,
+      rgba(255, 122, 0, 0) 100%
+    );
+    animation: deck-blob-light-a 16s ease-in-out infinite;
+  }
+  .deck-backdrop--default::after {
+    width: min(74.88vmin, 62.4vw);
+    height: min(74.88vmin, 62.4vw);
+    right: -6%;
+    bottom: -8%;
+    background: radial-gradient(
+      circle at 58% 58%,
+      rgba(255, 182, 72, 0.072) 0%,
+      rgba(255, 182, 72, 0.038) 28%,
+      rgba(255, 182, 72, 0.018) 50%,
+      rgba(255, 182, 72, 0.007) 70%,
+      rgba(255, 182, 72, 0.003) 84%,
+      rgba(255, 182, 72, 0.001) 93%,
+      rgba(255, 182, 72, 0) 100%
+    );
+    animation: deck-blob-light-b 20s ease-in-out infinite;
+  }
+  /* Third light-slide blob — mid-left–upper band (extra layer; pseudos exhausted on .deck-backdrop--default) */
+  .deck-backdrop--blob-mlt {
+    inset: auto;
+    width: min(56vmin, 44vw);
+    height: min(56vmin, 44vw);
+    left: 5%;
+    top: 14%;
+    border-radius: 50%;
+    opacity: 1;
+    filter: blur(clamp(36px, 6vmin, 88px));
+    background: radial-gradient(
+      circle at 48% 42%,
+      rgba(255, 140, 88, 0.082) 0%,
+      rgba(255, 122, 0, 0.048) 30%,
+      rgba(255, 122, 0, 0.022) 52%,
+      rgba(255, 122, 0, 0.009) 70%,
+      rgba(255, 122, 0, 0.003) 84%,
+      rgba(255, 122, 0, 0.001) 93%,
+      rgba(255, 122, 0, 0) 100%
+    );
+    will-change: transform, filter;
+    animation: deck-blob-light-c 21s ease-in-out infinite;
+    backface-visibility: hidden;
+  }
+  /* Static hero “image”: original tight 3× radial + diagonal base (hue-matched transparent stops, no keyword transparent) */
+  .deck-backdrop--hero {
+    opacity: 0;
+    background:
+      radial-gradient(circle at 82% 18%, rgba(255, 186, 66, 0.114) 0%, rgba(255, 186, 66, 0.114) 26%, rgba(255, 186, 66, 0) 27%),
+      radial-gradient(circle at 66% 72%, rgba(255, 255, 255, 0.047) 0%, rgba(255, 255, 255, 0.047) 25%, rgba(255, 255, 255, 0) 26%),
+      radial-gradient(circle at 102% 10%, rgba(255, 114, 0, 0.104) 0%, rgba(255, 114, 0, 0.104) 25%, rgba(255, 114, 0, 0) 26%),
+      linear-gradient(135deg, #ff7a00 0%, #ff8d00 58%, #ffb326 100%);
+  }
+  /* Hero-only: animated overlays (+30% size vs prior); heavy blur + long ramps so edges stay feathered */
+  .deck-backdrop--hero::before,
+  .deck-backdrop--hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform, filter;
+    mix-blend-mode: screen;
+    filter: blur(clamp(40px, 7vmin, 110px));
+    backface-visibility: hidden;
+  }
+  .deck-backdrop--hero::before {
+    width: min(75.4vmin, 62.4vw);
+    height: min(75.4vmin, 62.4vw);
+    right: -6%;
+    top: -10%;
+    background: radial-gradient(
+      circle at 44% 44%,
+      rgba(255, 255, 255, 0.234) 0%,
+      rgba(255, 235, 205, 0.114) 24%,
+      rgba(255, 215, 175, 0.057) 46%,
+      rgba(255, 196, 140, 0.025) 64%,
+      rgba(255, 186, 66, 0.009) 80%,
+      rgba(255, 186, 66, 0.003) 92%,
+      rgba(255, 186, 66, 0) 100%
+    );
+    animation: deck-hero-motion-a 12s ease-in-out infinite;
+  }
+  .deck-backdrop--hero::after {
+    width: min(67.6vmin, 57.2vw);
+    height: min(67.6vmin, 57.2vw);
+    left: -12%;
+    bottom: -14%;
+    background: radial-gradient(
+      circle at 52% 52%,
+      rgba(255, 255, 255, 0.177) 0%,
+      rgba(255, 252, 247, 0.088) 28%,
+      rgba(255, 250, 242, 0.044) 48%,
+      rgba(255, 255, 255, 0.019) 66%,
+      rgba(255, 255, 255, 0.007) 82%,
+      rgba(255, 255, 255, 0.002) 93%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: deck-hero-motion-b 15s ease-in-out infinite;
+  }
+  @keyframes deck-hero-motion-a {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    20% { transform: translate(18vw, 14vh) rotate(14deg) scale(1.35); }
+    45% { transform: translate(-14vw, 20vh) rotate(-12deg) scale(0.68); }
+    70% { transform: translate(16vw, -16vh) rotate(10deg) scale(1.22); }
+  }
+  @keyframes deck-hero-motion-b {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    30% { transform: translate(-20vw, -12vh) rotate(-16deg) scale(1.28); }
+    55% { transform: translate(14vw, 18vh) rotate(12deg) scale(0.72); }
+    80% { transform: translate(18vw, 8vh) rotate(-8deg) scale(1.18); }
+  }
+  /* Deliberately strong: large travel + scale + a few degrees rotation so motion is easy to spot (default backdrop only) */
+  @keyframes deck-blob-light-a {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    22% { transform: translate(12vw, 9vh) rotate(7deg) scale(1.18); }
+    48% { transform: translate(-7vw, 14vh) rotate(-6deg) scale(0.82); }
+    72% { transform: translate(10vw, -7vh) rotate(5deg) scale(1.12); }
+  }
+  @keyframes deck-blob-light-b {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    28% { transform: translate(-13vw, -11vh) rotate(-8deg) scale(1.16); }
+    54% { transform: translate(11vw, -9vh) rotate(6deg) scale(0.8); }
+    78% { transform: translate(-6vw, 12vh) rotate(-4deg) scale(1.1); }
+  }
+  @keyframes deck-blob-light-c {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    24% { transform: translate(10vw, -8vh) rotate(6deg) scale(1.14); }
+    48% { transform: translate(-8vw, 11vh) rotate(-7deg) scale(0.85); }
+    72% { transform: translate(14vw, 6vh) rotate(5deg) scale(1.08); }
+  }
+  .deck.deck--hero .deck-backdrop--default {
+    opacity: 0;
+  }
+  .deck.deck--hero .deck-backdrop--hero {
+    opacity: 1;
+  }
+  .deck.deck--hero .deck-backdrop--default::before,
+  .deck.deck--hero .deck-backdrop--default::after,
+  .deck.deck--hero .deck-backdrop--blob-mlt {
+    animation-play-state: paused;
+  }
+  .deck.deck--hero .deck-backdrop--blob-mlt {
+    opacity: 0;
+  }
+  .deck:not(.deck--hero) .deck-backdrop--hero::before,
+  .deck:not(.deck--hero) .deck-backdrop--hero::after {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .deck-backdrop {
+      transition: none;
+    }
+    .deck-backdrop--default::before,
+    .deck-backdrop--default::after,
+    .deck-backdrop--blob-mlt,
+    .deck-backdrop--hero::before,
+    .deck-backdrop--hero::after {
+      animation: none !important;
+    }
+  }
+
   .slide {
     padding: 5.2vh 5.6vw;
-    background:
-      radial-gradient(circle at -8% -12%, rgba(255, 122, 0, 0.11) 0%, rgba(255, 122, 0, 0.11) 18%, transparent 19%),
-      radial-gradient(circle at 110% 100%, rgba(255, 182, 72, 0.1) 0%, rgba(255, 182, 72, 0.1) 20%, transparent 21%),
-      linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+    background: transparent;
+    z-index: 1;
   }
 
   .nav {
@@ -2215,11 +2413,6 @@
   .cover {
     justify-content: center;
     overflow: hidden;
-    background:
-      radial-gradient(circle at 82% 18%, rgba(255, 186, 66, 0.22) 0%, rgba(255, 186, 66, 0.22) 26%, transparent 27%),
-      radial-gradient(circle at 66% 72%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.09) 25%, transparent 26%),
-      radial-gradient(circle at 102% 10%, rgba(255, 114, 0, 0.2) 0%, rgba(255, 114, 0, 0.2) 25%, transparent 26%),
-      linear-gradient(135deg, #ff7a00 0%, #ff8d00 58%, #ffb326 100%);
   }
 
   .cover .brand-tag,
@@ -2244,17 +2437,12 @@
     background: rgba(255,255,255,0.72);
   }
 
-  /* Chapter / transition title — same hero gradient as cover */
+  /* Chapter / transition title — hero fill on .deck-backdrop--hero */
   .slide.slide-transition-hero {
     justify-content: center;
     align-items: center;
     text-align: center;
     overflow: hidden;
-    background:
-      radial-gradient(circle at 82% 18%, rgba(255, 186, 66, 0.22) 0%, rgba(255, 186, 66, 0.22) 26%, transparent 27%),
-      radial-gradient(circle at 66% 72%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.09) 25%, transparent 26%),
-      radial-gradient(circle at 102% 10%, rgba(255, 114, 0, 0.2) 0%, rgba(255, 114, 0, 0.2) 25%, transparent 26%),
-      linear-gradient(135deg, #ff7a00 0%, #ff8d00 58%, #ffb326 100%);
   }
   .slide.slide-transition-hero .transition-hero-inner {
     display: flex;
@@ -2289,17 +2477,12 @@
     color: rgba(255, 255, 255, 0.92);
   }
 
-  /* Closing invite — same hero gradient as cover (slide 1); overrides default .slide white fill */
+  /* Closing invite — hero fill on .deck-backdrop--hero */
   .slide.slide-closing-cn {
     justify-content: center;
     align-items: center;
     text-align: center;
     overflow: hidden;
-    background:
-      radial-gradient(circle at 82% 18%, rgba(255, 186, 66, 0.22) 0%, rgba(255, 186, 66, 0.22) 26%, transparent 27%),
-      radial-gradient(circle at 66% 72%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.09) 25%, transparent 26%),
-      radial-gradient(circle at 102% 10%, rgba(255, 114, 0, 0.2) 0%, rgba(255, 114, 0, 0.2) 25%, transparent 26%),
-      linear-gradient(135deg, #ff7a00 0%, #ff8d00 58%, #ffb326 100%);
   }
   .slide.slide-closing-cn .closing-cn-headline {
     font-size: clamp(40px, 6vmin, 96px);
@@ -2316,9 +2499,6 @@
   .anchor {
     justify-content: center;
     text-align: center;
-    background:
-      radial-gradient(circle at 88% 20%, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.12) 28%, transparent 29%),
-      linear-gradient(135deg, #ff7a00 0%, #ff8b00 60%, #ffb933 100%);
   }
 
   .anchor .quote-mark,
@@ -4441,6 +4621,9 @@
       transform: none !important;
     }
     .deck { width: auto; height: auto; }
+    .deck-backdrop {
+      display: none !important;
+    }
     .slide {
       display: flex !important;
       opacity: 1 !important;
@@ -4451,6 +4634,20 @@
       width: 340mm;
       height: 191mm;
       padding: 14mm 20mm;
+      background:
+        radial-gradient(circle at -8% -12%, rgba(255, 122, 0, 0.11) 0%, rgba(255, 122, 0, 0.11) 18%, transparent 19%),
+        radial-gradient(circle at 110% 100%, rgba(255, 182, 72, 0.1) 0%, rgba(255, 182, 72, 0.1) 20%, transparent 21%),
+        linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+    }
+    .slide.cover,
+    .slide.slide-transition-hero,
+    .slide.slide-closing-cn,
+    .slide.anchor {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255, 186, 66, 0.114) 0%, rgba(255, 186, 66, 0.114) 26%, rgba(255, 186, 66, 0) 27%),
+        radial-gradient(circle at 66% 72%, rgba(255, 255, 255, 0.047) 0%, rgba(255, 255, 255, 0.047) 25%, rgba(255, 255, 255, 0) 26%),
+        radial-gradient(circle at 102% 10%, rgba(255, 114, 0, 0.104) 0%, rgba(255, 114, 0, 0.104) 25%, rgba(255, 114, 0, 0) 26%),
+        linear-gradient(135deg, #ff7a00 0%, #ff8d00 58%, #ffb326 100%);
     }
     .slide:last-child { page-break-after: auto; }
     .slide.slide-three-val {
@@ -4629,7 +4826,11 @@
   <button type="button" class="slide-toc-tab" id="slideTocTab" aria-controls="slideTocPanel" aria-expanded="false" title="Pages list — hover to open; B toggles; tap on touch">Pages</button>
 </div>
 
-<div class="deck">
+<div class="deck deck--hero">
+
+  <div class="deck-backdrop deck-backdrop--default" aria-hidden="true"></div>
+  <div class="deck-backdrop deck-backdrop--blob-mlt" aria-hidden="true"></div>
+  <div class="deck-backdrop deck-backdrop--hero" aria-hidden="true"></div>
 
   <!-- Slide map (structure + layout merge): 17 slides — … | 7 RO×Disney | 8 China Publishing Plan (transition) | 9 Strategic Positioning | 10 Budget | … | 17 Closing CN -->
 
@@ -5653,6 +5854,7 @@
 
 <script>
   const slides = document.querySelectorAll('.slide');
+  const deck = document.querySelector('.deck');
   const total = slides.length;
   const counter = document.getElementById('counter');
   const progressBar = document.getElementById('progressBar');
@@ -5718,6 +5920,8 @@
     idx = clampSlideIndex(idx);
     slides.forEach(s => s.classList.remove('active'));
     slides[idx].classList.add('active');
+    const isHero = slides[idx].matches('.cover, .slide-transition-hero, .slide-closing-cn, .anchor');
+    deck.classList.toggle('deck--hero', isHero);
     current = idx;
     counter.textContent = pad(idx + 1) + ' / ' + pad(total);
     progressBar.style.setProperty('--progress', ((idx + 1) / total * 100) + '%');
