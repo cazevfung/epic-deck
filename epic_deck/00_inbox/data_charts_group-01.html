@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国射击游戏市场现状分析 2025 | 品类格局重置版</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.6}
+.container{max-width:1400px;margin:0 auto;padding:20px}
+
+.header{background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);color:#fff;padding:50px 40px;border-radius:16px;margin-bottom:30px;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,107,107,0.12) 0%,transparent 70%);border-radius:50%}
+.header::after{content:'';position:absolute;bottom:-30%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(78,205,196,0.1) 0%,transparent 70%);border-radius:50%}
+.header h1{font-size:2.6em;font-weight:800;margin-bottom:12px;position:relative;z-index:1}
+.header .subtitle{font-size:1.15em;opacity:0.9;max-width:750px;position:relative;z-index:1}
+.header .meta{margin-top:20px;font-size:0.85em;opacity:0.65;position:relative;z-index:1}
+.badge{display:inline-block;background:rgba(255,255,255,0.15);padding:4px 12px;border-radius:20px;font-size:0.75em;margin-right:8px;margin-top:8px}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:30px}
+.kpi-card{background:#fff;border-radius:14px;padding:24px 20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);transition:all 0.25s;border-top:4px solid;position:relative}
+.kpi-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1)}
+.kpi-card .label{font-size:0.8em;color:#8898aa;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
+.kpi-card .value{font-size:2.2em;font-weight:800;margin-bottom:4px}
+.kpi-card .change{font-size:0.88em;font-weight:600}
+.kpi-card .note{font-size:0.78em;color:#8898aa;margin-top:6px;line-height:1.4}
+.kpi-card.c-red{border-color:#e74c3c}.kpi-card.c-red .value{color:#e74c3c}
+.kpi-card.c-teal{border-color:#1abc9c}.kpi-card.c-teal .value{color:#1abc9c}
+.kpi-card.c-blue{border-color:#3498db}.kpi-card.c-blue .value{color:#3498db}
+.kpi-card.c-purple{border-color:#9b59b6}.kpi-card.c-purple .value{color:#9b59b6}
+.kpi-card.c-orange{border-color:#e67e22}.kpi-card.c-orange .value{color:#e67e22}
+
+.section{background:#fff;border-radius:16px;padding:32px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.section-title{font-size:1.35em;font-weight:700;margin-bottom:6px;color:#1a1a2e;display:flex;align-items:center;gap:10px}
+.section-title .num{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.85em}
+.section-desc{color:#5f6368;font-size:0.95em;margin-bottom:24px}
+
+.chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:20px}
+.chart-box{background:#fafbfc;border-radius:12px;padding:16px;border:1px solid #eef0f4}
+.chart-title{font-size:1em;font-weight:600;margin-bottom:12px;color:#2c3e50;display:flex;align-items:center;gap:6px}
+.chart-title .tag{background:#e8f0fe;color:#1967d2;padding:2px 8px;border-radius:4px;font-size:0.75em;font-weight:500}
+.chart-title .tag.est{background:#fce8e6;color:#c5221d}
+.chart{width:100%;height:340px}
+.chart-lg{width:100%;height:420px}
+.chart-xl{width:100%;height:480px}
+
+.insight-box{background:linear-gradient(135deg,#f8f9fa,#eef2f7);border-radius:12px;padding:20px;margin-top:20px;border-left:4px solid #3498db}
+.insight-box h4{font-size:1.05em;color:#1a1a2e;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.insight-box ul{list-style:none;padding:0}
+.insight-box li{padding:5px 0;padding-left:22px;position:relative;color:#4a5568;font-size:0.92em}
+.insight-box li::before{content:'▸';position:absolute;left:0;color:#3498db;font-weight:bold}
+.insight-box li strong{color:#1a1a2e}
+
+.comparison-table{width:100%;border-collapse:collapse;font-size:0.9em;margin-top:16px}
+.comparison-table th{background:#f1f3f4;padding:10px 12px;text-align:left;font-weight:600;color:#5f6368;border-bottom:2px solid #dadce0}
+.comparison-table td{padding:10px 12px;border-bottom:1px solid #eef0f4}
+.comparison-table tr:hover{background:#f8f9fa}
+.comparison-table .up{color:#137333;font-weight:600}
+.comparison-table .down{color:#c5221d;font-weight:600}
+.comparison-table .highlight{background:#e8f0fe}
+.comparison-table .note{color:#8898aa;font-size:0.85em}
+
+.overlap-visual{display:flex;flex-direction:column;align-items:center;padding:10px}
+.overlap-circles{position:relative;width:400px;height:280px}
+.circle{position:absolute;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,0.12);backdrop-filter:blur(4px)}
+.circle-mobile{width:200px;height:200px;background:rgba(231,76,60,0.72);top:10px;left:30px}
+.circle-pc{width:160px;height:160px;background:rgba(26,188,156,0.72);top:50px;right:50px}
+.circle-console{width:90px;height:90px;background:rgba(52,152,219,0.72);bottom:20px;left:150px}
+.circle .big{font-size:1.3em}
+.circle .small{font-size:0.7em;opacity:0.9;font-weight:500}
+.overlap-label{position:absolute;background:rgba(255,255,255,0.95);padding:5px 10px;border-radius:16px;font-size:0.75em;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,0.1);color:#2c3e50}
+
+.timeline-container{position:relative;padding:20px 0}
+.timeline-line{position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#667eea,#764ba2);transform:translateX(-50%)}
+.timeline-item{display:flex;align-items:flex-start;margin-bottom:30px;position:relative}
+.timeline-item.left{flex-direction:row-reverse;text-align:right}
+.timeline-item.left .timeline-content{text-align:right;margin-right:30px;margin-left:0}
+.timeline-item.right .timeline-content{margin-left:30px}
+.timeline-content{flex:1;background:#fafbfc;border-radius:12px;padding:16px;border:1px solid #eef0f4;max-width:45%}
+.timeline-dot{width:16px;height:16px;background:#667eea;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px #667eea;position:absolute;left:50%;transform:translateX(-50%);margin-top:20px;z-index:2}
+.timeline-year{font-size:0.75em;color:#667eea;font-weight:700;margin-bottom:4px}
+.timeline-title{font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.timeline-desc{font-size:0.85em;color:#5f6368}
+
+.matrix-container{display:grid;grid-template-columns:120px repeat(3,1fr);gap:1px;background:#dadce0;border-radius:8px;overflow:hidden;margin-top:16px;font-size:0.88em}
+.matrix-header{background:#f1f3f4;padding:10px;font-weight:600;text-align:center;color:#5f6368}
+.matrix-cell{background:#fff;padding:10px;text-align:center}
+.matrix-cell.highlight{background:#e8f0fe;font-weight:600;color:#1967d2}
+.matrix-row-header{background:#f8f9fa;padding:10px;font-weight:600;display:flex;align-items:center;justify-content:center;color:#5f6368}
+
+.footer{text-align:center;padding:30px;color:#95a5a6;font-size:0.82em}
+.footer p{margin:4px 0}
+
+@media(max-width:768px){
+.header h1{font-size:1.7em}
+.chart-grid{grid-template-columns:1fr}
+.overlap-circles{transform:scale(0.8)}
+.timeline-line{left:20px}
+.timeline-item,.timeline-item.left{flex-direction:column;text-align:left}
+.timeline-item .timeline-content,.timeline-item.left .timeline-content{margin-left:50px;margin-right:0;text-align:left;max-width:80%}
+.timeline-dot{left:20px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+<h1>中国射击游戏市场现状分析</h1>
+<p class="subtitle">2025年度深度洞察：搜打撤改写品类格局，品类分类从"模糊大筐"走向"对局循环"维度</p>
+<p class="meta">数据周期: 2024.09-2025.12 | 数据来源: 伽马数据、点点数据、游戏工委、腾讯财报、华源证券</p>
+<span class="badge">品类维度重构</span><span class="badge">搜打撤崛起</span><span class="badge">FPS扩容而非内卷</span>
+</div>
+
+<div class="kpi-grid">
+<div class="kpi-card c-red">
+<div class="label">搜打撤品类DAU总规模</div>
+<div class="value">~5500万</div>
+<div class="change up">地铁逃生3700万 + 三角洲~1500万 + 暗区~300万</div>
+<div class="note">2025年搜打撤已从硬核小众变为大众主流</div>
+</div>
+<div class="kpi-card c-blue">
+<div class="label">三角洲行动年总收入</div>
+<div class="value">~150亿</div>
+<div class="change up">含PC端约70%收入贡献</div>
+<div class="note">iOS仅45.68亿，真实流水因跨端被严重低估3.3倍</div>
+</div>
+<div class="kpi-card c-purple">
+<div class="label">射击品类总增量</div>
+<div class="value">~100亿</div>
+<div class="change up">2025年同比增量近百亿元</div>
+<div class="note">腾讯管理层：中国FPS市场正处于高速扩容期</div>
+</div>
+<div class="kpi-card c-teal">
+<div class="label">搜打撤玩家偏好度</div>
+<div class="value">51.7%</div>
+<div class="change up">与大逃杀53.7%几乎持平</div>
+<div class="note">伽马数据2025调研，可多选，态度与收入同步反转</div>
+</div>
+<div class="kpi-card c-orange">
+<div class="label">暗区突围注册用户</div>
+<div class="value">2.3亿+</div>
+<div class="change up">日活破1000万，端游首日百万</div>
+<div class="note">硬核搜打撤与三角洲形成差异化互补</div>
+</div>
+</div>
+
+<!-- Section 1: Unified Classification -->
+<div class="section">
+<div class="section-title"><span class="num">1</span>品类分类重构：统一"对局循环"口径</div>
+<div class="section-desc">传统分类中"团队竞技"是过于宽泛的筐（爆破、死斗、占点都可往里装），"英雄射击"和"爆破"是正交维度。本报告统一采用<strong>核心对局循环</strong>为互斥主维度，2024年数据基于官方份额反推拆分。</div>
+
+<div class="chart-grid">
+<div class="chart-box">
+<div class="chart-title">2024年品类份额 <span class="tag est">反推拆分</span></div>
+<div id="chart-2024" class="chart"></div>
+</div>
+<div class="chart-box">
+<div class="chart-title">2025年品类份额 <span class="tag est">行业估算</span></div>
+<div id="chart-2025" class="chart"></div>
+</div>
+</div>
+
+<div class="chart-box" style="margin-top:20px">
+<div class="chart-title">品类份额变化幅度 (2024→2025) <span class="tag">统一对局循环口径</span></div>
+<div id="chart-change" class="chart-lg"></div>
+</div>
+
+<table class="comparison-table">
+<tr><th>品类（对局循环维度）</th><th>2024份额</th><th>2025份额</th><th>变化</th><th>反推/估算依据</th></tr>
+<tr class="highlight"><td><strong>大逃杀(BR)</strong></td><td>43%</td><td>36%</td><td class="down">-7ppt</td><td class="note">2024官方直接给出；2025和平精英经典模式增速放缓</td></tr>
+<tr class="highlight"><td><strong>搜打撤</strong></td><td>14%</td><td>33%</td><td class="up">+19ppt</td><td class="note">2024官方直接给出；2025三角洲+地铁逃生+暗区全面爆发</td></tr>
+<tr><td><strong>回合竞技(爆破+经济)</strong></td><td>~10%</td><td>~12%</td><td class="up">+2ppt</td><td class="note">2024拆分：CF爆破6%+CF手游爆破2%+无畏契约2%；2025无畏契约端手游爆发</td></tr>
+<tr><td><strong>即时竞技(即时重生)</strong></td><td>~9%</td><td>~4%</td><td class="down">-5ppt</td><td class="note">2024拆分：CF手游死斗/生化5%+COD手游3%+CF端游1%；2025被搜打撤严重分流</td></tr>
+<tr><td><strong>大战场</strong></td><td>~2%</td><td>~5%</td><td class="up">+3ppt</td><td class="note">2024仅三角洲9月上线贡献；2025全面战场全年运营+战地手游</td></tr>
+<tr><td><strong>其他/PVE</strong></td><td>~22%</td><td>~10%</td><td class="down">-12ppt</td><td class="note">2024含融合RPG+载具+剩余多玩法；2025品类被重新分类</td></tr>
+</table>
+
+<div class="insight-box">
+<h4>口径统一说明</h4>
+<ul>
+<li><strong>2024年大逃杀(43%)和搜打撤(14%)</strong>：直接采用点点数据官方发布的品类份额，无需反推</li>
+<li><strong>2024年"团队竞技"18.8%反推拆分</strong>：拆解为回合竞技(~10%，CF端游爆破为主+CF手游爆破+无畏契约)和即时竞技(~9%，CF手游死斗/生化+COD手游+CF端游非爆破)</li>
+<li><strong>2024年"多玩法融合"12.2%反推拆分</strong>：拆出大战场(~2%，三角洲9月上线仅贡献约2个月)和其余归入其他/PVE</li>
+<li><strong>2024年"融合RPG"7.3% + "载具射击"4.7%</strong>：因无法进一步按对局循环拆分，归入其他/PVE</li>
+<li><strong>2025年所有品类</strong>：基于头部产品收入数据（含PC推算）进行行业估算</li>
+</ul>
+</div>
+
+<div style="margin-top:24px">
+<h4 style="margin-bottom:8px;font-size:1.05em">双维度分类矩阵：对局循环 × 角色系统</h4>
+<p style="color:#5f6368;font-size:0.9em;margin-bottom:12px">同一产品在对局循环维度唯一归类，角色系统维度可叠加标注。两个维度正交，不互斥。</p>
+<div class="matrix-container">
+<div class="matrix-row-header" style="grid-column:1;grid-row:1"></div>
+<div class="matrix-header">传统对称</div>
+<div class="matrix-header">英雄技能</div>
+<div class="matrix-header">载具/战术协同</div>
+
+<div class="matrix-row-header">大逃杀</div>
+<div class="matrix-cell">PUBG / 和平精英</div>
+<div class="matrix-cell highlight">Apex英雄</div>
+<div class="matrix-cell">—</div>
+
+<div class="matrix-row-header">搜打撤</div>
+<div class="matrix-cell">暗区突围</div>
+<div class="matrix-cell highlight">三角洲·烽火</div>
+<div class="matrix-cell">—</div>
+
+<div class="matrix-row-header">回合竞技</div>
+<div class="matrix-cell">CS / CF爆破</div>
+<div class="matrix-cell highlight">无畏契约</div>
+<div class="matrix-cell">—</div>
+
+<div class="matrix-row-header">即时竞技</div>
+<div class="matrix-cell">CF死斗 / COD</div>
+<div class="matrix-cell highlight">守望先锋</div>
+<div class="matrix-cell">—</div>
+
+<div class="matrix-row-header">大战场</div>
+<div class="matrix-cell">战地 / 三角洲·全面</div>
+<div class="matrix-cell">—</div>
+<div class="matrix-cell highlight">—</div>
+</div>
+</div>
+</div>
+
+<!-- Section 2: 2025格局 -->
+<div class="section">
+<div class="section-title"><span class="num">2</span>2025年品类格局：对局循环维度的收入与DAU</div>
+<div class="section-desc">以下按统一后的"核心对局循环"口径，对2025年中国射击游戏市场各品类收入规模和DAU进行估算（含PC端推算值）。</div>
+
+<div class="chart-grid">
+<div class="chart-box">
+<div class="chart-title">2025年各品类收入规模估算（亿元）<span class="tag est">含PC推算</span></div>
+<div id="chart-revenue-scale" class="chart-lg"></div>
+</div>
+<div class="chart-box">
+<div class="chart-title">2025年各品类DAU规模估算（万人）</div>
+<div id="chart-dau-scale" class="chart-lg"></div>
+</div>
+</div>
+
+<div class="insight-box">
+<h4>品类格局核心结论</h4>
+<ul>
+<li><strong>大逃杀（~200亿）</strong>：和平精英仍是中国射击游戏收入第一单品。但"纯大逃杀"经典模式增速趋缓，增长主要来自地铁逃生这一搜打撤模式的叠加</li>
+<li><strong>搜打撤（~180亿）</strong>：三角洲行动（~150亿）+ 暗区突围 + 和平精英地铁逃生模式部分收入。2025年绝对核心增量来源，收入规模已接近大逃杀</li>
+<li><strong>回合竞技（~65亿）</strong>：穿越火线爆破模式 + 无畏契约端游（腾讯国内流水最高PC游戏）+ CS系列。无畏契约端手游月活合计破5000万</li>
+<li><strong>大战场（~25亿）</strong>：三角洲行动·全面战场贡献了主要收入，该模式与烽火地带用户约5:5，但重叠度低</li>
+<li><strong>即时竞技（~20亿）</strong>：穿越火线团队竞技/生化模式、使命召唤团队死斗等，长青但被搜打撤严重分流</li>
+</ul>
+</div>
+</div>
+
+<!-- Section 3: Extraction细分 -->
+<div class="section">
+<div class="section-title"><span class="num">3</span>搜打撤内部格局：三种差异化解法做大品类</div>
+<div class="section-desc">腾讯用三款产品证明搜打撤不是零和博弈——各产品体验差异显著，共同做大盘子且互补。2025年搜打撤总DAU约5500万。</div>
+
+<div class="chart-grid">
+<div class="chart-box">
+<div class="chart-title">搜打撤三大产品DAU对比（2025）</div>
+<div id="chart-extraction-dau" class="chart"></div>
+</div>
+<div class="chart-box">
+<div class="chart-title">三角洲行动双模式用户分布</div>
+<div id="chart-delta-modes" class="chart"></div>
+</div>
+</div>
+
+<table class="comparison-table">
+<tr><th>产品</th><th>DAU（2025）</th><th>核心定位</th><th>体验差异</th><th>用户画像</th></tr>
+<tr class="highlight"><td><strong>和平精英·地铁逃生</strong></td><td>3700万</td><td>轻量化搜打撤</td><td>基于成熟BR规则架设，低门槛入局</td><td>原有BR玩家转化，泛用户</td></tr>
+<tr><td><strong>三角洲行动·烽火地带</strong></td><td>~1500万</td><td>高燃战术搜打撤</td><td>干员设定+技能，放大战斗爽感</td><td>PC端上班族+移动端年轻人</td></tr>
+<tr><td><strong>暗区突围</strong></td><td>~1000万</td><td>硬核拟真搜打撤</td><td>复杂枪改+真实健康系统+死亡全掉落</td><td>硬核FPS玩家，追求沉浸</td></tr>
+</table>
+
+<div class="insight-box">
+<h4>搜打撤品类洞察</h4>
+<ul>
+<li><strong>不是零和是共荣</strong>：腾讯管理层明确表示"《三角洲行动》拉动的都是全新用户"，三款搜打撤产品间体验差异足够大，不存在明显的用户流失替代</li>
+<li><strong>双模式分化明显</strong>：三角洲行动烽火地带与全面战场用户约5:5，但两类玩家重叠度低（"让大战场玩家去玩烽火地带，他根本玩不明白"）</li>
+<li><strong>扩容而非内卷</strong>：FPS市场正在"高速扩容"，搜打撤带来的新用户最终惠及整个射击品类</li>
+</ul>
+</div>
+</div>
+
+<!-- Section 4: Evolution -->
+<div class="section">
+<div class="section-title"><span class="num">4</span>品类演进脉络：每隔5-8年一波玩法大创新</div>
+<div class="section-desc">射击品类的历史就是玩法创新的历史。从双边爆破到大逃杀再到搜打撤，每一波创新都带来用户盘子的倍增。</div>
+
+<div class="timeline-container">
+<div class="timeline-line"></div>
+
+<div class="timeline-item left">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<div class="timeline-year">1999-2000</div>
+<div class="timeline-title">回合竞技（爆破模式）确立</div>
+<div class="timeline-desc">CS 1.6定义"买枪→回合攻防→经济系统"循环。穿越火线2007年将其带入中国并长青运营至今，端游MAU仍达4000万。</div>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-dot" style="background:#e74c3c;box-shadow:0 0 0 3px #e74c3c"></div>
+<div class="timeline-content">
+<div class="timeline-year">2017-2018</div>
+<div class="timeline-title">大逃杀（战术竞技）爆发</div>
+<div class="timeline-desc">PUBG引爆全球，和平精英承接中国市场。BR模式使射击游戏从硬核竞技走向全民化。</div>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-dot" style="background:#3498db;box-shadow:0 0 0 3px #3498db"></div>
+<div class="timeline-content">
+<div class="timeline-year">2022-2023</div>
+<div class="timeline-title">搜打撤萌芽与验证</div>
+<div class="timeline-desc">暗区突围将塔科夫式搜打撤带入移动端并大众化验证，完成品类启蒙。</div>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-dot" style="background:#9b59b6;box-shadow:0 0 0 3px #9b59b6"></div>
+<div class="timeline-content">
+<div class="timeline-year">2024-2025</div>
+<div class="timeline-title">搜打撤大众化爆发</div>
+<div class="timeline-desc">三角洲行动DAU突破4100万，搜打撤总DAU达5500万。和平精英地铁逃生DAU 3700万证明大DAU产品可通过副玩法完成品类迁移。</div>
+</div>
+</div>
+</div>
+
+<div class="chart-box" style="margin-top:24px">
+<div class="chart-title">射击品类在TOP100手游中收入占比变化</div>
+<div id="chart-top100-trend" style="width:100%;height:300px"></div>
+</div>
+</div>
+
+<!-- Section 5: Platform -->
+<div class="section">
+<div class="section-title"><span class="num">5</span>平台表现与重叠：PC收入被系统性低估</div>
+<div class="section-desc">手游承载用户规模（73%），但射击品类中PC端贡献了更高的单用户价值。跨端产品导致传统iOS监测模型"失真"。</div>
+
+<div class="chart-grid">
+<div class="chart-box">
+<div class="chart-title">中国游戏市场平台收入结构 (2025)</div>
+<div id="chart-platform-pie" class="chart"></div>
+</div>
+<div class="chart-box">
+<div class="chart-title">射击游戏平台重叠示意</div>
+<div class="overlap-visual">
+<div class="overlap-circles">
+<div class="circle circle-mobile"><span class="big">73%</span><span class="small">移动游戏<br>用户规模最大</span></div>
+<div class="circle circle-pc"><span class="big">48%</span><span class="small">PC端游<br>射击收入主力</span></div>
+<div class="circle circle-console"><span class="big">7%</span><span class="small">主机游戏<br>86%高增长</span></div>
+<div class="overlap-label" style="top:80px;left:120px">跨端重叠 28%</div>
+<div class="overlap-label" style="top:130px;right:80px;background:#fff7e6">三端互通 8%</div>
+</div>
+<p style="margin-top:10px;font-size:0.8em;color:#8898aa">圆圈大小 ≈ 平台市场体量 | 重叠区 ≈ 跨端用户/收入比例</p>
+</div>
+</div>
+</div>
+
+<div class="chart-box" style="margin-top:20px">
+<div class="chart-title">头部射击产品跨端收入结构（2025年真实流水估算）</div>
+<div id="chart-cross-revenue" class="chart-lg"></div>
+</div>
+
+<div class="insight-box">
+<h4>平台重叠核心洞察</h4>
+<ul>
+<li><strong>iOS畅销榜"失真"</strong>：三角洲行动iOS年流水45.68亿排名第5，但其PC端贡献约70%收入，真实总流水约150亿，是iOS观测值的<strong>3.3倍</strong></li>
+<li><strong>规模与价值的错位</strong>：手游拥有73%的用户规模，但射击游戏中PC端游ARPU显著更高。网吧热力榜前十中射击游戏占6席</li>
+<li><strong>主机86%高增长</strong>：2025年主机游戏实销收入83.62亿元，同比+86.33%。三角洲行动8月登陆PS5/XBOX，成为首款国产主机搜打撤游戏</li>
+<li><strong>跨端版号爆发</strong>：2025年至少118款游戏同时获批移动+PC双平台版号，跨端成为标配</li>
+</ul>
+</div>
+</div>
+
+<!-- Section 6: Products -->
+<div class="section">
+<div class="section-title"><span class="num">6</span>头部产品表现矩阵 (2025年)</div>
+<div class="section-desc">射击赛道进入"多爆款并行"时代。气泡大小=DAU规模，横轴=DAU，纵轴=预估综合年收入（含PC/主机）。</div>
+<div id="chart-products" class="chart-xl"></div>
+
+<div class="chart-box" style="margin-top:20px">
+<div class="chart-title">2025年射击品类玩家玩法偏好度（可多选）</div>
+<div id="chart-preference" style="width:100%;height:320px"></div>
+</div>
+</div>
+
+<!-- Section 7: Market size -->
+<div class="section">
+<div class="section-title"><span class="num">7</span>市场规模与增长趋势</div>
+<div class="chart-grid">
+<div class="chart-box">
+<div class="chart-title">各平台游戏市场收入趋势 (2020-2025)</div>
+<div id="chart-market-trend" class="chart"></div>
+</div>
+<div class="chart-box">
+<div class="chart-title">搜打撤品类DAU增长轨迹 (2022-2025)</div>
+<div id="chart-extraction-trend" class="chart"></div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<p><strong>数据来源：</strong>伽马数据(CNG)、点点数据、游戏工委《2025年中国游戏产业报告》、腾讯/网易财报、华源证券研究所</p>
+<p><strong>重要说明：</strong>2024年品类份额中，大逃杀(43%)和搜打撤(14%)直接采用点点数据官方发布值；其余品类基于官方"团队竞技""多玩法融合""融合RPG""载具射击"等大类按头部产品收入反推拆分到"对局循环"维度，非官方直接发布。2025年品类份额为基于产品收入数据的行业估算。两年口径已统一为"核心对局循环"维度。</p>
+<p>PC端收入因统计口径差异存在系统性低估，跨端产品真实市场表现通常高于单一平台观测值2-3倍。</p>
+</div>
+
+</div>
+
+<script>
+const C={red:'#e74c3c',teal:'#1abc9c',blue:'#3498db',purple:'#9b59b6',orange:'#e67e22',yellow:'#f1c40f',gray:'#95a5a6',dark:'#2c3e50',pink:'#fd79a8',navy:'#74b9ff'};
+
+// Unified labels and colors for both years
+const unifiedLabels=['大逃杀(BR)','搜打撤','回合竞技(爆破+经济)','即时竞技(即时重生)','大战场','其他/PVE'];
+const unifiedColors=[C.red,C.blue,C.orange,C.teal,C.navy,C.gray];
+
+// Chart 1: 2024 (reconstructed)
+echarts.init(document.getElementById('chart-2024')).setOption({
+  tooltip:{trigger:'item',formatter:function(p){return p.name+'<br/>'+p.value+'%';}},
+  legend:{bottom:0,icon:'circle',textStyle:{fontSize:10},itemWidth:10,itemHeight:10},
+  color:unifiedColors,
+  series:[{
+    name:'收入占比',type:'pie',radius:['30%','60%'],center:['50%','45%'],
+    avoidLabelOverlap:true,
+    itemStyle:{borderRadius:6,borderColor:'#fff',borderWidth:2},
+    label:{show:true,formatter:'{b}\n{d}%',fontSize:10,lineHeight:14,overflow:'break'},
+    labelLine:{show:true,length:20,length2:35,smooth:true},
+    emphasis:{label:{show:true,fontSize:13,fontWeight:'bold'}},
+    data:[
+      {value:43,name:unifiedLabels[0]},
+      {value:14,name:unifiedLabels[1]},
+      {value:10,name:unifiedLabels[2]},
+      {value:9,name:unifiedLabels[3]},
+      {value:2,name:unifiedLabels[4]},
+      {value:22,name:unifiedLabels[5]}
+    ]
+  }]
+});
+
+// Chart 2: 2025 (estimated)
+echarts.init(document.getElementById('chart-2025')).setOption({
+  tooltip:{trigger:'item',formatter:function(p){return p.name+'<br/>'+p.value+'%';}},
+  legend:{bottom:0,icon:'circle',textStyle:{fontSize:10},itemWidth:10,itemHeight:10},
+  color:unifiedColors,
+  series:[{
+    name:'估算收入占比',type:'pie',radius:['30%','60%'],center:['50%','45%'],
+    avoidLabelOverlap:true,
+    itemStyle:{borderRadius:6,borderColor:'#fff',borderWidth:2},
+    label:{show:true,formatter:'{b}\n{d}%',fontSize:10,lineHeight:14,overflow:'break'},
+    labelLine:{show:true,length:20,length2:35,smooth:true},
+    emphasis:{label:{show:true,fontSize:13,fontWeight:'bold'}},
+    data:[
+      {value:36,name:unifiedLabels[0]},
+      {value:33,name:unifiedLabels[1]},
+      {value:12,name:unifiedLabels[2]},
+      {value:4,name:unifiedLabels[3]},
+      {value:5,name:unifiedLabels[4]},
+      {value:10,name:unifiedLabels[5]}
+    ]
+  }]
+});
+
+// Chart 3: Change comparison (RESTORED with unified口径)
+echarts.init(document.getElementById('chart-change')).setOption({
+  tooltip:{trigger:'axis',axisPointer:{type:'shadow'},formatter:function(p){
+    let r='<b>'+p[0].name+'</b><br/>';
+    p.forEach(v=>{r+=v.marker+v.seriesName+': '+v.value+'%<br/>';});
+    let delta=p[1].value-p[0].value;
+    r+=(delta>=0?'+':'')+delta.toFixed(0)+'ppt';
+    return r;
+  }},
+  legend:{top:0},
+  grid:{left:'3%',right:'4%',bottom:'3%',top:'12%',containLabel:true},
+  xAxis:{type:'category',data:unifiedLabels,axisLabel:{fontSize:10,interval:0,rotate:15}},
+  yAxis:{type:'value',max:50,axisLabel:{formatter:'{value}%'}},
+  series:[
+    {name:'2024年（反推拆分）',type:'bar',data:[43,14,10,9,2,22],itemStyle:{color:C.gray},barGap:'10%',barWidth:'32%'},
+    {name:'2025年（行业估算）',type:'bar',data:[36,33,12,4,5,10],itemStyle:{color:function(p){return unifiedColors[p.dataIndex]}},barWidth:'32%'}
+  ]
+});
+
+// Chart 4: Revenue scale
+echarts.init(document.getElementById('chart-revenue-scale')).setOption({
+  tooltip:{trigger:'axis',axisPointer:{type:'shadow'},formatter:function(p){
+    let r=p[0].name+'<br/>';
+    p.forEach(v=>{r+=v.marker+v.seriesName+': '+v.value+'亿元<br/>';});
+    return r;
+  }},
+  legend:{top:0},
+  grid:{left:'3%',right:'4%',bottom:'3%',top:'12%',containLabel:true},
+  xAxis:{type:'category',data:['大逃杀','搜打撤','回合竞技','大战场','即时竞技','其他'],axisLabel:{fontSize:11}},
+  yAxis:{type:'value',name:'亿元'},
+  series:[
+    {name:'移动端估算',type:'bar',stack:'total',data:[120,55,45,15,15,10],itemStyle:{color:C.red},barWidth:'50%'},
+    {name:'PC端估算',type:'bar',stack:'total',data:[30,110,15,8,3,0],itemStyle:{color:C.teal}},
+    {name:'主机/其他',type:'bar',stack:'total',data:[0,0,0,0,0,0],itemStyle:{color:C.blue,borderRadius:[6,6,0,0]}},
+    {type:'bar',stack:'total',data:[0,0,0,0,0,0],label:{show:true,position:'top',formatter:function(p){const totals=[150,165,60,23,18,10];return totals[p.dataIndex]+'亿';},fontWeight:'bold',color:C.dark}}
+  ]
+});
+
+// Chart 5: DAU scale
+echarts.init(document.getElementById('chart-dau-scale')).setOption({
+  tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+  grid:{left:'3%',right:'4%',bottom:'3%',containLabel:true},
+  xAxis:{type:'category',data:['大逃杀','搜打撤','回合竞技','即时竞技','大战场','其他'],axisLabel:{fontSize:11}},
+  yAxis:{type:'value',name:'万人',max:12000},
+  series:[{
+    name:'DAU估算',type:'bar',
+    data:[9000,5500,2500,1500,2000,500],
+    itemStyle:{color:function(p){return [C.red,C.blue,C.orange,C.teal,C.navy,C.gray][p.dataIndex]},borderRadius:[6,6,0,0]},
+    barWidth:'55%',
+    label:{show:true,position:'top',formatter:'{c}万',fontWeight:'bold'}
+  }]
+});
+
+// Chart 6: Extraction DAU
+echarts.init(document.getElementById('chart-extraction-dau')).setOption({
+  tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+  grid:{left:'3%',right:'4%',bottom:'3%',containLabel:true},
+  xAxis:{type:'category',data:['和平精英·地铁逃生','三角洲·烽火地带','暗区突围']},
+  yAxis:{type:'value',name:'万人',max:4500},
+  series:[{
+    name:'DAU',type:'bar',
+    data:[3700,1500,1000],
+    itemStyle:{color:function(p){return [C.red,C.blue,C.purple][p.dataIndex]},borderRadius:[6,6,0,0]},
+    barWidth:'50%',
+    label:{show:true,position:'top',formatter:'{c}万',fontWeight:'bold'}
+  }]
+});
+
+// Chart 7: Delta modes
+echarts.init(document.getElementById('chart-delta-modes')).setOption({
+  tooltip:{trigger:'item',formatter:'{b}: {c}% ({d}%)'},
+  legend:{bottom:0,icon:'circle'},
+  color:[C.blue,C.teal],
+  series:[{
+    name:'用户分布',type:'pie',radius:['40%','70%'],
+    itemStyle:{borderRadius:6,borderColor:'#fff',borderWidth:2},
+    label:{formatter:'{b}\n{c}%',fontSize:12},
+    data:[
+      {value:50,name:'烽火地带（搜打撤）'},
+      {value:50,name:'全面战场（大战场）'}
+    ]
+  }]
+});
+
+// Chart 8: Platform pie
+echarts.init(document.getElementById('chart-platform-pie')).setOption({
+  tooltip:{trigger:'item',formatter:'{b}: {c}%'},
+  legend:{bottom:0,icon:'circle'},
+  series:[{
+    name:'平台收入',type:'pie',radius:['35%','65%'],center:['50%','45%'],
+    itemStyle:{borderRadius:6,borderColor:'#fff',borderWidth:2},
+    label:{formatter:'{b}\n{c}%',fontSize:11},
+    data:[
+      {value:73.3,name:'移动游戏',itemStyle:{color:C.red}},
+      {value:22.3,name:'PC客户端',itemStyle:{color:C.teal}},
+      {value:3.3,name:'主机游戏',itemStyle:{color:C.blue}},
+      {value:1.3,name:'网页游戏',itemStyle:{color:C.gray}}
+    ]
+  }]
+});
+
+// Chart 9: Cross revenue
+echarts.init(document.getElementById('chart-cross-revenue')).setOption({
+  tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+  legend:{top:0},
+  grid:{left:'3%',right:'4%',bottom:'10%',top:'12%',containLabel:true},
+  xAxis:{type:'category',data:['三角洲行动','和平精英','穿越火线端游','暗区突围','无畏契约端游','使命召唤手游']},
+  yAxis:{type:'value',max:100,axisLabel:{formatter:'{value}%'}},
+  series:[
+    {name:'移动端收入占比',type:'bar',stack:'total',data:[30,85,15,98,20,90],itemStyle:{color:C.red},barWidth:'50%'},
+    {name:'PC端收入占比',type:'bar',stack:'total',data:[68,10,82,0,78,8],itemStyle:{color:C.teal},label:{show:true,position:'inside',formatter:function(p){return p.value>10?p.value+'%':''},color:'#fff',fontWeight:'bold'}},
+    {name:'主机/其他',type:'bar',stack:'total',data:[2,5,3,2,2,2],itemStyle:{color:C.blue,borderRadius:[6,6,0,0]}}
+  ]
+});
+
+// Chart 10: Products bubble
+echarts.init(document.getElementById('chart-products')).setOption({
+  tooltip:{
+    formatter:function(p){
+      return '<b>'+p.data[2]+'</b><br/>DAU: '+p.data[0]+'万人<br/>预估综合年收入: '+p.data[1]+'亿元<br/>核心循环: '+p.data[3]+'<br/>平台: '+p.data[4];
+    }
+  },
+  grid:{left:'8%',right:'15%',top:'10%',bottom:'10%'},
+  xAxis:{type:'value',name:'DAU（万人）',nameLocation:'middle',nameGap:30,min:0,max:10000},
+  yAxis:{type:'value',name:'预估综合年收入（亿元）',nameLocation:'middle',nameGap:50,min:0,max:220},
+  series:[{
+    type:'scatter',
+    symbolSize:function(data){return Math.sqrt(data[0])*2;},
+    data:[
+      [9000,200,'和平精英','大逃杀+搜打撤(地铁)','移动/PC/模拟器',C.red],
+      [5000,150,'三角洲行动','搜打撤+大战场','PC/移动/主机',C.blue],
+      [4000,80,'穿越火线端游','回合竞技+即时竞技','PC',C.teal],
+      [3000,55,'穿越火线手游','回合竞技+即时竞技','移动',C.teal],
+      [5000,30,'无畏契约系列','回合竞技(爆破)+英雄技能','PC/移动',C.purple],
+      [1000,15,'暗区突围','搜打撤(硬核拟真)','移动/PC',C.pink],
+      [500,12,'使命召唤手游','即时竞技','移动/模拟器',C.orange],
+      [3700,25,'和平精英·地铁逃生','搜打撤(BR变体)','移动',C.blue]
+    ],
+    itemStyle:{color:function(p){return p.data[5];},opacity:0.75,shadowBlur:8,shadowColor:'rgba(0,0,0,0.1)'},
+    label:{show:true,formatter:function(p){return p.data[2];},position:'top',fontSize:11,fontWeight:'bold'}
+  }]
+});
+
+// Chart 11: Preference
+echarts.init(document.getElementById('chart-preference')).setOption({
+  tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+  grid:{left:'3%',right:'8%',bottom:'3%',containLabel:true},
+  xAxis:{type:'value',max:60,axisLabel:{formatter:'{value}%'}},
+  yAxis:{type:'category',data:['生化/变异','末世求生','英雄射击/技能竞技','即时竞技(死斗)','回合竞技(爆破)','搜打撤模式','大逃杀模式'],axisLabel:{fontSize:11}},
+  series:[{
+    name:'玩家偏好度',type:'bar',
+    data:[
+      {value:28.8,itemStyle:{color:C.gray}},
+      {value:34.2,itemStyle:{color:C.yellow}},
+      {value:39.2,itemStyle:{color:C.purple}},
+      {value:40,itemStyle:{color:C.teal}},
+      {value:44.2,itemStyle:{color:C.orange}},
+      {value:51.7,itemStyle:{color:C.blue}},
+      {value:53.7,itemStyle:{color:C.red}}
+    ],
+    barWidth:'55%',itemStyle:{borderRadius:[0,6,6,0]},
+    label:{show:true,position:'right',formatter:'{c}%',fontWeight:'bold'}
+  }]
+});
+
+// Chart 12: Market trend
+echarts.init(document.getElementById('chart-market-trend')).setOption({
+  tooltip:{trigger:'axis'},
+  legend:{bottom:0},
+  grid:{left:'3%',right:'4%',bottom:'15%',containLabel:true},
+  xAxis:{type:'category',data:['2020','2021','2022','2023','2024','2025']},
+  yAxis:{type:'value',name:'亿元'},
+  series:[
+    {name:'移动游戏',type:'line',data:[2100,2250,1930,2270,2382,2571],smooth:true,itemStyle:{color:C.red},lineStyle:{width:3}},
+    {name:'客户端游戏',type:'line',data:[560,588,610,663,680,782],smooth:true,itemStyle:{color:C.teal},lineStyle:{width:3}},
+    {name:'主机游戏',type:'line',data:[15,18,23,29,45,84],smooth:true,itemStyle:{color:C.blue},lineStyle:{width:3}}
+  ]
+});
+
+// Chart 13: Extraction trend
+echarts.init(document.getElementById('chart-extraction-trend')).setOption({
+  tooltip:{trigger:'axis'},
+  legend:{bottom:0},
+  grid:{left:'3%',right:'4%',bottom:'15%',containLabel:true},
+  xAxis:{type:'category',data:['2022','2023H1','2023H2','2024H1','2024H2','2025']},
+  yAxis:{type:'value',name:'万人',max:6000},
+  series:[
+    {name:'暗区突围',type:'line',data:[200,400,500,600,800,1000],smooth:true,itemStyle:{color:C.purple},lineStyle:{width:3}},
+    {name:'和平精英地铁逃生',type:'line',data:[0,0,800,1500,2500,3700],smooth:true,itemStyle:{color:C.red},lineStyle:{width:3}},
+    {name:'三角洲烽火地带',type:'line',data:[0,0,0,0,1200,1500],smooth:true,itemStyle:{color:C.blue},lineStyle:{width:3}},
+    {name:'搜打撤品类总计',type:'line',data:[200,400,1300,2100,4500,5500],smooth:true,itemStyle:{color:C.dark},lineStyle:{width:4,type:'dashed'},symbol:'circle',symbolSize:8}
+  ]
+});
+
+// Chart 14: TOP100 trend
+echarts.init(document.getElementById('chart-top100-trend')).setOption({
+  tooltip:{trigger:'axis'},
+  grid:{left:'3%',right:'4%',bottom:'10%',containLabel:true},
+  xAxis:{type:'category',data:['2021','2022','2023','2024','2025']},
+  yAxis:{type:'value',max:20,axisLabel:{formatter:'{value}%'}},
+  series:[{
+    name:'射击品类收入占比',type:'line',
+    data:[11.5,12.0,13.2,13.89,18.29],
+    smooth:true,itemStyle:{color:C.red},lineStyle:{width:3},
+    symbol:'circle',symbolSize:10,
+    label:{show:true,position:'top',formatter:'{c}%',fontWeight:'bold',color:C.red},
+    areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:'rgba(231,76,60,0.25)'},{offset:1,color:'rgba(231,76,60,0.03)'}]}}
+  }]
+});
+
+window.addEventListener('resize',()=>{
+  document.querySelectorAll('.chart,.chart-lg,.chart-xl').forEach(el=>{
+    const chart=echarts.getInstanceByDom(el);
+    if(chart)chart.resize();
+  });
+});
+</script>
+</body>
+</html>

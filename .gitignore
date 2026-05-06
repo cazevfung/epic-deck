@@ -11,3 +11,9 @@ _rewrite_urls.py
 # Local backups / scratch
 epic_deck_V2.reverted-as-found-backup.html
 fortnite_pitch_image_search_results.yaml
+\#SyncVersion/
+tmp_demo_*.png
+tmp_slide31_demo.png
+tmp_slide_exports/
+tmp_ppt_inspect/
+epic_deck/00_inbox/Epic Deck 合并_v1.pptx

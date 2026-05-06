@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortnite China Demo | Deck System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="../../deck-system/styles/tokens.css" rel="stylesheet">
+<link href="../../deck-system/styles/base.css" rel="stylesheet">
+<link href="../../deck-system/styles/components.css" rel="stylesheet">
+<link href="../../deck-system/styles/templates.css" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --bg-elev: #ffffff;
+    --bg-card: #fffdfa;
+    --border: #ddd6cc;
+    --text: #252a36;
+    --text-dim: #697386;
+    --text-faint: #9299a8;
+    --orange: #ff6b35;
+    --orange-soft: rgba(255, 107, 53, 0.12);
+    --purple: #6f7ffb;
+    --teal: #14b8a6;
+    --green: #06ffa5;
+    --yellow: #ffd60a;
+    --blue: #4a90e2;
+    --panel: rgba(255, 255, 255, 0.72);
+    --shadow: 0 18px 50px rgba(49, 38, 24, 0.08);
+
+    --color-bg: var(--bg);
+    --color-surface: var(--bg-elev);
+    --color-card: var(--bg-card);
+    --color-border: var(--border);
+    --color-text: var(--text);
+    --color-text-dim: var(--text-dim);
+    --color-text-faint: var(--text-faint);
+    --color-accent-primary: var(--orange);
+    --color-accent-secondary: var(--purple);
+    --color-accent-tertiary: var(--teal);
+    --color-accent-positive: var(--green);
+    --color-accent-warning: var(--yellow);
+    --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+    --stage-width: 1920px;
+    --stage-height: 1080px;
+  }
+
+  html,
+  body {
+    background:
+      radial-gradient(circle at 18% 22%, rgba(255, 107, 53, 0.1), transparent 26%),
+      radial-gradient(circle at 78% 74%, rgba(255, 107, 53, 0.08), transparent 28%),
+      var(--bg);
+    font-family: var(--font-sans);
+  }
+
+  .deck-viewport {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .deck-stage-shell {
+    width: var(--stage-width);
+    height: var(--stage-height);
+    position: relative;
+    transform-origin: center center;
+  }
+
+  .deck {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at 18% 24%, rgba(255, 107, 53, 0.08), transparent 24%),
+      radial-gradient(circle at 84% 76%, rgba(255, 107, 53, 0.07), transparent 24%),
+      linear-gradient(180deg, #fffdf9, #f8f5ef);
+    box-shadow: var(--shadow);
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    padding: 72px 96px;
+    opacity: 0;
+    transition: opacity 0.28s ease;
+  }
+
+  .slide.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .page-bleed {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .page-safe {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #7282ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .kicker::before {
+    content: "";
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--orange), transparent);
+  }
+
+  .title {
+    max-width: 1100px;
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+  }
+
+  .title .accent {
+    color: var(--orange);
+  }
+
+  .subtitle {
+    max-width: 1040px;
+    font-size: 20px;
+    line-height: 1.42;
+    color: #525b6c;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 26px;
+    min-height: 0;
+  }
+
+  .proof-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .panel {
+    position: relative;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(209, 200, 188, 0.9);
+    border-radius: 22px;
+    padding: 22px;
+    overflow: hidden;
+  }
+
+  .panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    pointer-events: none;
+  }
+
+  .panel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .panel-title h3 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255, 107, 53, 0.14);
+    color: #b85a2d;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .donut-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .donut {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    background:
+      radial-gradient(circle at center, rgba(255, 253, 249, 1) 0 34%, transparent 35%),
+      conic-gradient(
+        #f1643d 0 43%,
+        #598fdb 43% 57%,
+        #da8a2f 57% 67%,
+        #53b79f 67% 76%,
+        #7aa3eb 76% 78%,
+        #9da8ac 78% 100%
+      );
+    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+
+  .donut.y2025 {
+    background:
+      radial-gradient(circle at center, rgba(255, 253, 249, 1) 0 34%, transparent 35%),
+      conic-gradient(
+        #f1643d 0 36%,
+        #598fdb 36% 69%,
+        #da8a2f 69% 81%,
+        #53b79f 81% 85%,
+        #7aa3eb 85% 90%,
+        #9da8ac 90% 100%
+      );
+  }
+
+  .donut::before {
+    content: attr(data-label);
+    position: absolute;
+    inset: 30% 24%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .legend {
+    display: grid;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .legend-item {
+    display: grid;
+    grid-template-columns: 16px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    font-size: 15px;
+    color: #445062;
+  }
+
+  .legend-item span:last-child {
+    color: var(--text);
+    font-weight: 800;
+  }
+
+  .swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+
+  .commentary-card {
+    display: grid;
+    gap: 18px;
+    align-content: start;
+  }
+
+  .takeaway-card {
+    padding: 22px 24px;
+    border-radius: 22px;
+    background:
+      linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(255, 107, 53, 0.04)),
+      rgba(255,255,255,0.76);
+    border: 1px solid rgba(255, 107, 53, 0.22);
+  }
+
+  .takeaway-card h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #b85a2d;
+    margin-bottom: 14px;
+  }
+
+  .takeaway-card p {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+  }
+
+  .bullet-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .bullet {
+    display: grid;
+    grid-template-columns: 12px 1fr;
+    gap: 14px;
+    align-items: start;
+    color: #40495a;
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .bullet::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--orange), #ff9e54);
+    box-shadow: 0 0 0 6px rgba(255, 107, 53, 0.08);
+  }
+
+  .data-note {
+    color: var(--text-faint);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .phase-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+    min-height: 0;
+  }
+
+  .info-stack {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+  }
+
+  .meta-card {
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.74);
+    border: 1px solid rgba(209, 200, 188, 0.9);
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .meta-item {
+    display: grid;
+    gap: 8px;
+  }
+
+  .meta-item strong {
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .meta-item span {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .section-card h4 {
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .section-card p,
+  .section-card li {
+    color: #475062;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .section-card ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .section-card li::before {
+    content: "— ";
+    color: var(--orange);
+    font-weight: 800;
+  }
+
+  .visual-stack {
+    display: grid;
+    grid-template-rows: 1.15fr 0.85fr;
+    gap: 16px;
+    min-height: 0;
+  }
+
+  .hero-image,
+  .support-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid rgba(209, 200, 188, 0.9);
+    background: rgba(255,255,255,0.74);
+  }
+
+  .hero-image img,
+  .support-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .visual-caption {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    display: grid;
+    gap: 6px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(10,10,15,0), rgba(10,10,15,0.84));
+  }
+
+  .visual-caption strong {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .visual-caption span {
+    font-size: 14px;
+    line-height: 1.35;
+    color: #d7d7e2;
+  }
+
+  .quote-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(20, 184, 166, 0.08);
+    color: #118576;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .insight-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    min-height: 0;
+  }
+
+  .hero-statement {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+  }
+
+  .statement-card {
+    position: relative;
+    padding: 30px 32px 34px;
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at 0% 0%, rgba(255, 107, 53, 0.14), transparent 28%),
+      linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.72));
+    border: 1px solid rgba(209, 200, 188, 0.9);
+    overflow: hidden;
+  }
+
+  .statement-card::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    bottom: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.18), transparent 65%);
+    pointer-events: none;
+  }
+
+  .statement-card .mega {
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+  }
+
+  .statement-card .mega + .mega {
+    margin-top: 8px;
+  }
+
+  .statement-card .muted {
+    color: #8f91a0;
+  }
+
+  .statement-card .orange {
+    color: var(--orange);
+  }
+
+  .support-copy {
+    max-width: 760px;
+    font-size: 20px;
+    line-height: 1.42;
+    color: #4b5567;
+  }
+
+  .principles {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+
+  .principle-card {
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.76);
+    border: 1px solid rgba(209, 200, 188, 0.9);
+  }
+
+  .principle-card strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: 19px;
+    font-weight: 800;
+  }
+
+  .principle-card p {
+    color: #4b5567;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .signal-line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #6b7280;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+
+  .signal-line::before {
+    content: "";
+    width: 96px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--orange), rgba(255, 107, 53, 0.12));
+  }
+
+  .nav {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-faint);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    z-index: 10;
+  }
+
+  .nav .bar {
+    width: 200px;
+    height: 2px;
+    background: rgba(130, 140, 155, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav .bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--progress, 33.333%);
+    background: var(--orange);
+    transition: width 0.28s ease;
+  }
+
+  .hint {
+    position: fixed;
+    right: 28px;
+    bottom: 22px;
+    color: var(--text-faint);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    z-index: 10;
+  }
+
+  .slide-index {
+    position: absolute;
+    top: 72px;
+    right: 96px;
+    color: #8b93a5;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .title {
+    max-width: 1180px;
+    font-size: 42px;
+    line-height: 1.05;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .phase-grid {
+    gap: 22px;
+    align-items: start;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .panel,
+  .slide[data-title="Re-entry Warmup"] .meta-card {
+    padding: 18px;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .meta-item span {
+    font-size: 16px;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .section-card h4 {
+    font-size: 16px;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .section-card p,
+  .slide[data-title="Re-entry Warmup"] .section-card li {
+    font-size: 14px;
+    line-height: 1.38;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .visual-stack {
+    grid-template-rows: auto auto;
+    gap: 12px;
+    align-content: start;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .hero-image {
+    height: 380px;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .support-image {
+    height: 220px;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .visual-caption {
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+    padding: 10px 12px;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .visual-caption strong {
+    font-size: 14px;
+  }
+
+  .slide[data-title="Re-entry Warmup"] .visual-caption span {
+    font-size: 12px;
+    line-height: 1.28;
+  }
+</style>
+</head>
+<body>
+  <div class="deck-viewport">
+    <div class="deck-stage-shell" id="stage-shell">
+      <main class="deck" id="deck">
+        <section class="slide active" data-title="Category Reset">
+          <div class="page-bleed"></div>
+          <div class="slide-index">Demo 01</div>
+          <div class="page-safe">
+            <div class="kicker">T07 Comparison Split · Slide 16 rewrite</div>
+            <h1 class="title">从 <span class="accent">BR 一家独大</span> 到“双核竞争”，Fortnite 的进入逻辑已经变了</h1>
+            <p class="subtitle">原页的问题不是没有数据，而是没有把“结构性变化”讲清楚。demo 的目标是把两个圆环图升级成一个明确的战略判断：2025 年中国射击品类不再只是抢 BR 存量，而是要回答“搜打撤为什么正在吃掉注意力”。</p>
+            <div class="grid-2">
+              <div class="proof-panels">
+                <article class="panel">
+                  <div class="panel-title">
+                    <h3>2024 品类结构</h3>
+                    <span class="pill">反推拆分</span>
+                  </div>
+                  <div class="donut-wrap">
+                    <div class="donut" data-label="大逃杀 43%&#10;搜打撤 14%"></div>
+                    <div class="legend">
+                      <div class="legend-item"><span class="swatch" style="background:#f1643d"></span><span>大逃杀 BR</span><span>43%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#598fdb"></span><span>搜打撤</span><span>14%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#da8a2f"></span><span>回合竞技</span><span>10%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#53b79f"></span><span>即时竞技</span><span>9%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#7aa3eb"></span><span>大战场</span><span>2%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#9da8ac"></span><span>其他 / PVE</span><span>22%</span></div>
+                    </div>
+                  </div>
+                </article>
+                <article class="panel">
+                  <div class="panel-title">
+                    <h3>2025 品类结构</h3>
+                    <span class="pill">行业估算</span>
+                  </div>
+                  <div class="donut-wrap">
+                    <div class="donut y2025" data-label="大逃杀 36%&#10;搜打撤 33%"></div>
+                    <div class="legend">
+                      <div class="legend-item"><span class="swatch" style="background:#f1643d"></span><span>大逃杀 BR</span><span>36%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#598fdb"></span><span>搜打撤</span><span>33%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#da8a2f"></span><span>回合竞技</span><span>12%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#53b79f"></span><span>即时竞技</span><span>4%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#7aa3eb"></span><span>大战场</span><span>5%</span></div>
+                      <div class="legend-item"><span class="swatch" style="background:#9da8ac"></span><span>其他 / PVE</span><span>10%</span></div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <aside class="commentary-card">
+                <div class="takeaway-card">
+                  <h3>Strategic takeaway</h3>
+                  <p>Fortnite 不该被包装成“另一个 BR”，而要被重新定义成能跨越 BR / 搜打撤两端期待的内容型平台。</p>
+                </div>
+                <div class="panel">
+                  <div class="bullet-list">
+                    <div class="bullet">BR 仍然是最大单品类，但不再拥有绝对统治力，市场注意力开始被新玩法分流。</div>
+                    <div class="bullet">搜打撤一年内从 14% 拉升到 33%，说明用户对“射击 + 内容差异化 + 长线运营”的组合已经形成新的预期。</div>
+                    <div class="bullet">如果 Fortnite 只强调传统射击标签，会被放进存量竞争；如果强调跨端、内容事件和创作生态，才有机会避开正面拥挤。</div>
+                  </div>
+                </div>
+                <div class="data-note">Source note: data rebuilt from source slide visual. This demo proves layout and argument upgrade, not final audited market numbers.</div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Re-entry Warmup">
+          <div class="page-bleed"></div>
+          <div class="slide-index">Demo 02</div>
+          <div class="page-safe">
+            <div class="kicker">T04 Two-Column Proof · Slide 26 rewrite</div>
+            <h1 class="title">回归预告期的第一任务，不是讲清产品细节，而是<span class="accent">先把市场认知拉回来</span></h1>
+            <div class="phase-grid">
+              <div class="info-stack">
+                <div class="meta-card">
+                  <div class="meta-grid">
+                    <div class="meta-item">
+                      <strong>阶段</strong>
+                      <span>回归预告期</span>
+                    </div>
+                    <div class="meta-item">
+                      <strong>时间</strong>
+                      <span>2027.01 - 2027.02</span>
+                    </div>
+                    <div class="meta-item">
+                      <strong>目标</strong>
+                      <span>先回答“堡垒之夜回来了”</span>
+                    </div>
+                    <div class="meta-item">
+                      <strong>结果</strong>
+                      <span>重建中国市场第一印象</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel section-card">
+                  <h4>关键动作</h4>
+                  <ul>
+                    <li>借 TapTap 年度游戏大赏完成第一次高势能官宣，把“回归中国”做成一个文化事件而不是渠道通知。</li>
+                    <li>统一释出回归主视觉、概念片和跨平台信号，让玩家先知道这次不是旧版本回流。</li>
+                    <li>同步重启微博、B 站、抖音、小红书、TapTap 与微信视频号，建立第一轮舆论承接面。</li>
+                  </ul>
+                </div>
+                <div class="panel section-card">
+                  <h4>为什么这页值得被重做</h4>
+                  <p>原页内容其实很强，但旧版只是“左文右图”。新布局把它变成一个更清楚的证明链：先讲阶段目标，再让两张 proof image 分别承担“高势能官宣”和“平台信任背书”两种不同作用。</p>
+                </div>
+              </div>
+              <div class="visual-stack">
+                <figure class="hero-image">
+                  <img src="demo_assets/slide26_awards.png" alt="TapTap 年度游戏大赏主视觉">
+                  <figcaption class="visual-caption">
+                    <strong>Hero proof: TapTap 年度游戏大赏官宣合作</strong>
+                    <span>这张图负责证明“回归”可以不是一次普通宣发，而是一次具有平台级话题势能的重启事件。</span>
+                  </figcaption>
+                </figure>
+                <figure class="support-image">
+                  <img src="demo_assets/slide26_interview.png" alt="TapTap 负责人视频画面">
+                  <figcaption class="visual-caption">
+                    <strong>Support proof: 平台负责人内容背书</strong>
+                    <span>视频化表达用来降低“海外现象级产品为何回归中国”的解释成本，也更适合社交平台扩散。</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Commercialization">
+          <div class="page-bleed"></div>
+          <div class="slide-index">Demo 03</div>
+          <div class="page-safe">
+            <div class="kicker">T03 Core Insight · Slide 60 rewrite</div>
+            <div class="insight-layout">
+              <div class="hero-statement">
+                <div class="statement-card">
+                  <div class="mega">先证明<span class="orange">吸引力</span></div>
+                  <div class="mega muted">再教育付费</div>
+                </div>
+                <p class="support-copy">原页的核心其实非常清晰，但版面还停留在“一个大标题加两个 bullet”。系统化重构后，这一页被提升成商业化章节的记忆锚点：Epic 不需要先担心中国版本会不会过度改造，而应该先接受一个更稳妥的商业化进入顺序。</p>
+                <div class="signal-line">首发版本的商业化任务，是减少门槛，不是急于抬高 ARPPU</div>
+              </div>
+              <aside class="principles">
+                <div class="quote-chip">Commercialization principles</div>
+                <div class="principle-card">
+                  <strong>内容选取：保持全球骨架，但允许本地化供给更聪明</strong>
+                  <p>不必在首发期就把所有皮肤和付费结构彻底中国化。优先保证可理解、可被讨论、可被传播的内容出现频率。</p>
+                </div>
+                <div class="principle-card">
+                  <strong>定价策略：大部分对齐，少数老皮肤做教育型折扣</strong>
+                  <p>价格不需要大改，但可以给旧内容留出“重新认识 Fortnite”的试错入口，让第一次付费更像参与事件，而不是强硬转化。</p>
+                </div>
+                <div class="principle-card">
+                  <strong>章节作用：给 Epic 安全感，而不是陷入细节争辩</strong>
+                  <p>这类页面的价值在于先建立原则边界。等对方接受顺序，我们再进入 SKU、折扣层级和长期内容供给的细化讨论。</p>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="nav">
+    <span id="nav-count">01 / 03</span>
+    <div class="bar" id="nav-bar"></div>
+  </div>
+  <div class="hint">← → navigate · F fullscreen</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  const stageShell = document.getElementById("stage-shell");
+  const navCount = document.getElementById("nav-count");
+  const navBar = document.getElementById("nav-bar");
+  let current = 0;
+
+  function scaleStage() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const scale = Math.min(width / 1920, height / 1080);
+    stageShell.style.transform = `scale(${scale})`;
+  }
+
+  function renderSlide(index, updateHash = true) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("active", slideIndex === current);
+    });
+    navCount.textContent = `${String(current + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+    navBar.style.setProperty("--progress", `${((current + 1) / slides.length) * 100}%`);
+    document.title = `Fortnite China Demo | ${slides[current].dataset.title}`;
+    if (updateHash) {
+      history.replaceState(null, "", `#${current + 1}`);
+    }
+  }
+
+  function getInitialSlide() {
+    const raw = window.location.hash.replace("#", "");
+    const parsed = Number.parseInt(raw, 10);
+    if (Number.isNaN(parsed) || parsed < 1 || parsed > slides.length) {
+      return 0;
+    }
+    return parsed - 1;
+  }
+
+  window.addEventListener("resize", scaleStage);
+  window.addEventListener("hashchange", () => {
+    renderSlide(getInitialSlide(), false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+      event.preventDefault();
+      renderSlide(current + 1);
+    }
+    if (event.key === "ArrowLeft" || event.key === "PageUp") {
+      event.preventDefault();
+      renderSlide(current - 1);
+    }
+    if (event.key.toLowerCase() === "f") {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+  });
+
+  scaleStage();
+  renderSlide(getInitialSlide(), false);
+</script>
+</body>
+</html>

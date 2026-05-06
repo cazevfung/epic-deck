@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年中国游戏品类收入结构 - 多维度数据报告</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #0F1419;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            color: #6C757D;
+            font-style: italic;
+        }
+        
+        .header .subtitle a {
+            color: #2A9D8F;
+            text-decoration: none;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .chart-card {
+            background-color: #141b26;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            transition: border-color 0.3s;
+        }
+        
+        .chart-card:hover {
+            border-color: #2A9D8F;
+        }
+        
+        .chart-card .chart-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+            padding-left: 12px;
+            border-left: 3px solid #2A9D8F;
+        }
+        
+        .chart-card .chart-desc {
+            font-size: 12px;
+            color: #6C757D;
+            margin-bottom: 16px;
+            padding-left: 15px;
+        }
+        
+        .chart-container {
+            width: 100%;
+            height: 380px;
+        }
+        
+        .insights-section {
+            background-color: #141b26;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-top: 24px;
+        }
+        
+        .insights-section h2 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 3px solid #E63946;
+        }
+        
+        .insight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .insight-item {
+            background-color: #0F1419;
+            border-radius: 8px;
+            padding: 16px 20px;
+            border-left: 3px solid #2A9D8F;
+        }
+        
+        .insight-item.warning {
+            border-left-color: #E63946;
+        }
+        
+        .insight-item.highlight {
+            border-left-color: #F4A261;
+        }
+        
+        .insight-item h4 {
+            font-size: 13px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .insight-item p {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        .data-table-section {
+            background-color: #141b26;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-top: 24px;
+        }
+        
+        .data-table-section h2 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 3px solid #457B9D;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        
+        th {
+            background-color: #0F1419;
+            color: #6C757D;
+            font-weight: 500;
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #1e293b;
+            color: #e0e0e0;
+        }
+        
+        tr:hover td {
+            background-color: #0F1419;
+        }
+        
+        .trend-up { color: #2A9D8F; font-weight: 600; }
+        .trend-down { color: #E63946; font-weight: 600; }
+        .trend-neutral { color: #6C757D; }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #6C757D;
+            font-size: 12px;
+            border-top: 1px solid #1e293b;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .chart-grid { grid-template-columns: 1fr; }
+            .insight-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>2025年中国游戏品类收入结构</h1>
+    <div class="subtitle">
+        数据来源：《2025年中国游戏产业报告》| 发布机构：中国音数协游戏工委 (GPC) + 伽马数据 (CNG) | 发布日期：2025年12月19日
+    </div>
+</div>
+
+<div class="container">
+    
+    <!-- 图表网格 -->
+    <div class="chart-grid">
+        
+        <!-- 图表1: 2025年国内品类收入占比 -->
+        <div class="chart-card">
+            <div class="chart-title">2025年国内TOP100品类收入占比分布</div>
+            <div class="chart-desc">统计口径：国内收入排名前100的移动游戏产品</div>
+            <div id="chart-pie" class="chart-container"></div>
+        </div>
+        
+        <!-- 图表2: 2024 vs 2025 同比对比 -->
+        <div class="chart-card">
+            <div class="chart-title">国内TOP100品类收入占比：2024 vs 2025</div>
+            <div class="chart-desc">同比变化显示射击类和策略类增长最为显著</div>
+            <div id="chart-bar" class="chart-container"></div>
+        </div>
+        
+        <!-- 图表3: 国内 vs 海外 -->
+        <div class="chart-card">
+            <div class="chart-title">2025年国内 vs 海外自研品类结构差异</div>
+            <div class="chart-desc">海外数据口径：中国自主研发移动游戏海外市场收入前100</div>
+            <div id="chart-overseas" class="chart-container"></div>
+        </div>
+        
+        <!-- 图表4: 数量 vs 收入（变现效率） -->
+        <div class="chart-card">
+            <div class="chart-title">数量占比 vs 收入占比（TOP100变现效率分析）</div>
+            <div class="chart-desc">位于对角线上方的品类变现效率更高（少产品/高收入）</div>
+            <div id="chart-scatter" class="chart-container"></div>
+        </div>
+        
+    </div>
+    
+    <!-- 核心洞察 -->
+    <div class="insights-section">
+        <h2>核心洞察</h2>
+        <div class="insight-grid">
+            <div class="insight-item highlight">
+                <h4>射击类跃升为第二大品类（+4.40pct）</h4>
+                <p>射击类收入占比从2024年的13.89%跃升至18.29%，成功反超角色扮演类（15.10%）成为第二大品类。"搜打撤"新玩法（如《三角洲行动》）成为关键增量来源，为2025年市场贡献超百亿元增量。</p>
+            </div>
+            <div class="insight-item warning">
+                <h4>动作类收入占比腰斩（-5.04pct）</h4>
+                <p>动作类游戏收入占比从2024年的9.98%大幅下滑至4.94%，是2025年下滑最剧烈的品类。头部产品老化、新品供给不足是主要原因。</p>
+            </div>
+            <div class="insight-item">
+                <h4>海外策略类一家独大（49.96%）</h4>
+                <p>中国自研游戏在海外TOP100中，策略类（含SLG）收入占比高达49.96%，几乎是国内的5倍。美国（32.31%）、日本（16.35%）、韩国（9.15%）合计占比57.81%。</p>
+            </div>
+            <div class="insight-item highlight">
+                <h4>MOBA与射击变现效率极高</h4>
+                <p>MOBA和射击品类在TOP100中仅占7款产品（数量占比7%），却分别贡献19.45%和18.29%的收入。头部产品变现效率是RPG品类的2.5-3倍，呈现典型的"少而精"格局。</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 完整数据表 -->
+    <div class="data-table-section">
+        <h2>2024-2025年国内TOP100品类收入占比完整数据</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>品类</th>
+                    <th>2024年收入占比</th>
+                    <th>2025年收入占比</th>
+                    <th>同比变化</th>
+                    <th>趋势</th>
+                    <th>2025年数量占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MOBA（多人在线战术竞技类）</td>
+                    <td>17.85%</td>
+                    <td><strong>19.45%</strong></td>
+                    <td class="trend-up">+1.60pct</td>
+                    <td class="trend-up">↑ 稳步增长</td>
+                    <td>7%</td>
+                </tr>
+                <tr>
+                    <td>射击类</td>
+                    <td>13.89%</td>
+                    <td><strong>18.29%</strong></td>
+                    <td class="trend-up">+4.40pct</td>
+                    <td class="trend-up">↑ 跃升最大</td>
+                    <td>7%</td>
+                </tr>
+                <tr>
+                    <td>角色扮演类</td>
+                    <td>17.85%</td>
+                    <td><strong>15.10%</strong></td>
+                    <td class="trend-down">-2.75pct</td>
+                    <td class="trend-down">↓ 被反超</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td>策略类（含SLG）</td>
+                    <td>6.92%</td>
+                    <td><strong>9.77%</strong></td>
+                    <td class="trend-up">+2.85pct</td>
+                    <td class="trend-up">↑ 显著增长</td>
+                    <td>11%</td>
+                </tr>
+                <tr>
+                    <td>动作类</td>
+                    <td>9.98%</td>
+                    <td><strong>4.94%</strong></td>
+                    <td class="trend-down">-5.04pct</td>
+                    <td class="trend-down">↓ 下滑最剧</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>卡牌类</td>
+                    <td>-</td>
+                    <td>~3.5%（估算）</td>
+                    <td class="trend-neutral">-</td>
+                    <td class="trend-neutral">→ 收入弱势</td>
+                    <td>8%</td>
+                </tr>
+                <tr>
+                    <td>其他品类</td>
+                    <td>33.51%</td>
+                    <td><strong>32.45%</strong></td>
+                    <td class="trend-down">-1.06pct</td>
+                    <td class="trend-neutral">→ 基本稳定</td>
+                    <td>47%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+
+<div class="footer">
+    数据来源：《2025年中国游戏产业报告》| 中国音数协游戏工委 (GPC) + 伽马数据 (CNG) | 发布日期：2025年12月19日 | 论文引用：《中国数字出版》2026年第4卷第1期
+</div>
+
+<script>
+// ==================== 图表1: 饼图 ====================
+const chartPie = echarts.init(document.getElementById('chart-pie'));
+chartPie.setOption({
+    backgroundColor: 'transparent',
+    tooltip: {
+        trigger: 'item',
+        formatter: '{b}: {c}% ({d}%)',
+        backgroundColor: '#1A1D29',
+        borderColor: '#2A9D8F',
+        textStyle: { color: '#fff' }
+    },
+    legend: {
+        orient: 'vertical',
+        right: '5%',
+        top: 'center',
+        textStyle: { color: '#e0e0e0', fontSize: 11 },
+        itemWidth: 12,
+        itemHeight: 12
+    },
+    series: [{
+        type: 'pie',
+        radius: ['42%', '72%'],
+        center: ['40%', '50%'],
+        avoidLabelOverlap: true,
+        itemStyle: {
+            borderRadius: 6,
+            borderColor: '#141b26',
+            borderWidth: 3
+        },
+        label: {
+            show: true,
+            formatter: '{b}\n{d}%',
+            color: '#e0e0e0',
+            fontSize: 11,
+            fontWeight: 'bold'
+        },
+        emphasis: {
+            label: { show: true, fontSize: 13, fontWeight: 'bold' },
+            itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0,0,0,0.5)' }
+        },
+        data: [
+            { value: 19.45, name: 'MOBA', itemStyle: { color: '#E63946' } },
+            { value: 18.29, name: '射击类', itemStyle: { color: '#F4A261' } },
+            { value: 15.10, name: 'RPG', itemStyle: { color: '#2A9D8F' } },
+            { value: 9.77, name: '策略类', itemStyle: { color: '#264653' } },
+            { value: 4.94, name: '动作类', itemStyle: { color: '#457B9D' } },
+            { value: 32.45, name: '其他', itemStyle: { color: '#A8DADC' } }
+        ]
+    }]
+});
+
+// ==================== 图表2: 柱状图对比 ====================
+const chartBar = echarts.init(document.getElementById('chart-bar'));
+chartBar.setOption({
+    backgroundColor: 'transparent',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        backgroundColor: '#1A1D29',
+        borderColor: '#2A9D8F',
+        textStyle: { color: '#fff' },
+        formatter: function(params) {
+            let res = '<strong>' + params[0].axisValue + '</strong><br/>';
+            params.forEach(p => {
+                res += p.marker + ' ' + p.seriesName + ': ' + p.value + '%<br/>';
+            });
+            return res;
+        }
+    },
+    legend: {
+        data: ['2024年', '2025年'],
+        top: 5,
+        textStyle: { color: '#e0e0e0', fontSize: 11 }
+    },
+    grid: { left: '8%', right: '6%', bottom: '10%', top: '18%', containLabel: true },
+    xAxis: {
+        type: 'category',
+        data: ['MOBA', '射击类', 'RPG', '策略类', '动作类', '其他'],
+        axisLine: { lineStyle: { color: '#1e293b' } },
+        axisLabel: { color: '#e0e0e0', fontSize: 11 },
+        axisTick: { show: false }
+    },
+    yAxis: {
+        type: 'value',
+        name: '收入占比 (%)',
+        nameTextStyle: { color: '#6C757D', fontSize: 11 },
+        axisLine: { show: false },
+        axisLabel: { color: '#6C757D', fontSize: 10 },
+        splitLine: { lineStyle: { color: '#1e293b', type: 'dashed' } }
+    },
+    series: [
+        {
+            name: '2024年',
+            type: 'bar',
+            data: [17.85, 13.89, 17.85, 6.92, 9.98, 33.51],
+            itemStyle: { color: '#6C757D', borderRadius: [4, 4, 0, 0] },
+            barWidth: '30%'
+        },
+        {
+            name: '2025年',
+            type: 'bar',
+            data: [
+                { value: 19.45, itemStyle: { color: '#E63946' } },
+                { value: 18.29, itemStyle: { color: '#F4A261' } },
+                { value: 15.10, itemStyle: { color: '#2A9D8F' } },
+                { value: 9.77, itemStyle: { color: '#264653' } },
+                { value: 4.94, itemStyle: { color: '#457B9D' } },
+                { value: 32.45, itemStyle: { color: '#A8DADC' } }
+            ],
+            barWidth: '30%',
+            itemStyle: { borderRadius: [4, 4, 0, 0] },
+            label: {
+                show: true,
+                position: 'top',
+                formatter: function(p) {
+                    const changes = ['+1.60', '+4.40', '-2.75', '+2.85', '-5.04', '-1.06'];
+                    const colors = ['#2A9D8F', '#2A9D8F', '#E63946', '#2A9D8F', '#E63946', '#E63946'];
+                    return '{val|' + p.value + '%}\n{change|' + changes[p.dataIndex] + 'pct}';
+                },
+                rich: {
+                    val: { color: '#e0e0e0', fontSize: 11, fontWeight: 'bold' },
+                    change: { color: '#6C757D', fontSize: 10 }
+                }
+            }
+        }
+    ]
+});
+
+// ==================== 图表3: 国内 vs 海外 ====================
+const chartOverseas = echarts.init(document.getElementById('chart-overseas'));
+chartOverseas.setOption({
+    backgroundColor: 'transparent',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        backgroundColor: '#1A1D29',
+        borderColor: '#2A9D8F',
+        textStyle: { color: '#fff' }
+    },
+    legend: {
+        data: ['国内市场 (TOP100)', '海外自研 (TOP100)'],
+        top: 5,
+        textStyle: { color: '#e0e0e0', fontSize: 11 }
+    },
+    grid: { left: '12%', right: '15%', bottom: '8%', top: '18%', containLabel: true },
+    xAxis: {
+        type: 'value',
+        name: '收入占比 (%)',
+        nameTextStyle: { color: '#6C757D', fontSize: 11 },
+        axisLine: { show: false },
+        axisLabel: { color: '#6C757D', fontSize: 10 },
+        splitLine: { lineStyle: { color: '#1e293b', type: 'dashed' } }
+    },
+    yAxis: {
+        type: 'category',
+        data: ['策略类', '射击类', 'RPG', '其他'],
+        axisLine: { lineStyle: { color: '#1e293b' } },
+        axisLabel: { color: '#e0e0e0', fontSize: 12 },
+        axisTick: { show: false }
+    },
+    series: [
+        {
+            name: '国内市场 (TOP100)',
+            type: 'bar',
+            data: [9.77, 18.29, 15.10, 56.84],
+            itemStyle: { color: '#2A9D8F', borderRadius: [0, 4, 4, 0] },
+            barWidth: '28%',
+            label: {
+                show: true,
+                position: 'right',
+                formatter: '{c}%',
+                color: '#e0e0e0',
+                fontSize: 11
+            }
+        },
+        {
+            name: '海外自研 (TOP100)',
+            type: 'bar',
+            data: [49.96, 9.69, 9.39, 30.96],
+            itemStyle: { color: '#F4A261', borderRadius: [0, 4, 4, 0] },
+            barWidth: '28%',
+            label: {
+                show: true,
+                position: 'right',
+                formatter: '{c}%',
+                color: '#e0e0e0',
+                fontSize: 11
+            }
+        }
+    ]
+});
+
+// ==================== 图表4: 散点图 ====================
+const chartScatter = echarts.init(document.getElementById('chart-scatter'));
+chartScatter.setOption({
+    backgroundColor: 'transparent',
+    tooltip: {
+        backgroundColor: '#1A1D29',
+        borderColor: '#2A9D8F',
+        textStyle: { color: '#fff' },
+        formatter: function(p) {
+            return '<strong>' + p.data[3] + '</strong><br/>数量占比: ' + p.data[0] + '%<br/>收入占比: ' + p.data[1] + '%<br/>效率比: ' + (p.data[1]/p.data[0]).toFixed(1) + 'x';
+        }
+    },
+    grid: { left: '10%', right: '8%', bottom: '12%', top: '12%', containLabel: true },
+    xAxis: {
+        type: 'value',
+        name: '数量占比 (%)',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: { color: '#6C757D', fontSize: 11 },
+        axisLine: { lineStyle: { color: '#1e293b' } },
+        axisLabel: { color: '#6C757D', fontSize: 10 },
+        splitLine: { lineStyle: { color: '#1e293b', type: 'dashed' } },
+        max: 25
+    },
+    yAxis: {
+        type: 'value',
+        name: '收入占比 (%)',
+        nameTextStyle: { color: '#6C757D', fontSize: 11 },
+        axisLine: { lineStyle: { color: '#1e293b' } },
+        axisLabel: { color: '#6C757D', fontSize: 10 },
+        splitLine: { lineStyle: { color: '#1e293b', type: 'dashed' } },
+        max: 22
+    },
+    series: [
+        // 基准线 y=x
+        {
+            type: 'line',
+            data: [[0, 0], [22, 22]],
+            lineStyle: { color: '#6C757D', type: 'dashed', width: 1 },
+            symbol: 'none',
+            silent: true
+        },
+        // 散点
+        {
+            type: 'scatter',
+            symbolSize: function(data) { return 28; },
+            data: [
+                [7, 19.45, 2.78, 'MOBA'],
+                [7, 18.29, 2.61, '射击类'],
+                [20, 15.10, 0.76, 'RPG'],
+                [11, 9.77, 0.89, '策略类'],
+                [8, 3.5, 0.44, '卡牌类']
+            ],
+            itemStyle: {
+                color: function(p) {
+                    const colors = ['#E63946', '#F4A261', '#2A9D8F', '#264653', '#457B9D'];
+                    return colors[p.dataIndex];
+                },
+                borderColor: '#fff',
+                borderWidth: 2,
+                shadowBlur: 8,
+                shadowColor: 'rgba(0,0,0,0.3)'
+            },
+            label: {
+                show: true,
+                formatter: '{@3}',
+                color: '#e0e0e0',
+                fontSize: 11,
+                fontWeight: 'bold',
+                position: 'top',
+                distance: 10
+            }
+        }
+    ],
+    graphic: [
+        {
+            type: 'text',
+            left: '18%',
+            top: '15%',
+            style: { text: '高变现效率', fill: '#E63946', fontSize: 11, fontStyle: 'italic' }
+        },
+        {
+            type: 'text',
+            left: '55%',
+            top: '75%',
+            style: { text: '低变现效率', fill: '#2A9D8F', fontSize: 11, fontStyle: 'italic' }
+        }
+    ]
+});
+
+// 响应式
+window.addEventListener('resize', () => {
+    chartPie.resize();
+    chartBar.resize();
+    chartOverseas.resize();
+    chartScatter.resize();
+});
+</script>
+
+</body>
+</html>
