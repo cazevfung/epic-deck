@@ -1,0 +1,27 @@
+{
+  "name": "epic_deck_workbench_all_pdf_raster",
+  "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "merge": {
+    "outputHtml": "04_assembly/epic_deck_workbench_all_merged.html",
+    "pageSize": {
+      "width": "16in",
+      "height": "9in"
+    }
+  },
+  "pdf": {
+    "inputHtml": "04_assembly/epic_deck_workbench_all_merged.html",
+    "outputPdf": "04_assembly/epic_deck_workbench_all_merged.pdf",
+    "pagesDir": "04_assembly/.deck-pdf-pages-workbench-all-raster",
+    "waitMs": 2500,
+    "jpegQuality": 55,
+    "viewport": {
+      "width": 1600,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "pageSize": {
+      "width": "16in",
+      "height": "9in"
+    }
+  }
+}
