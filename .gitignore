@@ -5,6 +5,9 @@
 Thumbs.db
 __pycache__/
 *.py[cod]
+node_modules/
+**/node_modules/
+**/.deck-pdf-pages/
 _img_list.txt
 _rewrite_urls.py
 
@@ -17,3 +20,14 @@ tmp_slide31_demo.png
 tmp_slide_exports/
 tmp_ppt_inspect/
 epic_deck/00_inbox/Epic Deck 合并_v1.pptx
+
+# Ignore all temp files and temp directories
+tmp*
+**/tmp*
+*.pptx
+**/*.pptx
+
+# Ignore local workbench and assembly outputs
+epic_deck/00_inbox/
+epic_deck/02_sections/05_exports/workbench/
+epic_deck/04_assembly/

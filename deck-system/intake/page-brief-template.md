@@ -2,7 +2,7 @@
 
 Use one copy of this template for each requested page.
 
-This template is the default intake format described in [`../docs/02-contribution-and-intake.md`](../docs/02-contribution-and-intake.md).
+This template is the default intake format for the current canon-first deck workflow.
 
 ## Source Info
 

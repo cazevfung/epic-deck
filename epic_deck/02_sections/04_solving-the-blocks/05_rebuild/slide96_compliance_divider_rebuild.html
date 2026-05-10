@@ -1,0 +1,44 @@
+ok<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 96 - 合规部分</title>
+<link href="../../../../deck-system/styles/tokens.css" rel="stylesheet">
+<link href="../../../../deck-system/styles/base.css" rel="stylesheet">
+<link href="../../../../deck-system/styles/components.css" rel="stylesheet">
+<link href="../../../../deck-system/styles/templates.css" rel="stylesheet">
+<link href="./compliance_light_rebuild.css" rel="stylesheet">
+<style>
+  .compliance-divider-page {
+    position: relative;
+    isolation: isolate;
+  }
+</style>
+</head>
+<body class="mode-editorial-light">
+  <div class="deck-viewport">
+    <div class="compliance-shell" id="stage-shell">
+      <main class="deck-stage compliance-stage">
+        <div class="page-safe">
+          <section class="page-shell layout-hero compliance-divider-page density-hero">
+            <div class="compliance-divider">
+              <h1 class="compliance-divider__title">合规部分</h1>
+              <div class="compliance-divider__line"></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+<script>
+  const stageShell = document.getElementById("stage-shell");
+  function scaleStage() {
+    const scale = Math.min(1, window.innerWidth / 1920, window.innerHeight / 1080);
+    stageShell.style.transform = `scale(${scale})`;
+  }
+  window.addEventListener("resize", scaleStage);
+  scaleStage();
+</script>
+</body>
+</html>

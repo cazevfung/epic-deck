@@ -1,0 +1,17 @@
+{
+  "name": "deck-system-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "merge": "node scripts/merge-deck-html.js",
+    "export:pdf": "node scripts/export-deck-pdf.js",
+    "audit": "node scripts/audit-deck-output.js"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "postcss": "^8.5.14",
+    "postcss-selector-parser": "^7.1.1",
+    "puppeteer-core": "^24.43.0"
+  }
+}

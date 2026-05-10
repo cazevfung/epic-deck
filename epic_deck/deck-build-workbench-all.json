@@ -1,0 +1,72 @@
+{
+  "name": "epic_deck_workbench_all",
+  "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "merge": {
+    "title": "Epic Deck Workbench All Merged",
+    "baseHref": "../02_sections/05_exports/workbench/",
+    "outputHtml": "04_assembly/epic_deck_workbench_all_merged.html",
+    "deckTotal": 96,
+    "excludeSlidesContainingText": [
+      "How to use this scaffold"
+    ],
+    "preloadWindowRadius": 2,
+    "pageSize": {
+      "width": "16in",
+      "height": "9in"
+    },
+    "sources": [
+      {
+        "id": "src-01-02",
+        "file": "02_sections/05_exports/workbench/workbench-pages-01-02.html"
+      },
+      {
+        "id": "src-03-05-06",
+        "file": "02_sections/05_exports/workbench/workbench-pages-03_05-06.html"
+      },
+      {
+        "id": "src-03-10-12-17",
+        "file": "02_sections/05_exports/workbench/workbench-pages-03-10_12_17.html"
+      },
+      {
+        "id": "src-07-08",
+        "file": "02_sections/05_exports/workbench/workbench-pages-07-08.html"
+      },
+      {
+        "id": "src-21-23",
+        "file": "02_sections/05_exports/workbench/workbench-pages-21-23.html"
+      },
+      {
+        "id": "src-25-34-36",
+        "file": "02_sections/05_exports/workbench/workbench-pages-25-34_36.html"
+      },
+      {
+        "id": "src-39-45-47-48",
+        "file": "02_sections/05_exports/workbench/workbench-pages-39-45_47-48.html"
+      },
+      {
+        "id": "src-49-56",
+        "file": "02_sections/05_exports/workbench/workbench-pages-49-56.html"
+      },
+      {
+        "id": "src-57-64",
+        "file": "02_sections/05_exports/workbench/workbench-pages-57-64.html"
+      },
+      {
+        "id": "src-65-79",
+        "file": "02_sections/05_exports/workbench/workbench-pages-65-79.html"
+      },
+      {
+        "id": "src-81-88",
+        "file": "02_sections/05_exports/workbench/workbench-pages-81-88.html"
+      },
+      {
+        "id": "src-89-93",
+        "file": "02_sections/05_exports/workbench/workbench-pages-89-93.html"
+      },
+      {
+        "id": "src-94-96",
+        "file": "02_sections/05_exports/workbench/workbench-pages-94-96.html"
+      }
+    ]
+  }
+}

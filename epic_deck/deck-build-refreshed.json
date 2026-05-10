@@ -1,0 +1,63 @@
+{
+  "name": "epic_deck_05_exports_refreshed",
+  "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "merge": {
+    "title": "Epic Deck 05 Exports Refreshed",
+    "baseHref": "../02_sections/05_exports/workbench/",
+    "outputHtml": "04_assembly/epic_deck_05_exports_refreshed_merged.html",
+    "appendCssPath": "04_assembly/page-num-slide38-override.css",
+    "deckTotal": 105,
+    "preloadWindowRadius": 2,
+    "pageSize": {
+      "width": "16in",
+      "height": "9in"
+    },
+    "sources": [
+      {
+        "id": "src-03-18",
+        "file": "02_sections/05_exports/workbench/workbench-pages-03-10_12_17.html"
+      },
+      {
+        "id": "src-21-23",
+        "file": "02_sections/05_exports/workbench/workbench-pages-21-23.html"
+      },
+      {
+        "id": "src-25-36",
+        "file": "02_sections/05_exports/workbench/workbench-pages-25-34_36.html"
+      },
+      {
+        "id": "src-39-48",
+        "file": "02_sections/05_exports/workbench/workbench-pages-39-45_47-48.html"
+      },
+      {
+        "id": "src-49-56",
+        "file": "02_sections/05_exports/workbench/workbench-pages-49-56.html"
+      },
+      {
+        "id": "src-57-64",
+        "file": "02_sections/05_exports/workbench/workbench-pages-57-64.html"
+      }
+    ]
+  },
+  "pdf": {
+    "inputHtml": "04_assembly/epic_deck_05_exports_refreshed_merged.html",
+    "outputPdf": "04_assembly/epic_deck_05_exports_refreshed_merged.pdf",
+    "pagesDir": "04_assembly/.deck-pdf-pages-refreshed",
+    "waitMs": 2500,
+    "viewport": {
+      "width": 1920,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    "pageSize": {
+      "width": "16in",
+      "height": "9in"
+    }
+  },
+  "audit": {
+    "inputHtml": "04_assembly/epic_deck_05_exports_refreshed_merged.html",
+    "outputDir": "04_assembly/audit-refreshed",
+    "waitMs": 1000,
+    "samplePages": ["first", "stride:5", 38, 44, 52, "last"]
+  }
+}
