@@ -1,0 +1,26 @@
+{
+  "name": "epic_deck_workbench_all_pdf",
+  "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "merge": {
+    "outputHtml": "04_assembly/epic_deck_workbench_all_merged.html",
+    "pageSize": {
+      "width": "16in",
+      "height": "9in"
+    }
+  },
+  "pdf": {
+    "inputHtml": "04_assembly/epic_deck_workbench_all_merged.html",
+    "outputPdf": "04_assembly/epic_deck_workbench_all_merged.pdf",
+    "pagesDir": "04_assembly/.deck-pdf-pages-workbench-all",
+    "waitMs": 2500,
+    "viewport": {
+      "width": 1920,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    "pageSize": {
+      "width": "16in",
+      "height": "9in"
+    }
+  }
+}
