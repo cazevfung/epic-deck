@@ -5,10 +5,7 @@
     "title": "Epic Deck Workbench All Merged",
     "baseHref": "../02_sections/05_exports/workbench/",
     "outputHtml": "04_assembly/epic_deck_workbench_all_merged.html",
-    "deckTotal": 96,
-    "excludeSlidesContainingText": [
-      "How to use this scaffold"
-    ],
+    "deckTotal": 97,
     "preloadWindowRadius": 2,
     "pageSize": {
       "width": "16in",
@@ -16,20 +13,12 @@
     },
     "sources": [
       {
-        "id": "src-01-02",
-        "file": "02_sections/05_exports/workbench/workbench-pages-01-02.html"
+        "id": "src-01",
+        "file": "02_sections/05_exports/workbench/workbench-pages-01.html"
       },
       {
-        "id": "src-03-05-06",
-        "file": "02_sections/05_exports/workbench/workbench-pages-03_05-06.html"
-      },
-      {
-        "id": "src-03-10-12-17",
-        "file": "02_sections/05_exports/workbench/workbench-pages-03-10_12_17.html"
-      },
-      {
-        "id": "src-07-08",
-        "file": "02_sections/05_exports/workbench/workbench-pages-07-08.html"
+        "id": "src-05-17",
+        "file": "02_sections/05_exports/workbench/workbench-pages-05-17.html"
       },
       {
         "id": "src-21-23",
@@ -57,7 +46,8 @@
       },
       {
         "id": "src-81-88",
-        "file": "02_sections/05_exports/workbench/workbench-pages-81-88.html"
+        "file": "02_sections/05_exports/workbench/workbench-pages-81-88.html",
+        "excludeSlideNumbers": [89, 90, 91]
       },
       {
         "id": "src-89-93",

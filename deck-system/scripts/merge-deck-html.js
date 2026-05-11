@@ -45,7 +45,14 @@ function updatePageNum(slide, total) {
   const m = /data-slide="(\d+)"/.exec(slide);
   if (!m) return slide;
   const label = `${String(Number(m[1])).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
-  return slide.replace(/(<div class="page-num">)\s*\d+\s*\/\s*\d+\s*(<\/div>)/g, `$1${label}$2`);
+  const pageNumRe = /(<(div|span)\b[^>]*class="[^"]*\bpage-num\b[^"]*"[^>]*>)\s*[^<]*?\d+\s*\/\s*\d+[^<]*?(<\/\2>)/i;
+  if (pageNumRe.test(slide)) return slide.replace(pageNumRe, `$1${label}$3`);
+  return slide.replace(/<\/section>\s*$/i, `  <div class="page-num">${label}</div>\n</section>`);
+}
+
+function slideNumberFrom(slide) {
+  const m = /data-slide="(\d+)"/.exec(slide);
+  return m ? Number(m[1]) : null;
 }
 
 function slideRootClassesFrom(slides) {
@@ -422,13 +429,21 @@ function softTransitionCss() {
 
 .slide.entering,
 .slide.leaving {
-  opacity: 0 !important;
   visibility: visible !important;
   pointer-events: none !important;
-  z-index: 1;
   transition:
     opacity 0.56s cubic-bezier(0.22, 1, 0.36, 1),
     visibility 0s linear 0s !important;
+}
+
+.slide.entering {
+  opacity: 0 !important;
+  z-index: 3;
+}
+
+.slide.leaving {
+  opacity: 1 !important;
+  z-index: 1;
 }
 `;
 }
@@ -440,6 +455,7 @@ function softTransitionScript() {
 
   const SLIDE_FADE_MS = 560;
   let fadeTimer = null;
+  let enterFrame = null;
   const slideNumberToIndex = new Map(
     Array.from(slides).map((slide, idx) => [parseInt(slide?.dataset?.slide || '', 10), idx]).filter(([n]) => Number.isFinite(n)),
   );
@@ -487,6 +503,10 @@ function softTransitionScript() {
       clearTimeout(fadeTimer);
       fadeTimer = null;
     }
+    if (enterFrame) {
+      cancelAnimationFrame(enterFrame);
+      enterFrame = null;
+    }
 
     slides.forEach((slide) => {
       if (slide !== prevSlide && slide !== nextSlide) {
@@ -504,19 +524,24 @@ function softTransitionScript() {
       nextSlide.classList.add('entering');
       void nextSlide.offsetWidth;
     }
-    nextSlide.classList.add('active');
-    nextSlide.classList.remove('entering');
+    enterFrame = requestAnimationFrame(() => {
+      nextSlide.classList.add('active');
+      nextSlide.classList.remove('entering');
+      enterFrame = null;
+    });
 
+    const isHero = nextSlide.matches('.cover, .slide-transition-hero, .slide-closing-cn, .anchor');
     if (prevSlide && prevSlide !== nextSlide) {
       const leavingSlide = prevSlide;
       fadeTimer = window.setTimeout(() => {
         leavingSlide.classList.remove('leaving');
+        deck.classList.toggle('deck--hero', isHero);
         fadeTimer = null;
       }, SLIDE_FADE_MS);
+    } else {
+      deck.classList.toggle('deck--hero', isHero);
     }
 
-    const isHero = nextSlide.matches('.cover, .slide-transition-hero, .slide-closing-cn, .anchor');
-    deck.classList.toggle('deck--hero', isHero);
     current = idx;
     const currentSlideNumber = resolveSlideNumber(nextSlide, idx);
     const totalSlidesForCounter = resolveDeckTotal();
@@ -667,8 +692,9 @@ function main() {
 
   docs.forEach((doc, index) => {
     const body = matchOne(/<body[^>]*>([\s\S]*?)<\/body>/i, doc.html, `body ${doc.file}`);
+    const excludedNumbers = new Set((doc.excludeSlideNumbers || []).map((number) => Number(number)));
     const extractedSlides = extractSlides(body).filter(
-      (slide) => !shouldExcludeSlide(slide, excludeSlidesContainingText),
+      (slide) => !shouldExcludeSlide(slide, excludeSlidesContainingText) && !excludedNumbers.has(slideNumberFrom(slide)),
     );
     const slideRootClasses = slideRootClassesFrom(extractedSlides);
 

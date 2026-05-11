@@ -1,6 +1,6 @@
 # HTML Merge and PDF Export
 
-This workflow turns several finished workbench HTML files into one merged HTML deck and one text-preserving PDF.
+This workflow turns all finished HTML files in a deck's `workbench/` directory into one merged HTML deck and one text-preserving PDF.
 
 It is intended for frequent assembly work after pages are already visually approved.
 
@@ -15,7 +15,7 @@ Manual PDF export from Chrome print preview is fragile for our decks:
 
 The standard workflow is therefore:
 
-1. Merge source workbench HTML files into one interactive HTML.
+1. Merge every HTML file in the configured `workbench/` directory into one interactive HTML.
 2. Activate each slide in screen mode.
 3. Export one PDF page per active slide.
 4. Merge those PDF pages.
@@ -49,7 +49,7 @@ epic_deck/deck-build.json
 
 The config controls:
 
-- source HTML files and source IDs;
+- source `workbench/` directory or glob for all HTML files to merge;
 - output merged HTML path;
 - interactive preheat radius for the merged HTML deck;
 - output PDF path;
@@ -58,6 +58,8 @@ The config controls:
 - sample pages for audit screenshots.
 
 Paths are resolved relative to the config file.
+
+Do not encode a required naming convention for individual workbench files in this workflow. The merge input should be the complete set of `*.html` files under the configured `workbench/` directory, regardless of whether a file name uses page ranges, page lists, or another temporary working label.
 
 ## Merge Rules
 
