@@ -6032,6 +6032,8 @@
     display: flex;
     flex-direction: column;
     gap: 2.5vh;
+    min-height: 0;
+    overflow: hidden;
     padding-top: 0.4vh;
   }
 
@@ -6094,6 +6096,7 @@
     gap: clamp(20px, 1.8vw, 34px);
     flex: 1;
     min-height: 0;
+    overflow: hidden;
   }
 
   .our-business-panel {
@@ -6101,7 +6104,14 @@
     overflow: hidden;
     border-radius: 34px;
     padding: 2.6vh 1.5vw 1.6vh;
+    box-sizing: border-box;
+    max-height: 100%;
     border: 1px solid rgba(255,255,255,0.14);
+    background-image:
+      linear-gradient(180deg, rgba(8, 10, 14, 0.22), rgba(8, 10, 14, 0.44)),
+      url('../../04_assets/source-pptx-media-03-15/XD_background.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
     box-shadow: 0 22px 48px rgba(0,0,0,0.22);
     backdrop-filter: blur(12px);
     display: flex;
@@ -6121,15 +6131,11 @@
   }
 
   .our-business-panel--self {
-    background:
-      linear-gradient(155deg, rgba(255, 150, 78, 0.34) 0%, rgba(255, 187, 98, 0.16) 60%, rgba(255, 219, 135, 0.22) 100%),
-      rgba(255, 255, 255, 0.04);
+    background-position: left center;
   }
 
   .our-business-panel--pub {
-    background:
-      linear-gradient(155deg, rgba(114, 196, 217, 0.32) 0%, rgba(153, 217, 226, 0.14) 60%, rgba(188, 244, 247, 0.2) 100%),
-      rgba(255, 255, 255, 0.04);
+    background-position: right center;
   }
 
   .our-business-panel-head,
@@ -6206,6 +6212,8 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px 16px;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .our-business-item {
@@ -6216,9 +6224,11 @@
     min-height: 104px;
     padding: 14px;
     border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.14);
-    background: rgba(10, 12, 18, 0.16);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.48);
+    background: rgba(245, 247, 250, 0.94);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.7),
+      0 12px 24px rgba(0,0,0,0.12);
   }
 
   .our-business-item img {
@@ -6232,8 +6242,8 @@
   .our-business-item span {
     font-size: clamp(18px, 1.55vmin, 24px);
     line-height: 1.2;
-    color: #ffffff;
-    font-weight: 600;
+    color: #1e2530;
+    font-weight: 700;
   }
 
   .taptap-intro-page {
@@ -7147,6 +7157,7 @@
     display: flex;
     flex-direction: column;
     gap: 2.6vh;
+    min-height: 0;
     min-width: 0;
   }
 
@@ -7167,11 +7178,16 @@
   .ua-phones {
     display: flex;
     align-items: flex-start;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
     padding-top: 0.8vh;
   }
 
   .ua-phones img {
-    width: min(100%, 690px);
+    width: auto;
+    max-width: min(100%, 690px);
+    max-height: min(100%, 52vh);
     height: auto;
     object-fit: contain;
   }
